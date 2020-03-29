@@ -1,0 +1,26 @@
+{
+  "name": "armory-des-buissons",
+  "version": "1.0.0",
+  "description": "Website for the Arma3 game server Armory des buissons.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nathan Gobinet",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "bootstrap": "^4.4.1",
+    "fullpage.js": "^3.0.8",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.1"
+  }
+}

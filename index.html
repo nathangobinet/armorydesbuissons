@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Armory des buissons</title>
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="src/styles/style.css">
+  <script src="dist/main.js" defer></script>
+</head>
+<body class="light-mode">
+  <nav class="navbar navbar-expand-md navbar-dark bg-accent nav-header p-0">
+    <div class="container-md">
+      <a class="navbar-brand opacity-interaction" href="index.html">
+        <img src="src/resources/svg/logo-white.svg" width="23" height="23"/>
+      </a>
+      <button class="px-4 navbar-toggler opacity-interaction" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white py-2"></i>
+      </button>
+      <div id="navbarNav" class="collapse navbar-collapse w-100">
+        <div class="text-center text-md-left p-0 m-auto">
+          <div class="navbar-nav">
+            <a class="nav-py nav-menu nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-py nav-menu nav-item nav-link" href="#">Live</a>
+            <a class="nav-py nav-menu nav-item nav-link" href="#">About</a>
+            <a class="nav-py nav-menu nav-item nav-link" href="#">Vip</a>
+          </div>
+        </div>
+        <div class="pb-3 pt-2 py-md-0">
+          <div class="navbar-nav d-flex align-items-center justify-content-center" style="flex-direction: row !important;">
+            <div class="nav-select d-flex justify-content-between rounded-pill">
+              <div class="d-flex py-1 px-2">
+                <a id="toggle-language-select" data-toggle="language-select" class="nav-item nav-link text-white opacity-interaction px-2 py-0" href="#"><i class="fas fa-globe"></i></a>
+              </div>
+              <div id="language-select" class="nav-to-select d-flex py-1 px-2 nav-select-hide">
+                <a class="nav-item nav-link text-white opacity-interaction px-1 py-0" href="#"><img style="margin-bottom: 2px;" src="src/resources/svg/usa.svg" width="16" height="16"/></a>
+                <a class="nav-item nav-link text-white opacity-interaction px-1 py-0" href="#"><img style="margin-bottom: 2px;" src="src/resources/svg/fr.svg" width="16" height="16"/></a>
+              </div>
+            </div>
+            <div class="nav-select d-flex justify-content-between rounded-pill">
+              <div class="d-flex py-1 px-2">
+                <a id="toggle-theme-select" data-toggle="theme-select" class="nav-item nav-link text-white opacity-interaction px-2 py-0" href="#"><i class="fas fa-adjust"></i></a>
+              </div>
+              <div id="theme-select" class="nav-to-select d-flex py-1 px-2 nav-select-hide">
+                <a class="nav-item nav-link text-white opacity-interaction px-1 py-0" href="#"><i class="fas fa-moon"></i></a>
+                <a class="nav-item nav-link text-white opacity-interaction px-1 py-0" href="#"><i class="fas fa-sun"></i></a>
+              </div>
+            </div>
+            <a class="nav-item nav-link text-white opacity-interaction px-3" href="#"><i class="fas fa-user"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section class="first-page-section">
+    <div class="container h-100">
+      <div class="d-flex align-items-center justify-content-center" style="height: 90%;">
+        <div class="d-flex">
+          <img src="src/resources/svg/logo-gr.svg"/>
+          <div class="px-4">
+            <div class="title">Armory</div>
+            <div class="sub-title">des buissons</div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center justify-content-center" style="height: 10%;">
+        <a class="fp-caret-down" href="#features"><i class="fas fa-caret-down"></i></a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
