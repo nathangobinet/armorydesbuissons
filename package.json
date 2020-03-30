@@ -1,7 +1,7 @@
 {
   "name": "armory-des-buissons",
   "version": "1.0.0",
-  "description": "Website for the Arma3 game server Armory des buissons.",
+  "description": "Website for an Arma3 game server called Armory des buissons.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
