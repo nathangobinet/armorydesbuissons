@@ -14,29 +14,47 @@
 }
 
 html, body {
+    margin: 0;
     height: 100%;
 }
 
 body {
     font-family: 'Ubuntu', sans-serif;
-    font-weight: lighter;
+    font-weight: normal;
     font-size: 18px;
     background: var(--background-gr) fixed;
     color: var(--text-color);
+}
+
+#navbar {
+    transition: top 0.3s; 
+}
+
+b {
+    font-weight: 500;
 }
 
 a{
     transition: ease-in-out color .15s;
 }
 
+kbd {
+    background: var(--accent);
+    margin: 2px;
+}
+
 .light-mode {
     --background-gr: linear-gradient(122.01deg, #E3E3E3 0%, #F5F5F5 100%);
     --text-color: var(--black-text);
+    --accent-or-dark: var(--accent-gr);
+    --white-or-accent: var(--white-text)
 }
 
 .dark-mode {
     --background-gr: linear-gradient(302.01deg, #1F1F1F 0%, #131313 100%, #000000 100%);
     --text-color: var(--white-text);
+    --accent-or-dark: var(--background-gr);
+    --white-or-accent: var(--accent)
 }
 
 .bg-gr {
@@ -171,18 +189,13 @@ a{
     opacity: 0;
 }
 
-.first-page-section {
-    height: calc(100vh - 56px) !important;
-}
-
 .full-page-section {
-    width: 100%;
-    display: table;
-    height: 100vh;
+  min-height: 100%;
+  display: flex;
 }
 
 .section-content {
-    display: table-cell;
+    flex: 1;
 }
 
 .title {
@@ -253,4 +266,25 @@ p {
     position: absolute;
     top: 60%;
     transform: translateY(-60%);
+}
+
+.h-90 {
+    height: 90%;
+}
+
+.h-10 {
+    height: 10%;
+}
+
+.bg-accent-or-dark {
+    background: var(--accent-or-dark);
+}
+
+.text-white-or-accent {
+    color: var(--white-or-accent);;
+}
+
+
+.text-white-or-accent:hover {
+    color: var(--white-or-accent);;
 }

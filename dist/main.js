@@ -128,7 +128,29 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_0__);\n\n\nfunction getToogleEl(event) {\n  const selectId = event.currentTarget.getAttribute('data-toggle');\n  return document.getElementById(selectId);\n}\n\nfunction toogleNavSelect(select) {\n  select.classList.remove('nav-select-hide');\n  select.parentNode.classList.add('nav-select-border');\n}\n\nfunction unToogleNavSelect(select) {\n  select.classList.add('nav-select-hide');\n  select.parentNode.classList.remove('nav-select-border');\n}\n\nfunction handleClickNavSelect(event) {\n  const select = getToogleEl(event);\n  if (select.classList.contains('nav-select-hide')) {\n    toogleNavSelect(select);\n  } else {\n    unToogleNavSelect(select);\n  }\n}\n\nfunction handleBlurNavSelect(event) {\n  const select = getToogleEl(event);\n  if (event.relatedTarget && event.relatedTarget.parentNode === select) {\n    event.relatedTarget.addEventListener('blur', (newEvent) => handleBlurNavSelect({\n      relatedTarget: newEvent.relatedTarget,\n      currentTarget: select.previousElementSibling.firstElementChild,\n    }));\n  } else {\n    unToogleNavSelect(select);\n  }\n}\n\ndocument.getElementById('toggle-language-select').addEventListener('click', handleClickNavSelect);\ndocument.getElementById('toggle-theme-select').addEventListener('click', handleClickNavSelect);\n\ndocument.getElementById('toggle-theme-select').addEventListener('blur', handleBlurNavSelect);\ndocument.getElementById('toggle-language-select').addEventListener('blur', handleBlurNavSelect);\n\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _nav_toggleNav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./nav/toggleNav */ \"./src/js/nav/toggleNav.js\");\n/* harmony import */ var _nav_toggleNav__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nav_toggleNav__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _nav_toggleNavSelects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nav/toggleNavSelects */ \"./src/js/nav/toggleNavSelects.js\");\n/* harmony import */ var _nav_toggleNavSelects__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nav_toggleNavSelects__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\n\n//# sourceURL=webpack:///./src/js/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/nav/toggleNav.js":
+/*!*********************************!*\
+  !*** ./src/js/nav/toggleNav.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("let prevScrollpos = window.pageYOffset;\nwindow.onscroll = () => {\n  const currentScrollPos = window.pageYOffset;\n  if (prevScrollpos > currentScrollPos) {\n    document.getElementById('navbar').style.top = '0';\n  } else {\n    document.getElementById('navbar').style.top = '-56px';\n  }\n  prevScrollpos = currentScrollPos;\n};\n\n\n//# sourceURL=webpack:///./src/js/nav/toggleNav.js?");
+
+/***/ }),
+
+/***/ "./src/js/nav/toggleNavSelects.js":
+/*!****************************************!*\
+  !*** ./src/js/nav/toggleNavSelects.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function getToogleEl(event) {\n  const selectId = event.currentTarget.getAttribute('data-toggle');\n  return document.getElementById(selectId);\n}\n\nfunction toogleNavSelect(select) {\n  select.classList.remove('nav-select-hide');\n  select.parentNode.classList.add('nav-select-border');\n}\n\nfunction unToogleNavSelect(select) {\n  select.classList.add('nav-select-hide');\n  select.parentNode.classList.remove('nav-select-border');\n}\n\nfunction handleClickNavSelect(event) {\n  const select = getToogleEl(event);\n  if (select.classList.contains('nav-select-hide')) {\n    toogleNavSelect(select);\n  } else {\n    unToogleNavSelect(select);\n  }\n}\n\nfunction handleBlurNavSelect(event) {\n  const select = getToogleEl(event);\n  if (event.relatedTarget && event.relatedTarget.parentNode === select) {\n    event.relatedTarget.addEventListener('blur', (newEvent) => handleBlurNavSelect({\n      relatedTarget: newEvent.relatedTarget,\n      currentTarget: select.previousElementSibling.firstElementChild,\n    }));\n  } else {\n    unToogleNavSelect(select);\n  }\n}\n\ndocument.getElementById('toggle-language-select').addEventListener('click', handleClickNavSelect);\ndocument.getElementById('toggle-theme-select').addEventListener('click', handleClickNavSelect);\n\ndocument.getElementById('toggle-theme-select').addEventListener('blur', handleBlurNavSelect);\ndocument.getElementById('toggle-language-select').addEventListener('blur', handleBlurNavSelect);\n\n\n//# sourceURL=webpack:///./src/js/nav/toggleNavSelects.js?");
 
 /***/ }),
 
