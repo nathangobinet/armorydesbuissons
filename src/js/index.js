@@ -1,5 +1,4 @@
 import 'bootstrap';
-import './fullpage';
 
 function getToogleEl(event) {
   const selectId = event.currentTarget.getAttribute('data-toggle');
