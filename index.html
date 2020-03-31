@@ -7,10 +7,11 @@
   <title>Armory des buissons</title>
   <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
   <link rel="stylesheet" href="src/styles/style.css">
   <script src="dist/main.js" defer></script>
 </head>
-<body class="light-mode">
+<body class="dark-mode">
   <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-accent nav-header p-0 fixed-top">
     <div class="container-md">
       <a class="navbar-brand opacity-interaction" href="index.html">
@@ -59,18 +60,18 @@
       <div class="container h-100">
         <div class="d-flex flex-column justify-content-center h-100 pt-5 ">
           <div class="my-auto">
-            <div class="d-flex flex-column flex-md-row justify-content-center">
+            <div class="d-flex flex-column flex-md-row justify-content-center" >
               <div class="align-self-center mb-3 mb-md-0 mr-0 mr-md-4">
-                <img src="src/resources/svg/logo-gr.svg" width="110" height="110" />
+                <img src="src/resources/svg/logo-gr.svg" width="110" height="110" data-aos-delay="500" data-aos="fade-left" data-aos-duration="700"/>
               </div>
-              <div class="align-self-center ">
+              <div class="align-self-center" data-aos-delay="800" data-aos="zoom-in" data-aos-duration="700">
                 <div class="title">Armory</div>
                 <div class="sub-title">des buissons</div>
               </div>
             </div>
           </div>
           <div class="align-self-center m-0">
-            <a class="fp-caret-down opacity-interaction" href="#features"><i class="fas fa-caret-down"></i></a>
+            <a class="fp-caret-down opacity-interaction" href="#features" data-aos="fade" data-aos-delay="1500" data-aos-offset="0"><i class="fas fa-caret-down pulse pulse"></i></a>
           </div>
         </div>
       </div>
@@ -83,11 +84,11 @@
           <div class="row mb-5">
             <div class="col-md-6 d-flex align-items-center justify-content-center justify-content-md-end">
               <div class="pb-4 pb-mb-0 pr-md-5 pr-0">
-                <img class="img-fluid" src="src/resources/svg/screen-logo.svg" width="350" height="350" />
+                <img class="img-fluid" src="src/resources/svg/screen-logo.svg" width="350" height="350" data-aos="fade-left"/>
               </div>
             </div>
             <div class="col-md-6 d-flex">
-              <div>
+              <div data-aos="fade" data-aos-delay="200">
                 <h1 class="text-center text-md-left text-accent">An Arma 3 server</h1>
                 <p>
                   <b>Armory des buissons</b> is a training server for the game Arma 3. It offers many features such as <b>ranked PVP</b>, public and private <b>arenas</b>, <b>sandbox</b> and <b>attack-defense fight</b>.
@@ -104,12 +105,12 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-12 d-flex justify-content-center position-relative">
+            <div class="col-12 d-flex justify-content-center position-relative" data-aos="fade-up" data-aos-delay="200">
               <img class="img-fluid" src="src/resources/svg/shapes/shape1.svg"  width="550" height="550"/>
               <div class="card-on-shape-1 card shadow-sm pb-0">
                 <div class="text-center">
                   <h2 class="text-accent mb-0">Discover the features</h2>
-                  <a class="fp-caret-down opacity-interaction mb-0" style="font-size: 50px;" href="#tp-into-fight"><i class="fas fa-caret-down"></i></a>
+                  <a class="fp-caret-down opacity-interaction mb-0" style="font-size: 50px;" href="#tp-into-fight"><i class="fas fa-caret-down pulse pulse"></i></a>
                 </div>
               </div>
             </div>
@@ -123,17 +124,17 @@
       <div class="container d-flex flex-column justify-content-center h-100 py-5">
         <div class="my-auto">
           <div class="text-center">
-            <h1 class="mb-5">Be teleported directly into the fight</h1>
+            <h1 class="mb-5" data-aos="fade">Be teleported directly into the fight</h1>
             <div class="mb-5">
-              <img class="img-fluid" src="src/resources/svg/altis-map.svg" width="930" height="390"/>
+              <img class="img-fluid" src="src/resources/svg/altis-map.svg" width="930" height="390" data-aos="zoom-in"/>
             </div>
-            <p>
+            <p data-aos="fade-up">
               The <b>game panel</b> (<kbd>Y</kbd>) allows you to teleport directly to different <b>combat zones</b>. You can also activate <b>automatic teleportation</b> during respawn. The game panel also tells you the <b>number of players</b> in each area.
             </p>
           </div>
         </div>
         <div class="align-self-center m-0">
-          <a class="fp-caret-down opacity-interaction" href="#choose-your-gameplay"><i class="fas fa-caret-down"></i></a>
+          <a class="fp-caret-down opacity-interaction" href="#choose-your-gameplay" data-aos="fade" data-aos-offset="0"><i class="fas fa-caret-down pulse"></i></a>
         </div>  
       </div>
     </div>
@@ -142,25 +143,25 @@
     <div class="section-content">
       <div class="container d-flex flex-column justify-content-center h-100 py-5">
         <div class="my-auto">
-          <div class="mb-5 text-center">
+          <div class="mb-5 text-center" data-aos="fade">
             <h1>Choose your gameplay</h1>
             <h4>Different types of figting zone are available</h4>
           </div>
           <div class="d-flex flex-column flex-md-row">
             <div class="px-md-4 align-self-end">
               <div class="mb-5">
-                <img class="img-fluid mx-auto d-block" src="src/resources/svg/shapes/strider-shape.svg"/>
+                <img class="img-fluid mx-auto d-block" src="src/resources/svg/shapes/strider-shape.svg" data-aos="fade-right"/>
               </div>
-              <div class="text-center px-md-4">
+              <div class="text-center px-md-4" data-aos="fade-up">
                 <h4 class="text-accent">Long range fight</h4>
                 <p>You can train in long distance combat thanks to the large arenas with an open field.</p>
               </div> 
             </div>
             <div class="px-md-4">
               <div class="mb-5">
-                <img class="img-fluid mx-auto d-block" src="src/resources/svg/shapes/soldier-shape.svg"/>
+                <img class="img-fluid mx-auto d-block" src="src/resources/svg/shapes/soldier-shape.svg" data-aos="fade-left"/>
               </div>
-              <div class="text-center px-md-4">
+              <div class="text-center px-md-4" data-aos="fade-up">
                 <h4 class="text-primary">Close range fight</h4>
                 <p>You can train in short distance combat thanks to the small arenas like towns or factory.</p>
               </div> 
@@ -168,7 +169,7 @@
           </div>
         </div>
         <div class="align-self-center m-0">
-          <a class="fp-caret-down opacity-interaction" href="#versus"><i class="fas fa-caret-down"></i></a>
+          <a class="fp-caret-down opacity-interaction" href="#versus" data-aos="fade" data-aos-offset="0"><i class="fas fa-caret-down pulse"></i></a>
         </div>  
       </div>
     </div>
@@ -183,10 +184,10 @@
         <div class="w-100 h-100" style="margin-left: -100%;">
           <div class="container d-flex flex-column justify-content-center h-100 py-5">
             <div class="my-auto">
-              <h1 class="text-white text-center mb-5 pb-lg-5">Fight in versus</h1>
+              <h1 class="text-white text-center mb-5 pb-lg-5" data-aos="fade">Fight in versus</h1>
               <div class="row">
                 <div class="col-lg-4 px-lg-4 pb-4 pb-lg-0">
-                  <div class="card shadow bt-primary">
+                  <div class="card shadow bt-primary" data-aos="flip-down">
                     <div class="text-center">
                       <div class="py-4 mx-auto">
                         <img src="src/resources/svg/icons/users.svg" width="100px"/>
@@ -199,7 +200,7 @@
                   </div>
                 </div>
                 <div class="col-lg-4 px-lg-4 pt-lg-5 pb-4 pb-lg-0">
-                  <div class="card shadow bt-primary">
+                  <div class="card shadow bt-primary" data-aos="flip-down">
                     <div class="text-center">
                       <div class="py-4 mx-auto">
                         <img src="src/resources/svg/icons/points.svg"  width="100px"/>
@@ -212,7 +213,7 @@
                   </div>
                 </div>
                 <div class="col-lg-4 px-lg-4">
-                  <div class="card shadow bt-primary">
+                  <div class="card shadow bt-primary" data-aos="flip-down">
                     <div class="text-center">
                       <div class="py-4 mx-auto">
                         <img src="src/resources/svg/icons/location.svg"  width="70px"/>
@@ -227,7 +228,7 @@
               </div>
             </div>
             <div class="align-self-center m-0">
-              <a class="fp-caret-down text-white-or-accent opacity-interaction" href="#ranking"><i class="fas fa-caret-down"></i></a>
+              <a class="fp-caret-down text-white-or-accent opacity-interaction" href="#ranking" data-aos="fade" data-aos-offset="0"><i class="fas fa-caret-down pulse"></i></a>
             </div>  
           </div>
         </div>
@@ -238,13 +239,13 @@
     <div class="section-content">
       <div class="d-flex h-100">
         <div class="container my-auto pl-md-5 pt-md-5 mt-md-5">
-          <img class="img-fluid" src="src/resources/svg/shapes/shape2.svg" width="600px"/>
+          <img class="img-fluid" src="src/resources/svg/shapes/shape2.svg" width="600px" data-aos="fade-right"/>
         </div>
         <div class="w-100 h-100" style="margin-left: -100%;">
           <div class="container d-flex flex-column justify-content-center h-100 py-5">
             <div class="my-auto">
               <div class="d-flex w-100 justify-content-center mt-md-5 pt-md-5 pl-md-5">
-                <div class="card text-center shadow" style="max-width: 400px;">
+                <div class="card text-center shadow" style="max-width: 400px;" data-aos="zoom-out" data-aos-delay="200">
                   <h1 class="text-primary">Get the highest ranking</h1>
                   <img class="py-4 mx-auto" src="src/resources/svg/icons/rank.svg" width="90px"/>
                   <p class="mb-4">
@@ -257,7 +258,7 @@
               </div>
             </div>
             <div class="align-self-center m-0">
-              <a class="fp-caret-down opacity-interaction" href="#atack-defense"><i class="fas fa-caret-down"></i></a>
+              <a class="fp-caret-down opacity-interaction" href="#atack-defense" data-aos="fade" data-aos-offset="0"><i class="fas fa-caret-down pulse"></i></a>
             </div>  
           </div>
         </div>
@@ -269,32 +270,32 @@
       <div class="container d-flex flex-column justify-content-center h-100 py-5">
         <div class="my-auto">
           <div class="mb-5 text-center">
-            <h1>Atack or defend the bomb</h1>
+            <h1 data-aos="fade">Atack or defend the bomb</h1>
           </div>
           <div class="container pt-lg-3">
             <div class="row">
               <div class="col-lg-4 text-center text-lg-right pt-lg-5">
                 <div class="h-100 d-flex flex-column justify-content-between">
-                  <div>
+                  <div data-aos="zoom-in">
                     <h4 class="text-accent">A public lobby system</h4>
                     <p>It allows you to sign up for the fight and choose your side.</p>
                   </div>
-                  <div>
+                  <div data-aos="zoom-in">
                     <h4 class="text-accent">Defenders must defend the bomb</h4>
                     <p>Their goal is to prevent attackers from defusing it.</p>
                   </div>
                 </div>
               </div>
               <div class="col-lg-4 text-center">
-                <img class="px-lg-4 py-lg-0 pt-4 pb-5 img-fluid" src="src/resources/svg/bomb.svg" width="280"/>
+                <img class="px-lg-4 py-lg-0 pt-4 pb-5 img-fluid" src="src/resources/svg/bomb.svg" width="280" data-aos="fade-up"/>
               </div>
               <div class="col-lg-4 text-center text-lg-left pt-lg-5">
                 <div class="d-flex flex-column h-100 justify-content-between">
-                  <div>
+                  <div data-aos="zoom-in">
                     <h4 class="text-accent">Multiple arenas are available</h4>
                     <p>Arenas are varied and offer a different experience.</p>
                   </div>
-                  <div>
+                  <div data-aos="zoom-in">
                     <h4 class="text-accent">Attackers must defuse the bomb</h4>
                     <p>Their goal is to prevent the bomb from exploding and therefore defuse it</p>
                   </div>
@@ -304,7 +305,7 @@
           </div>
         </div>
         <div class="align-self-center m-0">
-          <a class="fp-caret-down opacity-interaction" href="#more"><i class="fas fa-caret-down"></i></a>
+          <a class="fp-caret-down opacity-interaction" href="#more" data-aos="fade" data-aos-offset="0"><i class="fas fa-caret-down pulse"></i></a>
         </div>  
       </div>
     </div>
@@ -314,15 +315,15 @@
       <div class="container d-flex flex-column justify-content-center h-100 py-5">
         <div class="my-auto">
           <div class="mb-5 text-center">
-            <h1>And even more to discover</h1>
+            <h1 data-aos="fade">And even more to discover</h1>
           </div>
           <div class="container pt-lg-3">
             <div class="row mb-5">
               <div class="col-md-6 text-center">
-                <img class="pb-5 px-3 pb-md-0" src="src/resources/svg/icons/sandbox.svg" width="200px">
+                <img class="pb-5 px-3 pb-md-0" src="src/resources/svg/icons/sandbox.svg" width="200px" data-aos="zoom-in">
               </div>
               <div class="col-md-6 d-flex align-items-center">
-                <div class="pr-md-5">
+                <div class="pr-md-5" data-aos="fade-left">
                   <h4 class="text-primary mb-4">Sandbox</h4>
                   <p>Sandbox allows you to try out all the vehicles available on the game. Train yourself to fly helicopters and fight against  your friends in epic battles.</p>
                 </div>
@@ -330,21 +331,21 @@
             </div>
             <div class="row mb-5">
               <div class="col-md-6 d-flex order-md-1 order-2 align-items-center">
-                <div class="text-right pl-md-5">
+                <div class="text-right pl-md-5" data-aos="fade-right">
                   <h4 class="text-primary mb-4">Inventory</h4>
                   <p>You can completely customize your stuff. Outfit, weapons, accessory ... Create the stuff that suits you and fight with it.</p>
                 </div>
               </div>
               <div class="col-md-6 order-md-2 order-1 text-center">
-                <img class="pb-5 px-3 pb-md-0" src="src/resources/svg/icons/inventory.svg" width="200px">
+                <img class="pb-5 px-3 pb-md-0" src="src/resources/svg/icons/inventory.svg" width="200px" data-aos="zoom-in">
               </div>
             </div>
             <div class="row">
               <div class="col-md-6 text-center">
-                <img class="pb-5 px-3 pb-md-0" src="src/resources/svg/icons/code.svg" width="200px">
+                <img class="pb-5 px-3 pb-md-0" src="src/resources/svg/icons/code.svg" width="200px" data-aos="zoom-in">
               </div>
               <div class="col-md-6 d-flex align-items-center">
-                <div class="pr-md-5">
+                <div class="pr-md-5" data-aos="fade-left">
                   <h4 class="text-primary  mb-4">Gameplay</h4>
                   <p>The server is perfectly programmed to offer you the best gameplay, whether you are alone or with others.</p>
                 </div>

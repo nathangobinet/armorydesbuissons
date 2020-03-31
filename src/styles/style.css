@@ -13,12 +13,17 @@
     --black-text: #595757;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
     margin: 0;
     height: 100%;
 }
 
 body {
+    overflow-x: hidden;
     font-family: 'Ubuntu', sans-serif;
     font-weight: normal;
     font-size: 18px;
@@ -28,6 +33,22 @@ body {
 
 #navbar {
     transition: top 0.3s; 
+}
+
+#navbar {
+    opacity: 0;
+    animation-name: show-nav;
+    animation-delay: 1500ms;
+    animation-duration: 600ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes show-nav {
+    0% {
+        opacity: 0;
+    } 100% {
+        opacity: 1;
+    }
 }
 
 b {
@@ -225,6 +246,21 @@ kbd {
     color: var(--accent);
 }
 
+.pulse {
+    animation: pulse 2s infinite;
+}
+  
+@keyframes pulse {
+    0% {
+        transform: translate(0, 0); 
+    }
+    50% {
+        transform: translate(0, -10px); 
+    }
+    100% {
+        transform: translate(0, 0); 
+    } 
+}
 
 .btn {
     border: none;
