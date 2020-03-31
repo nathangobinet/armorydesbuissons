@@ -14,7 +14,7 @@
   <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-accent nav-header p-0 fixed-top">
     <div class="container-md">
       <a class="navbar-brand opacity-interaction" href="index.html">
-        <img src="src/resources/svg/logo-white.svg" width="25" height="25"/>
+        <img src="src/resources/svg/nav/logo-white.svg" width="25" height="25"/>
       </a>
       <button class="px-4 nav-py navbar-toggler opacity-interaction" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <i style="line-height: 1.1;" class="fas fa-bars text-white"></i>
@@ -35,8 +35,8 @@
                 <a id="toggle-language-select" data-toggle="language-select" class="nav-item nav-link text-white opacity-interaction px-2 py-0" href="#"><i class="fas fa-globe"></i></a>
               </div>
               <div id="language-select" class="nav-to-select d-flex py-1 px-2 nav-select-hide">
-                <a class="nav-item nav-link text-white opacity-interaction px-1 py-0" href="#"><img style="margin-bottom: 2px;" src="src/resources/svg/usa.svg" width="16" height="16"/></a>
-                <a class="nav-item nav-link text-white opacity-interaction px-1 py-0" href="#"><img style="margin-bottom: 2px;" src="src/resources/svg/fr.svg" width="16" height="16"/></a>
+                <a class="nav-item nav-link text-white opacity-interaction px-1 py-0" href="#"><img style="margin-bottom: 2px;" src="src/resources/svg/nav/usa.svg" width="16" height="16"/></a>
+                <a class="nav-item nav-link text-white opacity-interaction px-1 py-0" href="#"><img style="margin-bottom: 2px;" src="src/resources/svg/nav/fr.svg" width="16" height="16"/></a>
               </div>
             </div>
             <div class="nav-select d-flex justify-content-between rounded-pill">
@@ -58,7 +58,7 @@
     <div class="section-content">
       <div class="container h-100">
         <div class="d-flex flex-column justify-content-center h-100 pt-5 ">
-          <div class="m-auto">
+          <div class="my-auto">
             <div class="d-flex flex-column flex-md-row justify-content-center">
               <div class="align-self-center mb-3 mb-md-0 mr-0 mr-md-4">
                 <img src="src/resources/svg/logo-gr.svg" width="110" height="110" />
@@ -121,7 +121,7 @@
   <section id="tp-into-fight" class="full-page-section">
     <div class="section-content">
       <div class="container d-flex flex-column justify-content-center h-100 py-5">
-        <div class="m-auto">
+        <div class="my-auto">
           <div class="text-center">
             <h1 class="mb-5">Be teleported directly into the fight</h1>
             <div class="mb-5">
@@ -141,7 +141,7 @@
   <section id="choose-your-gameplay" class="full-page-section">
     <div class="section-content">
       <div class="container d-flex flex-column justify-content-center h-100 py-5">
-        <div class="m-auto">
+        <div class="my-auto">
           <div class="mb-5 text-center">
             <h1>Choose your gameplay</h1>
             <h4>Different types of figting zone are available</h4>
@@ -175,24 +175,215 @@
   </section>
   <section id="versus" class="full-page-section">
     <div class="section-content bg-accent-or-dark">
-      <div class="position-relative h-100">
-        <div class="d-flex h-100" style="overflow: hidden;">
+      <div class="d-flex h-100">
+        <div class="d-flex h-100 w-100" style="overflow: hidden;">
           <img style="user-select: none;" class="img-fluid align-self-start mb-auto" src="src/resources/svg/shapes/transparentshape1.svg"/>
           <img style="user-select: none;" class="img-fluid align-self-end m-0" src="src/resources/svg/shapes/transparentshape2.svg"/>
         </div>
-        <div class="position-absolute w-100 h-100" style="top: 0; left: 0">
+        <div class="w-100 h-100" style="margin-left: -100%;">
           <div class="container d-flex flex-column justify-content-center h-100 py-5">
-            <div class="m-auto">
-              dqdqsqds
+            <div class="my-auto">
+              <h1 class="text-white text-center mb-5 pb-lg-5">Fight in versus</h1>
+              <div class="row">
+                <div class="col-lg-4 px-lg-4 pb-4 pb-lg-0">
+                  <div class="card shadow bt-primary">
+                    <div class="text-center">
+                      <div class="py-4 mx-auto">
+                        <img src="src/resources/svg/icons/users.svg" width="100px"/>
+                      </div>
+                      <h4 class="text-primary">Invite your friends</h4>
+                      <p>
+                        Invite your friends and split up into two teams.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 px-lg-4 pt-lg-5 pb-4 pb-lg-0">
+                  <div class="card shadow bt-primary">
+                    <div class="text-center">
+                      <div class="py-4 mx-auto">
+                        <img src="src/resources/svg/icons/points.svg"  width="100px"/>
+                      </div>
+                      <h4 class="text-primary">Set the points limit</h4>
+                      <p>
+                        Define the number of kills to reach to win the game.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 px-lg-4">
+                  <div class="card shadow bt-primary">
+                    <div class="text-center">
+                      <div class="py-4 mx-auto">
+                        <img src="src/resources/svg/icons/location.svg"  width="70px"/>
+                      </div>
+                      <h4 class="text-primary">Choose your arena</h4>
+                      <p>
+                        A variety of short or long distance arenas are available.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="align-self-center m-0">
-              <a class="fp-caret-down text-white-or-accent opacity-interaction" href="#features"><i class="fas fa-caret-down"></i></a>
+              <a class="fp-caret-down text-white-or-accent opacity-interaction" href="#ranking"><i class="fas fa-caret-down"></i></a>
             </div>  
           </div>
         </div>
       </div>
     </div>
   </section>
-  
+  <section id="ranking" class="full-page-section">
+    <div class="section-content">
+      <div class="d-flex h-100">
+        <div class="container my-auto pl-md-5 pt-md-5 mt-md-5">
+          <img class="img-fluid" src="src/resources/svg/shapes/shape2.svg" width="600px"/>
+        </div>
+        <div class="w-100 h-100" style="margin-left: -100%;">
+          <div class="container d-flex flex-column justify-content-center h-100 py-5">
+            <div class="my-auto">
+              <div class="d-flex w-100 justify-content-center mt-md-5 pt-md-5 pl-md-5">
+                <div class="card text-center shadow" style="max-width: 400px;">
+                  <h1 class="text-primary">Get the highest ranking</h1>
+                  <img class="py-4 mx-auto" src="src/resources/svg/icons/rank.svg" width="90px"/>
+                  <p class="mb-4">
+                    Each player's ranking is <b>instantly updated</b> each time <b>he kills</b> or <b>is killed</b> by another player. The players are split in <b>6 divisions</b> according to their number of points.
+                  </p>
+                  <button class="btn btn-primary mx-4">
+                    Learn more
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="align-self-center m-0">
+              <a class="fp-caret-down opacity-interaction" href="#atack-defense"><i class="fas fa-caret-down"></i></a>
+            </div>  
+          </div>
+        </div>
+      </div> 
+    </div>
+  </section>
+  <section id="atack-defense" class="full-page-section">
+    <div class="section-content">
+      <div class="container d-flex flex-column justify-content-center h-100 py-5">
+        <div class="my-auto">
+          <div class="mb-5 text-center">
+            <h1>Atack or defend the bomb</h1>
+          </div>
+          <div class="container pt-lg-3">
+            <div class="row">
+              <div class="col-lg-4 text-center text-lg-right pt-lg-5">
+                <div class="h-100 d-flex flex-column justify-content-between">
+                  <div>
+                    <h4 class="text-accent">A public lobby system</h4>
+                    <p>It allows you to sign up for the fight and choose your side.</p>
+                  </div>
+                  <div>
+                    <h4 class="text-accent">Defenders must defend the bomb</h4>
+                    <p>Their goal is to prevent attackers from defusing it.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 text-center">
+                <img class="px-lg-4 py-lg-0 pt-4 pb-5 img-fluid" src="src/resources/svg/bomb.svg" width="280"/>
+              </div>
+              <div class="col-lg-4 text-center text-lg-left pt-lg-5">
+                <div class="d-flex flex-column h-100 justify-content-between">
+                  <div>
+                    <h4 class="text-accent">Multiple arenas are available</h4>
+                    <p>Arenas are varied and offer a different experience.</p>
+                  </div>
+                  <div>
+                    <h4 class="text-accent">Attackers must defuse the bomb</h4>
+                    <p>Their goal is to prevent the bomb from exploding and therefore defuse it</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="align-self-center m-0">
+          <a class="fp-caret-down opacity-interaction" href="#more"><i class="fas fa-caret-down"></i></a>
+        </div>  
+      </div>
+    </div>
+  </section>
+  <section id="more" class="full-page-section">
+    <div class="section-content">
+      <div class="container d-flex flex-column justify-content-center h-100 py-5">
+        <div class="my-auto">
+          <div class="mb-5 text-center">
+            <h1>And even more to discover</h1>
+          </div>
+          <div class="container pt-lg-3">
+            <div class="row mb-5">
+              <div class="col-md-6 text-center">
+                <img class="pb-5 px-3 pb-md-0" src="src/resources/svg/icons/sandbox.svg" width="200px">
+              </div>
+              <div class="col-md-6 d-flex align-items-center">
+                <div class="pr-md-5">
+                  <h4 class="text-primary mb-4">Sandbox</h4>
+                  <p>Sandbox allows you to try out all the vehicles available on the game. Train yourself to fly helicopters and fight against  your friends in epic battles.</p>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-5">
+              <div class="col-md-6 d-flex order-md-1 order-2 align-items-center">
+                <div class="text-right pl-md-5">
+                  <h4 class="text-primary mb-4">Inventory</h4>
+                  <p>You can completely customize your stuff. Outfit, weapons, accessory ... Create the stuff that suits you and fight with it.</p>
+                </div>
+              </div>
+              <div class="col-md-6 order-md-2 order-1 text-center">
+                <img class="pb-5 px-3 pb-md-0" src="src/resources/svg/icons/inventory.svg" width="200px">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 text-center">
+                <img class="pb-5 px-3 pb-md-0" src="src/resources/svg/icons/code.svg" width="200px">
+              </div>
+              <div class="col-md-6 d-flex align-items-center">
+                <div class="pr-md-5">
+                  <h4 class="text-primary  mb-4">Gameplay</h4>
+                  <p>The server is perfectly programmed to offer you the best gameplay, whether you are alone or with others.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container" style="max-width: 410px;">
+      <div class="row py-5">
+        <div class="col-12">
+          <div class="px-3 d-flex justify-content-between">
+            <a href="#">Home</a>
+            <a href="#">Live</a>
+            <a href="#">About</a>
+            <a href="#">Vip</a>
+          </div>
+        </div>
+      </div>
+      <div class="row py-4">
+        <div class="col-12">
+          <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
+            <img class="pr-md-4 pb-md-2 mb-md-1 pb-4" src="src/resources/svg/nav/logo-white.svg" width="100px">
+            <div class="text-white footer-logo">
+              <div>Armory</div>
+              <div>des buisson</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row py-5">
+        <div class="col-12 text-center">
+          <span class="text-white">© Armory des buissons - All Rights Reserved</span>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
