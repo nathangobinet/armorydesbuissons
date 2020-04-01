@@ -35,19 +35,22 @@ body {
     transition: top 0.3s; 
 }
 
-#navbar {
-    opacity: 0;
-    animation-name: show-nav;
-    animation-delay: 1500ms;
-    animation-duration: 600ms;
-    animation-fill-mode: forwards;
+@media (min-width: 767px) { 
+    #navbar {
+        transform: translateY(-56px); 
+        animation-name: show-nav;
+        animation-delay: 1500ms;
+        animation-duration: 600ms;
+        animation-fill-mode: forwards;
+    }
 }
+
 
 @keyframes show-nav {
     0% {
-        opacity: 0;
+        transform: translateY(-56px); 
     } 100% {
-        opacity: 1;
+        transform: translateY(0); 
     }
 }
 
@@ -65,17 +68,19 @@ kbd {
 }
 
 .light-mode {
-    --background-gr: linear-gradient(122.01deg, #E3E3E3 0%, #F5F5F5 100%);
+    --background-gr: linear-gradient(145deg, #E3E3E3 0%, #F5F5F5 100%);
     --text-color: var(--black-text);
     --accent-or-dark: var(--accent-gr);
-    --white-or-accent: var(--white-text)
+    --white-or-accent: var(--white-text);
+    --text-color-button: white;
 }
 
 .dark-mode {
-    --background-gr: linear-gradient(302.01deg, #1F1F1F 0%, #131313 100%, #000000 100%);
+    --background-gr: linear-gradient(145deg, #1F1F1F 0%, #131313 100%);
     --text-color: var(--white-text);
     --accent-or-dark: var(--background-gr);
-    --white-or-accent: var(--accent)
+    --white-or-accent: var(--accent);
+    --text-color-button: black;
 }
 
 .bg-gr {
@@ -267,15 +272,19 @@ kbd {
     padding: .4rem 1rem .4rem 1rem;
     font-weight: 500;
     text-transform: uppercase;
+    color: var(--text-color-button) !important;
 }
 
+.btn:hover {
+    color: var(--text-color-button) !important;
+}
+
+
 .btn-accent {
-    color: var(--white-text);
     background: var(--accent);
 }
 
 .btn-accent:hover {
-    color: var(--white-text);
     background: var(--darker-accent);
 }
 
@@ -284,12 +293,10 @@ kbd {
 }
 
 .btn-primary {
-    color: var(--white-text) !important;
     background: var(--primary) !important;
 }
 
 .btn-primary:hover {
-    color: var(--white-text) !important;
     background: var(--darker-primary) !important;
 }
 
