@@ -9,3 +9,7 @@ Aos.init({
   duration: 600,
   disable: 'mobile',
 });
+
+function style({style}) {
+
+}

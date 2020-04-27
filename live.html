@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Armory des buissons</title>
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
+  <link rel="stylesheet" href="src/styles/style.css">
+  <script src="dist/main.js" defer></script>
+</head>
+<body class="light-mode">
+  <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-accent nav-header p-0 fixed-top">
+    <div class="container-md">
+      <a class="navbar-brand opacity-interaction" href="index.html">
+        <img src="src/resources/svg/nav/logo-white.svg" width="25" height="25"/>
+      </a>
+      <button class="px-4 nav-py navbar-toggler opacity-interaction" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i style="line-height: 1.1;" class="fas fa-bars text-white"></i>
+      </button>
+      <div id="navbarNav" class="collapse navbar-collapse w-100">
+        <div class="text-center text-md-left p-0 m-auto">
+          <div class="navbar-nav">
+            <a class="nav-py nav-menu nav-item nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-py nav-menu nav-item nav-link active" href="live.html">Live</a>
+            <a class="nav-py nav-menu nav-item nav-link" href="#">About</a>
+            <a class="nav-py nav-menu nav-item nav-link" href="#">Vip</a>
+          </div>
+        </div>
+        <div class="pb-3 pt-2 py-md-0">
+          <div class="navbar-nav d-flex align-items-center justify-content-center" style="flex-direction: row !important;">
+            <div class="nav-select d-flex justify-content-between rounded-pill">
+              <div class="d-flex py-1 px-2">
+                <a id="toggle-language-select" data-toggle="language-select" class="nav-item nav-link text-white opacity-interaction px-2 py-0" href="#"><i class="fas fa-globe"></i></a>
+              </div>
+              <div id="language-select" class="nav-to-select d-flex py-1 px-2 nav-select-hide">
+                <a class="nav-item nav-link text-white opacity-interaction px-1 py-0" href="#"><img style="margin-bottom: 2px;" src="src/resources/svg/nav/usa.svg" width="16" height="16"/></a>
+                <a class="nav-item nav-link text-white opacity-interaction px-1 py-0" href="#"><img style="margin-bottom: 2px;" src="src/resources/svg/nav/fr.svg" width="16" height="16"/></a>
+              </div>
+            </div>
+            <div class="nav-select d-flex justify-content-between rounded-pill">
+              <div class="d-flex py-1 px-2">
+                <a id="toggle-theme-select" data-toggle="theme-select" class="nav-item nav-link text-white opacity-interaction px-2 py-0" href="#"><i class="fas fa-adjust"></i></a>
+              </div>
+              <div id="theme-select" class="nav-to-select d-flex py-1 px-2 nav-select-hide">
+                <a class="nav-item nav-link text-white opacity-interaction px-1 py-0" href="#"><i class="fas fa-moon"></i></a>
+                <a class="nav-item nav-link text-white opacity-interaction px-1 py-0" href="#"><i class="fas fa-sun"></i></a>
+              </div>
+            </div>
+            <a class="nav-item nav-link text-white opacity-interaction px-3" href="#"><i class="fas fa-user"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+ <div class="nav-offset"></div>
+ <div class="container-fluid p-4">
+  <section id="reacap-cards">
+    <div class="row py-4">
+      <div class="col-xl-3 col-md-6 py-2">
+        <div class="card card-primary">
+          <div class="d-flex justify-content-center align-items-center">
+            <div class="card-icon">
+              <i class="fas fa-skull-crossbones"></i>
+            </div>
+            <div class="card-text">
+              <div>12,000</div>
+              <div>kills today</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 py-2">
+        <div class="card card-accent">
+          <div class="d-flex justify-content-center align-items-center">
+            <div class="card-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="card-text">
+              <div>26</div>
+              <div>online player</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 py-2">
+        <div class="card card-primary">
+          <div class="d-flex justify-content-center align-items-center">
+            <div class="card-icon">
+              <i class="fas fa-user-clock"></i>
+            </div>
+            <div class="card-text">
+              <div>115</div>
+              <div>unique players today</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 py-2">
+        <div class="card card-accent">
+          <div class="d-flex justify-content-center align-items-center">
+            <div class="card-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <div class="card-text">
+              <div>20000</div>
+              <div>players ranked</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ </div>
+ 
+  <footer>
+    <div class="container" style="max-width: 410px;">
+      <div class="row py-5">
+        <div class="col-12">
+          <div class="px-3 d-flex justify-content-between">
+            <a href="#">Home</a>
+            <a href="#">Live</a>
+            <a href="#">About</a>
+            <a href="#">Vip</a>
+          </div>
+        </div>
+      </div>
+      <div class="row py-4">
+        <div class="col-12">
+          <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
+            <img class="pr-md-4 pb-md-2 mb-md-1 pb-4" src="src/resources/svg/nav/logo-white.svg" width="100px">
+            <div class="text-white footer-logo">
+              <div>Armory</div>
+              <div>des buisson</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row py-5">
+        <div class="col-12 text-center">
+          <span class="text-white">© Armory des buissons - All Rights Reserved</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
