@@ -3,7 +3,6 @@
 :root {
     --primary: #63BF60;
     --darker-primary: #58A65D;
-    --text-primary: #31a22d;
     --accent: #F26E50;
     --darker-accent:  #d46950;
     --lighter: rgba(255, 255, 255, 0.10);
@@ -11,7 +10,6 @@
     --accent-gr: linear-gradient(207.48deg, #F26E50 18.73%, #FA8F77 80.5%);
     --primary-split: linear-gradient(28.55deg, #58A65D 7.38%, #59A75D 48.68%, #63BF60 48.69%, #63BF60 99.59%);
     --accent-split: linear-gradient(217.23deg, #F26E50 18.73%, #F26E50 46.72%, #EF8168 46.95%, #EF8168 80.5%);
-    --white-text: #FFFFFF;
     --black-text: #595757;
 }
 
@@ -52,6 +50,9 @@ kbd {
     --accent-or-dark: var(--accent-gr);
     --white-or-accent: var(--white-text);
     --text-color-button: white;
+    --text-primary: #31a22d;
+    --text-accent: #f15e3d;
+    --white-text: #FFFFFF;
 }
 
 .dark-mode {
@@ -60,10 +61,13 @@ kbd {
     --accent-or-dark: var(--background-gr);
     --white-or-accent: var(--accent);
     --text-color-button: black;
+    --text-primary: #71d76e;
+    --text-accent: #ff8d73;
+    --white-text: #eaeaea;
 }
 
 .text-accent {
-    color: var(--accent)!important;
+    color: var(--text-accent)!important;
 }
 
 .text-primary {
@@ -98,9 +102,9 @@ kbd {
 
 #navbar {
     transition: top 0.3s; 
-  }
-  
-  @media (min-width: 767px) { 
+}
+
+@media (min-width: 767px) { 
     .navbar-anim  {
         transform: translateY(-62.38px); 
         animation-name: show-nav;
@@ -108,62 +112,62 @@ kbd {
         animation-duration: 600ms;
         animation-fill-mode: forwards;
     }
-  }
-  
-  
-  @keyframes show-nav {
+}
+
+
+@keyframes show-nav {
     0% {
         transform: translateY(-62.38px); 
     } 100% {
         transform: translateY(0); 
     }
-  }
-  
-  .full-page-section {
+}
+
+.full-page-section {
     min-height: 100%;
     display: flex;
-  }
-  
-  .section-content {
-      flex: 1;
-  }
-  
-  .title {
-      padding-left: 2px;
-      margin-top: -5px;
-      line-height: 1;
-      text-transform: uppercase;
-      font-weight: normal;
-      font-size: 61px;
-      color: var(--text-color);
-  }
-  
-  .sub-title {
-      line-height: 1;
-      text-transform: uppercase;
-      font-weight: normal;
-      font-size: 37px;
-      color: var(--text-primary);
-  }
-  
-    
-  @keyframes pulse {
-      0% {
-          transform: translate(0, 0); 
-      }
-      50% {
-          transform: translate(0, -10px); 
-      }
-      100% {
-          transform: translate(0, 0); 
-      } 
-  }
-  
-  .card-on-shape-1 {
+}
+
+.section-content {
+    flex: 1;
+}
+
+.title {
+    padding-left: 2px;
+    margin-top: -5px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 61px;
+    color: var(--text-color);
+}
+
+.sub-title {
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 37px;
+    color: var(--text-primary);
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: translate(0, 0); 
+    }
+    50% {
+        transform: translate(0, -10px); 
+    }
+    100% {
+        transform: translate(0, 0); 
+    } 
+}
+
+.card-on-shape-1 {
     position: absolute;
     top: 60%;
     transform: translateY(-60%);
-  }
+}
 
 /* Overide bootstrap */
 .navbar-collapse {
@@ -191,7 +195,7 @@ kbd {
 @media (max-width: 767px) { 
     .nav-link.active {
         box-shadow: inset 5px 0px 0px 0px #f6f5f5;
-
+        
     }
 }
 
@@ -249,7 +253,7 @@ kbd {
 
 
 .btn-accent {
-    background: var(--accent);
+    background: var(--text-accent);
 }
 
 .btn-accent:hover {
@@ -324,7 +328,7 @@ p {
 }
 
 .fp-caret-down {
-    color: var(--accent);
+    color: var(--text-accent);
     font-size: 72px;
 }
 
@@ -384,45 +388,83 @@ footer a:hover {
 
 .nav-offset {
     height: 62.38px;
-  }
-  
-  .card-icon {
+}
+
+.card-icon {
     color: var(--white-text);
     font-size: 60px;
-  }
-  
-  .card-text {
+}
+
+.card-text {
     margin-left: 25px;
     color: var(--white-text);
-  }
-  
-  .card-text div:first-child {
+}
+
+.card-text div:first-child {
     font-weight: 500;
     font-size: 40px;
     line-height: 1;
-  }
-  
-  .card-text div:last-child{
+}
+
+.card-text div:last-child{
     margin-left: 4px;;
     font-size: 20px;
-  }
-  
-  .light-mode .card-accent {
-    background: var(--primary-gr);
-  }
-  
-  .light-mode .card-primary {
+}
+
+.light-mode .card-accent {
     background: var(--accent-gr);
-  }
-  
-  .dark-mode .card-accent {
+}
+
+.light-mode .card-primary {
+    background: var(--primary-gr);
+}
+
+.dark-mode .card-accent {
     border-top: 10px solid var(--accent);
     background: var(--lighter);
-  }
-  
-  .dark-mode .card-primary {
+}
+
+.dark-mode .card-primary {
     border-top: 10px solid var(--primary);
     background: var(--lighter);
-  }
-  
-  
+}
+
+.dark-mode .bg-lighter  {
+    background: var(--lighter);
+}
+
+table {
+    color: var(--text-color)!important;
+}
+
+
+
+.table-container {
+    height: 400px;
+}
+
+table {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
+}
+table thead {
+    /* head takes the height it requires, 
+    and it's not scaled when table is resized */
+    flex: 0 0 auto;
+    width: calc(100% - 0.9em);
+}
+table tbody {
+    /* body takes all the remaining available space */
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: scroll;
+}
+table tbody tr {
+    width: 100%;
+}
+table thead, table tbody tr {
+    display: table;
+    table-layout: fixed;
+}
