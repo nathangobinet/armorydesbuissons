@@ -435,12 +435,15 @@ footer a:hover {
 
 table {
     color: var(--text-color)!important;
+    min-width: 600px;
 }
 
 
 
 .table-container {
-    height: 400px;
+    height: 380px;
+    overflow-x: auto; 
+    overflow-y: hidden; 
 }
 
 table {
@@ -467,4 +470,32 @@ table tbody tr {
 table thead, table tbody tr {
     display: table;
     table-layout: fixed;
+}
+
+small {
+    color: grey;
+}
+
+.nav-pills .nav-link.active {
+    color: #fff!important;
+    background-color: var(--accent);
+}
+
+.nav-pills .nav-link {
+    cursor: pointer;
+    border-radius: 1rem;
+    box-shadow: none;
+    padding: .2rem 1.2rem .3rem 1.2rem;
+    color: var(--text-accent)!important;
+}
+
+.chart-container {
+    position: relative;
+    height: 100%;
+}
+
+@media (max-width: 1200px) { 
+    .chart-container {
+        height: 400px;
+    }
 }
