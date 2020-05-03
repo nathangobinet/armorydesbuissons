@@ -6,6 +6,7 @@
     --accent: #F26E50;
     --darker-accent:  #d46950;
     --lighter: rgba(255, 255, 255, 0.10);
+    --darker: rgba(0, 0, 0, 0.10);
     --primary-gr: linear-gradient(62.27deg, #37A633 -0.93%, #81D080 95.35%);;
     --accent-gr: linear-gradient(207.48deg, #F26E50 18.73%, #FA8F77 80.5%);
     --primary-split: linear-gradient(28.55deg, #58A65D 7.38%, #59A75D 48.68%, #63BF60 48.69%, #63BF60 99.59%);
@@ -36,7 +37,12 @@ b {
 }
 
 a{
+    color: var(--text-accent);
     transition: ease-in-out color .15s;
+}
+
+a:hover, a:focus{
+    color: var(--text-accent);
 }
 
 kbd {
@@ -53,6 +59,7 @@ kbd {
     --text-primary: #31a22d;
     --text-accent: #f15e3d;
     --white-text: #FFFFFF;
+    --lighter-or-darker: var(--darker);
 }
 
 .dark-mode {
@@ -64,6 +71,7 @@ kbd {
     --text-primary: #71d76e;
     --text-accent: #ff8d73;
     --white-text: #eaeaea;
+    --lighter-or-darker: var(--lighter);
 }
 
 .text-accent {
@@ -429,7 +437,7 @@ footer a:hover {
     background: var(--lighter);
 }
 
-.dark-mode .bg-lighter  {
+.bg-lighter  {
     background: var(--lighter);
 }
 
@@ -476,18 +484,38 @@ small {
     color: grey;
 }
 
-.nav-pills .nav-link.active {
-    color: #fff!important;
+.nav-pills.pills-accent .nav-link.active {
+    color: var(--white-text)!important;
     background-color: var(--accent);
 }
+
+.nav-pills.pills-white .nav-link.active {
+    color: var(--primary)!important;
+    background-color: var(--white-text);
+}
+
+.dark-mode .nav-pills.pills-white .nav-link.active {
+    color: var(--black-text)!important;
+    background-color: var(--white-text);
+}
+
+
 
 .nav-pills .nav-link {
     cursor: pointer;
     border-radius: 1rem;
     box-shadow: none;
     padding: .2rem 1.2rem .3rem 1.2rem;
+}
+
+.nav-pills.pills-accent .nav-link {
     color: var(--text-accent)!important;
 }
+
+.nav-pills.pills-white .nav-link {
+    color: var(--white-text)!important;
+}
+
 
 .chart-container {
     position: relative;
@@ -498,4 +526,84 @@ small {
     .chart-container {
         height: 400px;
     }
+}
+
+.input {
+    width: 100%;
+    display: block;
+    max-width: 300px;
+    padding: .2rem .8rem .2rem .8rem;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    background: var(--lighter-or-darker);
+}
+
+.card-rank div:last-child {
+    font-weight: 500;
+    font-size: 42px;
+    line-height: .9;
+}
+
+.link {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-shadow: none;
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    text-align: left;
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    font-family: inherit;
+}
+
+.link:hover, .link:focus  {
+    outline: none;
+    text-decoration: underline;
+}
+
+.black-mode .bg-info-popper {
+    background: var(--background-gr);
+}
+
+.light-mode .bg-info-popper {
+    background: var(--white-text);
+}
+
+
+@media (max-width: 1200px) { 
+    #player-info-popper {
+        width: 100%;
+        padding-left: 1.5rem!important;
+        padding-right: 1.5rem!important;
+        display: none;
+    }    
+}
+
+@media (min-width: 1200px) { 
+    #player-info-popper {
+        max-width: 650px;
+        display: none;
+    }    
+}
+
+
+#player-info-popper {
+    display: block;
+    position: fixed;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+#player-info-popper[data-show] {
+    opacity: 1;
+    visibility: visible;
 }

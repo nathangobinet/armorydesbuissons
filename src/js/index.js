@@ -1,4 +1,5 @@
 import 'bootstrap';
+import { createPopper } from '@popperjs/core';
 import Aos from 'aos';
 import Chart from 'chart.js';
 import './nav/toggleNav';
@@ -49,6 +50,7 @@ const lineChartData = {
 
 
 const ctx = document.getElementById('canvas');
+// eslint-disable-next-line no-unused-vars
 const chart = new Chart(ctx, {
   type: 'line',
   data: lineChartData,
@@ -77,4 +79,51 @@ const chart = new Chart(ctx, {
       }],
     },
   },
+});
+
+const tooltip = document.querySelector('#player-info-popper');
+let popperInstance = null;
+
+function create(target) {
+  popperInstance = createPopper(target, tooltip, {
+    placement: (window.innerWidth) > 1100 ? 'right' : 'bottom',
+    modifiers: [
+      {
+        name: 'offset',
+        options: {
+          offset: [0, 10],
+        },
+      },
+    ],
+  });
+}
+
+function destroy() {
+  if (popperInstance) {
+    popperInstance.destroy();
+    popperInstance = null;
+  }
+}
+
+function hide(event) {
+  if (!event.path.includes(tooltip)) {
+    document.removeEventListener('click', hide);
+    tooltip.removeAttribute('data-show');
+    destroy();
+  }
+}
+
+function show(target) {
+  document.addEventListener('click', hide);
+  tooltip.setAttribute('data-show', '');
+  create(target);
+}
+
+
+const playerElements = document.getElementsByClassName('link');
+Array.prototype.forEach.call(playerElements, (el) => {
+  el.addEventListener('click', (e) => {
+    e.stopPropagation();
+    show(e.currentTarget);
+  });
 });
