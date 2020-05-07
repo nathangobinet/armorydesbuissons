@@ -781,3 +781,7 @@ small {
  .shortcuts-table td {
     margin: 1rem 0rem;
 }
+
+.drop-shadow {
+    filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5));
+}
