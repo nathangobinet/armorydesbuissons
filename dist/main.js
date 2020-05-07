@@ -390,7 +390,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!**************************************************!*\
   !*** ./node_modules/@popperjs/core/lib/index.js ***!
   \**************************************************/
-/*! exports provided: top, bottom, right, left, auto, basePlacements, start, end, clippingParents, viewport, popper, reference, variationPlacements, placements, beforeRead, read, afterRead, beforeMain, main, afterMain, beforeWrite, write, afterWrite, modifierPhases, popperGenerator, createPopper */
+/*! exports provided: popperGenerator, createPopper, top, bottom, right, left, auto, basePlacements, start, end, clippingParents, viewport, popper, reference, variationPlacements, placements, beforeRead, read, afterRead, beforeMain, main, afterMain, beforeWrite, write, afterWrite, modifierPhases */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2233,6 +2233,51 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 
 /***/ }),
 
+/***/ "./src/js/about/rankSlide.js":
+/*!***********************************!*\
+  !*** ./src/js/about/rankSlide.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("const animationIn = 'fadeIn';\nconst animationOut = 'fadeOut';\n\n// HTML id of ranks\nconst ranks = [\n  'rank-top10',\n  'rank-diamond',\n  'rank-platinium',\n];\n\nlet activeRank = 0;\n\nconst btnSwitchLeft = document.getElementById('switch-rank-left');\nconst btnSwitchRight = document.getElementById('switch-rank-right');\n\n\nfunction animateRanks(elActiveRank, elNewRank, index) {\n  const animeIn = animationIn + ((index === 1) ? 'Left' : 'Right');\n  const animeOut = animationOut + ((index === 1) ? 'Right' : 'Left');\n\n  // Fade out the active rank then fade in the new rank\n  elActiveRank.addEventListener('animationend', function hide(hideEvent) {\n    hideEvent.target.classList.add('d-none');\n    hideEvent.target.classList.remove(animeOut);\n    hideEvent.target.removeEventListener('animationend', hide);\n\n    elNewRank.classList.remove('d-none');\n    elNewRank.addEventListener('animationend', function show(showEvent) {\n      showEvent.target.classList.remove(animeIn);\n      showEvent.target.removeEventListener('animationend', show);\n    });\n    elNewRank.classList.add(animeIn);\n  });\n  elActiveRank.classList.add(animeOut);\n}\n\nfunction switchRank(index) {\n  let newRank;\n  if (activeRank === 0 && index === -1) newRank = (ranks.length - 1);\n  else if (activeRank === (ranks.length - 1) && index === 1) newRank = 0;\n  else newRank = activeRank + index;\n\n  const elActiveRank = document.getElementById(ranks[activeRank]);\n  const elNewRank = document.getElementById(ranks[newRank]);\n\n  animateRanks(elActiveRank, elNewRank, index);\n\n  activeRank = newRank;\n}\n\n\nif (btnSwitchLeft && btnSwitchRight) {\n  btnSwitchLeft.addEventListener('click', () => switchRank(-1));\n  btnSwitchRight.addEventListener('click', () => switchRank(1));\n}\n\n\n//# sourceURL=webpack:///./src/js/about/rankSlide.js?");
+
+/***/ }),
+
+/***/ "./src/js/home/aos-init.js":
+/*!*********************************!*\
+  !*** ./src/js/home/aos-init.js ***!
+  \*********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! aos */ \"./node_modules/aos/dist/aos.js\");\n/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_0__);\n\n\naos__WEBPACK_IMPORTED_MODULE_0___default.a.init({\n  offset: 120,\n  delay: 100,\n  duration: 600,\n  disable: 'mobile',\n});\n\n\n//# sourceURL=webpack:///./src/js/home/aos-init.js?");
+
+/***/ }),
+
+/***/ "./src/js/home/nav/toggleNav.js":
+/*!**************************************!*\
+  !*** ./src/js/home/nav/toggleNav.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("let prevScrollpos = window.pageYOffset;\nwindow.onscroll = () => {\n  const currentScrollPos = window.pageYOffset;\n  if (prevScrollpos > currentScrollPos) {\n    document.getElementById('navbar').style.top = '0';\n  } else {\n    document.getElementById('navbar').style.top = '-62.38px';\n  }\n  prevScrollpos = currentScrollPos;\n};\n\n\n//# sourceURL=webpack:///./src/js/home/nav/toggleNav.js?");
+
+/***/ }),
+
+/***/ "./src/js/home/nav/toggleNavSelects.js":
+/*!*********************************************!*\
+  !*** ./src/js/home/nav/toggleNavSelects.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function getToogleEl(event) {\n  const selectId = event.currentTarget.getAttribute('data-toggle');\n  return document.getElementById(selectId);\n}\n\nfunction toogleNavSelect(select) {\n  select.classList.remove('nav-select-hide');\n  select.parentNode.classList.add('nav-select-border');\n}\n\nfunction unToogleNavSelect(select) {\n  select.classList.add('nav-select-hide');\n  select.parentNode.classList.remove('nav-select-border');\n}\n\nfunction handleClickNavSelect(event) {\n  const select = getToogleEl(event);\n  if (select.classList.contains('nav-select-hide')) {\n    toogleNavSelect(select);\n  } else {\n    unToogleNavSelect(select);\n  }\n}\n\nfunction handleBlurNavSelect(event) {\n  const select = getToogleEl(event);\n  if (event.relatedTarget && event.relatedTarget.parentNode === select) {\n    event.relatedTarget.addEventListener('blur', (newEvent) => handleBlurNavSelect({\n      relatedTarget: newEvent.relatedTarget,\n      currentTarget: select.previousElementSibling.firstElementChild,\n    }));\n  } else {\n    unToogleNavSelect(select);\n  }\n}\n\ndocument.getElementById('toggle-language-select').addEventListener('click', handleClickNavSelect);\ndocument.getElementById('toggle-theme-select').addEventListener('click', handleClickNavSelect);\n\ndocument.getElementById('toggle-theme-select').addEventListener('blur', handleBlurNavSelect);\ndocument.getElementById('toggle-language-select').addEventListener('blur', handleBlurNavSelect);\n\n\n//# sourceURL=webpack:///./src/js/home/nav/toggleNavSelects.js?");
+
+/***/ }),
+
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -2241,29 +2286,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _popperjs_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @popperjs/core */ \"./node_modules/@popperjs/core/lib/popper.js\");\n/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! aos */ \"./node_modules/aos/dist/aos.js\");\n/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! chart.js */ \"./node_modules/chart.js/dist/Chart.js\");\n/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(chart_js__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _nav_toggleNav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./nav/toggleNav */ \"./src/js/nav/toggleNav.js\");\n/* harmony import */ var _nav_toggleNav__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_nav_toggleNav__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _nav_toggleNavSelects__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./nav/toggleNavSelects */ \"./src/js/nav/toggleNavSelects.js\");\n/* harmony import */ var _nav_toggleNavSelects__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_nav_toggleNavSelects__WEBPACK_IMPORTED_MODULE_5__);\n\n\n\n\n\n\n\naos__WEBPACK_IMPORTED_MODULE_2___default.a.init({\n  offset: 120,\n  delay: 100,\n  duration: 600,\n  disable: 'mobile',\n});\n\n\nconst lineChartData = {\n  labels: ['02/04', '03/04', '04/04', '05/04', '06/04', '07/04', '08/04'],\n  datasets: [{\n    label: 'Kills',\n    borderColor: '#63BF60',\n    backgroundColor: '#63BF60',\n    fill: false,\n    data: [\n      10,\n      5,\n      56,\n      12,\n      54,\n      10,\n      10,\n    ],\n    yAxisID: 'y-axis-1',\n  }, {\n    label: 'Players',\n    borderColor: '#F26E50',\n    backgroundColor: '#F26E50',\n    fill: false,\n    data: [\n      21,\n      12,\n      21,\n      12,\n      21,\n      21,\n      54,\n    ],\n    yAxisID: 'y-axis-2',\n  }],\n};\n\n\nconst ctx = document.getElementById('canvas');\n// eslint-disable-next-line no-unused-vars\nconst chart = new chart_js__WEBPACK_IMPORTED_MODULE_3___default.a(ctx, {\n  type: 'line',\n  data: lineChartData,\n  options: {\n    responsive: true,\n    maintainAspectRatio: false,\n    legend: {\n      position: 'bottom',\n    },\n    scales: {\n      yAxes: [{\n        type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance\n        display: true,\n        position: 'left',\n        id: 'y-axis-1',\n      }, {\n        type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance\n        display: true,\n        position: 'right',\n        id: 'y-axis-2',\n\n        // grid line settings\n        gridLines: {\n          drawOnChartArea: false, // only want the grid lines for one axis to show up\n        },\n      }],\n    },\n  },\n});\n\nconst tooltip = document.querySelector('#player-info-popper');\nlet popperInstance = null;\n\nfunction create(target) {\n  popperInstance = Object(_popperjs_core__WEBPACK_IMPORTED_MODULE_1__[\"createPopper\"])(target, tooltip, {\n    placement: (window.innerWidth) > 1100 ? 'right' : 'bottom',\n    modifiers: [\n      {\n        name: 'offset',\n        options: {\n          offset: [0, 10],\n        },\n      },\n    ],\n  });\n}\n\nfunction destroy() {\n  if (popperInstance) {\n    popperInstance.destroy();\n    popperInstance = null;\n  }\n}\n\nfunction hide(event) {\n  if (!event.path.includes(tooltip)) {\n    document.removeEventListener('click', hide);\n    tooltip.removeAttribute('data-show');\n    destroy();\n  }\n}\n\nfunction show(target) {\n  document.addEventListener('click', hide);\n  tooltip.setAttribute('data-show', '');\n  create(target);\n}\n\n\nconst playerElements = document.getElementsByClassName('link');\nArray.prototype.forEach.call(playerElements, (el) => {\n  el.addEventListener('click', (e) => {\n    e.stopPropagation();\n    show(e.currentTarget);\n  });\n});\n\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _home_nav_toggleNav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home/nav/toggleNav */ \"./src/js/home/nav/toggleNav.js\");\n/* harmony import */ var _home_nav_toggleNav__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_home_nav_toggleNav__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _home_nav_toggleNavSelects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./home/nav/toggleNavSelects */ \"./src/js/home/nav/toggleNavSelects.js\");\n/* harmony import */ var _home_nav_toggleNavSelects__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_home_nav_toggleNavSelects__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _home_aos_init__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home/aos-init */ \"./src/js/home/aos-init.js\");\n/* harmony import */ var _live_live__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./live/live */ \"./src/js/live/live.js\");\n/* harmony import */ var _about_rankSlide__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./about/rankSlide */ \"./src/js/about/rankSlide.js\");\n/* harmony import */ var _about_rankSlide__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_about_rankSlide__WEBPACK_IMPORTED_MODULE_5__);\n\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 
-/***/ "./src/js/nav/toggleNav.js":
-/*!*********************************!*\
-  !*** ./src/js/nav/toggleNav.js ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./src/js/live/live.js":
+/*!*****************************!*\
+  !*** ./src/js/live/live.js ***!
+  \*****************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("let prevScrollpos = window.pageYOffset;\nwindow.onscroll = () => {\n  const currentScrollPos = window.pageYOffset;\n  if (prevScrollpos > currentScrollPos) {\n    document.getElementById('navbar').style.top = '0';\n  } else {\n    document.getElementById('navbar').style.top = '-62.38px';\n  }\n  prevScrollpos = currentScrollPos;\n};\n\n\n//# sourceURL=webpack:///./src/js/nav/toggleNav.js?");
-
-/***/ }),
-
-/***/ "./src/js/nav/toggleNavSelects.js":
-/*!****************************************!*\
-  !*** ./src/js/nav/toggleNavSelects.js ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("function getToogleEl(event) {\n  const selectId = event.currentTarget.getAttribute('data-toggle');\n  return document.getElementById(selectId);\n}\n\nfunction toogleNavSelect(select) {\n  select.classList.remove('nav-select-hide');\n  select.parentNode.classList.add('nav-select-border');\n}\n\nfunction unToogleNavSelect(select) {\n  select.classList.add('nav-select-hide');\n  select.parentNode.classList.remove('nav-select-border');\n}\n\nfunction handleClickNavSelect(event) {\n  const select = getToogleEl(event);\n  if (select.classList.contains('nav-select-hide')) {\n    toogleNavSelect(select);\n  } else {\n    unToogleNavSelect(select);\n  }\n}\n\nfunction handleBlurNavSelect(event) {\n  const select = getToogleEl(event);\n  if (event.relatedTarget && event.relatedTarget.parentNode === select) {\n    event.relatedTarget.addEventListener('blur', (newEvent) => handleBlurNavSelect({\n      relatedTarget: newEvent.relatedTarget,\n      currentTarget: select.previousElementSibling.firstElementChild,\n    }));\n  } else {\n    unToogleNavSelect(select);\n  }\n}\n\ndocument.getElementById('toggle-language-select').addEventListener('click', handleClickNavSelect);\ndocument.getElementById('toggle-theme-select').addEventListener('click', handleClickNavSelect);\n\ndocument.getElementById('toggle-theme-select').addEventListener('blur', handleBlurNavSelect);\ndocument.getElementById('toggle-language-select').addEventListener('blur', handleBlurNavSelect);\n\n\n//# sourceURL=webpack:///./src/js/nav/toggleNavSelects.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! chart.js */ \"./node_modules/chart.js/dist/Chart.js\");\n/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(chart_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _popperjs_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @popperjs/core */ \"./node_modules/@popperjs/core/lib/popper.js\");\n\n\n\nconst lineChartData = {\n  labels: ['02/04', '03/04', '04/04', '05/04', '06/04', '07/04', '08/04'],\n  datasets: [{\n    label: 'Kills',\n    borderColor: '#63BF60',\n    backgroundColor: '#63BF60',\n    fill: false,\n    data: [\n      10,\n      5,\n      56,\n      12,\n      54,\n      10,\n      10,\n    ],\n    yAxisID: 'y-axis-1',\n  }, {\n    label: 'Players',\n    borderColor: '#F26E50',\n    backgroundColor: '#F26E50',\n    fill: false,\n    data: [\n      21,\n      12,\n      21,\n      12,\n      21,\n      21,\n      54,\n    ],\n    yAxisID: 'y-axis-2',\n  }],\n};\n\n\nconst ctx = document.getElementById('canvas');\nif (ctx) {\n  // eslint-disable-next-line no-unused-vars\n  const chart = new chart_js__WEBPACK_IMPORTED_MODULE_0___default.a(ctx, {\n    type: 'line',\n    data: lineChartData,\n    options: {\n      responsive: true,\n      maintainAspectRatio: false,\n      legend: {\n        position: 'bottom',\n      },\n      scales: {\n        yAxes: [{\n          type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance\n          display: true,\n          position: 'left',\n          id: 'y-axis-1',\n        }, {\n          type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance\n          display: true,\n          position: 'right',\n          id: 'y-axis-2',\n\n          // grid line settings\n          gridLines: {\n            drawOnChartArea: false, // only want the grid lines for one axis to show up\n          },\n        }],\n      },\n    },\n  });\n}\n\nconst tooltip = document.querySelector('#player-info-popper');\nlet popperInstance = null;\n\nfunction create(target) {\n  popperInstance = Object(_popperjs_core__WEBPACK_IMPORTED_MODULE_1__[\"createPopper\"])(target, tooltip, {\n    placement: (window.innerWidth) > 1100 ? 'right' : 'bottom',\n    modifiers: [\n      {\n        name: 'offset',\n        options: {\n          offset: [0, 10],\n        },\n      },\n    ],\n  });\n}\n\nfunction destroy() {\n  if (popperInstance) {\n    popperInstance.destroy();\n    popperInstance = null;\n  }\n}\n\nfunction hide(event) {\n  if (!event.path.includes(tooltip)) {\n    document.removeEventListener('click', hide);\n    tooltip.removeAttribute('data-show');\n    destroy();\n  }\n}\n\nfunction show(target) {\n  document.addEventListener('click', hide);\n  tooltip.setAttribute('data-show', '');\n  create(target);\n}\n\n\nconst playerElements = document.getElementsByClassName('link');\nArray.prototype.forEach.call(playerElements, (el) => {\n  el.addEventListener('click', (e) => {\n    e.stopPropagation();\n    show(e.currentTarget);\n  });\n});\n\n\n//# sourceURL=webpack:///./src/js/live/live.js?");
 
 /***/ }),
 

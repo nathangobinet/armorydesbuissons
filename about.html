@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Armory des buissons</title>
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="src/styles/style.css">
+  <script src="dist/main.js" defer></script>
+</head>
+<body class="light-mode">
+  <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-accent nav-header p-0 fixed-top">
+    <div class="container-md">
+      <a class="navbar-brand opacity-interaction" href="index.html">
+        <img src="src/resources/svg/nav/logo-white.svg" width="25" height="25"/>
+      </a>
+      <button class="px-4 nav-py navbar-toggler opacity-interaction" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i style="line-height: 1.1;" class="fas fa-bars text-white"></i>
+      </button>
+      <div id="navbarNav" class="collapse navbar-collapse w-100">
+        <div class="text-center text-md-left p-0 m-auto">
+          <div class="navbar-nav">
+            <a class="nav-py nav-menu nav-item nav-link" href="index.html">Home</a>
+            <a class="nav-py nav-menu nav-item nav-link" href="live.html">Live <span class="sr-only">(current)</span></a>
+            <a class="nav-py nav-menu nav-item nav-link active" href="about.html">About</a>
+            <a class="nav-py nav-menu nav-item nav-link" href="vip.html">Vip</a>
+          </div>
+        </div>
+        <div class="pb-3 pt-2 py-md-0">
+          <div class="navbar-nav d-flex align-items-center justify-content-center" style="flex-direction: row !important;">
+            <div class="nav-select d-flex justify-content-between rounded-pill">
+              <div class="d-flex py-1 px-2">
+                <a id="toggle-language-select" data-toggle="language-select" class="nav-item nav-link text-white opacity-interaction px-2 py-0" href="#"><i class="fas fa-globe"></i></a>
+              </div>
+              <div id="language-select" class="nav-to-select d-flex py-1 px-2 nav-select-hide">
+                <a class="nav-item nav-link text-white opacity-interaction px-1 py-0" href="#"><img style="margin-bottom: 2px;" src="src/resources/svg/nav/usa.svg" width="16" height="16"/></a>
+                <a class="nav-item nav-link text-white opacity-interaction px-1 py-0" href="#"><img style="margin-bottom: 2px;" src="src/resources/svg/nav/fr.svg" width="16" height="16"/></a>
+              </div>
+            </div>
+            <div class="nav-select d-flex justify-content-between rounded-pill">
+              <div class="d-flex py-1 px-2">
+                <a id="toggle-theme-select" data-toggle="theme-select" class="nav-item nav-link text-white opacity-interaction px-2 py-0" href="#"><i class="fas fa-adjust"></i></a>
+              </div>
+              <div id="theme-select" class="nav-to-select d-flex py-1 px-2 nav-select-hide">
+                <a class="nav-item nav-link text-white opacity-interaction px-1 py-0" href="#"><i class="fas fa-moon"></i></a>
+                <a class="nav-item nav-link text-white opacity-interaction px-1 py-0" href="#"><i class="fas fa-sun"></i></a>
+              </div>
+            </div>
+            <a class="nav-item nav-link text-white opacity-interaction px-3" href="#"><i class="fas fa-user"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-offset mb-3"></div>
+  <section id="summary" class="container py-5">
+    <div class="row py-4">
+      <div class="col-md-6 d-flex align-items-center justify-content-center justify-content-md-end">
+        <div class="pb-4 pb-mb-0 pr-md-5 pr-0">
+          <img class="img-fluid mb-3" src="src/resources/svg/screen-logo.svg" width="350" height="350"/>
+          <div class="text-center">
+            <a class="btn btn-accent mr-2 my-1" href="steam://run/107410//-connect=164.132.203.207%20-port=2302">
+              <i class="fas fa-gamepad mr-1"></i>
+              Connect
+            </a>
+            <a class="btn btn-primary my-1" href="http://127.0.0.1:5500/index.html#tp-into-fight" target="_blank">
+              <i class="fas fa-star mr-1"></i>
+              All the features
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 d-flex">
+        <div>
+          <h1 class="text-center text-md-left">About our Arma 3 server</h1>
+          <p>This section invites you to:</p>
+          <ol>
+            <a href="#rules"><li>Know the rules</li></a>
+            <a href="#team"><li>Meet our team</li></a>
+            <a href="#contact"><li>Contact us</li></a>
+            <a href="#rank"><li>Understand the ranking system</li></a>
+            <a href="#vip"><li>Help us finance the server</li></a>
+            <a href="#shortcuts"><li>Know all the shortcuts</li></a>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="rules">
+    <div class="bg-accent-or-dark">
+      <div class="d-flex h-100">
+        <div class="d-flex w-100" style="overflow: hidden;">
+          <img style="user-select: none;" class="img-fluid align-self-start mb-auto" src="src/resources/svg/shapes/transparentshape1.svg"/>
+          <img style="user-select: none;" class="img-fluid align-self-end m-0" src="src/resources/svg/shapes/transparentshape2.svg"/>
+        </div>
+        <div class="w-100 h-100 py-4" style="margin-left: -100%;">
+          <div class="container py-5">
+            <div class="text-center">
+              <h1 class="mb-4 text-white">Know the rules</h1>
+              <p class="text-white">Even if we play for fun, it is necessary to <b>respect</b> certain rules in order to guarantee a <b>pleasant</b> gaming experience.</p>
+            </div>
+            <div class="my-4">
+              <div class="card my-3 shadow">
+                <div class="d-flex flex-column flex-sm-row align-items-center ">
+                  <div class=" mr-0 ml-sm-3 mr-sm-4 ml-lg-4  mr-lg-5 flex-shrink-0 mb-sm-0 mb-3">
+                    <span class="round-primary">1</span>
+                  </div>
+                  <div class="text-center text-sm-left">
+                    <h4 class="text-accent mb-2">Carkill</h4>
+                    <p class="mb-0">Carkill is not allowed, however if it happens, let the person <b>reposition</b> himself.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card my-3 shadow">
+                <div class="d-flex flex-column flex-sm-row align-items-center ">
+                  <div class=" mr-0 ml-sm-3 mr-sm-4 ml-lg-4  mr-lg-5 flex-shrink-0 mb-sm-0 mb-3">
+                    <span class="round-primary">2</span>
+                  </div>
+                  <div class="text-center text-sm-left">
+                    <h4 class="text-accent mb-2">Boost</h4>
+                    <p class="mb-0">It is forbidden to be killed in order to <b>increase</b> the score of another player.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card my-3 shadow">
+                <div class="d-flex flex-column flex-sm-row align-items-center ">
+                  <div class=" mr-0 ml-sm-3 mr-sm-4 ml-lg-4  mr-lg-5 flex-shrink-0 mb-sm-0 mb-3">
+                    <span class="round-primary">3</span>
+                  </div>
+                  <div class="text-center text-sm-left">
+                    <h4 class="text-accent mb-2">Glitch</h4>
+                    <p class="mb-0">It is obviously forbidden to <b>take advantage</b> of any game bug.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card my-3 shadow">
+                <div class="d-flex flex-column flex-sm-row align-items-center ">
+                  <div class=" mr-0 ml-sm-3 mr-sm-4 ml-lg-4  mr-lg-5 flex-shrink-0 mb-sm-0 mb-3">
+                    <span class="round-primary">4</span>
+                  </div>
+                  <div class="text-center text-sm-left">
+                    <h4 class="text-accent mb-2">Fairplay</h4>
+                    <p class="mb-0">Never forget that you are playing for fun, so try to <b>stay fairplay</b> at all times.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <p class="text-white">In the event of non-compliance with the regulations, <b>sanctions</b> will be taken, going from a simple warning to final <b>banishment</b>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="team" class="container py-5">
+    <div class="py-4">
+      <h1 class="text-center">Meet our team</h1>
+      <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between pt-4">
+        <div class="p-3" style="flex: 1 1 0">
+          <img class="rounded-circle mx-auto d-block" src="/src/resources/images/team/avatar-hector.jpg" width="200px"/>
+          <h4 class="text-primary text-center mt-3 mb-0">Hector</h4>
+          <div class="text-accent text-center mb-4"><b>Game developer</b></div>
+          <p class="text-center">He fully <b>developed the mission</b> and takes care of the administration of the server.</p>
+        </div>
+        <div class="p-3" style="flex: 1 1 0">
+          <img class="rounded-circle mx-auto d-block" src="/src/resources/images/team/avatar-jpat.jpg" width="200px"/>
+          <h4 class="text-primary text-center mt-3 mb-0">J-Pat</h4>
+          <div class="text-accent text-center mb-4"><b>Web developer</b></div>
+          <p class="text-center">He <b>developed the website</b> and moderates the server.</p>
+        </div>
+        <div class="p-3" style="flex: 1 1 0">
+          <img class="rounded-circle mx-auto d-block" src="/src/resources/images/team/avatar-jezah.jpg" width="200px"/>
+          <h4 class="text-primary text-center mt-3 mb-0">Jezah</h4>
+          <div class="text-accent text-center mb-4"><b>Investor</b></div>
+          <p class="text-center">He initially <b>funded the server</b> and helps with its moderation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="bg-primary-or-dark">
+      <div class="d-flex h-100">
+        <div class="d-flex w-100" style="overflow: hidden;">
+          <img style="user-select: none;" class="img-fluid align-self-start mb-auto" src="src/resources/svg/shapes/transparentshape1.svg"/>
+          <img style="user-select: none;" class="img-fluid align-self-end m-0" src="src/resources/svg/shapes/transparentshape2.svg"/>
+        </div>
+        <div class="w-100 h-100 py-4" style="margin-left: -100%;">
+          <div class="container py-5">
+            <div class="text-center">
+              <h1 class="mb-5 text-white">Contact us</h1>
+            </div>
+            <div class="row text-center">
+              <div class="col-md-6">
+                <div class="card my-3 shadow">
+                  <h4 class="text-accent mb-3">Join our community</h4>
+                  <p>You have a <b>problem</b> ? You want to be aware of the last <b>news</b> ? You want to <b>discuss</b> with your friends and with all the members of the Armory ?</p>
+                  <p>So our <b>discord</b> is made for you !</p>
+                  <a class="btn btn-discord mt-2 w-75 mx-auto" href="https://discord.gg/RUh4QUV" target="_blank">
+                    <i class="fab fa-discord mr-1"></i>
+                    Join us
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card my-3 shadow">
+                  <h4 class="text-accent mb-3">Contact the founders</h4>
+                  <p>You want to <b>join the moderation </b>team? You have a problem with a <b>moderator</b>? You have a <b>suggestion</b> or any other <b>problems</b> ?</p>
+                  <p>Then send us an <b>email</b> !</p>
+                  <a class="btn btn-mail mt-2 w-75 mx-auto"  href="mailto:armorydesbuissons@gmail.com">
+                    <i class="fas fa-envelope mr-1"></i>
+                    Mail us
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="rank" class="container py-5">
+    <div class="text-center py-4">
+      <div>
+        <h1 class="text-accent mb-4">Understand the ranking system</h1>
+        <p>Each player's ranking is instantly <b>updated</b> each time he kills or is killed by another player. Players are split in <b>6 divisions</b> according to their number of points.</p>  
+      </div>
+      <div class="d-flex justify-content-around align-items-center py-5">
+        <btn id="switch-rank-left" class="btn chevron flex-shrink-0"><i class="fas fa-chevron-left"></i></btn>
+        <div id="rank-top10" class="px-3" style="max-width: 300px;">
+          <div class="font-weight-bold text-accent mb-4">TOP 10</div>
+          <img src="/src/resources/images/ranks/rank_top10.png" width="200px" class="img-fluid mb-4"/>
+          <p class="mb-0">This division brings together the <b>10 best</b> players.</p>
+        </div>
+        <div id="rank-diamond" class="px-3 d-none" style="max-width: 300px;">
+          <div class="font-weight-bold text-accent mb-4">DIAMOND</div>
+          <img src="/src/resources/images/ranks/rank_diamond.png" width="200px" class="img-fluid mb-4"/>
+          <p class="mb-0">This division brings together the <b>4% best</b> players.</p>
+        </div>
+        <div id="rank-platinium" class="px-3 d-none" style="max-width: 300px;">
+          <div class="font-weight-bold text-accent mb-4">PLATINIUM</div>
+          <img src="/src/resources/images/ranks/rank_platinium.png" width="200px" class="img-fluid mb-4"/>
+          <p class="mb-0">This division brings together the <b>8% best</b> players.</p>
+        </div>
+        <btn id="switch-rank-right" class="btn chevron flex-shrink-0"><i class="fas fa-chevron-right"></i></btn>
+      </div>
+      <div>
+        <div class="card my-3 shadow bg-lighter">
+          <div class="d-flex flex-column flex-sm-row align-items-center ">
+            <div class=" mr-0 ml-sm-3 mr-sm-4 ml-lg-4 mr-lg-5 flex-shrink-0 mb-sm-0 mb-3">
+              <span class="round-primary bigger"><i class="fas fa-square-root-alt"></i></span>
+            </div>
+            <div class="text-center text-sm-left flex-shrink-1">
+              <h4 class="text-accent mb-2">Calculation of the number of points</h4>
+              <p>The number of points won and lost <b>depends on the ranking</b> of the two players according to the following algorithm:</p>
+              <pre class="mb-1"><code><span class="font-weight-bolder">newRank</span> = yourRank +  (rankPlayerKilled / yourRank * 5)</code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="card my-3 shadow bg-lighter">
+          <div class="d-flex flex-column flex-sm-row align-items-center ">
+            <div class=" mr-0 ml-sm-3 mr-sm-4 ml-lg-4 mr-lg-5 flex-shrink-0 mb-sm-0 mb-3">
+              <span class="round-primary bigger"><i class="fas fa-sort-amount-down"></i></span>
+            </div>
+            <div class="text-center text-sm-left flex-shrink-1">
+              <h4 class="text-accent mb-2">Decrease for inactivity</h4>
+              <p>The ranking <b>decreases automatically</b> if the player has not made a kill during the day. This reduction is made according to the division:</p>
+              <div class="d-flex flex-wrap align-items-center justify-content-between">
+                <div class="p-1">
+                  <div><b>Bronze</b></div>
+                  <div>0 points</div>
+                </div>
+                <div class="p-1">
+                  <div><b>Silver</b></div>
+                  <div>1 points</div>
+                </div>
+                <div class="p-1">
+                  <div><b>Gold</b></div>
+                  <div>2 points</div>
+                </div>
+                <div class="p-1">
+                  <div><b>Platinium</b></div>
+                  <div>3 points</div>
+                </div>
+                <div class="p-1">
+                  <div><b>Diamond</b></div>
+                  <div>5 points</div>
+                </div>
+                <div class="p-1">
+                  <div><b>TOP 10</b></div>
+                  <div>10 points</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card my-3 shadow bg-lighter">
+          <div class="d-flex flex-column flex-sm-row align-items-center ">
+            <div class=" mr-0 ml-sm-3 mr-sm-4 ml-lg-4 mr-lg-5 flex-shrink-0 mb-sm-0 mb-3">
+              <span class="round-primary bigger"><i class="fas fa-people-arrows"></i></span>
+            </div>
+            <div class="text-center text-sm-left flex-shrink-1">
+              <h4 class="text-accent mb-2">Reduction for distant kills</h4>
+              <p>Kills made <b>over 50 meters</b> earn <b>less points</b> proportionally to the distance according to the following algorithm:</p>
+              <pre class="mb-1"><code><span class="font-weight-bolder">earnedPoints</span> = normalKillPoints * (50 / distance)</code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="card my-3 shadow bg-lighter">
+          <div class="d-flex flex-column flex-sm-row align-items-center ">
+            <div class=" mr-0 ml-sm-3 mr-sm-4 ml-lg-4 mr-lg-5 flex-shrink-0 mb-sm-0 mb-3">
+              <span class="round-primary bigger"><i class="fas fa-calendar-week"></i></span>
+            </div>
+            <div class="text-center text-sm-left flex-shrink-1">
+              <h4 class="text-accent mb-2">Rank initialization and reset</h4>
+              <p>Rank is <b>initialised at 1000</b>, which corresponds to the Gold division. Rank is <b>reset to 1000</b> each month. The highest ranked player wins a <b>VIP</b> and a Top 1 skin.</p>
+              <p>It is also possible to reset your ranking to 1000 by being <a href="vip.html">VIP</a> and going to tour profile.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="vip">
+    <div class="bg-accent-or-dark">
+      <div class="d-flex h-100">
+        <div class="d-flex w-100" style="overflow: hidden;">
+          <img style="user-select: none;" class="img-fluid align-self-start mb-auto" src="src/resources/svg/shapes/transparentshape1.svg"/>
+          <img style="user-select: none;" class="img-fluid align-self-end m-0" src="src/resources/svg/shapes/transparentshape2.svg"/>
+        </div>
+        <div class="w-100 h-100 py-4" style="margin-left: -100%;">
+          <div class="container py-5">
+            <div class="text-center">
+              <h1 class="mb-4 text-white">Help us finance the server</h1>
+              <p class="text-white mb-5">To guarantee you the most <b>pleasant gaming experience</b>, we have invested in a <b>high-performance server</b>. But it comes at a cost, and <b>we need you to help</b> us finance the server.</p>
+            </div>
+            <div class="my-4">
+              <div class="card my-3 shadow">
+                <div class="text-center">
+                  <h4 class="text-accent mb-4">Become a VIP</h4>
+                  <p class="mb-4">In return for your <b>donation</b>, you will unlock <b>exceptional visuals</b> for your vehicles and outfits. You will also have access to <b>reserved slots</b> so that you can always connect.</p>
+                  <a href="vip.html" class="btn btn-primary px-5"><i class="fas fa-external-link-alt mr-2"></i> Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="shortcuts" class="container py-5">
+    <div class="text-center py-5"><h1 class="text-accent">Know all the shortcuts</h1></div>
+    <table class="shortcuts-table mb-4">
+      <tbody>
+        <tr>
+          <td class="d-flex justify-content-between align-items-center">
+            <kbd class="key-bigger">F3</kbd>
+            <span class="text-right">Increase/Decrease the sound</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="d-flex justify-content-between align-items-center">
+            <kbd class="key-bigger">F2</kbd>
+            <span class="text-right">Increase/Decrease the display distance</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="d-flex justify-content-between align-items-center">
+            <kbd class="key-bigger">Y</kbd>
+            <div class="text-right">
+              <div>Main menu</div>
+              <div>Score, vehicles, equipment, groups, skins, ...</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="d-flex justify-content-between align-items-center">
+            <kbd class="key-bigger">Space</kbd>
+            <span class="text-right">Jump</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="d-flex justify-content-between align-items-center">
+            <kbd class="key-bigger">Shift + H</kbd>
+            <span class="text-right">Put the weapon in the back</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="d-flex justify-content-between align-items-center">
+            <kbd class="key-bigger">F1</kbd>
+            <span class="text-right">Rearrange ammunition</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="d-flex justify-content-between align-items-center">
+            <kbd class="key-bigger">F4</kbd>
+            <span class="text-right">Attack/Defense the bomb menu</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="d-flex justify-content-between align-items-center">
+            <kbd class="key-bigger">F7</kbd>
+            <span class="text-right">Versus menu</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <footer>
+    <div class="container" style="max-width: 410px;">
+      <div class="row py-5">
+        <div class="col-12">
+          <div class="px-3 d-flex justify-content-between">
+            <a href="index.html">Home</a>
+            <a href="live.html">Live</a>
+            <a href="about.html">About</a>
+            <a href="vip.html">Vip</a>
+          </div>
+        </div>
+      </div>
+      <div class="row py-4">
+        <div class="col-12">
+          <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
+            <img class="pr-md-4 pb-md-2 mb-md-1 pb-4" src="src/resources/svg/nav/logo-white.svg" width="100px">
+            <div class="text-white footer-logo">
+              <div>Armory</div>
+              <div>des buisson</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row py-5">
+        <div class="col-12 text-center">
+          <span class="text-white">© Armory des buissons - All Rights Reserved</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

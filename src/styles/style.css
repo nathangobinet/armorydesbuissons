@@ -67,7 +67,7 @@ kbd {
     --text-color: var(--white-text);
     --accent-or-dark: var(--background-gr);
     --white-or-accent: var(--accent);
-    --text-color-button: black;
+    --text-color-button: white;
     --text-primary: #71d76e;
     --text-accent: #ff8d73;
     --white-text: #eaeaea;
@@ -261,7 +261,7 @@ kbd {
 
 
 .btn-accent {
-    background: var(--text-accent);
+    background: var(--accent);
 }
 
 .btn-accent:hover {
@@ -272,8 +272,32 @@ kbd {
     box-shadow: 0 0 0 0.2rem var(--darker-accent);
 }
 
+.btn-discord {
+    background: #5C6BC0;
+}
+
+.btn-discord:hover {
+    background: rgb(85, 98, 173);
+}
+
+.btn-discord:focus {
+    box-shadow: 0 0 0 0.2rem rgb(85, 98, 173);
+}
+
+.btn-mail {
+    background: #D54B3E;
+}
+
+.btn-mail:hover {
+    background: rgb(180, 62, 51);
+}
+
+.btn-mail:focus {
+    box-shadow: 0 0 0 0.2rem rgb(180, 62, 51);
+}
+
 .btn-primary {
-    background: var(--text-primary) !important;
+    background: var(--primary) !important;
 }
 
 .btn-primary:hover {
@@ -350,6 +374,14 @@ p {
 
 .bg-accent-or-dark {
     background: var(--accent-or-dark);
+}
+
+.bg-primary-or-dark {
+    background: var(--primary-gr);
+}
+
+.dark-mode .bg-primary-or-dark {
+    background: var(--background-gr);
 }
 
 .text-white-or-accent {
@@ -447,7 +479,6 @@ table {
 }
 
 
-
 .table-container {
     height: 380px;
     overflow-x: auto; 
@@ -460,17 +491,15 @@ table {
     height: 100%;
     width: 100%;
 }
+
 table thead {
-    /* head takes the height it requires, 
-    and it's not scaled when table is resized */
     flex: 0 0 auto;
     width: calc(100% - 0.9em);
 }
 table tbody {
-    /* body takes all the remaining available space */
     flex: 1 1 auto;
     display: block;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 table tbody tr {
     width: 100%;
@@ -606,4 +635,149 @@ small {
 #player-info-popper[data-show] {
     opacity: 1;
     visibility: visible;
+}
+
+
+.round-primary {
+    background: var(--primary);
+    font-size: 32px;
+    width: 4.5rem;
+    height: 4.5rem;
+    color: white;
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
+    border-radius: 50%!important;
+    
+}
+
+.round-primary.bigger {
+    width: 7rem;
+    height: 7rem;
+    font-size: 42px;
+}
+.chevron {
+    background: var(--accent);
+    width: 4.5rem;
+    height: 4.5rem;
+    color: var(--white-text)!important;
+    font-size: 32px;
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
+    border-radius: 50%!important;
+}
+
+.chevron:hover {
+    background: var(--darker-accent);
+}
+
+.chevron:active {
+    box-shadow: 0 0 0 0.2rem var(--darker-accent)
+}
+
+.fadeInLeft {
+    animation: fadeInLeft .2s ease-in-out;
+}
+
+.fadeInRight {
+    animation: fadeInRight .2s ease-in-out;
+}
+
+.fadeOutLeft {
+    animation: fadeOutLeft .2s ease-in-out;
+}
+
+
+.fadeOutRight {
+    animation: fadeOutRight .2s ease-in-out;
+}
+
+
+@keyframes fadeInLeft {
+    0% {
+       opacity: 0;
+       transform: translateX(-50px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ }   
+
+ @keyframes fadeInRight {
+    0% {
+       opacity: 0;
+       transform: translateX(50px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ }   
+
+ @keyframes fadeOutLeft {
+    0% {
+       opacity: 1;
+       transform: translateX(0px);
+    }
+    100% {
+       opacity: 0;
+       transform: translateX(-50px);
+    }
+ }   
+
+ @keyframes fadeOutRight {
+    0% {
+       opacity: 1;
+       transform: translateX(0px);
+    }
+    100% {
+       opacity: 0;
+       transform: translateX(50px);
+    }
+ } 
+
+ pre {
+     background: #E0E0E0;
+     text-align: center;
+     padding: 1rem;
+     border-radius:.4rem;
+     white-space: pre-wrap;
+     word-wrap: break-word;
+ }
+
+ .dark-mode pre {
+    background: #101010;
+ }
+
+ code {
+     color: #DE43A0!important;
+     font-size: 18px!important;
+ }
+
+ .key-bigger {
+     font-size: 20px;
+     padding: .2rem .5rem .1rem .5rem;
+     font-weight: 600;
+     margin-right: 1rem;
+ }
+
+ .shortcuts-table  {
+     margin-right: auto;
+     margin-left: auto;
+     min-width: 0px;
+     max-width: 800px;
+ }
+
+ .shortcuts-table tr {
+     border-top: 1px solid #929292;
+ }
+
+ .shortcuts-table tr:last-child {
+    border-bottom: 1px solid #929292;
+}
+
+ .shortcuts-table td {
+    margin: 1rem 0rem;
 }
