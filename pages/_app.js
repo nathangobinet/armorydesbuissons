@@ -1,7 +1,23 @@
-import '../styles/globals.css'
+import App from 'next/app';
+import React, { useEffect } from 'react';
+import '../styles/globals.scss';
+import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+import { isDarkMode, setDarkMode } from '../helpers/theme';
+import { appWithTranslation, i18n } from '../helpers/i18n';
+import { storeLanguage } from '../helpers/language';
 
-export default MyApp
+const MyApp = ({ Component, pageProps }) => {
+  useEffect(() => {
+    setDarkMode(isDarkMode());
+    storeLanguage(i18n.language);
+  }, []);
+  return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <Component {...pageProps} />
+  );
+};
+
+MyApp.getInitialProps = async (appContext) => ({ ...await App.getInitialProps(appContext) });
+
+export default appWithTranslation(MyApp);

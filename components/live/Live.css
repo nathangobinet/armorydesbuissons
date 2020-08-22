@@ -1,0 +1,182 @@
+.card-icon {
+  color: var(--white-text);
+  font-size: 60px;
+}
+
+.card-text {
+  margin-left: 25px;
+  color: var(--white-text);
+}
+
+.card-text div:first-child {
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  line-height: 1;
+}
+
+.card-text div:last-child{
+  margin-left: 4px;;
+  font-size: 20px;
+}
+
+.last-kill {
+  height: 480px;
+}
+
+@media (max-width: 575px) {
+  .last-kill {
+    height: 810px;
+  }
+}
+
+.dynamic-table {
+  overflow-y: auto;
+}
+
+.dynamic-table {
+  will-change: transform, height, opacity;
+  width: 100%;
+}
+
+.dynamic-table tr {
+  position: absolute;
+}
+
+.truncateNews {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.chart-container {
+  position: relative;
+  height: 100%;
+}
+
+@media (max-width: 1200px) { 
+  .chart-container {
+      height: 400px;
+  }
+}
+
+.nav-pills.pills-accent .nav-link.active {
+  color: var(--white-text)!important;
+  background-color: var(--accent);
+}
+
+.nav-pills.pills-white .nav-link.active {
+  color: var(--text-primary)!important;
+  background-color: var(--white-text);
+}
+
+.dark-mode .nav-pills.pills-white .nav-link.active {
+  color: var(--black-text)!important;
+  background-color: var(--white-text);
+}
+
+.nav-pills .nav-link {
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  border-radius: 1rem;
+  box-shadow: none;
+  padding: .3rem 1.2rem .2rem 1.2rem;   
+}
+
+.nav-pills.pills-accent .nav-link {
+  color: var(--text-accent)!important;
+}
+
+.nav-pills.pills-white .nav-link {
+  color: var(--white-text)!important;
+}
+
+.nav-pills .nav-link:hover, .nav-pills .nav-link.active  {
+  outline: none;
+}
+
+
+
+.input {
+  width: 100%;
+  display: block;
+  max-width: 300px;
+  padding: .3rem .8rem .2rem .8rem;
+  border-radius: .5rem;
+  border: none;
+  outline: none;
+  color: var(--text-color);
+  background: var(--lighter-or-darker);
+}
+
+.card-rank div:last-child {
+  font-weight: 600;
+  font-size: 42px;
+  line-height: .9;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.playerButton {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: none;
+  outline: none;
+  text-decoration: none;
+  display: inline-block;
+  text-align: left;
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  font-family: inherit;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.playerButton:focus, .playerButton:hover {
+  outline: none;
+  transform: translateX(4px);
+  color: var(--accent);
+}
+
+.black-mode .bg-info-popper {
+  background: var(--background-gr);
+}
+
+.light-mode .bg-info-popper {
+  background: var(--white-text);
+}
+
+
+@media (max-width: 1200px) { 
+  #player-info-popper {
+      width: 100%;
+      padding-left: 1.5rem!important;
+      padding-right: 1.5rem!important;
+      display: none;
+  }    
+}
+
+@media (min-width: 1200px) { 
+  #player-info-popper {
+      max-width: 650px;
+      display: none;
+  }    
+}
+
+
+#player-info-popper {
+  display: block;
+  position: fixed;
+  width: 100%;
+  transition: opacity .3s;
+}
+
+.hide-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

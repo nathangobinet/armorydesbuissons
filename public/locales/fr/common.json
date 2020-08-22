@@ -1,0 +1,114 @@
+{
+  "pages": {
+    "home": "Accueil",
+    "live": "Direct",
+    "about": "À propos",
+    "vip": "Vip"
+  },
+  "footer": {
+    "copyright": "© Armory des buissons - Tous droits réservés"
+  }, 
+  "home": {
+    "features": {
+      "title": "Un serveur Arma 3",
+      "p1": "L'Armory des buissons est un serveur d'entraînement pour le jeu Arma 3. Il offre de nombreuses fonctionnalités telles que du PVP classé, des arènes publiques et privées, un mode \"bac à sable\" et du combat de type attaque-défense.",
+      "p2": "N'hésitez plus et rejoignez-nous maintenant pour devenir le meilleur joueur !",
+      "btnConnect": "Connexion",
+      "btnDiscord": "Rejoins-nous",
+      "discover": "Découvre les fonctionalités"
+    },
+    "tpintofight": {
+      "title": "Soyez téléporté au plus proche du combat",
+      "beforeKey": "Le panel de jeu (",
+      "afterKey": ") vous permet de vous téléporter directement dans différentes zones de combat. Vous pouvez activer la téléportation automatique lors de la réaparition. Le panneau de jeu vous indique également le nombre de joueurs dans chaque zone."
+    }, 
+    "chooseYourGameplay": {
+      "title": "Choisissez votre gameplay",
+      "subTitle": "Différents types de zones de combat sont disponibles",
+      "striderTitle": "Combat à distance",
+      "striderParagraph": "Vous pouvez vous entraîner au combat à longue distance grâce aux grandes arènes avec un champ de vue ouvert.",
+      "soldierTitle": "Combat rapprochée",
+      "soldierParagraph": "Vous pouvez vous entraîner au combat à courte distance grâce aux petites arènes comme les villes ou les usines."
+    },
+    "versus": {
+      "title": "Combattez en versus",
+      "card1": {
+        "title": "Invitez vos amis",
+        "sub": "Invitez vos amis et séparez-vous en deux équipes."
+      }, 
+      "card2": {
+        "title": "Fixer la limite de points",
+        "sub": "Définissez le nombre de kills à atteindre pour gagner la partie."
+      }, 
+      "card3": {
+        "title": "Choisissez votre arène",
+        "sub": "Une variété d'arènes courte ou longue distance sont disponibles."
+      }
+    },
+    "ranking": {
+      "title": "Obtenez le meilleur classement",
+      "paragraph": "Le classement de chaque joueur est instantanément mis à jour chaque fois qu'il tue ou est tué par un autre joueur. Les joueurs sont répartis en 6 divisions en fonction de leur nombre de points.",
+      "button": "En savoir plus"
+    }, 
+    "attackDefense": {
+      "title": "Attaquez ou défendez la bombe",
+      "p1": {
+        "title": "Un système de lobby public",
+        "sub": "Il vous permet de vous inscrire pour le combat et de choisir votre camp."
+      },
+      "p2": {
+        "title": "Les défenseurs doivent défendre la bombe",
+        "sub": "Leur but est d'empêcher les attaquants de la désamorcer."
+      },
+      "p3": {
+        "title": "Plusieurs arènes sont disponibles",
+        "sub": "Les arènes sont variées et offrent une expérience différente."
+      },
+      "p4": {
+        "title": "Les attaquants doivent désamorcer la bombe",
+        "sub": "Leur but est d'empêcher la bombe d'exploser et donc de la désamorcer."
+      }
+    },
+    "more": {
+      "title": "Et encore plus à découvrir",
+      "p1": {
+        "title": "Sandbox",
+        "sub": "La sandbox vous permet d'essayer tous les véhicules disponibles sur le jeu. Entraînez-vous à piloter des hélicoptères et combattez vos amis dans des batailles épiques."
+      },
+      "p2": {
+        "title": "Inventaire",
+        "sub": "Vous pouvez entièrement personnaliser votre matériel. Equipement, armes, accessoires ... Créez le matériel qui vous convient et combattez avec."
+      },
+      "p3": {
+        "title": "Gameplay",
+        "sub": "Le serveur est parfaitement programmé pour vous offrir le meilleur gameplay, que vous soyez seul ou à plusieurs."
+      }
+    }
+  }, "live": {
+    "infoCards": {
+      "kills": "kills aujourd'hui", "player": "joueurs connectés", "unique": "joueurs unique aujourd'hui", "ranked": "joueurs classés"
+    },
+
+    "onlinePlayers": {
+      "headers": { "country": "Pays", "name": "Pseudo", "kills": "Kills", "deaths": "Morts", "timePlayed":"Temps joué" },
+      "title": "Joueurs en ligne"
+    },
+    "lastKills": {
+      "title": "Derniers kills", "time": " Il y a {{timeStamp}} secondes", "distance": " {{distance}} mètres de distance", "weapon": " avec une {{weapon}}"
+    },
+    "news": { "title": "Nouveautés", "more": "Voir plus...", "back": "Retour" },
+    "graph" : { "title": "Historique des kills et des joueurs", "day": "Jour", "season": "Saison", "kills": "Kills", "players": "Joueurs"},
+    "ranking": { 
+      "title": "Classement", 
+      "headers": {"rank": "Rang", "name": "Pseudo", "division": "Division", "score": "Score", "top":"Top"}
+    },
+    "champions": { "title": "Derniers champions", "rank": "Rang", "season": "Saison" },
+    "bestStats": { 
+      "title": "Meilleurs statistiques", "day": "Jour", "season": "Saison", "allTime": "Toute période", "topKills": "Meilleur kills", "topRatio": "Meilleur ratio", "kills":" kills", "ratio": " ratio" 
+    },
+    "statistic": { 
+      "title": "Statistiques", "day": "Jour", "season": "Saison", "allTime": "Toute prériode",
+      "headers": {"rank": "Rang", "name": "Nom", "kills": "Kills", "deaths": "Morts", "ratio": "Ratio"}
+    }
+  }
+}

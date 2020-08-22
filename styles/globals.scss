@@ -1,0 +1,9 @@
+// Override default variables before the import
+$primary: #00AC3A;
+$secondary: #F26E50;
+$link-color: $secondary;
+$btn-font-weight: 600;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+@import 'custom_global.css';
+
