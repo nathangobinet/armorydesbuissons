@@ -46,13 +46,17 @@ html, body {
   height: 100%;
 }
 
+#__next {
+  height: 100%;
+}
+
 body {
-  overflow-x: hidden;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  background: var(--background);
-  color: var(--text-color);
+  overflow-x: hidden!important;
+  font-family: 'Open Sans', sans-serif!important;
+  font-weight: 400!important;
+  font-size: 18px!important;
+  background: var(--background)!important;
+  color: var(--text-color)!important;
 }
 
 h1, h2, h3, h4, h5 {
@@ -72,7 +76,7 @@ b {
 }
 
 kbd {
-  background: var(--accent);
+  background-color: var(--accent)!important;
   margin: 2px;
 }
 
@@ -162,7 +166,7 @@ code {
 }
 
 .bg-dark {
-  background-color: var(--black-text)!important;
+  background: var(--black-text)!important;
 }
 
 .bg-accent-or-dark {
@@ -335,39 +339,39 @@ code {
 }
 
 .btn-accent {
-  background: var(--accent);
+  background-color: var(--accent) !important;
 }
 
 .btn-accent:hover {
-  background: var(--darker-accent);
+  background-color: var(--darker-accent) !important;
 }
 
 .btn-accent:focus {
-  box-shadow: 0 0 0 0.2rem var(--darker-accent);
+  box-shadow: 0 0 0 0.2rem var(--darker-accent) !important;
 }
 
 .btn-discord {
-  background: #5C6BC0;
+  background-color: #5C6BC0 !important;
 }
 
 .btn-discord:hover {
-  background: rgb(75, 87, 155);
+  background-color: rgb(75, 87, 155) !important;
 }
 
 .btn-discord:focus {
-  box-shadow: 0 0 0 0.2rem rgb(75, 87, 155);
+  box-shadow: 0 0 0 0.2rem rgb(75, 87, 155) !important;
 }
 
 .btn-mail {
-  background: #D54B3E;
+  background-color: #D54B3E !important;
 }
 
 .btn-mail:hover {
-  background: rgb(180, 62, 51);
+  background-color: rgb(180, 62, 51) !important;
 }
 
 .btn-mail:focus {
-  box-shadow: 0 0 0 0.2rem rgb(180, 62, 51);
+  box-shadow: 0 0 0 0.2rem rgb(180, 62, 51) !important;
 }
 
  /* Table */

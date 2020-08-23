@@ -1,14 +1,15 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '../../helpers/i18n';
 
+import styles from '../../styles/Home.module.css';
 import screenLogo from '../../public/svgs/screen-logo.svg';
 import shape from '../../public/svgs/shapes/shape1.svg';
 
 function Features() {
   const { t } = useTranslation('common');
   return (
-    <section id="features" className="full-page-section">
-      <div className="section-content">
+    <section id="features" className={styles['full-page-section']}>
+      <div className={styles['section-content']}>
         <div className="container h-100 d-flex align-items-center py-5">
           <div>
             <div className="row mb-5">
@@ -44,7 +45,7 @@ function Features() {
             <div className="row">
               <div className="col-12 d-flex justify-content-center position-relative" data-aos="fade-up" data-aos-delay="200">
                 <img className="img-fluid" src={shape} alt="Style shape" width="550" height="550" />
-                <div className="card-on-shape-1 card shadow pb-0">
+                <div className={`card shadow pb-0 ${styles['card-on-shape-1']}`}>
                   <div className="text-center">
                     <h2 className="text-accent mb-0">
                       {t('home.features.discover')}

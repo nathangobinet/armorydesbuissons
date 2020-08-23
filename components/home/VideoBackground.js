@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Container } from 'react-bootstrap';
 import styles from '../../styles/Home.module.css';
 
 import video from '../../public/videos/compilation.mp4';
@@ -10,7 +11,7 @@ function VideoBackground() {
   return (
     <section className={styles['full-page-section']} id="videobackground">
       <div className={styles['section-content']}>
-        <div className="container h-100">
+        <Container className="h-100">
           <video poster={videoPoster} className={styles.bgvid} playsInline autoPlay muted loop>
             <source src={video} type="video/mp4" />
           </video>
@@ -20,11 +21,11 @@ function VideoBackground() {
             </div>
             <div className="align-self-center m-0 mb-5">
               <a className={`${styles['fp-caret-down']} opacity-interaction`} href="#features" alt="Next section">
-                <i className="fa fa-caret-down pulse" />
+                <i className={`fa fa-caret-down ${styles.pulse}`} />
               </a>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
     </section>
   );

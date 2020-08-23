@@ -1,5 +1,6 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '../../helpers/i18n';
+import styles from '../../styles/Home.module.css';
 
 import sandox from '../../public/svgs/icons/sandbox.svg';
 import inventory from '../../public/svgs/icons/inventory.svg';
@@ -8,8 +9,8 @@ import code from '../../public/svgs/icons/code.svg';
 function More() {
   const { t } = useTranslation('common');
   return (
-    <section id="more" className="full-page-section">
-      <div className="section-content">
+    <section id="more" className={styles['full-page-section']}>
+      <div className={styles['section-content']}>
         <div className="container d-flex flex-column justify-content-center h-100 py-5">
           <div className="my-auto">
             <div className="mb-5 text-center">

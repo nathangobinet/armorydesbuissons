@@ -1,13 +1,14 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '../../helpers/i18n';
 
+import styles from '../../styles/Home.module.css';
 import altisMap from '../../public/svgs/altis-map.svg';
 
 function TpIntoFight() {
   const { t } = useTranslation('common');
   return (
-    <section id="tp-into-fight" className="full-page-section">
-      <div className="section-content">
+    <section id="tp-into-fight" className={styles['full-page-section']}>
+      <div className={styles['section-content']}>
         <div className="container d-flex flex-column justify-content-center h-100 py-5">
           <div className="my-auto">
             <div className="text-center">
@@ -25,7 +26,9 @@ function TpIntoFight() {
             </div>
           </div>
           <div className="align-self-center m-0">
-            <a className="fp-caret-down opacity-interaction" label="Go to next section" href="#choose-your-gameplay" data-aos="fade" data-aos-offset="0"><i className="fa fa-caret-down pulse" /></a>
+            <a className={`${styles['fp-caret-down']} opacity-interaction`} href="#choose-your-gameplay" alt="Next section">
+              <i className={`fa fa-caret-down ${styles.pulse}`} />
+            </a>
           </div>
         </div>
       </div>

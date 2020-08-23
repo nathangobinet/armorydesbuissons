@@ -1,6 +1,7 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '../../helpers/i18n';
 
+import styles from '../../styles/Home.module.css';
 import shape1 from '../../public/svgs/shapes/transparentshape1.svg';
 import shape2 from '../../public/svgs/shapes/transparentshape2.svg';
 import users from '../../public/svgs/icons/users.svg';
@@ -10,8 +11,8 @@ import location from '../../public/svgs/icons/location.svg';
 function Versus() {
   const { t } = useTranslation('common');
   return (
-    <section id="versus" className="full-page-section">
-      <div className="section-content bg-accent-or-dark">
+    <section id="versus" className={`${styles['full-page-section']} bg-accent-or-dark`}>
+      <div className={styles['section-content']}>
         <div className="d-flex h-100">
           <div className="d-flex h-100 w-100" style={{ overflow: 'hidden' }}>
             <img style={{ userSelect: 'none' }} className="img-fluid align-self-start mb-auto" src={shape1} alt="Shape" />
@@ -72,7 +73,9 @@ function Versus() {
                 </div>
               </div>
               <div className="align-self-center m-0">
-                <a className="fp-caret-down text-white-or-accent opacity-interaction" label="Go to next section" href="#ranking" data-aos="fade" data-aos-offset="0"><i className="fas fa-caret-down pulse" /></a>
+                <a className={`${styles['fp-caret-down']} text-white-or-accent opacity-interaction`} label="Go to next section" href="#ranking" data-aos="fade" data-aos-offset="0">
+                  <i className={`fas fa-caret-down ${styles.pulse}`} />
+                </a>
               </div>
             </div>
           </div>

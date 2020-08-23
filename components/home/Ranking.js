@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
+import { useTranslation } from '../../helpers/i18n';
+import styles from '../../styles/Home.module.css';
 
 import shape from '../../public/svgs/shapes/shape2.svg';
 import rank from '../../public/svgs/icons/rank.svg';
@@ -9,8 +10,8 @@ import rank from '../../public/svgs/icons/rank.svg';
 function Ranking() {
   const { t } = useTranslation('common');
   return (
-    <section id="ranking" className="full-page-section">
-      <div className="section-content">
+    <section id="ranking" className={styles['full-page-section']}>
+      <div className={styles['section-content']}>
         <div className="d-flex h-100">
           <div className="container my-auto pl-md-5 pt-md-5 mt-md-5">
             <img className="img-fluid" src={shape} width="600px" data-aos="fade-right" alt="Shape" />
@@ -34,7 +35,9 @@ function Ranking() {
                 </div>
               </div>
               <div className="align-self-center m-0">
-                <a className="fp-caret-down opacity-interaction" label="Go to the next section" href="#atack-defense" data-aos="fade" data-aos-offset="0"><i className="fas fa-caret-down pulse" /></a>
+                <a className={`${styles['fp-caret-down']} opacity-interaction`} href="#attack-defense" alt="Next section">
+                  <i className={`fa fa-caret-down ${styles.pulse}`} />
+                </a>
               </div>
             </div>
           </div>
