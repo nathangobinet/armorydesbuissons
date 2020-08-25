@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 
+import styles from '../../styles/Live.module.css';
+
 export default function TableInput({ setFilter }) {
   const [text, setText] = useState('');
   const timeoutRef = useRef(null);
@@ -14,7 +16,7 @@ export default function TableInput({ setFilter }) {
 
   return (
     <input
-      className="input"
+      className={styles.input}
       value={text}
       type="text"
       placeholder="Search..."

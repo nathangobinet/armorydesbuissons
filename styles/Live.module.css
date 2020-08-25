@@ -12,12 +12,13 @@
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
   font-size: 40px;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .card-text div:last-child{
   margin-left: 4px;;
   font-size: 20px;
+  line-height: 1;
 }
 
 .last-kill {
@@ -61,43 +62,6 @@
       height: 400px;
   }
 }
-
-.nav-pills.pills-accent .nav-link.active {
-  color: var(--white-text)!important;
-  background-color: var(--accent);
-}
-
-.nav-pills.pills-white .nav-link.active {
-  color: var(--text-primary)!important;
-  background-color: var(--white-text);
-}
-
-.dark-mode .nav-pills.pills-white .nav-link.active {
-  color: var(--black-text)!important;
-  background-color: var(--white-text);
-}
-
-.nav-pills .nav-link {
-  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-  border-radius: 1rem;
-  box-shadow: none;
-  padding: .3rem 1.2rem .2rem 1.2rem;   
-}
-
-.nav-pills.pills-accent .nav-link {
-  color: var(--text-accent)!important;
-}
-
-.nav-pills.pills-white .nav-link {
-  color: var(--white-text)!important;
-}
-
-.nav-pills .nav-link:hover, .nav-pills .nav-link.active  {
-  outline: none;
-}
-
-
 
 .input {
   width: 100%;
@@ -152,7 +116,7 @@
 
 
 @media (max-width: 1200px) { 
-  #player-info-popper {
+  .player-info-popper {
       width: 100%;
       padding-left: 1.5rem!important;
       padding-right: 1.5rem!important;
@@ -161,14 +125,14 @@
 }
 
 @media (min-width: 1200px) { 
-  #player-info-popper {
+  .player-info-popper {
       max-width: 650px;
       display: none;
   }    
 }
 
 
-#player-info-popper {
+.player-info-popper {
   display: block;
   position: fixed;
   width: 100%;

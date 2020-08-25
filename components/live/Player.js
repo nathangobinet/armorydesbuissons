@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import { createPopper } from '@popperjs/core';
 import { playerState } from './PlayerPopper';
 
+import styles from '../../styles/Live.module.css';
+
 let popperInstance = null;
 
 /**
@@ -55,15 +57,14 @@ function displayPopper(playerRef, name) {
 
 export default function Player({ name }) {
   const playerRef = useRef();
-  const truncateName = (name.length > 20) ? `${name.substring(0, 17)}...` : name;
   return (
     <button
       ref={playerRef}
       type="button"
-      className="playerButton"
+      className={styles.playerButton}
       onClick={() => displayPopper(playerRef, name)}
     >
-      {truncateName}
+      {name}
     </button>
   );
 }

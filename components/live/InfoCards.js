@@ -1,40 +1,51 @@
 import React, { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '../../helpers/i18n';
 import InfoCard from './InfoCard';
+import EVENTS from '../../helpers/liveEventList';
 
-function randomIntFromInterval(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function InfoCards() {
-  const [infos, setInfos] = useState({
-    kills: 8000, online: 26, unique: 115, ranked: 2000,
-  });
+function useSocket(socket) {
+  const [playerNumber, setPlayerNumber] = useState(0);
+  const [uniquePlayerNumber, setUniquePlayerNumber] = useState(0);
+  const [killNumber, setKillNumber] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setInfos((crtIinfos) => ({
-        kills: crtIinfos.kills + randomIntFromInterval(0, 3),
-        online: (randomIntFromInterval(0, 1) === 1)
-          ? crtIinfos.online + randomIntFromInterval(0, 2)
-          : crtIinfos.online - randomIntFromInterval(0, 2),
-        unique: crtIinfos.unique + randomIntFromInterval(0, 2),
-        ranked: crtIinfos.ranked + randomIntFromInterval(0, 5),
-      }));
-    }, 1500);
+    socket.on(EVENTS.INITIED, (initInfo) => {
+      setPlayerNumber(initInfo.players.length);
+      setUniquePlayerNumber(initInfo.nbUniquePlayers);
+      setKillNumber(initInfo.nbKills);
+    });
 
-    return (() => { clearInterval(interval); });
+    socket.on(EVENTS.KILL_ADDED, (_players, _lastKills, _killNumber) => {
+      setKillNumber(_killNumber);
+    });
+
+    socket.on(EVENTS.PLAYER_ADDED, (_players) => {
+      setPlayerNumber(_players.length);
+    });
+
+    socket.on(EVENTS.PLAYER_REMOVED, (_players) => {
+      setPlayerNumber(_players.length);
+    });
+
+    socket.on(EVENTS.UNIQUE_PLAYER_ADDED, (_uniquePlayerNumber) => {
+      setUniquePlayerNumber(_uniquePlayerNumber);
+    });
   }, []);
 
+  return { playerNumber, uniquePlayerNumber, killNumber };
+}
+
+function InfoCards({ socket }) {
+  const { playerNumber, uniquePlayerNumber, killNumber } = useSocket(socket);
   const { t } = useTranslation('common');
 
   return (
     <section className="py-2" id="info-cards">
       <div className="row">
-        <InfoCard bg="card-primary" icon="fa-skull" number={infos.kills} description={t('live.infoCards.kills')} />
-        <InfoCard bg="card-accent" icon="fa-users" number={infos.online} description={t('live.infoCards.player')} />
-        <InfoCard bg="card-primary" icon="fa-user-clock" number={infos.unique} description={t('live.infoCards.unique')} />
-        <InfoCard bg="card-accent" icon="fa-medal" number={infos.ranked} description={t('live.infoCards.ranked')} />
+        <InfoCard bg="card-primary" icon="fa-skull" number={killNumber} description={t('live.infoCards.kills')} />
+        <InfoCard bg="card-accent" icon="fa-users" number={playerNumber} description={t('live.infoCards.player')} />
+        <InfoCard bg="card-primary" icon="fa-user-clock" number={uniquePlayerNumber} description={t('live.infoCards.unique')} />
+        <InfoCard bg="card-accent" icon="fa-medal" number={0} description={t('live.infoCards.ranked')} />
       </div>
     </section>
   );

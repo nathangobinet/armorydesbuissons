@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
 import { v4 as uuid } from 'uuid';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '../../helpers/i18n';
 
 import News from './News';
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from '../../styles/Live.module.css';
 
 const playerState = {
   displayed: null,
@@ -15,8 +16,8 @@ function PlayerPopper() {
   playerState.setPlayerData = setPlayerData;
 
   return (
-    <div id="player-info-popper" style={{ margin: 0, visibility: (displayed) ? 'visible' : 'hidden', opacity: (displayed) ? 1 : 0 }}>
-      <div className="card shadow bg-info-popper">
+    <div id="player-info-popper" className={styles['player-info-popper']} style={{ margin: 0, visibility: (displayed) ? 'visible' : 'hidden', opacity: (displayed) ? 1 : 0 }}>
+      <div className={`card shadow ${styles['bg-info-popper']}`}>
         <div className="d-flex align-items-center justify-content-between mb-4">
           <h4 className="text-accent hide-overflow mb-0">{playerData.name}</h4>
           <a href="/">View profile</a>

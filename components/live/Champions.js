@@ -1,14 +1,16 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+
+import { useTranslation } from '../../helpers/i18n';
 import Player from './Player';
+import styles from '../../styles/Live.module.css';
 
 function Champion({ season, player, rank }) {
   const { t } = useTranslation('common');
 
   return (
-    <div className="card bg-darker my-2 text-center text-sm-left">
+    <div className="card shadow bg-darker my-2 text-center text-sm-left">
       <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center">
-        <div className="card-rank py-2 py-sm-0">
+        <div className={`${styles['card-rank']} py-2 py-sm-0`}>
           <div>{t('live.champions.season')}</div>
           <div className="text-primary">{season}</div>
         </div>
@@ -16,7 +18,7 @@ function Champion({ season, player, rank }) {
           <div className="text-primary mb-1"><i className="fas fa-medal fa-2x" /></div>
           <div style={{ fontFamily: '"Montserrat", sans-serif' }}>{player}</div>
         </div>
-        <div className="card-rank py-2 py-sm-0">
+        <div className={`${styles['card-rank']} py-2 py-sm-0`}>
           <div>{t('live.champions.rank')}</div>
           <div className="text-primary">{rank}</div>
         </div>

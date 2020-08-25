@@ -3,12 +3,13 @@ import React from 'react';
 import OnlinePlayers from './OnlinePlayers';
 import LastKils from './LastKills';
 
-function LiveInfo() {
+function LiveInfo({ socket }) {
+  console.log('livreInfo rerender');
   return (
     <section className="py-2" id="live-info">
       <div className="row">
-        <OnlinePlayers />
-        <LastKils />
+        <OnlinePlayers socket={socket} />
+        <LastKils socket={socket} />
       </div>
     </section>
   );

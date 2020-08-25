@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Chart } from 'chart.js';
-import { useTranslation } from 'react-i18next';
-import { isDarkMode } from '../../Helpers/theme';
+import { useTranslation } from '../../helpers/i18n';
+import { isDarkMode } from '../../helpers/theme';
+
+import styles from '../../styles/Live.module.css';
 
 const PERIODS = {
   DAY: 'day',
@@ -96,7 +98,7 @@ export default function Graph() {
             </span>
           </div>
         </div>
-        <div className="chart-container">
+        <div className={styles['chart-container']}>
           <canvas ref={graphRef} />
         </div>
       </div>

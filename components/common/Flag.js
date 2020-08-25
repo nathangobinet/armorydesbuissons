@@ -5,17 +5,30 @@ import React from 'react';
 import flagsInfo from 'svg-country-flags/countries.json';
 
 function Flag(props) {
-  const { country, size = '35px' } = props;
+  const { country, width = '35px', height = '25px' } = props;
   let flag;
-  try {
-    flag = require(`svg-country-flags/svg/${country}.svg`);
-  } catch (err) {
-    flag = require('../../assets/svgs/unknown-flag.svg');
+  let description;
+  if (country) {
+    const coutryPath = country.toLowerCase();
+    try {
+      flag = require(`svg-country-flags/svg/${coutryPath}.svg`);
+    } catch (err) {
+      flag = require('../../public/svgs/unknown-flag.svg');
+    }
+    const countryName = flagsInfo[country.toUpperCase()];
+    description = `${countryName} flag`;
+  } else {
+    flag = require('../../public/svgs/unknown-flag.svg');
+    description = 'Unknow country';
   }
-  const countryName = flagsInfo[country.toUpperCase()];
-  const description = `${countryName} flag`;
   return (
-    <img width={size} src={flag} alt={description} title={description} />
+    <img
+      width={width}
+      height={height}
+      src={(flag.default) ? flag.default : flag} // Try to fix a strange bug on flag dynamic import
+      alt={description}
+      title={description}
+    />
   );
 }
 

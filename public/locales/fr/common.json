@@ -94,7 +94,7 @@
       "title": "Joueurs en ligne"
     },
     "lastKills": {
-      "title": "Derniers kills", "time": " Il y a {{timeStamp}} secondes", "distance": " {{distance}} mètres de distance", "weapon": " avec une {{weapon}}"
+      "title": "Derniers kills", "time": " Il y a {{timeStamp}} secondes", "distance": " {{distance}} mètres de distance", "weapon": " avec une {{weapon}}", "killed": "a tué"
     },
     "news": { "title": "Nouveautés", "more": "Voir plus...", "back": "Retour" },
     "graph" : { "title": "Historique des kills et des joueurs", "day": "Jour", "season": "Saison", "kills": "Kills", "players": "Joueurs"},

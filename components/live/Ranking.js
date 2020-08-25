@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { v4 as uuid } from 'uuid';
+
+import { useTranslation } from '../../helpers/i18n';
 
 import Table from './Table';
 import TableInput from './TableInput';

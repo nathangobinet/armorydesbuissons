@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Navbar as BootstrapNavBar, Container, Nav } from 'react-bootstrap';
+import { useRouter } from 'next/router';
 
 import NavIcon from './NavIcon';
 import { setDarkMode } from '../../../helpers/theme';
@@ -60,6 +61,7 @@ const icons = [
 function Navbar({ transparent }) {
   const { t } = useTranslation('common');
   const navRef = useRef();
+  const router = useRouter();
   useEffect(() => {
     handleScroll(transparent);
   }, []);
@@ -71,6 +73,7 @@ function Navbar({ transparent }) {
         expand="lg"
         fixed="top"
         className="p-0"
+        style={{ backgroundColor: (transparent) ? 'transparent' : '#2B2B2B' }}
         onToggle={(isToggle) => handleToggle(isToggle, navRef.current)}
       >
         <Container fluid="lg">
@@ -87,10 +90,26 @@ function Navbar({ transparent }) {
           <BootstrapNavBar.Collapse id="basic-navbar-nav" className="nav-header">
             <div className="text-center text-lg-left p-0 m-auto">
               <Nav>
-                <Link href="/"><a className="nav-py nav-menu nav-item nav-link active">{t('pages.home')}</a></Link>
-                <Link href="/live"><a className="nav-py nav-menu nav-item nav-link">{t('pages.live')}</a></Link>
-                <Link href="/about"><a className="nav-py nav-menu nav-item nav-link">{t('pages.about')}</a></Link>
-                <Link href="/vip"><a className="nav-py nav-menu nav-item nav-link">{t('pages.vip')}</a></Link>
+                <Link href="/">
+                  <a className={`nav-py nav-menu nav-item nav-link ${router.pathname === '/' ? 'active' : ''}`}>
+                    {t('pages.home')}
+                  </a>
+                </Link>
+                <Link href="/live">
+                  <a className={`nav-py nav-menu nav-item nav-link ${router.pathname === '/live' ? 'active' : ''}`}>
+                    {t('pages.live')}
+                  </a>
+                </Link>
+                <Link href="/about">
+                  <a className={`nav-py nav-menu nav-item nav-link ${router.pathname === '/about' ? 'active' : ''}`}>
+                    {t('pages.about')}
+                  </a>
+                </Link>
+                <Link href="/vip">
+                  <a className={`nav-py nav-menu nav-item nav-link ${router.pathname === '/vip' ? 'active' : ''}`}>
+                    {t('pages.vip')}
+                  </a>
+                </Link>
               </Nav>
             </div>
             <div className="pb-3 pt-2 py-lg-0">

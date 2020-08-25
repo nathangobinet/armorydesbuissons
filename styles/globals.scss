@@ -2,12 +2,12 @@
 $primary: #00AC3A;
 $secondary: #F26E50;
 $link-color: $secondary;
-$btn-font-weight: 600;
 $theme-colors: (
-  "primary": $primary,
+  "primary": $primary, 
   "accent": $secondary
 );
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
+@import "~bootstrap/scss/bootstrap.scss";
 @import 'custom_global.css';
+
 

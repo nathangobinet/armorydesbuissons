@@ -25,11 +25,12 @@ export function handleScroll(shouldHandle) {
       setNavBackground(currentScrollPos);
       prevScrollpos = displayNav(currentScrollPos, prevScrollpos);
     };
+  } else {
+    window.onscroll = null;
   }
 }
 
 export function handleToggle(isToggle, navRef) {
-  console.log(navRef);
   if (isToggle) {
     navRef.style.backgroundColor = '#2B2B2B';
   } else {
