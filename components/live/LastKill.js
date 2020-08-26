@@ -3,9 +3,11 @@ import { useTranslation } from '../../helpers/i18n';
 
 function LastKill(props) {
   const {
-    killer, killed, distance, weapon,
+    killer, killed, distance, weapon, date,
   } = props;
-  const [timeStamp, setTimeStamp] = useState(1);
+  const timestampDefault = Math.round((new Date() - new Date(date)) / 1000);
+  const [timeStamp, setTimeStamp] = useState(timestampDefault);
+
   useEffect(() => {
     const interval = setInterval(() => setTimeStamp((ts) => ts + 1), 1000);
     return () => {

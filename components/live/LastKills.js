@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTransition, animated } from 'react-spring';
 import { useTranslation } from '../../helpers/i18n';
 import { isDarkMode } from '../../helpers/theme';
@@ -17,6 +17,7 @@ function getPrintedLastKills(lastKills) {
     id: lastKill.id,
     killer: <Player name={lastKill.nomTueur} id={lastKill.idTueur} />,
     killed: <Player name={lastKill.nomTue} id={lastKill.idTue} />,
+    date: lastKill.date,
     distance: lastKill.distance,
     weapon: lastKill.arme,
   }));
@@ -72,6 +73,7 @@ function LastKills({ socket }) {
             <LastKill
               killer={item.killer}
               killed={item.killed}
+              date={item.date}
               distance={item.distance}
               weapon={item.weapon}
             />
