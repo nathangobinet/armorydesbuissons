@@ -3,6 +3,7 @@ import React from 'react';
 import { useTranslation } from '../../helpers/i18n';
 import Player from './Player';
 import styles from '../../styles/Live.module.css';
+import useFetch from '../../helpers/useFetch';
 
 function Champion({ season, player, rank }) {
   const { t } = useTranslation('common');
@@ -28,11 +29,7 @@ function Champion({ season, player, rank }) {
 }
 
 export default function Champions() {
-  const champions = [
-    { season: 22, player: <Player name="[SWAT] Michel" />, rank: 1950 },
-    { season: 21, player: <Player name="[SWAT] Jean" />, rank: 1850 },
-    { season: 20, player: <Player name="[SWAT] Eude" />, rank: 1970 },
-  ];
+  const champions = useFetch('champions', []);
 
   const { t } = useTranslation('common');
 
@@ -42,10 +39,10 @@ export default function Champions() {
         <h4 className="text-white">{t('live.champions.title')}</h4>
         {champions.map((champion) => (
           <Champion
-            key={champion.player + champion.season}
+            key={champion.playerID + champion.season}
             season={champion.season}
-            player={champion.player}
-            rank={champion.rank}
+            player={<Player name={champion.lastName} id={champion.playerID} />}
+            rank={Math.round(champion.rank)}
           />
         ))}
       </div>

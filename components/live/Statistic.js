@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { v4 as uuid } from 'uuid';
 import { useTranslation } from '../../helpers/i18n';
 
 import Table from './Table';
 import TableInput from './TableInput';
 import Player from './Player';
+import useFetch from '../../helpers/useFetch';
 
 const PERIODS = {
   DAY: 'day',
   SEASON: 'season',
-  ALLTIME: 'alltime',
+  ALLTIME: 'all',
 };
 
 export default function Statistic() {
@@ -17,36 +17,28 @@ export default function Statistic() {
   const [period, setPeriod] = useState(PERIODS.DAY);
   const [filter, setFilter] = useState('');
 
+  const players = useFetch('stats', [], { name: filter, period });
+
+  const rows = players.map((p) => ({
+    key: p.id,
+    data: [
+      p.rank,
+      <Player name={p.lastPseudo} id={p.id} />,
+      p.nbKills,
+      p.nbDeaths,
+      p.ratio.toFixed(2),
+      p.level,
+    ],
+  }));
+
   const headers = [
-    { text: t('live.statistic.headers.rank'), size: 2 },
-    { text: t('live.statistic.headers.name'), size: 4 },
+    { text: t('live.statistic.headers.rank'), size: 1 },
+    { text: t('live.statistic.headers.name'), size: 3 },
     { text: t('live.statistic.headers.kills'), size: 2 },
     { text: t('live.statistic.headers.deaths'), size: 2 },
     { text: t('live.statistic.headers.ratio'), size: 2 },
+    { text: t('live.statistic.headers.level'), size: 2 },
   ];
-
-  /**
-   * Random gen
-   */
-
-  const getRandomElement = (array) => array[Math.floor(Math.random() * array.length)];
-  const names = [
-    <Player name="[SWAT] Louis" />,
-    <Player name=">-----»Matsuki«-----<" />,
-    <Player name="Backary Baradji" />,
-    <Player name="Johann Mallet" />,
-    <Player name="kkonperson" />,
-    <Player name="Jules Jerne" />,
-    <Player name="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" />,
-  ];
-
-  const rows = [...Array(8)]
-    .map((e, i) => ({ key: uuid(), data: [i, getRandomElement(names), '50', '20', '2'] }))
-    .filter((row) => row.data[1].props.name.includes(filter));
-
-  /**
-   * Random gen
-   */
 
   return (
     <div className="col-xl-7 py-2">

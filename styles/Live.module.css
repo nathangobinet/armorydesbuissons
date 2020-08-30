@@ -45,11 +45,7 @@
 }
 
 .truncateNews {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  height: 80px;
 }
 
 .chart-container {
@@ -106,15 +102,6 @@
   color: var(--accent);
 }
 
-.black-mode .bg-info-popper {
-  background: var(--background-gr);
-}
-
-.light-mode .bg-info-popper {
-  background: var(--white-text);
-}
-
-
 @media (max-width: 1200px) { 
   .player-info-popper {
       width: 100%;
@@ -143,4 +130,9 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.bigNews img {
+  max-width: 100%;
+  height: auto;
 }

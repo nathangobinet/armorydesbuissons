@@ -112,7 +112,7 @@ code {
 
 /* Colors */
 
-.text-accent {
+div .text-accent {
   color: var(--text-accent)!important;
 }
 
@@ -166,6 +166,14 @@ div .text-primary  {
 
 .bg-accent-or-dark {
   background: var(--accent-or-dark);
+}
+
+.bg-primary-or-dark {
+  background: var(--primary-gr);
+}
+
+.dark-mode .bg-primary-or-dark {
+  background: var(--background-gr);
 }
 
 /*
@@ -457,4 +465,14 @@ table thead, table tbody tr {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.dark-mode .bg-info-popper {
+  border: solid 1px #777!important;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .3);
+}
+
+.light-mode .bg-info-popper {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .3);
+  border: solid 1px #aaa!important;
 }

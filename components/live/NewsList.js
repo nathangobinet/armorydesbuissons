@@ -1,25 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
-import { v4 as uuid } from 'uuid';
 import { useTranslation } from '../../helpers/i18n';
 
 import News from './News';
+import useFetch from '../../helpers/useFetch';
 
-function getRandomNews() {
-  return {
-    id: uuid(),
-    title: { fr: 'Ceci est une news', en: 'This is a news' },
-    date: new Date(),
-    content: {
-      fr: `${uuid()}Cette nouvelle est jutse complétement incroyable, elle est vraiment pertinente ! Cette nouvelle est jutse complétement incroyable, elle est vraiment pertinente !`,
-      en: 'This news is acutally very exciting and i\'m very proud to introduce it to you.',
-    },
-  };
-}
+import styles from '../../styles/Live.module.css';
 
 export default function NewsList() {
-  const [news] = useState([...Array(4)].map(() => getRandomNews()));
+  const news = useFetch('news', []);
   const [toggle, setToggle] = useState(false);
 
   const animation = {
@@ -56,7 +46,7 @@ export default function NewsList() {
             </button>
           )}
         </div>
-        <animated.div style={bigNews}>
+        <animated.div style={{ ...bigNews, zIndex: (toggle) ? 1 : 0 }} className={styles.bigNews}>
           <News news={news.find((n) => n.id === toggle)} setToggle={setToggle} fullWidth />
         </animated.div>
         <div>

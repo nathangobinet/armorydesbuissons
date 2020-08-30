@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from '../../helpers/i18n';
 import InfoCard from './InfoCard';
 import EVENTS from '../../helpers/liveEventList';
+import useFetch from '../../helpers/useFetch';
 
 function useSocket(socket) {
   const [playerNumber, setPlayerNumber] = useState(0);
@@ -36,6 +37,7 @@ function useSocket(socket) {
 }
 
 function InfoCards({ socket }) {
+  const result = useFetch('playerRanked', 0);
   const { playerNumber, uniquePlayerNumber, killNumber } = useSocket(socket);
   const { t } = useTranslation('common');
 
@@ -45,7 +47,7 @@ function InfoCards({ socket }) {
         <InfoCard bg="card-primary" icon="fa-skull" number={killNumber} description={t('live.infoCards.kills')} />
         <InfoCard bg="card-accent" icon="fa-users" number={playerNumber} description={t('live.infoCards.player')} />
         <InfoCard bg="card-primary" icon="fa-user-clock" number={uniquePlayerNumber} description={t('live.infoCards.unique')} />
-        <InfoCard bg="card-accent" icon="fa-medal" number={0} description={t('live.infoCards.ranked')} />
+        <InfoCard bg="card-accent" icon="fa-medal" number={result} description={t('live.infoCards.ranked')} />
       </div>
     </section>
   );

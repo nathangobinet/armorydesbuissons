@@ -6,8 +6,7 @@ function LastKill(props) {
     killer, killed, distance, weapon, date,
   } = props;
   const timestampDefault = Math.round((new Date() - new Date(date)) / 1000);
-  const [timeStamp, setTimeStamp] = useState(timestampDefault);
-
+  const [timeStamp, setTimeStamp] = useState(timestampDefault >= 0 ? timestampDefault : 0);
   useEffect(() => {
     const interval = setInterval(() => setTimeStamp((ts) => ts + 1), 1000);
     return () => {

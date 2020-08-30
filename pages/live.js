@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import io from 'socket.io-client';
 import Navbar from '../components/common/navbar/Navbar';
 import Footer from '../components/common/footer/Footer';

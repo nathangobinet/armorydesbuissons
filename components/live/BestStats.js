@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useTranslation } from '../../helpers/i18n';
 import Player from './Player';
+import useFetch from '../../helpers/useFetch';
 
 const PERIODS = {
   DAY: 'day',
   SEASON: 'season',
-  ALLTIME: 'alltime',
+  ALLTIME: 'all',
 };
 
 function StatCard({
@@ -31,14 +32,15 @@ function StatCard({
 export default function BestStats() {
   const { t } = useTranslation('common');
   const [period, setPeriod] = useState(PERIODS.DAY);
+  const result = useFetch('top', undefined, { period });
 
-  const killsCard = {
-    title: t('live.bestStats.topKills'), logo: 'fa-skull', player: <Player name="[SWAT] Louis" />, number: 1950, text: t('live.bestStats.kills'),
-  };
+  const killsCard = result ? {
+    title: t('live.bestStats.topKills'), logo: 'fa-skull', player: <Player name={result.kill.lastPseudo} id={result.kill.id} />, number: result.kill.nbKills, text: t('live.bestStats.kills'),
+  } : {};
 
-  const ratioCard = {
-    title: t('live.bestStats.topRatio'), logo: 'fa-percentage', player: <Player name="[SWAT] Louis" />, number: 3.5, text: t('live.bestStats.ratio'),
-  };
+  const ratioCard = result ? {
+    title: t('live.bestStats.topRatio'), logo: 'fa-percentage', player: <Player name={result.ratio.lastPseudo} id={result.ratio.id} />, number: result.ratio.ratio.toFixed(2), text: t('live.bestStats.ratio'),
+  } : {};
 
   return (
     <div className="col-xl-5 py-2">

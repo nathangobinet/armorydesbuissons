@@ -1,31 +1,44 @@
+/* eslint-disable no-param-reassign */
 import React, { useEffect, useRef, useState } from 'react';
 import { Chart } from 'chart.js';
 import { useTranslation } from '../../helpers/i18n';
 import { isDarkMode } from '../../helpers/theme';
 
 import styles from '../../styles/Live.module.css';
+import useFetch from '../../helpers/useFetch';
 
 const PERIODS = {
   DAY: 'day',
   SEASON: 'season',
 };
 
-function createGraph(graphRef, t) {
+function getHistoryData(period, history) {
+  const labels = (period === PERIODS.DAY)
+    ? history.players.map((p) => `${p.hour}h`)
+    : history.players.map((p) => (new Date(p.date)).toLocaleDateString());
+
+  const data1 = history.kills.map((k) => k.nbKills);
+  const data2 = history.players.map((p) => p.nbPlayers);
+  return { labels, data1, data2 };
+}
+
+function createGraph(graphRef, t, data) {
+  const { labels, data1, data2 } = data;
   const lineChartData = {
-    labels: ['02/04', '03/04', '04/04', '05/04', '06/04', '07/04', '08/04'],
+    labels,
     datasets: [{
       label: t('live.graph.kills'),
       borderColor: '#63BF60',
       backgroundColor: '#63BF60',
       fill: false,
-      data: [10, 5, 56, 12, 54, 10, 10],
+      data: data1,
       yAxisID: 'y-axis-1',
     }, {
       label: t('live.graph.players'),
       borderColor: '#F26E50',
       backgroundColor: '#F26E50',
       fill: false,
-      data: [21, 12, 21, 12, 21, 21, 54],
+      data: data2,
       yAxisID: 'y-axis-2',
     }],
   };
@@ -63,14 +76,31 @@ function createGraph(graphRef, t) {
   });
 }
 
+function updateChart(chart, data) {
+  const { labels, data1, data2 } = data;
+  chart.data.labels = labels;
+  chart.data.datasets[0].data = data1;
+  chart.data.datasets[1].data = data2;
+  chart.update();
+}
+
+let chart;
+
 export default function Graph() {
   const graphRef = useRef();
   const [period, setPeriod] = useState(PERIODS.DAY);
+  const history = useFetch('history', { players: [], kills: [] }, { period });
   const { t } = useTranslation('common');
 
   useEffect(() => {
-    createGraph(graphRef, t);
-  }, [t]);
+    chart = undefined;
+  }, []);
+
+  useEffect(() => {
+    const data = getHistoryData(period, history);
+    if (!chart) chart = createGraph(graphRef, t, data);
+    else updateChart(chart, data);
+  }, [history]);
 
   return (
     <div className="col-xl-7 py-2">

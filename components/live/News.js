@@ -1,4 +1,6 @@
+/* eslint-disable react/no-danger */
 import React, { useState } from 'react';
+import marked from 'marked';
 import { useTranslation, i18n } from '../../helpers/i18n';
 
 import styles from '../../styles/Live.module.css';
@@ -19,12 +21,12 @@ export default function News({ news, fullWidth, setToggle }) {
       }}
     >
       <div className="h-100 d-flex flex-column justify-content-between">
-        <div className="h-100">
-          <h5 className="text-accent">{news ? news.title[language] : ''}</h5>
-          <p className={styles.truncateNews}>{news ? news.content[language] : ''}</p>
+        <div className="h-100" style={{ overflow: (fullWidth) ? 'auto' : 'hidden' }}>
+          <h5 className="text-accent">{news ? news.content[language].title : ''}</h5>
+          <p dangerouslySetInnerHTML={{ __html: news ? marked(news.content[language].text) : '' }} className={(!fullWidth) ? styles.truncateNews : ''} />
         </div>
         <div className="d-flex align-items-center justify-content-between">
-          <small className="text-muted">{news ? news.date.toLocaleDateString() : ''}</small>
+          <small className="text-muted">{news ? (new Date(news.date)).toLocaleDateString() : ''}</small>
           {!fullWidth && (
             <button
               type="button"

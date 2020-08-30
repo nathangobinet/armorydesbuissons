@@ -1,15 +1,24 @@
 import React, { useState } from 'react';
-import { v4 as uuid } from 'uuid';
 
 import { useTranslation } from '../../helpers/i18n';
 
 import Table from './Table';
 import TableInput from './TableInput';
 import Player from './Player';
+import useFetch from '../../helpers/useFetch';
 
 export default function Ranking() {
   const { t } = useTranslation('common');
   const [filter, setFilter] = useState('');
+  const players = useFetch('rank', [], { name: filter });
+
+  const rows = players.map((p) => ({
+    key: p.id,
+    data: [
+      p.rank, <Player name={p.lastPseudo} id={p.id} />,
+      p.division, p.score, (p.top * 100).toFixed(2),
+    ],
+  }));
 
   const headers = [
     { text: t('live.ranking.headers.rank'), size: 2 },
@@ -18,29 +27,6 @@ export default function Ranking() {
     { text: t('live.ranking.headers.score'), size: 2 },
     { text: t('live.ranking.headers.top'), size: 2 },
   ];
-
-  /**
-   * Random gen
-   */
-
-  const getRandomElement = (array) => array[Math.floor(Math.random() * array.length)];
-  const names = [
-    <Player name="[SWAT] Louis" />,
-    <Player name=">-----»Matsuki«-----<" />,
-    <Player name="Backary Baradji" />,
-    <Player name="Johann Mallet" />,
-    <Player name="kkonperson" />,
-    <Player name="Jules Jerne" />,
-    <Player name="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" />,
-  ];
-
-  const rows = [...Array(8)]
-    .map((e, i) => ({ key: uuid(), data: [i, getRandomElement(names), 'TOP10', '25', '0.1%'] }))
-    .filter((row) => row.data[1].props.name.includes(filter));
-
-  /**
-   * Random gen
-  */
 
   return (
     <div className="col-xl-7 py-2">

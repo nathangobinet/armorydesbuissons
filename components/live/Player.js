@@ -47,22 +47,22 @@ function hide(event) {
   }
 }
 
-function displayPopper(playerRef, name) {
+function displayPopper(playerRef, id, name) {
   if (playerState.displayed) doNotHide = true;
-  playerState.setPlayerData({ name });
+  playerState.setPlayerData({ name, id });
   playerState.setDisplayed(true);
   document.addEventListener('click', hide);
   create(playerRef.current);
 }
 
-export default function Player({ name }) {
+export default function Player({ id, name }) {
   const playerRef = useRef();
   return (
     <button
       ref={playerRef}
       type="button"
       className={styles.playerButton}
-      onClick={() => displayPopper(playerRef, name)}
+      onClick={() => displayPopper(playerRef, id, name)}
     >
       {name}
     </button>

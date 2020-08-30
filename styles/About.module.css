@@ -1,0 +1,70 @@
+.round-primary {
+  background: var(--primary-gr);
+  font-size: 32px;
+  width: 4.5rem;
+  height: 4.5rem;
+  color: white;
+  display: flex!important;
+  justify-content: center!important;
+  align-items: center!important;
+  border-radius: 50%!important;
+  
+}
+
+.round-primary.bigger {
+  width: 7rem;
+  height: 7rem;
+  font-size: 42px;
+}
+
+.round-primary.big {
+  width: 8rem;
+  height: 8rem;
+  font-size: 70px;
+}
+
+.chevron {
+  background: var(--accent);
+  width: 4.5rem;
+  height: 4.5rem;
+  color: var(--white-text)!important;
+  font-size: 32px;
+  display: flex!important;
+  justify-content: center!important;
+  align-items: center!important;
+  border-radius: 50%!important;
+}
+
+.chevron:hover {
+  background: var(--darker-accent);
+}
+
+.chevron:focus {
+  box-shadow: 0 0 0 0.2rem var(--darker-accent)
+}
+
+.key-bigger {
+  font-size: 20px;
+  padding: .2rem .5rem .1rem .5rem;
+  font-weight: 600;
+  margin-right: 1rem;
+}
+
+.shortcuts-table  {
+  margin-right: auto;
+  margin-left: auto;
+  min-width: 0px;
+  max-width: 800px;
+}
+
+.shortcuts-table tr {
+  border-top: 1px solid #929292;
+}
+
+.shortcuts-table tr:last-child {
+ border-bottom: 1px solid #929292;
+}
+
+.shortcuts-table td {
+ margin: 1rem 0rem;
+}
