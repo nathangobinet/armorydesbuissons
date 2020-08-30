@@ -35,7 +35,7 @@ function Ranking() {
                 </div>
               </div>
               <div className="align-self-center m-0">
-                <a className={`${styles['fp-caret-down']} opacity-interaction`} href="#attack-defense" alt="Next section">
+                <a className={`${styles['fp-caret-down']} opacity-interaction`} href="#quests" alt="Next section">
                   <i className={`fa fa-caret-down ${styles.pulse}`} />
                 </a>
               </div>

@@ -177,6 +177,11 @@ export default function Rank() {
           <p>{t('about.rank.reset.p1')}</p>
           <p>{t('about.rank.reset.p2')}</p>
         </Info>
+        <Info icon="fa-filter" title={t('about.rank.filter.title')}>
+          <p>
+            {t('about.rank.filter.p1')}
+          </p>
+        </Info>
       </div>
     </section>
   );

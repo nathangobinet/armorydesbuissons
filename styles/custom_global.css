@@ -10,7 +10,7 @@
   --white-text: #FFFFFF;
   --text-color-button: white;
   --accent-gr: linear-gradient(222.25deg, #F26E50 18.73%, #E86F8C 80.5%);
-  --primary-gr: linear-gradient(76.7deg, #00AC3A -0.93%, #2DD667 95.35%, #2DD667 95.35%);
+  --primary-gr: linear-gradient(76.7deg, #01AD84 -0.93%, #00CB44 95.35%);
 }
 
 .light-mode {

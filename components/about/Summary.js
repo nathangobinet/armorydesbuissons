@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Link from 'next/link';
+import { useTranslation } from '../../helpers/i18n';
 
 import screenLogo from '../../public/svgs/screen-logo.svg';
 
 export default function Summary() {
+  const { t } = useTranslation('common');
   return (
     <section id="summary" className="container py-5">
       <div className="row py-4">
@@ -14,12 +16,12 @@ export default function Summary() {
             <div className="text-center">
               <a className="btn btn-accent mr-2 my-1" href="steam://run/107410//-connect=164.132.203.207%20-port=2302">
                 <i className="fas fa-gamepad mr-1" />
-                Connect
+                {t('about.summary.btnConnect')}
               </a>
               <Link href="/#tp-into-fight">
                 <a className="btn btn-primary my-1">
                   <i className="fas fa-star mr-1" />
-                  All the features
+                  {t('about.summary.btnFeatures')}
                 </a>
               </Link>
             </div>
@@ -27,15 +29,15 @@ export default function Summary() {
         </div>
         <div className="col-md-6 d-flex">
           <div>
-            <h1 className="text-center text-md-left">About our Arma 3 server</h1>
-            <p>This section invites you to:</p>
+            <h1 className="text-center text-md-left">{t('about.summary.title')}</h1>
+            <p>{t('about.summary.p1')}</p>
             <ol>
-              <a href="#rules"><li>Know the rules</li></a>
-              <a href="#team"><li>Meet our team</li></a>
-              <a href="#contact"><li>Contact us</li></a>
-              <a href="#rank"><li>Understand the ranking system</li></a>
-              <a href="#vip"><li>Help us finance the server</li></a>
-              <a href="#shortcuts"><li>Know all the shortcuts</li></a>
+              <a href="#rules"><li>{t('about.rules.title')}</li></a>
+              <a href="#team"><li>{t('about.team.title')}</li></a>
+              <a href="#contact"><li>{t('about.contact.title')}</li></a>
+              <a href="#rank"><li>{t('about.rank.title')}</li></a>
+              <a href="#vip"><li>{t('about.vip.title')}</li></a>
+              <a href="#shortcuts"><li>{t('about.shortcut.title')}</li></a>
             </ol>
           </div>
         </div>

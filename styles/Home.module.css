@@ -56,3 +56,10 @@
   top: 60%;
   transform: translateY(-60%);
 }
+
+.round-accent {
+  width: 90px;
+  height: 90px;
+  background: var(--accent-gr);
+  border-radius: 50%;
+}

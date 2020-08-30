@@ -10,6 +10,7 @@ import Versus from '../components/home/Versus';
 import Ranking from '../components/home/Ranking';
 import AtackDefense from '../components/home/AtackDefense';
 import More from '../components/home/More';
+import Quests from '../components/home/Quests';
 
 function Home() {
   return (
@@ -21,6 +22,7 @@ function Home() {
       <ChooseYourGameplay />
       <Versus />
       <Ranking />
+      <Quests />
       <AtackDefense />
       <More />
       <Footer />
