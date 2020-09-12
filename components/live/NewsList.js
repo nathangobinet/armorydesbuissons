@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
-import { useTranslation } from '../../helpers/i18n';
+import useTranslation from 'next-translate/useTranslation';
 
 import News from './News';
 import useFetch from '../../helpers/useFetch';

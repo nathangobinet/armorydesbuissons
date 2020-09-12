@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from '../../helpers/i18n';
+import useTranslation from 'next-translate/useTranslation';
 
 import transparentShape1 from '../../public/svgs/shapes/transparentshape1.svg';
 import transparentShape2 from '../../public/svgs/shapes/transparentshape2.svg';

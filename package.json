@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next-translate && next dev",
+    "build": "next-translate && next build",
     "start": "next start"
   },
   "dependencies": {
@@ -19,6 +19,7 @@
     "next": "^9.5.2",
     "next-i18next": "^6.0.2",
     "next-optimized-images": "^2.6.2",
+    "next-translate": "^0.17.2",
     "next-videos": "^1.2.0",
     "node-sass": "^4.14.1",
     "react": "16.13.1",

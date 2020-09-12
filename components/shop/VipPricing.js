@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useTranslation } from '../../helpers/i18n';
+import useTranslation from 'next-translate/useTranslation';
 import PaymentModal from './PaymentModal';
 
 import styles from '../../styles/Shop.module.css';

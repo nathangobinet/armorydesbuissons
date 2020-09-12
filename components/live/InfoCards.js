@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useTranslation } from '../../helpers/i18n';
+import useTranslation from 'next-translate/useTranslation';
 import InfoCard from './InfoCard';
 import EVENTS from '../../helpers/liveEventList';
 import useFetch from '../../helpers/useFetch';

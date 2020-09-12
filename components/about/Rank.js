@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTransition, animated } from 'react-spring';
-import { useTranslation } from '../../helpers/i18n';
+import useTranslation from 'next-translate/useTranslation';
 
 import rankTop10 from '../../public/images/ranks/rank_top10.png';
 import rankDiamond from '../../public/images/ranks/rank_diamond.png';

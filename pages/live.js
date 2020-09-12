@@ -1,38 +1,33 @@
-import React, { useEffect } from 'react';
-import io from 'socket.io-client';
-import Navbar from '../components/common/navbar/Navbar';
-import Footer from '../components/common/footer/Footer';
+// @ts-nocheck
+import I18nProvider from 'next-translate/I18nProvider'
+import React from 'react'
+import C from '../pages_/live'
+import ns0 from '../public/locales/en/common.json'
 
-import InfoCards from '../components/live/InfoCards';
-import LiveInfo from '../components/live/LiveInfo';
-import NewsGraphs from '../components/live/NewsGraphs';
-import RankingChampions from '../components/live/RankingChampions';
-import Statistics from '../components/live/Statistics';
-import { PlayerPopper } from '../components/live/PlayerPopper';
+const namespaces = { 'common': ns0 }
 
-function Live() {
-  const socket = io('ws://localhost:3005');
-
-  useEffect(() => () => { socket.close(); });
-
+export default function Page(p){
   return (
-    <div>
-      <Navbar />
-      <div className="container-fluid p-4">
-        <InfoCards socket={socket} />
-        <LiveInfo socket={socket} />
-        <NewsGraphs />
-        <RankingChampions />
-        <Statistics />
-      </div>
-      <PlayerPopper />
-      <Footer />
-    </div>
-  );
+    <I18nProvider 
+      lang="en" 
+      namespaces={namespaces}  
+      internals={{"defaultLanguage":"en","isStaticMode":true}}
+    >
+      <C {...p} />
+    </I18nProvider>
+  )
 }
 
-Live.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
-});
+Page = Object.assign(Page, { ...C })
 
-export default Live;
+if(C && C.getInitialProps) {
+  Page.getInitialProps = ctx => C.getInitialProps({ ...ctx, lang: 'en'})
+}
+
+
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Link from 'next/link';
-import { useTranslation } from '../../../helpers/i18n';
+import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../../../styles/Footer.module.css';
 import logo from '../../../public/svgs/nav/logo-white.svg';

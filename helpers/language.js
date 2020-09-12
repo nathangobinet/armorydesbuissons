@@ -1,15 +1,9 @@
-import { i18n } from './i18n';
-
-export function storeLanguage(language) {
-  localStorage.setItem('i18n', language);
-}
+import clientSideLang from 'next-translate/clientSideLang';
 
 export function setLanguage(language) {
-  i18n.changeLanguage(language);
-  storeLanguage(language);
+
 }
 
 export function getLanguage() {
-  const storedLanguage = localStorage.getItem('i18n');
-  return storedLanguage;
+  return clientSideLang();
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from '../../helpers/i18n';
+import useTranslation from 'next-translate/useTranslation';
 
 import hector from '../../public/images/team/avatar-hector.jpg';
 import jpat from '../../public/images/team/avatar-jpat.jpg';

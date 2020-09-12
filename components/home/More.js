@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from '../../helpers/i18n';
+import useTranslation from 'next-translate/useTranslation';
 import styles from '../../styles/Home.module.css';
 
 import sandox from '../../public/svgs/icons/sandbox.svg';

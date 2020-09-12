@@ -12,7 +12,7 @@ import { handleScroll, handleToggle } from './toggleNav';
 import logo from '../../../public/svgs/nav/logo-white.svg';
 import englishFlag from '../../../public/svgs/nav/usa.svg';
 import frenchFlag from '../../../public/svgs/nav/fr.svg';
-import { useTranslation } from '../../../helpers/i18n';
+import useTranslation from 'next-translate/useTranslation';
 import { toogleUserPopper, UserTooltip } from './UserTooltip';
 
 const icons = [

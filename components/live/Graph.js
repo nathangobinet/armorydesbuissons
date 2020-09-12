@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import React, { useEffect, useRef, useState } from 'react';
 import { Chart } from 'chart.js';
-import { useTranslation } from '../../helpers/i18n';
+import useTranslation from 'next-translate/useTranslation';
 import { isDarkMode } from '../../helpers/theme';
 
 import styles from '../../styles/Live.module.css';

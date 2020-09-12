@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from '../../helpers/i18n';
+import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../../styles/Shop.module.css';
 import shape3 from '../../public/svgs/shapes/shape3.svg';

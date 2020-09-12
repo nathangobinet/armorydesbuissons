@@ -1,37 +1,33 @@
-import React from 'react';
-import Navbar from '../components/common/navbar/Navbar';
-import Footer from '../components/common/footer/Footer';
+// @ts-nocheck
+import I18nProvider from 'next-translate/I18nProvider'
+import React from 'react'
+import C from '../pages_'
+import ns0 from '../public/locales/en/common.json'
 
-import VideoBackground from '../components/home/VideoBackground';
-import Features from '../components/home/Features';
-import TpIntoFight from '../components/home/TpIntoFight';
-import ChooseYourGameplay from '../components/home/ChooseYourGameplay';
-import Versus from '../components/home/Versus';
-import Ranking from '../components/home/Ranking';
-import AtackDefense from '../components/home/AtackDefense';
-import More from '../components/home/More';
-import Quests from '../components/home/Quests';
+const namespaces = { 'common': ns0 }
 
-function Home() {
+export default function Page(p){
   return (
-    <div className="h-100">
-      <Navbar transparent />
-      <VideoBackground />
-      <Features />
-      <TpIntoFight />
-      <ChooseYourGameplay />
-      <Versus />
-      <Ranking />
-      <Quests />
-      <AtackDefense />
-      <More />
-      <Footer />
-    </div>
-  );
+    <I18nProvider 
+      lang="en" 
+      namespaces={namespaces}  
+      internals={{"defaultLanguage":"en","isStaticMode":true}}
+    >
+      <C {...p} />
+    </I18nProvider>
+  )
 }
 
-Home.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
-});
+Page = Object.assign(Page, { ...C })
 
-export default Home;
+if(C && C.getInitialProps) {
+  Page.getInitialProps = ctx => C.getInitialProps({ ...ctx, lang: 'en'})
+}
+
+
+
+
+
+
+
+

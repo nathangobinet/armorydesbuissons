@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from '../../helpers/i18n';
+import useTranslation from 'next-translate/useTranslation';
 
 import ac from '../../public/svgs/icons/ac.svg';
 import quest from '../../public/svgs/icons/quest.svg';

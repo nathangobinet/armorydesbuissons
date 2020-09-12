@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { useTranslation } from '../../helpers/i18n';
+import useTranslation from 'next-translate/useTranslation';
 
 import Table from './Table';
 import TableInput from './TableInput';

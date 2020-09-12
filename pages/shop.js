@@ -1,26 +1,33 @@
-import React from 'react';
-import Navbar from '../components/common/navbar/Navbar';
-import Footer from '../components/common/footer/Footer';
-import Description from '../components/shop/Description';
-import VipPricing from '../components/shop/VipPricing';
-import OtherDonation from '../components/shop/OtherDonation';
-import AvailableSkin from '../components/shop/AvailableSkins';
-import ShopPricing from '../components/shop/ShopPricing';
+// @ts-nocheck
+import I18nProvider from 'next-translate/I18nProvider'
+import React from 'react'
+import C from '../pages_/shop'
+import ns0 from '../public/locales/en/common.json'
 
-export default function Shop() {
+const namespaces = { 'common': ns0 }
+
+export default function Page(p){
   return (
-    <div>
-      <Navbar />
-      <VipPricing />
-      <ShopPricing />
-      <Description />
-      <OtherDonation />
-      <AvailableSkin />
-      <Footer />
-    </div>
-  );
+    <I18nProvider 
+      lang="en" 
+      namespaces={namespaces}  
+      internals={{"defaultLanguage":"en","isStaticMode":true}}
+    >
+      <C {...p} />
+    </I18nProvider>
+  )
 }
 
-Shop.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
-});
+Page = Object.assign(Page, { ...C })
+
+if(C && C.getInitialProps) {
+  Page.getInitialProps = ctx => C.getInitialProps({ ...ctx, lang: 'en'})
+}
+
+
+
+
+
+
+
+

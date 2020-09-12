@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTransition, animated } from 'react-spring';
-import { useTranslation } from '../../helpers/i18n';
+import useTranslation from 'next-translate/useTranslation';
 import { isDarkMode } from '../../helpers/theme';
 
 import LastKill from './LastKill';
