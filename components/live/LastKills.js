@@ -28,9 +28,8 @@ function useSocket(socket) {
   const [, updateState] = useState();
 
   useEffect(() => {
-    document.addEventListener('visibilitychange', () => {
-      updateState({});
-    });
+    const onVisiChange = () => { updateState({}); };
+    document.addEventListener('visibilitychange', onVisiChange);
 
     socket.on(EVENTS.KILL_ADDED, (_players, _lastKills) => {
       setLastKills(_lastKills);
@@ -39,6 +38,8 @@ function useSocket(socket) {
     socket.on(EVENTS.INITIED, (initInfo) => {
       setLastKills(initInfo.lastKills);
     });
+
+    return () => { document.removeEventListener('visibilitychange', onVisiChange); };
   }, []);
 
   return lastKills;

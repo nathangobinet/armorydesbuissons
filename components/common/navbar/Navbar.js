@@ -13,6 +13,7 @@ import logo from '../../../public/svgs/nav/logo-white.svg';
 import englishFlag from '../../../public/svgs/nav/usa.svg';
 import frenchFlag from '../../../public/svgs/nav/fr.svg';
 import { useTranslation } from '../../../helpers/i18n';
+import { toogleUserPopper, UserTooltip } from './UserTooltip';
 
 const icons = [
   {
@@ -55,6 +56,8 @@ const icons = [
     type: 'fa',
     label: 'User',
     class: 'fa-user',
+    id: 'nav-user-button',
+    func: () => toogleUserPopper('nav-user-button'),
   },
 ];
 
@@ -72,9 +75,8 @@ function Navbar({ transparent }) {
         id="navbar"
         expand="lg"
         fixed="top"
-        className="p-0"
-        style={{ backgroundColor: (transparent) ? 'transparent' : '#2B2B2B' }}
-        onToggle={(isToggle) => handleToggle(isToggle, navRef.current)}
+        style={{ padding: 0, backgroundColor: (transparent) ? 'transparent' : '#2B2B2B' }}
+        onToggle={(isToggle) => handleToggle(isToggle, navRef.current, transparent)}
       >
         <Container fluid="lg">
           <Link href="/">
@@ -85,7 +87,7 @@ function Navbar({ transparent }) {
             </a>
           </Link>
           <BootstrapNavBar.Toggle aria-controls="basic-navbar-nav" className="nav-py px-4 opacity-interaction">
-            <i style={{ lineHeight: 1.1 }} className="fa fa-bars text-white" />
+            <i style={{ lineHeight: 1.4 }} className="fa fa-bars text-white" />
           </BootstrapNavBar.Toggle>
           <BootstrapNavBar.Collapse id="basic-navbar-nav" className="nav-header">
             <div className="text-center text-lg-left p-0 m-auto">
@@ -105,9 +107,9 @@ function Navbar({ transparent }) {
                     {t('pages.about')}
                   </a>
                 </Link>
-                <Link href="/vip">
-                  <a className={`nav-py nav-menu nav-item nav-link ${router.pathname === '/vip' ? 'active' : ''}`}>
-                    {t('pages.vip')}
+                <Link href="/shop">
+                  <a className={`nav-py nav-menu nav-item nav-link ${router.pathname === '/shop' ? 'active' : ''}`}>
+                    {t('pages.shop')}
                   </a>
                 </Link>
               </Nav>
@@ -120,6 +122,7 @@ function Navbar({ transparent }) {
           </BootstrapNavBar.Collapse>
         </Container>
       </BootstrapNavBar>
+      <UserTooltip />
       { !transparent && <div className="nav-offset" /> }
     </div>
   );

@@ -26,8 +26,8 @@ function Table({ id, headers, rows }) {
   );
 
   return (
-    <div className="table-container">
-      <table className={`table ${styles['dynamic-table']}`}>
+    <div className={styles['table-container']}>
+      <table className={`table ${styles['live-table']} ${styles['dynamic-table']}`}>
         <thead>
           <tr className="d-flex w-100 hide-overflow">
             {headers.map((header) => (

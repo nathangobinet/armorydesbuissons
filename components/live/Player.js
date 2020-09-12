@@ -35,8 +35,9 @@ function destroy() {
 }
 
 function hide(event) {
-  const tooltip = document.querySelector('#player-info-popper');
-  if (!event.path.includes(tooltip)) {
+  const tooltip = document.getElementById('player-info-popper');
+  const path = event.path || (event.composedPath && event.composedPath());
+  if (!path.includes(tooltip)) {
     if (!doNotHide) {
       document.removeEventListener('click', hide);
       playerState.setDisplayed(false);

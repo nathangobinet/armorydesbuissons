@@ -19,7 +19,7 @@ export default function Shortcuts() {
   return (
     <section id="shortcuts" className="container py-5">
       <div className="text-center py-5"><h1 className="text-accent">{t('about.shortcut.title')}</h1></div>
-      <table className={`${styles['shortcuts-table']} mb-4`}>
+      <table className={`table ${styles['shortcuts-table']} mb-4`}>
         <tbody>
           <Shortcut shortcut="Y" description={t('about.shortcut.shortcuts.y')} />
           <Shortcut shortcut="F" description={t('about.shortcut.shortcuts.f')} />

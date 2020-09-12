@@ -8,8 +8,8 @@ function displayNav(currentScrollPos, prevScrollpos) {
   return currentScrollPos;
 }
 
-function setNavBackground(currentScrollPos) {
-  if (currentScrollPos < 200) {
+function setNavBackground(currentScrollPos, shouldHandle) {
+  if (currentScrollPos < 200 && shouldHandle) {
     document.getElementById('navbar').style.backgroundColor = 'transparent';
   } else {
     document.getElementById('navbar').style.backgroundColor = '#2B2B2B';
@@ -22,7 +22,7 @@ export function handleScroll(shouldHandle) {
 
     window.onscroll = () => {
       const currentScrollPos = window.pageYOffset;
-      setNavBackground(currentScrollPos);
+      setNavBackground(currentScrollPos, shouldHandle);
       prevScrollpos = displayNav(currentScrollPos, prevScrollpos);
     };
   } else {
@@ -30,10 +30,11 @@ export function handleScroll(shouldHandle) {
   }
 }
 
-export function handleToggle(isToggle, navRef) {
+export function handleToggle(isToggle, navRef, shouldHandle) {
   if (isToggle) {
     navRef.style.backgroundColor = '#2B2B2B';
   } else {
-    navRef.style.backgroundColor = 'transparent';
+    const currentScrollPos = window.pageYOffset;
+    setNavBackground(currentScrollPos, shouldHandle);
   }
 }

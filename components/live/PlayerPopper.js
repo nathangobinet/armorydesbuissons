@@ -14,7 +14,7 @@ const playerState = {
 function PlayerPopper() {
   const [displayed, setDisplayed] = useState(false);
   const [playerData, setPlayerData] = useState({});
-  const playerResume = useFetch('playerResume', undefined, { id: playerData.id });
+  const playerResume = useFetch('/api/playerResume', undefined, { id: playerData.id });
 
   const { t } = useTranslation('common');
 

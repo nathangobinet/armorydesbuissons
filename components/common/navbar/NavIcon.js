@@ -33,8 +33,13 @@ function NavIcon({ icon, subIcons = null }) {
         <button
           type="button"
           aria-label={icon.label}
+          id={icon.id}
           className="nav-item nav-link opacity-interaction px-2 button-nav"
-          onClick={() => setHiden(!isHiden)}
+          onClick={
+            (icon.subs !== undefined)
+              ? () => setHiden(!isHiden)
+              : icon.func
+          }
         >
           {displayImgOrIcon(icon)}
         </button>

@@ -60,6 +60,7 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
+  word-break: break-word;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -87,6 +88,10 @@ pre {
   border-radius:.4rem;
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+
+table {
+  color: var(--text-color)!important;
 }
 
 .dark-mode pre {
@@ -200,13 +205,13 @@ div .text-primary  {
   padding-bottom: 7px!important;
 }
 
-@media (min-width: 992px) { 
+@media (min-width: 991px) { 
   .nav-link.active {
       box-shadow: inset 0px -4px 0px 0px white;
   }
 }
 
-@media (max-width: 992px) { 
+@media (max-width: 991px) { 
   .nav-link.active {
       box-shadow: inset 5px 0px 0px 0px white;
   }
@@ -254,7 +259,7 @@ div .text-primary  {
 }
 
 .nav-offset {
-  height: 66px;
+  height: 65.38px;
 }
 
 .nav-header {
@@ -284,6 +289,44 @@ div .text-primary  {
   outline: 0;
 }
 
+#nav-user-tooltip{
+  z-index: 2;
+  transition: opacity .3s;
+}
+
+@media (max-width: 991px) { 
+  #nav-user-tooltip {
+      width: 100%;
+      padding-left: 1.5rem!important;
+      padding-right: 1.5rem!important;
+  }    
+}
+
+@media (min-width: 991px) { 
+  #nav-user-tooltip {
+      width: 300px;
+  }    
+}
+
+#nav-user-tooltip div {
+  color: var(--white-text)!important;
+  background: #2B2B2B!important;
+}
+
+#arrow,
+#arrow::before {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  z-index: -1;
+}
+
+#arrow::before {
+  content: '';
+  top: -4px;
+  transform: rotate(45deg);
+  background-color: #2B2B2B!important;
+}
 
 /* Cards */
 
@@ -388,41 +431,7 @@ div .text-primary  {
   outline: none!important;
 }
 
- /* Table */
 
-table {
-  color: var(--text-color)!important;
-  min-width: 600px;
-}
-
-.table-container {
-  height: 380px;
-  overflow-x: auto; 
-  overflow-y: hidden; 
-}
-
-table {
-  display: flex;
-  flex-flow: column;
-  height: 100%;
-  width: 100%;
-}
-
-table thead {
-  flex: 0 0 auto;
-  width: calc(100% - 0.9em);
-}
-table tbody {
-  flex: 1 1 auto;
-  display: block;
-}
-table tbody tr {
-  width: 100%;
-}
-table thead, table tbody tr {
-  display: table;
-  table-layout: fixed;
-}
 
 /* Nav */
 
@@ -475,4 +484,11 @@ table thead, table tbody tr {
 .light-mode .bg-info-popper {
   box-shadow: 0 0 1rem rgba(0, 0, 0, .3);
   border: solid 1px #aaa!important;
+}
+
+.modal-content {
+  border-radius: .8rem!important;
+  background: var(--background-card)!important;
+  padding: 1.5rem!important;
+  border: none!important;
 }

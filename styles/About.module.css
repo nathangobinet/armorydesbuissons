@@ -57,14 +57,10 @@
   max-width: 800px;
 }
 
-.shortcuts-table tr {
-  border-top: 1px solid #929292;
+.shortcuts-table th, .shortcuts-table td {
+  border-top: 1px solid #929292!important;
 }
 
 .shortcuts-table tr:last-child {
  border-bottom: 1px solid #929292;
-}
-
-.shortcuts-table td {
- margin: 1rem 0rem;
 }

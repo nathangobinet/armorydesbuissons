@@ -37,7 +37,7 @@ function useSocket(socket) {
 }
 
 function InfoCards({ socket }) {
-  const result = useFetch('playerRanked', 0);
+  const result = useFetch('/api/playerRanked', 0);
   const { playerNumber, uniquePlayerNumber, killNumber } = useSocket(socket);
   const { t } = useTranslation('common');
 

@@ -25,9 +25,8 @@ function useSocket(socket) {
   const [, updateState] = useState();
 
   useEffect(() => {
-    document.addEventListener('visibilitychange', () => {
-      updateState({});
-    });
+    const onVisiChange = () => { updateState({}); };
+    document.addEventListener('visibilitychange', onVisiChange);
 
     socket.on(EVENTS.INITIED, (initInfo) => {
       setPlayers(initInfo.players);
@@ -44,6 +43,8 @@ function useSocket(socket) {
     socket.on(EVENTS.PLAYER_REMOVED, (_players) => {
       setPlayers(_players);
     });
+
+    return () => { document.removeEventListener('visibilitychange', onVisiChange); };
   }, []);
 
   return players;

@@ -17,7 +17,7 @@ export default function Statistic() {
   const [period, setPeriod] = useState(PERIODS.DAY);
   const [filter, setFilter] = useState('');
 
-  const players = useFetch('stats', [], { name: filter, period });
+  const players = useFetch('/api/stats', [], { name: filter, period });
 
   const rows = players.map((p) => ({
     key: p.id,

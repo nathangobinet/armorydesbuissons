@@ -29,7 +29,7 @@ function Champion({ season, player, rank }) {
 }
 
 export default function Champions() {
-  const champions = useFetch('champions', []);
+  const champions = useFetch('/api/champions', []);
 
   const { t } = useTranslation('common');
 

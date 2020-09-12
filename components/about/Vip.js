@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 
+import Link from 'next/link';
 import { useTranslation } from '../../helpers/i18n';
 
 import transparentShape1 from '../../public/svgs/shapes/transparentshape1.svg';
@@ -30,11 +32,13 @@ export default function Vip() {
                     <p className="mb-4">
                       {t('about.vip.p2')}
                     </p>
-                    <a href="vip.html" className="btn btn-primary px-5">
-                      <i className="fas fa-external-link-alt mr-2" />
-                      {' '}
-                      {t('about.vip.btn')}
-                    </a>
+                    <Link href="/shop">
+                      <a className="btn btn-primary px-5">
+                        <i className="fas fa-external-link-alt mr-2" />
+                        {' '}
+                        {t('about.vip.btn')}
+                      </a>
+                    </Link>
                   </div>
                 </div>
               </div>

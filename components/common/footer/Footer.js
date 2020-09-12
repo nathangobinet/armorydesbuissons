@@ -10,20 +10,20 @@ function Footer() {
   const { t } = useTranslation('common');
   return (
     <footer className={styles.footer}>
-      <div className="container" style={{ maxWidth: '410px' }}>
+      <div className="container" style={{ maxWidth: '500px' }}>
         <div className="row py-5">
           <div className="col-12">
-            <div className="px-3 d-flex justify-content-between">
+            <div className="px-3 d-flex flex-column flex-sm-row align-items-center justify-content-between">
               <Link href="/"><a>{t('pages.home')}</a></Link>
               <Link href="/live"><a>{t('pages.live')}</a></Link>
               <Link href="/about"><a>{t('pages.about')}</a></Link>
-              <Link href="/vip"><a>{t('pages.vip')}</a></Link>
+              <Link href="/shop"><a>{t('pages.shop')}</a></Link>
             </div>
           </div>
         </div>
         <div className="row py-4">
           <div className="col-12">
-            <img className="d-block mx-auto" src={logo} width="300px" alt="Armory des buissons logo" />
+            <img className="d-block mx-auto img-fluid" src={logo} width="350px" alt="Armory des buissons logo" />
           </div>
         </div>
         <div className="row py-5">

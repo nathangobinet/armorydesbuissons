@@ -31,6 +31,39 @@
   }
 }
 
+.live-table {
+  min-width: 600px;
+}
+
+.table-container {
+  height: 380px;
+  overflow-x: auto; 
+  overflow-y: hidden; 
+}
+
+.live-table {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  width: 100%;
+}
+
+.live-table thead {
+  flex: 0 0 auto;
+  width: calc(100% - 0.9em);
+}
+.live-table tbody {
+  flex: 1 1 auto;
+  display: block;
+}
+.live-table tbody tr {
+  width: 100%;
+}
+.live-table thead, .live-table tbody tr {
+  display: table;
+  table-layout: fixed;
+}
+
 .dynamic-table {
   overflow-y: auto;
 }
@@ -43,6 +76,9 @@
 .dynamic-table tr {
   position: absolute;
 }
+
+
+
 
 .truncateNews {
   height: 80px;

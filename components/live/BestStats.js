@@ -32,15 +32,19 @@ function StatCard({
 export default function BestStats() {
   const { t } = useTranslation('common');
   const [period, setPeriod] = useState(PERIODS.DAY);
-  const result = useFetch('top', undefined, { period });
+  const result = useFetch('/api/top', undefined, { period });
 
-  const killsCard = result ? {
+  const killsCard = (result && result.kill) ? {
     title: t('live.bestStats.topKills'), logo: 'fa-skull', player: <Player name={result.kill.lastPseudo} id={result.kill.id} />, number: result.kill.nbKills, text: t('live.bestStats.kills'),
-  } : {};
+  } : {
+    title: t('live.bestStats.topKills'), logo: 'fa-skull', player: 'N/A', number: 'N/A', text: t('live.bestStats.kills'),
+  };
 
-  const ratioCard = result ? {
+  const ratioCard = (result && result.ratio) ? {
     title: t('live.bestStats.topRatio'), logo: 'fa-percentage', player: <Player name={result.ratio.lastPseudo} id={result.ratio.id} />, number: result.ratio.ratio.toFixed(2), text: t('live.bestStats.ratio'),
-  } : {};
+  } : {
+    title: t('live.bestStats.topRatio'), logo: 'fa-percentage', player: 'N/A', number: 'N/A', text: t('live.bestStats.ratio'),
+  };
 
   return (
     <div className="col-xl-5 py-2">

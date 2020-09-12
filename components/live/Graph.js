@@ -89,7 +89,7 @@ let chart;
 export default function Graph() {
   const graphRef = useRef();
   const [period, setPeriod] = useState(PERIODS.DAY);
-  const history = useFetch('history', { players: [], kills: [] }, { period });
+  const history = useFetch('/api/history', { players: [], kills: [] }, { period });
   const { t } = useTranslation('common');
 
   useEffect(() => {
@@ -105,9 +105,9 @@ export default function Graph() {
   return (
     <div className="col-xl-7 py-2">
       <div className="card shadow h-100">
-        <div className="d-flex align-items-center justify-content-between mb-4">
+        <div className="d-flex flex-column flex-sm-row align-items-center justify-content-between mb-4">
           <h4 className="text-accent mb-0">{t('live.graph.title')}</h4>
-          <div className="nav-pills pills-accent d-flex flex-column flex-sm-row align-items-center justify-content-between">
+          <div className="nav-pills pills-accent d-flex flex-row align-items-center justify-content-between py-sm-0 py-3">
             <span
               role="button"
               tabIndex="0"

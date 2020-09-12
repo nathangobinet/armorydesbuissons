@@ -3,7 +3,7 @@
     "home": "Accueil",
     "live": "Direct",
     "about": "À propos",
-    "vip": "Vip"
+    "shop": "Boutique"
   },
   "footer": {
     "copyright": "© Armory des buissons - Tous droits réservés"
@@ -53,7 +53,7 @@
     "quests": {
       "title": "Complète les quêtes et progresse à travers les niveaux",
       "quest": {
-        "title": "Termine différent type de quête",
+        "title": "Termine différents types de quête",
         "text": "De nombreuses quêtes sont disponibles. Elles peuvent être accomplies quotidiennement, de façon saisonnière ou juste une fois. Une fois terminées, les quêtes vous permettent de gagner des points d'expérience."
       }, 
       "levels": {
@@ -130,7 +130,7 @@
     }
   }, "about": {
     "summary": {
-      "title": "À propos de notre serveur Arma 3", "p1": "Cette section vous invite à :", "btnConnect": "Connexion", "btnFeatures": "Toutes les fonctionnalités"
+      "title": "À propos de notre serveur Arma 3", "p1": "Cette section vous invite à :", "btnConnect": "Connexion", "btnFeatures": "Fonctionnalités"
     }, 
     "rules": {
       "title": "Connaître les règles", "p1": "Même si nous jouons pour le plaisir, il est nécessaire de respecter certaines règles afin de garantir une expérience de jeu agréable.",
