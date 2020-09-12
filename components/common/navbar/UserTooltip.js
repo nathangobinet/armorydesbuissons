@@ -4,6 +4,7 @@ import { createPopper } from '@popperjs/core';
 import useTranslation from 'next-translate/useTranslation';
 import acSvg from '../../../public/svgs/icons/ac-round.svg';
 import { useAuth } from '../../../helpers/user';
+import config from '../../../helpers/config';
 
 const TOOLTIP_ID = 'nav-user-tooltip';
 // eslint-disable-next-line import/no-mutable-exports
@@ -72,7 +73,7 @@ function UserCardContent(props) {
         </div>
       </div>
       <a href={`/p/${id}`} type="button" className="btn btn-primary btn-block">View profile</a>
-      <a href="http://localhost:3005/auth/logout" type="button" className="btn btn-accent btn-block">Logout</a>
+      <a href={`${config.server}/auth/logout`} type="button" className="btn btn-accent btn-block">Logout</a>
     </div>
   );
 }
@@ -85,7 +86,7 @@ export function UserTooltip() {
 
   const CardContent = () => {
     if (!authInfo) return (<div>Loading...</div>);
-    if (!authInfo.auth) return <a href="http://localhost:3005/auth/steam" type="button" className="btn btn-primary btn-block">Connect with steam</a>;
+    if (!authInfo.auth) return <a href={`${config.server}/auth/steam`} type="button" className="btn btn-primary btn-block">Connect with steam</a>;
     return (
       <UserCardContent
         id={authInfo.id}

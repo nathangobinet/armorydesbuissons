@@ -9,6 +9,7 @@ import { PayPalButton } from 'react-paypal-button-v2';
 import styles from '../../styles/Shop.module.css';
 import useFetch from '../../helpers/useFetch';
 import { useAuth } from '../../helpers/user';
+import config from '../../helpers/config';
 
 const MODAL_SCREEEN = {
   LOGIN: 0,
@@ -96,7 +97,7 @@ function Payment({ setScreen, paymentInfo }) {
   const removeLoadingScreen = () => { setScreen(MODAL_SCREEEN.PAYMENT); };
 
   const onSuccess = async (details) => {
-    const rawResponse = await fetch('http://localhost:3005/api/shop/vip', {
+    const rawResponse = await fetch(`${config.server}/api/shop/vip`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -275,7 +276,7 @@ function Login({ setScreen, setPaymentInfo, paymentInfo }) {
     if (!isAuth) {
       return (
         <a
-          href={`http://localhost:3005/auth/steam?action=${encodeURIComponent(JSON.stringify({ id: paymentInfo.id }))}`}
+          href={`${config.server}/auth/steam?action=${encodeURIComponent(JSON.stringify({ id: paymentInfo.id }))}`}
           className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}
         >
           Login with steam

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import config from './config';
 
 /**
  * Dirty react turn arround to share auth state between pages
@@ -22,7 +23,7 @@ export function useAuth() {
 
 export async function loadUser() {
   const response = await fetch(
-    'http://localhost:3005/auth/user',
+    `${config.server}/auth/user`,
     { credentials: 'include' },
   ).then((res) => res.json());
   if (response.success) {

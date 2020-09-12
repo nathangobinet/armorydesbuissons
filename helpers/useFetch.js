@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-
-const baseUrl = 'http://localhost:3005';
+import config from './config';
 
 function fetcher(url, args) {
   const urlWithArg = (args) ? `${url}?${new URLSearchParams(args)}` : url;
@@ -13,7 +12,7 @@ export default function useFetch(url, defaultResult, args = undefined) {
 
   useEffect(() => {
     async function fetch() {
-      const result = await fetcher((baseUrl + url), args);
+      const result = await fetcher((config.server + url), args);
       if (result.success) setData(result);
     }
     fetch();
