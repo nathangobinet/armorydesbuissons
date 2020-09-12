@@ -9,8 +9,8 @@ const authListeners = [];
 
 export function useAuth() {
   const [auth, setAuth] = useState(user);
-  const listener = { key: authListeners.length, set: setAuth };
   useEffect(() => {
+    const listener = { key: authListeners.length, set: setAuth };
     authListeners.push(listener);
     return () => {
       const index = authListeners.findIndex((l) => l.key === listener.key);

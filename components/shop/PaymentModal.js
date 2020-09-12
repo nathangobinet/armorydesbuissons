@@ -365,7 +365,7 @@ export default function PaymentModal({
   // Check if steam callback
   // Then set loading
   useEffect(() => {
-    if (userInfo && userInfo.auth) {
+    if (steamCallback && userInfo && userInfo.auth) {
       setSteamInfo(setPaymentInfo, setCurrentScreen, userInfo);
     }
   }, [userInfo]);
