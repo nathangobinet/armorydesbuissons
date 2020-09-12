@@ -32,19 +32,19 @@ export default function Statistic() {
   }));
 
   const headers = [
-    { text: t('live.statistic.headers.rank'), size: 1 },
-    { text: t('live.statistic.headers.name'), size: 3 },
-    { text: t('live.statistic.headers.kills'), size: 2 },
-    { text: t('live.statistic.headers.deaths'), size: 2 },
-    { text: t('live.statistic.headers.ratio'), size: 2 },
-    { text: t('live.statistic.headers.level'), size: 2 },
+    { text: t('common:live.statistic.headers.rank'), size: 1 },
+    { text: t('common:live.statistic.headers.name'), size: 3 },
+    { text: t('common:live.statistic.headers.kills'), size: 2 },
+    { text: t('common:live.statistic.headers.deaths'), size: 2 },
+    { text: t('common:live.statistic.headers.ratio'), size: 2 },
+    { text: t('common:live.statistic.headers.level'), size: 2 },
   ];
 
   return (
     <div className="col-xl-7 py-2">
       <div className="card shadow">
         <div className="d-flex flex-column flex-sm-row align-items-center justify-content-between mb-4">
-          <h4 className="text-accent mb-0 mr-3">{t('live.statistic.title')}</h4>
+          <h4 className="text-accent mb-0 mr-3">{t('common:live.statistic.title')}</h4>
           <div className="nav-pills pills-accent d-flex flex-row align-items-center justify-content-between py-sm-0 py-3">
             <span
               role="button"
@@ -53,7 +53,7 @@ export default function Statistic() {
               onClick={() => setPeriod(PERIODS.DAY)}
               onKeyPress={() => setPeriod(PERIODS.DAY)}
             >
-              {t('live.statistic.day')}
+              {t('common:live.statistic.day')}
             </span>
             <span
               role="button"
@@ -62,7 +62,7 @@ export default function Statistic() {
               onClick={() => setPeriod(PERIODS.SEASON)}
               onKeyPress={() => setPeriod(PERIODS.SEASON)}
             >
-              {t('live.statistic.season')}
+              {t('common:live.statistic.season')}
             </span>
             <span
               role="button"
@@ -71,7 +71,7 @@ export default function Statistic() {
               onClick={() => setPeriod(PERIODS.ALLTIME)}
               onKeyPress={() => setPeriod(PERIODS.ALLTIME)}
             >
-              {t('live.statistic.allTime')}
+              {t('common:live.statistic.allTime')}
             </span>
           </div>
           <TableInput setFilter={setFilter} />

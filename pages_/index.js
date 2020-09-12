@@ -30,8 +30,4 @@ function Home() {
   );
 }
 
-Home.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
-});
-
 export default Home;

@@ -14,10 +14,10 @@ function ChooseYourGameplay() {
           <div className="my-auto">
             <div className="mb-5 text-center" data-aos="fade">
               <h1>
-                {t('home.chooseYourGameplay.title')}
+                {t('common:home.chooseYourGameplay.title')}
               </h1>
               <h4>
-                {t('home.chooseYourGameplay.subTitle')}
+                {t('common:home.chooseYourGameplay.subTitle')}
               </h4>
             </div>
             <div className="d-flex flex-column flex-md-row">
@@ -27,10 +27,10 @@ function ChooseYourGameplay() {
                 </div>
                 <div className="text-center px-md-4" data-aos="fade-up">
                   <h4 className="text-accent">
-                    {t('home.chooseYourGameplay.striderTitle')}
+                    {t('common:home.chooseYourGameplay.striderTitle')}
                   </h4>
                   <p>
-                    {t('home.chooseYourGameplay.striderParagraph')}
+                    {t('common:home.chooseYourGameplay.striderParagraph')}
                   </p>
                 </div>
               </div>
@@ -40,10 +40,10 @@ function ChooseYourGameplay() {
                 </div>
                 <div className="text-center px-md-4" data-aos="fade-up">
                   <h4 className="text-primary">
-                    {t('home.chooseYourGameplay.soldierTitle')}
+                    {t('common:home.chooseYourGameplay.soldierTitle')}
                   </h4>
                   <p>
-                    {t('home.chooseYourGameplay.soldierParagraph')}
+                    {t('common:home.chooseYourGameplay.soldierParagraph')}
                   </p>
                 </div>
               </div>

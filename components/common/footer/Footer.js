@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import Link from 'next/link';
+import Link from 'next-translate/Link';
 import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../../../styles/Footer.module.css';
@@ -14,10 +14,10 @@ function Footer() {
         <div className="row py-5">
           <div className="col-12">
             <div className="px-3 d-flex flex-column flex-sm-row align-items-center justify-content-between">
-              <Link href="/"><a>{t('pages.home')}</a></Link>
-              <Link href="/live"><a>{t('pages.live')}</a></Link>
-              <Link href="/about"><a>{t('pages.about')}</a></Link>
-              <Link href="/shop"><a>{t('pages.shop')}</a></Link>
+              <Link href="/"><a>{t('common:pages.home')}</a></Link>
+              <Link href="/live"><a>{t('common:pages.live')}</a></Link>
+              <Link href="/about"><a>{t('common:pages.about')}</a></Link>
+              <Link href="/shop"><a>{t('common:pages.shop')}</a></Link>
             </div>
           </div>
         </div>
@@ -28,7 +28,7 @@ function Footer() {
         </div>
         <div className="row py-5">
           <div className="col-12 text-center">
-            <span className="text-white">{t('footer.copyright')}</span>
+            <span className="text-white">{t('common:footer.copyright')}</span>
           </div>
         </div>
       </div>

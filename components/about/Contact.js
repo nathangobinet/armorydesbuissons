@@ -17,28 +17,28 @@ export default function Contact() {
           <div className="w-100 h-100 py-4" style={{ marginLeft: '-100%' }}>
             <div className="container py-5">
               <div className="text-center">
-                <h1 className="mb-5 text-white">{t('about.contact.title')}</h1>
+                <h1 className="mb-5 text-white">{t('common:about.contact.title')}</h1>
               </div>
               <div className="row text-center">
                 <div className="col-md-6">
                   <div className="card my-3 shadow">
-                    <h4 className="text-accent mb-3">{t('about.contact.join.title')}</h4>
-                    <p>{t('about.contact.join.p1')}</p>
-                    <p>{t('about.contact.join.p2')}</p>
+                    <h4 className="text-accent mb-3">{t('common:about.contact.join.title')}</h4>
+                    <p>{t('common:about.contact.join.p1')}</p>
+                    <p>{t('common:about.contact.join.p2')}</p>
                     <a className="btn btn-discord mt-2 w-75 mx-auto" href="https://discord.gg/RUh4QUV" target="_blank" rel="noreferrer">
                       <i className="fab fa-discord mr-1" />
-                      {t('about.contact.join.btn')}
+                      {t('common:about.contact.join.btn')}
                     </a>
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="card my-3 shadow">
-                    <h4 className="text-accent mb-3">{t('about.contact.contact.title')}</h4>
-                    <p>{t('about.contact.contact.p1')}</p>
-                    <p>{t('about.contact.contact.p2')}</p>
+                    <h4 className="text-accent mb-3">{t('common:about.contact.contact.title')}</h4>
+                    <p>{t('common:about.contact.contact.p1')}</p>
+                    <p>{t('common:about.contact.contact.p2')}</p>
                     <a className="btn btn-mail mt-2 w-75 mx-auto" href="mailto:armorydesbuissons@gmail.com">
                       <i className="fas fa-envelope mr-1" />
-                      {t('about.contact.contact.btn')}
+                      {t('common:about.contact.contact.btn')}
                     </a>
                   </div>
                 </div>

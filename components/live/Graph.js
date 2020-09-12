@@ -27,14 +27,14 @@ function createGraph(graphRef, t, data) {
   const lineChartData = {
     labels,
     datasets: [{
-      label: t('live.graph.kills'),
+      label: t('common:live.graph.kills'),
       borderColor: '#63BF60',
       backgroundColor: '#63BF60',
       fill: false,
       data: data1,
       yAxisID: 'y-axis-1',
     }, {
-      label: t('live.graph.players'),
+      label: t('common:live.graph.players'),
       borderColor: '#F26E50',
       backgroundColor: '#F26E50',
       fill: false,
@@ -106,7 +106,7 @@ export default function Graph() {
     <div className="col-xl-7 py-2">
       <div className="card shadow h-100">
         <div className="d-flex flex-column flex-sm-row align-items-center justify-content-between mb-4">
-          <h4 className="text-accent mb-0">{t('live.graph.title')}</h4>
+          <h4 className="text-accent mb-0">{t('common:live.graph.title')}</h4>
           <div className="nav-pills pills-accent d-flex flex-row align-items-center justify-content-between py-sm-0 py-3">
             <span
               role="button"
@@ -115,7 +115,7 @@ export default function Graph() {
               onClick={() => { setPeriod(PERIODS.DAY); }}
               onKeyPress={() => { setPeriod(PERIODS.DAY); }}
             >
-              {t('live.graph.day')}
+              {t('common:live.graph.day')}
             </span>
             <span
               role="button"
@@ -124,7 +124,7 @@ export default function Graph() {
               onClick={() => { setPeriod(PERIODS.SEASON); }}
               onKeyPress={() => { setPeriod(PERIODS.SEASON); }}
             >
-              {t('live.graph.season')}
+              {t('common:live.graph.season')}
             </span>
           </div>
         </div>

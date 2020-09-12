@@ -89,7 +89,7 @@ export function UserTooltip() {
     return (
       <UserCardContent
         id={authInfo.id}
-        lastPseudo={(authInfo.alreadyConnected) ? authInfo.playerInfo.lastPseudo : t('profile.unknowName')}
+        lastPseudo={(authInfo.alreadyConnected) ? authInfo.playerInfo.lastPseudo : t('common:profile.unknowName')}
         ac={(authInfo.alreadyConnected) ? authInfo.playerInfo.ac : 0}
         level={(authInfo.alreadyConnected) ? authInfo.playerInfo.level : 0}
       />

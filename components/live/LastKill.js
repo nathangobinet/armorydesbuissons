@@ -37,7 +37,7 @@ function LastKill(props) {
                   fontFamily: 'Montserrat, sans-serif', fontWeight: '600', fontSize: 29, lineHeight: 1.2,
                 }}
               >
-                {t('live.lastKills.killed')}
+                {t('common:live.lastKills.killed')}
               </div>
               <small className="d-none d-sm-block mt-2">
                 <i className="fa fa-people-arrows" />

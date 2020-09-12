@@ -24,7 +24,3 @@ export default function About() {
     </div>
   );
 }
-
-About.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
-});

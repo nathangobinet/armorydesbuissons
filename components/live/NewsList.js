@@ -34,7 +34,7 @@ export default function NewsList() {
     <div className="col-xl-5 py-2">
       <div className="card card-primary shadow">
         <div className="d-flex align-items-center justify-content-between">
-          <h4 className="text-white mb-3">{t('live.news.title')}</h4>
+          <h4 className="text-white mb-3">{t('common:live.news.title')}</h4>
           {toggle && (
             <button
               type="button"
@@ -42,7 +42,7 @@ export default function NewsList() {
               onClick={() => { setToggle(false); }}
             >
               <span className="mr-2"><i className="fa fa-chevron-left" /></span>
-              {t('live.news.back')}
+              {t('common:live.news.back')}
             </button>
           )}
         </div>

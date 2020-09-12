@@ -44,10 +44,10 @@ function InfoCards({ socket }) {
   return (
     <section className="py-2" id="info-cards">
       <div className="row">
-        <InfoCard bg="card-primary" icon="fa-skull" number={killNumber} description={t('live.infoCards.kills')} />
-        <InfoCard bg="card-accent" icon="fa-users" number={playerNumber} description={t('live.infoCards.player')} />
-        <InfoCard bg="card-primary" icon="fa-user-clock" number={uniquePlayerNumber} description={t('live.infoCards.unique')} />
-        <InfoCard bg="card-accent" icon="fa-medal" number={result} description={t('live.infoCards.ranked')} />
+        <InfoCard bg="card-primary" icon="fa-skull" number={killNumber} description={t('common:live.infoCards.kills')} />
+        <InfoCard bg="card-accent" icon="fa-users" number={playerNumber} description={t('common:live.infoCards.player')} />
+        <InfoCard bg="card-primary" icon="fa-user-clock" number={uniquePlayerNumber} description={t('common:live.infoCards.unique')} />
+        <InfoCard bg="card-accent" icon="fa-medal" number={result} description={t('common:live.infoCards.ranked')} />
       </div>
     </section>
   );

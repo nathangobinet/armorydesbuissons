@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useRef } from 'react';
-import Link from 'next/link';
+import Link from 'next-translate/Link';
 import { Navbar as BootstrapNavBar, Container, Nav } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 
+import useTranslation from 'next-translate/useTranslation';
 import NavIcon from './NavIcon';
 import { setDarkMode } from '../../../helpers/theme';
 import { setLanguage } from '../../../helpers/language';
@@ -12,7 +13,6 @@ import { handleScroll, handleToggle } from './toggleNav';
 import logo from '../../../public/svgs/nav/logo-white.svg';
 import englishFlag from '../../../public/svgs/nav/usa.svg';
 import frenchFlag from '../../../public/svgs/nav/fr.svg';
-import useTranslation from 'next-translate/useTranslation';
 import { toogleUserPopper, UserTooltip } from './UserTooltip';
 
 const icons = [
@@ -94,22 +94,22 @@ function Navbar({ transparent }) {
               <Nav>
                 <Link href="/">
                   <a className={`nav-py nav-menu nav-item nav-link ${router.pathname === '/' ? 'active' : ''}`}>
-                    {t('pages.home')}
+                    {t('common:pages.home')}
                   </a>
                 </Link>
                 <Link href="/live">
                   <a className={`nav-py nav-menu nav-item nav-link ${router.pathname === '/live' ? 'active' : ''}`}>
-                    {t('pages.live')}
+                    {t('common:pages.live')}
                   </a>
                 </Link>
                 <Link href="/about">
                   <a className={`nav-py nav-menu nav-item nav-link ${router.pathname === '/about' ? 'active' : ''}`}>
-                    {t('pages.about')}
+                    {t('common:pages.about')}
                   </a>
                 </Link>
                 <Link href="/shop">
                   <a className={`nav-py nav-menu nav-item nav-link ${router.pathname === '/shop' ? 'active' : ''}`}>
-                    {t('pages.shop')}
+                    {t('common:pages.shop')}
                   </a>
                 </Link>
               </Nav>

@@ -31,8 +31,4 @@ function Live() {
   );
 }
 
-Live.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
-});
-
 export default Live;

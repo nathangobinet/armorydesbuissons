@@ -41,12 +41,12 @@ export default function Quests() {
             <div className="container d-flex flex-column justify-content-center h-100 py-5">
               <div className="my-auto">
                 <h1 className="text-white text-center mb-5 pb-lg-5" data-aos="fade">
-                  {t('home.quests.title')}
+                  {t('common:home.quests.title')}
                 </h1>
                 <div className="my-4">
-                  <Section image={quest} text={t('home.quests.quest.text')} title={t('home.quests.quest.title')} />
-                  <Section image={levels} text={t('home.quests.levels.text')} title={t('home.quests.levels.title')} />
-                  <Section image={ac} text={t('home.quests.ac.text')} title={t('home.quests.ac.title')} />
+                  <Section image={quest} text={t('common:home.quests.quest.text')} title={t('home.quests.quest.title')} />
+                  <Section image={levels} text={t('common:home.quests.levels.text')} title={t('home.quests.levels.title')} />
+                  <Section image={ac} text={t('common:home.quests.ac.text')} title={t('home.quests.ac.title')} />
                 </div>
               </div>
               <div className="align-self-center m-0">

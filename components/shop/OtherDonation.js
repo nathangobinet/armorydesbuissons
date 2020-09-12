@@ -24,7 +24,7 @@ export default function OtherDonation() {
   return (
     <section id="other-donation" className="container py-5">
       <div className="text-center py-4">
-        <h1 className="text-accent mb-4">{t('shop.otherDonation.title')}</h1>
+        <h1 className="text-accent mb-4">{t('common:shop.otherDonation.title')}</h1>
       </div>
       <div>
         <Info icon="fa-hands-helping" title="Free donation">

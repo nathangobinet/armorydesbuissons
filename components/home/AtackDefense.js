@@ -13,7 +13,7 @@ function AtackDefense() {
           <div className="my-auto">
             <div className="mb-5 text-center">
               <h1 data-aos="fade">
-                {t('home.attackDefense.title')}
+                {t('common:home.attackDefense.title')}
               </h1>
             </div>
             <div className="container pt-lg-3">
@@ -22,18 +22,18 @@ function AtackDefense() {
                   <div className="h-100 d-flex flex-column justify-content-between">
                     <div data-aos="zoom-in">
                       <h4 className="text-accent">
-                        {t('home.attackDefense.p1.title')}
+                        {t('common:home.attackDefense.p1.title')}
                       </h4>
                       <p>
-                        {t('home.attackDefense.p1.sub')}
+                        {t('common:home.attackDefense.p1.sub')}
                       </p>
                     </div>
                     <div data-aos="zoom-in">
                       <h4 className="text-accent">
-                        {t('home.attackDefense.p2.title')}
+                        {t('common:home.attackDefense.p2.title')}
                       </h4>
                       <p>
-                        {t('home.attackDefense.p2.sub')}
+                        {t('common:home.attackDefense.p2.sub')}
                       </p>
                     </div>
                   </div>
@@ -45,18 +45,18 @@ function AtackDefense() {
                   <div className="d-flex flex-column h-100 justify-content-between">
                     <div data-aos="zoom-in">
                       <h4 className="text-accent">
-                        {t('home.attackDefense.p3.title')}
+                        {t('common:home.attackDefense.p3.title')}
                       </h4>
                       <p>
-                        {t('home.attackDefense.p3.sub')}
+                        {t('common:home.attackDefense.p3.sub')}
                       </p>
                     </div>
                     <div data-aos="zoom-in">
                       <h4 className="text-accent">
-                        {t('home.attackDefense.p4.title')}
+                        {t('common:home.attackDefense.p4.title')}
                       </h4>
                       <p>
-                        {t('home.attackDefense.p4.sub')}
+                        {t('common:home.attackDefense.p4.sub')}
                       </p>
                     </div>
                   </div>

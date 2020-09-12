@@ -12,7 +12,7 @@ function Champion({ season, player, rank }) {
     <div className="card shadow bg-darker my-2 text-center text-sm-left">
       <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center">
         <div className={`${styles['card-rank']} py-2 py-sm-0`}>
-          <div>{t('live.champions.season')}</div>
+          <div>{t('common:live.champions.season')}</div>
           <div className="text-primary">{season}</div>
         </div>
         <div className="text-center py-2 py-sm-0">
@@ -20,7 +20,7 @@ function Champion({ season, player, rank }) {
           <div style={{ fontFamily: '"Montserrat", sans-serif' }}>{player}</div>
         </div>
         <div className={`${styles['card-rank']} py-2 py-sm-0`}>
-          <div>{t('live.champions.rank')}</div>
+          <div>{t('common:live.champions.rank')}</div>
           <div className="text-primary">{rank}</div>
         </div>
       </div>
@@ -36,7 +36,7 @@ export default function Champions() {
   return (
     <div className="col-xl-5 py-2">
       <div className="card card-accent shadow">
-        <h4 className="text-white">{t('live.champions.title')}</h4>
+        <h4 className="text-white">{t('common:live.champions.title')}</h4>
         {champions.map((champion) => (
           <Champion
             key={champion.playerID + champion.season}

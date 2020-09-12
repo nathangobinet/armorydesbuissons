@@ -16,7 +16,7 @@ function PriceCard({
         <div className="text-center">
           <div className={`${styles['text-day-pricing']} mb-4`}>
             <div className="text-primary">{period}</div>
-            <div>{t('shop.pricing.days')}</div>
+            <div>{t('common:shop.pricing.days')}</div>
           </div>
           <div className={`${styles['text-price-pricing']} mb-4`}>
             { priceBeforeDiscount ? (
@@ -41,11 +41,11 @@ function PriceCard({
           <div className="text-left mx-auto mb-4" style={{ maxWidth: '190px' }}>
             <div>
               <i className="fas fa-check mr-3" />
-              {t('shop.pricing.skins')}
+              {t('common:shop.pricing.skins')}
             </div>
             <div>
               <i className="fas fa-check mr-3" />
-              {t('shop.pricing.slots')}
+              {t('common:shop.pricing.slots')}
             </div>
             <div>
               <i className="fas fa-check mr-3" />
@@ -54,12 +54,12 @@ function PriceCard({
                 {ac}
               </b>
               {' '}
-              {t('shop.pricing.ac')}
+              {t('common:shop.pricing.ac')}
             </div>
           </div>
           <button type="button" onClick={() => handleBuy(id)} className="btn btn-primary my-1 px-5">
             <i className="fas fa-shopping-cart mr-2" />
-            {t('shop.pricing.btn')}
+            {t('common:shop.pricing.btn')}
           </button>
         </div>
       </div>
@@ -69,7 +69,7 @@ function PriceCard({
 
 function getUrlAction() {
   const url = new URL(window.location.href);
-  const action = url.searchParams.get('action');
+  const action = url.searchParams.get('common:action');
   if (!action) return { isAction: false };
   const parsedMessage = JSON.parse(decodeURIComponent(action));
   window.history.replaceState(null, null, window.location.pathname); // Remove action from URL
@@ -131,7 +131,7 @@ export default function VipPricing() {
             <div className="w-100 h-100 py-5" style={{ marginLeft: '-100%' }}>
               <div className="container d-flex flex-column justify-content-center h-100 py-5">
                 <div className="my-auto">
-                  <h1 className="text-white text-center mb-3 pb-5">{t('shop.pricing.title')}</h1>
+                  <h1 className="text-white text-center mb-3 pb-5">{t('common:shop.pricing.title')}</h1>
                   <div className="row">
                     {
                     vipItems.map((item) => (

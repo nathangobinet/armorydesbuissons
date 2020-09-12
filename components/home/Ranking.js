@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import Link from 'next/link';
+import Link from 'next-translate/Link';
 import useTranslation from 'next-translate/useTranslation';
 import styles from '../../styles/Home.module.css';
 
@@ -22,14 +22,14 @@ function Ranking() {
                 <div className="d-flex w-100 justify-content-center mt-md-5 pt-md-5 pl-md-5">
                   <div className="card text-center shadow" style={{ maxWidth: '400px' }} data-aos="zoom-out" data-aos-delay="200">
                     <h1 className="text-primary">
-                      {t('home.ranking.title')}
+                      {t('common:home.ranking.title')}
                     </h1>
                     <img className="py-4 mx-auto" src={rank} width="90px" alt="Rank" />
                     <p className="mb-4">
-                      {t('home.ranking.paragraph')}
+                      {t('common:home.ranking.paragraph')}
                     </p>
                     <Link href="/about#rank">
-                      <a className="btn btn-primary mx-4">{t('home.ranking.button')}</a>
+                      <a className="btn btn-primary mx-4">{t('common:home.ranking.button')}</a>
                     </Link>
                   </div>
                 </div>

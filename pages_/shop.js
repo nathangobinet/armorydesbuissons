@@ -20,7 +20,3 @@ export default function Shop() {
     </div>
   );
 }
-
-Shop.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
-});
