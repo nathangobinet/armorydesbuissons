@@ -62,7 +62,7 @@ function LastKills({ socket }) {
     leave: { transform: 'scale(1,0)', height: 0, opacity: 0 },
   }) : [];
 
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   return (
     <div className="col-xl-5 py-2">

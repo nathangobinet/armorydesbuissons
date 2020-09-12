@@ -6,7 +6,7 @@ import useTranslation from 'next-translate/useTranslation';
 import screenLogo from '../../public/svgs/screen-logo.svg';
 
 export default function Summary() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="summary" className="container py-5">
       <div className="row py-4">

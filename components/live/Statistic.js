@@ -13,7 +13,7 @@ const PERIODS = {
 };
 
 export default function Statistic() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const [period, setPeriod] = useState(PERIODS.DAY);
   const [filter, setFilter] = useState('');
 

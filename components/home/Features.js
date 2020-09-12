@@ -6,7 +6,7 @@ import screenLogo from '../../public/svgs/screen-logo.svg';
 import shape from '../../public/svgs/shapes/shape1.svg';
 
 function Features() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="features" className={styles['full-page-section']}>
       <div className={styles['section-content']}>

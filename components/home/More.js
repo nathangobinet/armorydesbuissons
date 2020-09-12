@@ -7,7 +7,7 @@ import inventory from '../../public/svgs/icons/inventory.svg';
 import code from '../../public/svgs/icons/code.svg';
 
 function More() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="more" className={styles['full-page-section']}>
       <div className={styles['section-content']}>

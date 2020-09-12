@@ -9,7 +9,7 @@ import transparentShape2 from '../../public/svgs/shapes/transparentshape2.svg';
 function PriceCard({
   id, period, price, priceBeforeDiscount, discoutPercentage, ac, handleBuy, highlight,
 }) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <div className={`col-lg-4 px-lg-4 my-3 ${highlight ? 'pt-lg-4' : ''}`}>
       <div className="card shadow">
@@ -69,7 +69,7 @@ function PriceCard({
 
 function getUrlAction() {
   const url = new URL(window.location.href);
-  const action = url.searchParams.get('common:action');
+  const action = url.searchParams.get('action');
   if (!action) return { isAction: false };
   const parsedMessage = JSON.parse(decodeURIComponent(action));
   window.history.replaceState(null, null, window.location.pathname); // Remove action from URL
@@ -118,7 +118,7 @@ export default function VipPricing() {
     setsIsShowModal(true);
   };
 
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <>
       <section id="pricing">

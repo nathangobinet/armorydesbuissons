@@ -30,7 +30,7 @@ function StatCard({
 }
 
 export default function BestStats() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const [period, setPeriod] = useState(PERIODS.DAY);
   const result = useFetch('/api/top', undefined, { period });
 

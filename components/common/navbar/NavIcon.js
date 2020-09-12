@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
 function displayImgOrIcon(icon) {
-  if (icon.type === 'image') return <img style={{ marginBottom: '2px' }} src={icon.obj} width="18" height="18" alt={icon.alt} />;
+  if (icon.type === 'image') return <img style={{ marginBottom: '3px' }} src={icon.obj} width="18" height="18" alt={icon.alt} />;
   return <i className={`fa ${icon.class}`} />;
 }
 
 function getSubIconsPart(subIcons, isHiden) {
   if (!subIcons) return null;
   const iconsList = subIcons.map((subIcon) => (
-    <button key={subIcon.label} type="button" aria-label={subIcon.label} onClick={subIcon.func} className="opacity-interaction px-1 button-nav">
+    <button key={subIcon.label} type="button" aria-label={subIcon.label} onClick={subIcon.func} className="opacity-interaction button-nav px-1">
       {displayImgOrIcon(subIcon)}
     </button>
   ));

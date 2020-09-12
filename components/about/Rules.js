@@ -22,7 +22,7 @@ function Rule({ number, title, text }) {
 }
 
 export default function Rules() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="rules">
       <div className="bg-accent-or-dark">

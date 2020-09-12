@@ -6,7 +6,7 @@ import styles from '../../styles/Live.module.css';
 import useFetch from '../../helpers/useFetch';
 
 function Champion({ season, player, rank }) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   return (
     <div className="card shadow bg-darker my-2 text-center text-sm-left">
@@ -31,7 +31,7 @@ function Champion({ season, player, rank }) {
 export default function Champions() {
   const champions = useFetch('/api/champions', []);
 
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   return (
     <div className="col-xl-5 py-2">

@@ -79,7 +79,7 @@ function UserCardContent(props) {
 
 export function UserTooltip() {
   const authInfo = useAuth();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const [isDisplay, setIsDisplay] = useState(false);
   setDisplay = setIsDisplay;
 

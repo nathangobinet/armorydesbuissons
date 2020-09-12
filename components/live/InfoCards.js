@@ -39,7 +39,7 @@ function useSocket(socket) {
 function InfoCards({ socket }) {
   const result = useFetch('/api/playerRanked', 0);
   const { playerNumber, uniquePlayerNumber, killNumber } = useSocket(socket);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   return (
     <section className="py-2" id="info-cards">

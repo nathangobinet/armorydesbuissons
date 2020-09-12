@@ -5,7 +5,7 @@ import styles from '../../styles/Home.module.css';
 import bomb from '../../public/svgs/bomb.svg';
 
 function AtackDefense() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="attack-defense" className={styles['full-page-section']}>
       <div className={styles['section-content']}>

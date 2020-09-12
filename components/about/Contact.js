@@ -5,7 +5,7 @@ import transparentShape1 from '../../public/svgs/shapes/transparentshape1.svg';
 import transparentShape2 from '../../public/svgs/shapes/transparentshape2.svg';
 
 export default function Contact() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="contact">
       <div className="bg-primary-or-dark">

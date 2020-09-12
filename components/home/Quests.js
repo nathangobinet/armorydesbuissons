@@ -28,7 +28,7 @@ function Section({ image, title, text }) {
 }
 
 export default function Quests() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="quests" className={`${styles['full-page-section']} bg-primary-or-dark`}>
       <div className={styles['section-content']}>

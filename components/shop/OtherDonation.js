@@ -20,7 +20,7 @@ function Info({ icon, title, children }) {
 }
 
 export default function OtherDonation() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="other-donation" className="container py-5">
       <div className="text-center py-4">

@@ -8,7 +8,7 @@ import shape from '../../public/svgs/shapes/shape2.svg';
 import rank from '../../public/svgs/icons/rank.svg';
 
 function Ranking() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="ranking" className={styles['full-page-section']}>
       <div className={styles['section-content']}>

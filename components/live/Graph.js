@@ -90,7 +90,7 @@ export default function Graph() {
   const graphRef = useRef();
   const [period, setPeriod] = useState(PERIODS.DAY);
   const history = useFetch('/api/history', { players: [], kills: [] }, { period });
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   useEffect(() => {
     chart = undefined;

@@ -5,7 +5,7 @@ import styles from '../../styles/Home.module.css';
 import altisMap from '../../public/svgs/altis-map.svg';
 
 function TpIntoFight() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="tp-into-fight" className={styles['full-page-section']}>
       <div className={styles['section-content']}>

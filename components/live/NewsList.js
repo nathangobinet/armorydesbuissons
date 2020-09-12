@@ -28,7 +28,7 @@ export default function NewsList() {
     delay: toggle ? 500 : 0,
   });
 
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   return (
     <div className="col-xl-5 py-2">

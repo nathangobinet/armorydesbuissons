@@ -14,7 +14,7 @@ function LastKill(props) {
     };
   }, []);
 
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   return (
     <div className="card bg-darker my-2 text-center shadow">

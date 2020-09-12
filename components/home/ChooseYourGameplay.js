@@ -6,7 +6,7 @@ import striderShape from '../../public/svgs/shapes/strider-shape.svg';
 import soldierShape from '../../public/svgs/shapes/soldier-shape.svg';
 
 function ChooseYourGameplay() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="choose-your-gameplay" className={styles['full-page-section']}>
       <div className={styles['section-content']}>

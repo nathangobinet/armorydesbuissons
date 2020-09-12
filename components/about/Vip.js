@@ -8,7 +8,7 @@ import transparentShape1 from '../../public/svgs/shapes/transparentshape1.svg';
 import transparentShape2 from '../../public/svgs/shapes/transparentshape2.svg';
 
 export default function Vip() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="vip">
       <div className="bg-accent-or-dark">

@@ -54,7 +54,7 @@ let printedPlayer = [];
 
 function OnlinePlayers({ socket }) {
   const players = useSocket(socket);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   if (process.browser) {
     printedPlayer = (!document.hidden) ? getPrintedPlayer(players) : [];

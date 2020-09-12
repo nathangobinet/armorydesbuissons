@@ -5,7 +5,7 @@ import styles from '../../styles/Shop.module.css';
 import shape3 from '../../public/svgs/shapes/shape3.svg';
 
 export default function Description() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="description" className="mb-5">
       <div className="d-flex h-100">

@@ -7,7 +7,7 @@ import styles from '../../../styles/Footer.module.css';
 import logo from '../../../public/svgs/nav/logo-white.svg';
 
 function Footer() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <footer className={styles.footer}>
       <div className="container" style={{ maxWidth: '500px' }}>

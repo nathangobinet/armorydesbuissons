@@ -95,7 +95,7 @@ function Info({ icon, title, children }) {
 }
 
 export default function Rank() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   const [current, setCurrent] = useState(0);
 

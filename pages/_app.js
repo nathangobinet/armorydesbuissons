@@ -5,9 +5,11 @@ import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 
 import { isDarkMode, setDarkMode } from '../helpers/theme';
 import { loadUser } from '../helpers/user';
+import { initLanguage } from '../helpers/language';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
+    initLanguage();
     setDarkMode(isDarkMode());
     loadUser();
   }, []);

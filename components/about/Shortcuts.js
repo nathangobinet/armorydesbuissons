@@ -15,7 +15,7 @@ function Shortcut({ shortcut, description }) {
 }
 
 export default function Shortcuts() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="shortcuts" className="container py-5">
       <div className="text-center py-5"><h1 className="text-accent">{t('common:about.shortcut.title')}</h1></div>

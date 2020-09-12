@@ -20,7 +20,7 @@ function Profile(props) {
 }
 
 export default function Team() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="team" className="container py-5">
       <div className="py-4">

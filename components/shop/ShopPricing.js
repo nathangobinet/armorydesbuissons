@@ -82,7 +82,7 @@ function CardItem({
 }
 
 export default function ShopPricing() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="other-donation" className="container py-5">
       <div className="text-center py-4">

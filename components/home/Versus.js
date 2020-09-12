@@ -9,7 +9,7 @@ import points from '../../public/svgs/icons/points.svg';
 import location from '../../public/svgs/icons/location.svg';
 
 function Versus() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <section id="versus" className={`${styles['full-page-section']} bg-accent-or-dark`}>
       <div className={styles['section-content']}>

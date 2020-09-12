@@ -62,7 +62,7 @@ const icons = [
 ];
 
 function Navbar({ transparent }) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const navRef = useRef();
   const router = useRouter();
   useEffect(() => {

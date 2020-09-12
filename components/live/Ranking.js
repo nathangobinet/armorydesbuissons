@@ -8,7 +8,7 @@ import Player from './Player';
 import useFetch from '../../helpers/useFetch';
 
 export default function Ranking() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const [filter, setFilter] = useState('');
   const players = useFetch('/api/rank', [], { name: filter });
 
