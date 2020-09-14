@@ -73,7 +73,7 @@ function UserCardContent(props) {
         </div>
       </div>
       <a href={`/p/${id}`} type="button" className="btn btn-primary btn-block">View profile</a>
-      <a href={`${config.server}/auth/logout`} type="button" className="btn btn-accent btn-block">Logout</a>
+      <a href={`${config.httpserver}/api/auth/logout`} type="button" className="btn btn-accent btn-block">Logout</a>
     </div>
   );
 }
@@ -86,7 +86,7 @@ export function UserTooltip() {
 
   const CardContent = () => {
     if (!authInfo) return (<div>Loading...</div>);
-    if (!authInfo.auth) return <a href={`${config.server}/auth/steam`} type="button" className="btn btn-primary btn-block">Connect with steam</a>;
+    if (!authInfo.auth) return <a href={`${config.httpserver}/api/auth/steam`} type="button" className="btn btn-primary btn-block">Connect with steam</a>;
     return (
       <UserCardContent
         id={authInfo.id}

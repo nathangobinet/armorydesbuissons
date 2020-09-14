@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import useTranslation from 'next-translate/useTranslation';
 import NavIcon from './NavIcon';
 import { setDarkMode } from '../../../helpers/theme';
-import { setLanguage } from '../../../helpers/language';
+import { removeLangFromPath, setLanguage } from '../../../helpers/language';
 import { handleScroll, handleToggle } from './toggleNav';
 
 import logo from '../../../public/svgs/nav/logo-white.svg';
@@ -65,9 +65,17 @@ function Navbar({ transparent }) {
   const { t } = useTranslation();
   const navRef = useRef();
   const router = useRouter();
+
   useEffect(() => {
     handleScroll(transparent);
   }, []);
+
+  const isActive = (pathToBeActive) => (
+    (removeLangFromPath(router.pathname) === pathToBeActive)
+      ? 'active'
+      : ''
+  );
+
   return (
     <div>
       <BootstrapNavBar
@@ -93,22 +101,22 @@ function Navbar({ transparent }) {
             <div className="text-center text-lg-left p-0 m-auto">
               <Nav>
                 <Link href="/">
-                  <a className={`nav-py nav-menu nav-item nav-link ${router.pathname === '/' ? 'active' : ''}`}>
+                  <a className={`nav-py nav-menu nav-item nav-link ${isActive('/')}`}>
                     {t('common:pages.home')}
                   </a>
                 </Link>
                 <Link href="/live">
-                  <a className={`nav-py nav-menu nav-item nav-link ${router.pathname === '/live' ? 'active' : ''}`}>
+                  <a className={`nav-py nav-menu nav-item nav-link ${isActive('/live')}`}>
                     {t('common:pages.live')}
                   </a>
                 </Link>
                 <Link href="/about">
-                  <a className={`nav-py nav-menu nav-item nav-link ${router.pathname === '/about' ? 'active' : ''}`}>
+                  <a className={`nav-py nav-menu nav-item nav-link ${isActive('/about')}`}>
                     {t('common:pages.about')}
                   </a>
                 </Link>
                 <Link href="/shop">
-                  <a className={`nav-py nav-menu nav-item nav-link ${router.pathname === '/shop' ? 'active' : ''}`}>
+                  <a className={`nav-py nav-menu nav-item nav-link ${isActive('/shop')}`}>
                     {t('common:pages.shop')}
                   </a>
                 </Link>

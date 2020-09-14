@@ -25,7 +25,7 @@ function LastKill(props) {
               <div style={{ fontFamily: '"Montserrat", sans-serif' }}>{killer}</div>
               <small className="d-none d-sm-block mt-2">
                 <i className="fa fa-clock" />
-                {t('live.lastKills.time', { timeStamp })}
+                {t('common:live.lastKills.time', { timeStamp })}
               </small>
             </div>
           </div>
@@ -41,7 +41,7 @@ function LastKill(props) {
               </div>
               <small className="d-none d-sm-block mt-2">
                 <i className="fa fa-people-arrows" />
-                {t('live.lastKills.distance', { distance })}
+                {t('common:live.lastKills.distance', { distance })}
               </small>
             </div>
           </div>
@@ -50,7 +50,7 @@ function LastKill(props) {
               <div style={{ fontFamily: '"Montserrat", sans-serif' }}>{killed}</div>
               <small className="d-none d-sm-block mt-2">
                 <i className="fa fa-skull-crossbones" />
-                {t('live.lastKills.weapon', { weapon })}
+                {t('common:live.lastKills.weapon', { weapon })}
               </small>
             </div>
           </div>

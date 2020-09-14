@@ -9,7 +9,7 @@ let user = false;
 const authListeners = [];
 
 export function useAuth() {
-  const [auth, setAuth] = useState(user);
+  const [, setAuth] = useState(user);
   useEffect(() => {
     const listener = { key: authListeners.length, set: setAuth };
     authListeners.push(listener);
@@ -18,16 +18,28 @@ export function useAuth() {
       authListeners.splice(index, 1);
     };
   }, []);
-  return auth;
+  return user;
 }
 
 export async function loadUser() {
   const response = await fetch(
-    `${config.server}/auth/user`,
+    `${config.httpserver}/api/auth/user`,
     { credentials: 'include' },
   ).then((res) => res.json());
   if (response.success) {
     user = response.result;
     authListeners.forEach((listener) => listener.set(response.result));
   }
+}
+
+export function getUrlAction(type) {
+  const url = new URL(window.location.href);
+  const action = url.searchParams.get('action');
+  if (!action) return { isAction: false };
+  const parsedMessage = JSON.parse(decodeURIComponent(action));
+  if (parsedMessage.type === type) {
+    window.history.replaceState(null, null, window.location.pathname); // Remove action from URL
+    return { isAction: true, info: parsedMessage };
+  }
+  return { isAction: false };
 }

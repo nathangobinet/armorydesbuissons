@@ -35,15 +35,15 @@ export default function BestStats() {
   const result = useFetch('/api/top', undefined, { period });
 
   const killsCard = (result && result.kill) ? {
-    title: t('common:live.bestStats.topKills'), logo: 'fa-skull', player: <Player name={result.kill.lastPseudo} id={result.kill.id} />, number: result.kill.nbKills, text: t('live.bestStats.kills'),
+    title: t('common:live.bestStats.topKills'), logo: 'fa-skull', player: <Player name={result.kill.lastPseudo} id={result.kill.id} />, number: result.kill.nbKills, text: t('common:live.bestStats.kills'),
   } : {
-    title: t('common:live.bestStats.topKills'), logo: 'fa-skull', player: 'N/A', number: 'N/A', text: t('live.bestStats.kills'),
+    title: t('common:live.bestStats.topKills'), logo: 'fa-skull', player: 'N/A', number: 'N/A', text: t('common:live.bestStats.kills'),
   };
 
   const ratioCard = (result && result.ratio) ? {
-    title: t('common:live.bestStats.topRatio'), logo: 'fa-percentage', player: <Player name={result.ratio.lastPseudo} id={result.ratio.id} />, number: result.ratio.ratio.toFixed(2), text: t('live.bestStats.ratio'),
+    title: t('common:live.bestStats.topRatio'), logo: 'fa-percentage', player: <Player name={result.ratio.lastPseudo} id={result.ratio.id} />, number: result.ratio.ratio.toFixed(2), text: t('common:live.bestStats.ratio'),
   } : {
-    title: t('common:live.bestStats.topRatio'), logo: 'fa-percentage', player: 'N/A', number: 'N/A', text: t('live.bestStats.ratio'),
+    title: t('common:live.bestStats.topRatio'), logo: 'fa-percentage', player: 'N/A', number: 'N/A', text: t('common:live.bestStats.ratio'),
   };
 
   return (

@@ -97,7 +97,7 @@ function Payment({ setScreen, paymentInfo }) {
   const removeLoadingScreen = () => { setScreen(MODAL_SCREEEN.PAYMENT); };
 
   const onSuccess = async (details) => {
-    const rawResponse = await fetch(`${config.server}/api/shop/vip`, {
+    const rawResponse = await fetch(`${config.httpserver}/api/shop/vip`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -276,7 +276,7 @@ function Login({ setScreen, setPaymentInfo, paymentInfo }) {
     if (!isAuth) {
       return (
         <a
-          href={`${config.server}/auth/steam?action=${encodeURIComponent(JSON.stringify({ id: paymentInfo.id }))}`}
+          href={`${config.httpserver}/api/auth/steam?action=${encodeURIComponent(JSON.stringify({ type: 'vip', id: paymentInfo.id }))}`}
           className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}
         >
           Login with steam

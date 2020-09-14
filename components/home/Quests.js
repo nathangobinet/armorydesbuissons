@@ -44,9 +44,9 @@ export default function Quests() {
                   {t('common:home.quests.title')}
                 </h1>
                 <div className="my-4">
-                  <Section image={quest} text={t('common:home.quests.quest.text')} title={t('home.quests.quest.title')} />
-                  <Section image={levels} text={t('common:home.quests.levels.text')} title={t('home.quests.levels.title')} />
-                  <Section image={ac} text={t('common:home.quests.ac.text')} title={t('home.quests.ac.title')} />
+                  <Section image={quest} text={t('common:home.quests.quest.text')} title={t('common:home.quests.quest.title')} />
+                  <Section image={levels} text={t('common:home.quests.levels.text')} title={t('common:home.quests.levels.title')} />
+                  <Section image={ac} text={t('common:home.quests.ac.text')} title={t('common:home.quests.ac.title')} />
                 </div>
               </div>
               <div className="align-self-center m-0">

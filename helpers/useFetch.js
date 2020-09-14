@@ -12,7 +12,7 @@ export default function useFetch(url, defaultResult, args = undefined) {
 
   useEffect(() => {
     async function fetch() {
-      const result = await fetcher((config.server + url), args);
+      const result = await fetcher((config.httpserver + url), args);
       if (result.success) setData(result);
     }
     fetch();

@@ -14,8 +14,8 @@ export default function Shop() {
       <VipPricing />
       <ShopPricing />
       <Description />
-      <OtherDonation />
       <AvailableSkin />
+      <OtherDonation />
       <Footer />
     </div>
   );

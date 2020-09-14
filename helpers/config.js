@@ -1,3 +1,4 @@
 export default {
-  server: 'http://localhost:3005',
+  server: 'localhost:3005',
+  httpserver: 'http://localhost:3005',
 };

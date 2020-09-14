@@ -5,6 +5,7 @@ import PaymentModal from './PaymentModal';
 import styles from '../../styles/Shop.module.css';
 import transparentShape1 from '../../public/svgs/shapes/transparentshape1.svg';
 import transparentShape2 from '../../public/svgs/shapes/transparentshape2.svg';
+import { getUrlAction } from '../../helpers/user';
 
 function PriceCard({
   id, period, price, priceBeforeDiscount, discoutPercentage, ac, handleBuy, highlight,
@@ -67,15 +68,6 @@ function PriceCard({
   );
 }
 
-function getUrlAction() {
-  const url = new URL(window.location.href);
-  const action = url.searchParams.get('action');
-  if (!action) return { isAction: false };
-  const parsedMessage = JSON.parse(decodeURIComponent(action));
-  window.history.replaceState(null, null, window.location.pathname); // Remove action from URL
-  return { isAction: true, info: parsedMessage };
-}
-
 export default function VipPricing() {
   const vipItems = [{
     id: 1, days: 30, price: 3, ac: 50,
@@ -97,7 +89,7 @@ export default function VipPricing() {
   const [choosedItem, setChoosedItem] = useState(false);
 
   useEffect(() => {
-    const action = getUrlAction();
+    const action = getUrlAction('vip');
     // Check if action and action info have id
     if (action.isAction && action.info.id) {
       // Check if action id exist
