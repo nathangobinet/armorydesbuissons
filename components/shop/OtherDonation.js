@@ -27,13 +27,9 @@ export default function OtherDonation() {
         <h1 className="text-accent mb-4">{t('common:shop.otherDonation.title')}</h1>
       </div>
       <div>
-        <Info icon="fa-hands-helping" title="Free donation">
-          <p>You can also donate the amount of your wish.</p>
-          <p>
-            This donation does not offer any In-Game advantage
-            {' '}
-            , but allows us to continue to develop and to offer you a better gaming experience.
-          </p>
+        <Info icon="fa-hands-helping" title={t('common:shop.otherDonation.freeDonation.title')}>
+          <p>{t('common:shop.otherDonation.freeDonation.p2')}</p>
+          <p>{t('common:shop.otherDonation.freeDonation.p1')}</p>
           <form className="text-center" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_s-xclick" />
             <input type="hidden" name="hosted_button_id" value="2KSCXQ7WS7LMC" />
@@ -41,17 +37,9 @@ export default function OtherDonation() {
             <img alt="" border="0" src="https://www.paypal.com/en_FR/i/scr/pixel.gif" width="1" height="1" />
           </form>
         </Info>
-        <Info icon="fa-paint-roller" title="Custom skin">
-          <p>
-            It is possible to order a personalized and individual skin.
-            {' '}
-            This skin will be made to measure according to your requests.
-            {' '}
-            It is also possible to provide us with the skin you want. The price is €25,00.
-          </p>
-          <p>
-            Please contact a founder for more details on order and payment terms.
-          </p>
+        <Info icon="fa-paint-roller" title={t('common:shop.otherDonation.customSkin.title')}>
+          <p>{t('common:shop.otherDonation.customSkin.p1')}</p>
+          <p>{t('common:shop.otherDonation.customSkin.p2')}</p>
         </Info>
       </div>
     </section>

@@ -35,6 +35,7 @@ function useAudio(sound) {
 }
 
 function Siren({ sound }) {
+  const { t } = useTranslation();
   const [isPlay, toggle] = (sound) ? useAudio(sound) : [false, () => false];
   function getFaIcon() {
     if (!sound) return 'fa-times';
@@ -53,8 +54,8 @@ function Siren({ sound }) {
       </button>
       {
         (sound)
-          ? <div>Sirens are available for this skin</div>
-          : <div>Sirens are not available for this skin</div>
+          ? <div>{t('common:shop.availableSkins.sirenAvailable')}</div>
+          : <div>{t('common:shop.availableSkins.sirenNotAvailable')}</div>
       }
     </div>
   );
@@ -63,7 +64,7 @@ function Siren({ sound }) {
 function SkinImage({ image, sound, path }) {
   const description = (/.*(?=(.PNG|.png))/).exec(image)[0];
   return (
-    <div className="px-3 position-relative mx-auto" style={{ maxWidth: '450px' }}>
+    <div className="px-3 position-relative mx-auto" style={{ maxWidth: '480px' }}>
       <img src={require(`../../public/images/striders/${path}/${image}`)} alt={description} className="img-fluid mb-4 drop-shadow" />
       <div style={{ fontSize: '1.5rem' }} className="mb-0 font-weight-bold">{description}</div>
       <Siren sound={sound} />
@@ -153,13 +154,13 @@ export default function AvailableSkin() {
         <h1 className="text-accent mb-4">{t('common:shop.availableSkins.title')}</h1>
         <p className="mb-5">{t('common:shop.availableSkins.p1')}</p>
         <h3 className="text-accent">{t('common:shop.availableSkins.t2')}</h3>
-        <p>{t('common:shop.availableSkins.p1')}</p>
+        <p>{t('common:shop.availableSkins.p2')}</p>
         <VipSkins path="vip" skins={(skins) ? skins.vip : false} />
         <h3 className="text-accent">{t('common:shop.availableSkins.t3')}</h3>
-        <p>{t('common:shop.availableSkins.p2')}</p>
+        <p>{t('common:shop.availableSkins.p3')}</p>
         <VipSkins path="rank" skins={(skins) ? skins.rank : false} />
         <h3 className="text-accent">{t('common:shop.availableSkins.t4')}</h3>
-        <p>{t('common:shop.availableSkins.p3')}</p>
+        <p>{t('common:shop.availableSkins.p4')}</p>
         <VipSkins path="custom" skins={(skins) ? skins.custom : false} />
       </div>
     </section>

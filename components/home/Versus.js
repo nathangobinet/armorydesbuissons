@@ -21,12 +21,12 @@ function Versus() {
           <div className="w-100 h-100" style={{ marginLeft: '-100%' }}>
             <div className="container d-flex flex-column justify-content-center h-100 py-5">
               <div className="my-auto">
-                <h1 className="text-white text-center mb-5 pb-lg-5" data-aos="fade">
+                <h1 className="text-white text-center mb-5 pb-lg-5">
                   {t('common:home.versus.title')}
                 </h1>
                 <div className="row">
                   <div className="col-lg-4 px-lg-4 pb-4 pb-lg-0">
-                    <div className="card shadow bt-primary" data-aos="flip-down">
+                    <div className="card shadow bt-primary">
                       <div className="text-center">
                         <div className="py-4 mx-auto">
                           <img src={users} width="100px" alt="Users" />
@@ -41,7 +41,7 @@ function Versus() {
                     </div>
                   </div>
                   <div className="col-lg-4 px-lg-4 pt-lg-5 pb-4 pb-lg-0">
-                    <div className="card shadow bt-primary" data-aos="flip-down">
+                    <div className="card shadow bt-primary">
                       <div className="text-center">
                         <div className="py-4 mx-auto">
                           <img src={points} width="100px" alt="Points" />
@@ -56,7 +56,7 @@ function Versus() {
                     </div>
                   </div>
                   <div className="col-lg-4 px-lg-4">
-                    <div className="card shadow bt-primary" data-aos="flip-down">
+                    <div className="card shadow bt-primary">
                       <div className="text-center">
                         <div className="py-4 mx-auto">
                           <img src={location} width="70px" alt="Location" />
@@ -73,7 +73,7 @@ function Versus() {
                 </div>
               </div>
               <div className="align-self-center m-0">
-                <a className={`${styles['fp-caret-down']} text-white-or-accent opacity-interaction`} label="Go to next section" href="#ranking" data-aos="fade" data-aos-offset="0">
+                <a className={`${styles['fp-caret-down']} text-white-or-accent opacity-interaction`} label="Go to next section" href="#ranking">
                   <i className={`fas fa-caret-down ${styles.pulse}`} />
                 </a>
               </div>

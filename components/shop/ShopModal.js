@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import useTranslation from 'next-translate/useTranslation';
+
 import config from '../../helpers/config';
 import { useAuth } from '../../helpers/user';
 
@@ -6,36 +8,38 @@ import acSvg from '../../public/svgs/icons/ac-round.svg';
 import styles from '../../styles/Shop.module.css';
 
 function ButtonSection({ choosedItem, authInfo, onBuy }) {
+  const { t } = useTranslation();
   if (authInfo && authInfo.auth) {
     if (!authInfo.alreadyConnected || authInfo.playerInfo === undefined) {
-      return <div className="font-weight-bold">You have never logged on to the server. Please log in once before making a purchase.</div>;
+      return <div className="font-weight-bold">{t('common:shop.shopPricing.modal.neverConnected')}</div>;
     }
     if (authInfo.playerInfo.ac < choosedItem.ac) {
-      return <div className="font-weight-bold">You don't have enough Armory Coins to buy this item</div>;
+      return <div className="font-weight-bold">{t('common:shop.shopPricing.modal.notEnoughtAc')}</div>;
     }
     if (choosedItem.isOwned) {
-      return <div className="font-weight-bold">You already own this item</div>;
+      return <div className="font-weight-bold">{t('common:shop.shopPricing.modal.alreadyOwned')}</div>;
     }
-    return <button type="button" onClick={onBuy} className="btn btn-lg btn-primary px-5">Buy</button>;
+    return <button type="button" onClick={onBuy} className="btn btn-lg btn-primary px-5">{t('common:shop.shopPricing.modal.btnBuy')}</button>;
   }
   return (
     <a
       href={`${config.httpserver}/api/auth/steam?action=${encodeURIComponent(JSON.stringify({ type: 'shop', id: choosedItem.ID }))}`}
       className="btn btn-lg btn-primary px-5"
     >
-      Log in with steam
+      {t('common:shop.shopPricing.modal.btnLoginSteam')}
     </a>
   );
 }
 
 function PlayerSection({ authInfo }) {
+  const { t } = useTranslation();
   return (
     <div className="order-1 order-sm-0">
       <div style={{
         fontFamily: '"Montserrat", sans-serif', fontSize: 35, fontWeight: 600, marginBottom: 5,
       }}
       >
-        {(authInfo.playerInfo) ? authInfo.playerInfo.lastPseudo : 'Unknown'}
+        {(authInfo.playerInfo) ? authInfo.playerInfo.lastPseudo : t('common:shop.shopPricing.modal.unknowPlayer')}
       </div>
       <div className="d-flex align-items-center justify-content-center justify-content-sm-start">
         <img src={acSvg} alt="" width="40" className="mr-3" />
@@ -84,6 +88,7 @@ function BuySection({ choosedItem, authInfo, onBuy }) {
 }
 
 function SuccessSection() {
+  const { t } = useTranslation();
   return (
     <div
       style={{
@@ -93,15 +98,14 @@ function SuccessSection() {
     >
       <i className="fa-10x fas fa-check mb-4" />
       <div>
-        Your purchase has been successfully completed.
-        {' '}
-        You must perform an in-game disconnect/reconnect to enjoy it.
+        {t('common:shop.shopPricing.modal.success')}
       </div>
     </div>
   );
 }
 
 function ErrorSection() {
+  const { t } = useTranslation();
   return (
     <div
       style={{
@@ -111,9 +115,7 @@ function ErrorSection() {
     >
       <i className="fa-10x fas fa-times mb-4" />
       <div>
-        An unexpected error occurred.
-        {' '}
-        Please try again and contact an administrator if the problem persists.
+        {t('common:shop.shopPricing.modal.error')}
       </div>
     </div>
   );

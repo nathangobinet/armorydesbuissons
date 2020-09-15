@@ -12,13 +12,13 @@ function TpIntoFight() {
         <div className="container d-flex flex-column justify-content-center h-100 py-5">
           <div className="my-auto">
             <div className="text-center">
-              <h1 className="mb-5" data-aos="fade">
+              <h1 className="mb-5">
                 {t('common:home.tpintofight.title')}
               </h1>
               <div className="mb-5">
-                <img className="img-fluid" alt="Map of Altis" src={altisMap} width="930" height="390" data-aos="zoom-in" />
+                <img className="img-fluid" alt="Map of Altis" src={altisMap} width="930" height="390" />
               </div>
-              <p data-aos="fade-up">
+              <p>
                 {t('common:home.tpintofight.beforeKey')}
                 <kbd>Y</kbd>
                 {t('common:home.tpintofight.afterKey')}

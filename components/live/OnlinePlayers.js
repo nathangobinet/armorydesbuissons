@@ -25,27 +25,30 @@ function useSocket(socket) {
   const [, updateState] = useState();
 
   useEffect(() => {
-    const onVisiChange = () => { updateState({}); };
-    document.addEventListener('visibilitychange', onVisiChange);
+    if (socket !== false) {
+      const onVisiChange = () => { updateState({}); };
+      document.addEventListener('visibilitychange', onVisiChange);
 
-    socket.on(EVENTS.INITIED, (initInfo) => {
-      setPlayers(initInfo.players);
-    });
+      socket.on(EVENTS.INITIED, (initInfo) => {
+        setPlayers(initInfo.players);
+      });
 
-    socket.on(EVENTS.KILL_ADDED, (_players) => {
-      setPlayers(_players);
-    });
+      socket.on(EVENTS.KILL_ADDED, (_players) => {
+        setPlayers(_players);
+      });
 
-    socket.on(EVENTS.PLAYER_ADDED, (_players) => {
-      setPlayers(_players);
-    });
+      socket.on(EVENTS.PLAYER_ADDED, (_players) => {
+        setPlayers(_players);
+      });
 
-    socket.on(EVENTS.PLAYER_REMOVED, (_players) => {
-      setPlayers(_players);
-    });
+      socket.on(EVENTS.PLAYER_REMOVED, (_players) => {
+        setPlayers(_players);
+      });
 
-    return () => { document.removeEventListener('visibilitychange', onVisiChange); };
-  }, []);
+      return () => { document.removeEventListener('visibilitychange', onVisiChange); };
+    }
+    return () => false;
+  }, [socket]);
 
   return players;
 }

@@ -28,19 +28,22 @@ function useSocket(socket) {
   const [, updateState] = useState();
 
   useEffect(() => {
-    const onVisiChange = () => { updateState({}); };
-    document.addEventListener('visibilitychange', onVisiChange);
+    if (socket !== false) {
+      const onVisiChange = () => { updateState({}); };
+      document.addEventListener('visibilitychange', onVisiChange);
 
-    socket.on(EVENTS.KILL_ADDED, (_players, _lastKills) => {
-      setLastKills(_lastKills);
-    });
+      socket.on(EVENTS.KILL_ADDED, (_players, _lastKills) => {
+        setLastKills(_lastKills);
+      });
 
-    socket.on(EVENTS.INITIED, (initInfo) => {
-      setLastKills(initInfo.lastKills);
-    });
+      socket.on(EVENTS.INITIED, (initInfo) => {
+        setLastKills(initInfo.lastKills);
+      });
 
-    return () => { document.removeEventListener('visibilitychange', onVisiChange); };
-  }, []);
+      return () => { document.removeEventListener('visibilitychange', onVisiChange); };
+    }
+    return () => false;
+  }, [socket]);
 
   return lastKills;
 }

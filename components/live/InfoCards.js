@@ -10,28 +10,30 @@ function useSocket(socket) {
   const [killNumber, setKillNumber] = useState(0);
 
   useEffect(() => {
-    socket.on(EVENTS.INITIED, (initInfo) => {
-      setPlayerNumber(initInfo.players.length);
-      setUniquePlayerNumber(initInfo.nbUniquePlayers);
-      setKillNumber(initInfo.nbKills);
-    });
+    if (socket !== false) {
+      socket.on(EVENTS.INITIED, (initInfo) => {
+        setPlayerNumber(initInfo.players.length);
+        setUniquePlayerNumber(initInfo.nbUniquePlayers);
+        setKillNumber(initInfo.nbKills);
+      });
 
-    socket.on(EVENTS.KILL_ADDED, (_players, _lastKills, _killNumber) => {
-      setKillNumber(_killNumber);
-    });
+      socket.on(EVENTS.KILL_ADDED, (_players, _lastKills, _killNumber) => {
+        setKillNumber(_killNumber);
+      });
 
-    socket.on(EVENTS.PLAYER_ADDED, (_players) => {
-      setPlayerNumber(_players.length);
-    });
+      socket.on(EVENTS.PLAYER_ADDED, (_players) => {
+        setPlayerNumber(_players.length);
+      });
 
-    socket.on(EVENTS.PLAYER_REMOVED, (_players) => {
-      setPlayerNumber(_players.length);
-    });
+      socket.on(EVENTS.PLAYER_REMOVED, (_players) => {
+        setPlayerNumber(_players.length);
+      });
 
-    socket.on(EVENTS.UNIQUE_PLAYER_ADDED, (_uniquePlayerNumber) => {
-      setUniquePlayerNumber(_uniquePlayerNumber);
-    });
-  }, []);
+      socket.on(EVENTS.UNIQUE_PLAYER_ADDED, (_uniquePlayerNumber) => {
+        setUniquePlayerNumber(_uniquePlayerNumber);
+      });
+    }
+  }, [socket]);
 
   return { playerNumber, uniquePlayerNumber, killNumber };
 }

@@ -4,6 +4,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, useEffect } from 'react';
 import { Modal, Spinner } from 'react-bootstrap';
+import useTranslation from 'next-translate/useTranslation';
 
 import { PayPalButton } from 'react-paypal-button-v2';
 import styles from '../../styles/Shop.module.css';
@@ -43,19 +44,18 @@ function BackButton({ onClick }) {
 }
 
 function Error({ hide }) {
+  const { t } = useTranslation();
   return (
     <div>
-      <h3 className="text-accent mb-0">Oh no !</h3>
+      <h3 className="text-accent mb-0">{t('common:shop.vipPricing.modal.error.title')}</h3>
       <div className="py-4">
         <div className="mb-2"><i className="fas fa-times fa-3x" /></div>
         <p className="mb-0">
-          An unexpected error occurred. You may have been debited.
-          {' '}
-          If this is the case and you are not a VIP, please contact an administrator.
+          {t('common:shop.vipPricing.modal.error.message')}
         </p>
       </div>
       <button type="button" onClick={hide} className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}>
-        Go back
+        {t('common:shop.vipPricing.modal.error.btnBack')}
         <i className="fas fa-chevron-right ml-4" />
       </button>
     </div>
@@ -63,19 +63,18 @@ function Error({ hide }) {
 }
 
 function Success() {
+  const { t } = useTranslation();
   return (
     <div>
-      <h3 className="text-accent mb-0">Thank you !</h3>
+      <h3 className="text-accent mb-0">{t('common:shop.vipPricing.modal.success.title')}</h3>
       <div className="py-4">
         <div className="mb-2"><i className="fas fa-heart fa-3x" /></div>
         <p className="mb-0">
-          Your payment has been accepted and you are now VIP.
-          {' '}
-          You can find all the information about your VIP on your profile.
+          {t('common:shop.vipPricing.modal.success.message')}
         </p>
       </div>
       <a href="/" className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}>
-        Go to my profile
+        {t('common:shop.vipPricing.modal.success.btnProfile')}
         <i className="fas fa-chevron-right ml-4" />
       </a>
     </div>
@@ -83,16 +82,18 @@ function Success() {
 }
 
 function Loading() {
+  const { t } = useTranslation();
   return (
     <div>
       <Spinner animation="border" variant="primary">
-        <span className="sr-only">Loading...</span>
+        <span className="sr-only">{t('common:shop.vipPricing.modal.loading.message')}</span>
       </Spinner>
     </div>
   );
 }
 
 function Payment({ setScreen, paymentInfo }) {
+  const { t } = useTranslation();
   const setLoadingScreen = () => { setScreen(MODAL_SCREEEN.LOADING); };
   const removeLoadingScreen = () => { setScreen(MODAL_SCREEEN.PAYMENT); };
 
@@ -123,7 +124,7 @@ function Payment({ setScreen, paymentInfo }) {
 
   return (
     <div>
-      <h3 className="text-accent mb-0">Payment</h3>
+      <h3 className="text-accent mb-0">{t('common:shop.vipPricing.modal.payment.title')}</h3>
       <div style={{ paddingBottom: '2rem', paddingTop: '2rem' }}>
         <div className="table-responsive mb-2">
           <table
@@ -132,18 +133,18 @@ function Payment({ setScreen, paymentInfo }) {
           >
             <thead>
               <tr>
-                <th scope="col">Quantity</th>
-                <th scope="col">Item</th>
-                <th scope="col">Period</th>
-                <th scope="col">Bonus</th>
-                <th scope="col">Price</th>
+                <th scope="col">{t('common:shop.vipPricing.modal.payment.quantity')}</th>
+                <th scope="col">{t('common:shop.vipPricing.modal.payment.item')}</th>
+                <th scope="col">{t('common:shop.vipPricing.modal.payment.period')}</th>
+                <th scope="col">{t('common:shop.vipPricing.modal.payment.bonus')}</th>
+                <th scope="col">{t('common:shop.vipPricing.modal.payment.price')}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>1</td>
                 <td>VIP</td>
-                <td>{`${paymentInfo.days} days`}</td>
+                <td>{`${paymentInfo.days} ${t('common:shop.vipPricing.modal.payment.days')}`}</td>
                 <td>{`${paymentInfo.ac} Armory Coins`}</td>
                 <td>{`${paymentInfo.price}€`}</td>
               </tr>
@@ -151,11 +152,11 @@ function Payment({ setScreen, paymentInfo }) {
           </table>
         </div>
         <p className="mb-0">
-          To
+          {t('common:shop.vipPricing.modal.payment.to')}
           {' '}
           <b className="text-accent">{paymentInfo.playerId}</b>
           {' '}
-          last seen under
+          {t('common:shop.vipPricing.modal.payment.lastSeen')}
           {' '}
           <b className="text-accent">{paymentInfo.lastName}</b>
         </p>
@@ -181,6 +182,7 @@ function Payment({ setScreen, paymentInfo }) {
 }
 
 function Information({ setScreen, setPaymentInfo }) {
+  const { t } = useTranslation();
   const [mailWanted, setMailWanted] = useState(true);
   const [isCorrect, setIsCorrect] = useState(false);
   const [mail, setMail] = useState('');
@@ -199,13 +201,20 @@ function Information({ setScreen, setPaymentInfo }) {
 
   return (
     <div>
-      <h3 className="text-accent mb-0">Enter your e-mail</h3>
+      <h3 className="text-accent mb-0">{t('common:shop.vipPricing.modal.mail.title')}</h3>
       <div className="py-5">
-        <input type="email" id="email" placeholder="Email" className={`${styles.input} mx-auto`} onChange={onChange} disabled={!mailWanted} />
+        <input
+          type="email"
+          id="email"
+          placeholder={t('common:shop.vipPricing.modal.mail.placeHolderMail')}
+          className={`${styles.input} mx-auto`}
+          onChange={onChange}
+          disabled={!mailWanted}
+        />
         <div className="custom-control custom-checkbox pt-2">
           <input type="checkbox" className="custom-control-input" id="noEmail" onChange={() => setMailWanted((w) => !w)} />
           <label className="custom-control-label pb-1" htmlFor="noEmail" style={{ lineHeight: 1.4 }}>
-            <small>I don't want to receive a purchase confirmation</small>
+            <small>{t('common:shop.vipPricing.modal.mail.dontWantMail')}</small>
           </label>
         </div>
       </div>
@@ -215,7 +224,7 @@ function Information({ setScreen, setPaymentInfo }) {
         onClick={onClick}
         disabled={!(!mailWanted || isCorrect)}
       >
-        Validate
+        {t('common:shop.vipPricing.modal.btnValidate')}
         <i className="fas fa-chevron-right ml-4" />
       </button>
     </div>
@@ -223,6 +232,7 @@ function Information({ setScreen, setPaymentInfo }) {
 }
 
 function PlayerID({ setScreen, setPaymentInfo }) {
+  const { t } = useTranslation();
   const [isCorrect, setIsCorrect] = useState(false);
   const [input, setInput] = useState('');
   const playerName = useFetch('/api/playerName', undefined, { id: input }, 'GET');
@@ -241,19 +251,30 @@ function PlayerID({ setScreen, setPaymentInfo }) {
 
   return (
     <div>
-      <h3 className="text-accent mb-3">Enter your player ID</h3>
+      <h3 className="text-accent mb-3">{t('common:shop.vipPricing.modal.playerId.title')}</h3>
       <p className="mb-0">
-        You can find your player ID in your
-        <a target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=0fzyr0g0wvk"> Arma 3 profile</a>
+        {t('common:shop.vipPricing.modal.playerId.infoPlayerId')}
+        {' '}
+        <a target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=0fzyr0g0wvk">
+          {t('common:shop.vipPricing.modal.playerId.arma3Profile')}
+        </a>
       </p>
       <div style={{ paddingBottom: '2rem', paddingTop: '2rem' }}>
-        <input type="number" id="playerId" placeholder="Player ID" className={`${styles.input} mx-auto`} onChange={onChange} />
+        <input
+          type="number"
+          id="playerId"
+          placeholder={t('common:shop.vipPricing.modal.playerId.placeHolderPlayerId')}
+          className={`${styles.input} mx-auto`}
+          onChange={onChange}
+        />
         <div style={{
           transition: 'opacity O.5s', opacity: (isCorrect) ? 1 : 0, fontSize: 14, marginTop: 8,
         }}
         >
           <i className={`fas ${(playerName === null) ? 'fa-times' : 'fa-check'} mr-2`} />
-          {(playerName === null) ? 'This id does not match any player' : `Last seen under ${playerName}`}
+          {(playerName === null)
+            ? t('common:shop.vipPricing.modal.playerId.idNotMatch')
+            : t('common:shop.vipPricing.modal.playerId.lastSeenUnder', { pseudo: playerName })}
         </div>
       </div>
       <button
@@ -262,7 +283,7 @@ function PlayerID({ setScreen, setPaymentInfo }) {
         onClick={onClick}
         disabled={!(isCorrect && playerName !== null)}
       >
-        Validate
+        {t('common:shop.vipPricing.modal.btnValidate')}
         <i className="fas fa-chevron-right ml-4" />
       </button>
     </div>
@@ -270,6 +291,7 @@ function PlayerID({ setScreen, setPaymentInfo }) {
 }
 
 function Login({ setScreen, setPaymentInfo, paymentInfo }) {
+  const { t } = useTranslation();
   const userInfo = useAuth();
   const isAuth = userInfo ? userInfo.auth : false;
   const SteamButton = () => {
@@ -279,7 +301,7 @@ function Login({ setScreen, setPaymentInfo, paymentInfo }) {
           href={`${config.httpserver}/api/auth/steam?action=${encodeURIComponent(JSON.stringify({ type: 'vip', id: paymentInfo.id }))}`}
           className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}
         >
-          Login with steam
+          {t('common:shop.vipPricing.modal.login.btnLoginSteam')}
           <i className="fas fa-chevron-right ml-4" />
         </a>
       );
@@ -290,7 +312,7 @@ function Login({ setScreen, setPaymentInfo, paymentInfo }) {
         type="button"
         className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}
       >
-        Continue with steam
+        {t('common:shop.vipPricing.modal.login.btnContinueSteam')}
         <i className="fas fa-chevron-right ml-4" />
       </button>
     );
@@ -298,7 +320,7 @@ function Login({ setScreen, setPaymentInfo, paymentInfo }) {
 
   return (
     <div>
-      <h3 className="text-accent">Login</h3>
+      <h3 className="text-accent">{t('common:shop.vipPricing.modal.login.title')}</h3>
       <div className="py-5">
         <SteamButton />
         <button
@@ -306,7 +328,7 @@ function Login({ setScreen, setPaymentInfo, paymentInfo }) {
           type="button"
           onClick={() => { setScreen(MODAL_SCREEEN.PLAYERID); }}
         >
-          Use a player ID
+          {t('common:shop.vipPricing.modal.login.btnPlayerId')}
           <i className="fas fa-chevron-right ml-4" />
         </button>
       </div>
@@ -382,7 +404,15 @@ export default function PaymentModal({
     }
   }, [choosedItem]);
 
-  // TODO Adapter la requêteavec les bons chiffres pour les saisons à la requete player
+  // TODO Bug socket on reload
+  // TODO Adapter la requête avec les bons chiffres pour les saisons à la requete player
+  // TODO Optional ajouter une action sur vip & shop pour reload les ac / skins owned lors du reload
+  // TODO Partitoner les locales
+  // TODO faire le fichier _error (et check si il y'en a pas un autre)
+  // TODO FAire une page legals ?
+  // TODO Résoudre pb de build en prod mode
+  // TODO Fix pb opacity sur shop
+  // TODO refaire btn et link dans le global
 
   return (
     <Modal

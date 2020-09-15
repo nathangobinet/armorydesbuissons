@@ -14,13 +14,13 @@ function Ranking() {
       <div className={styles['section-content']}>
         <div className="d-flex h-100">
           <div className="container my-auto pl-md-5 pt-md-5 mt-md-5">
-            <img className="img-fluid" src={shape} width="600px" data-aos="fade-right" alt="Shape" />
+            <img className="img-fluid" src={shape} width="600px" alt="" />
           </div>
           <div className="w-100 h-100" style={{ marginLeft: '-100%' }}>
             <div className="container d-flex flex-column justify-content-center h-100 py-5">
               <div className="my-auto">
                 <div className="d-flex w-100 justify-content-center mt-md-5 pt-md-5 pl-md-5">
-                  <div className="card text-center shadow" style={{ maxWidth: '400px' }} data-aos="zoom-out" data-aos-delay="200">
+                  <div className="card text-center shadow" style={{ maxWidth: '400px' }}>
                     <h1 className="text-primary">
                       {t('common:home.ranking.title')}
                     </h1>

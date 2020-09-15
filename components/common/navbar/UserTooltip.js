@@ -49,6 +49,7 @@ function UserCardContent(props) {
   const {
     id, lastPseudo, ac, level,
   } = props;
+  const { t } = useTranslation();
   return (
     <div>
       <div style={{
@@ -67,13 +68,14 @@ function UserCardContent(props) {
         </div>
         <div>
           <em>
-            Lvl.
+            {t('common:navbar.level')}
+            {' '}
             {level}
           </em>
         </div>
       </div>
-      <a href={`/p/${id}`} type="button" className="btn btn-primary btn-block">View profile</a>
-      <a href={`${config.httpserver}/api/auth/logout`} type="button" className="btn btn-accent btn-block">Logout</a>
+      <a href={`/p/${id}`} type="button" className="btn btn-primary btn-block">{t('common:navbar.btnViewProfile')}</a>
+      <a href={`${config.httpserver}/api/auth/logout`} type="button" className="btn btn-accent btn-block">{t('common:navbar.btnLogout')}</a>
     </div>
   );
 }
@@ -86,11 +88,11 @@ export function UserTooltip() {
 
   const CardContent = () => {
     if (!authInfo) return (<div>Loading...</div>);
-    if (!authInfo.auth) return <a href={`${config.httpserver}/api/auth/steam`} type="button" className="btn btn-primary btn-block">Connect with steam</a>;
+    if (!authInfo.auth) return <a href={`${config.httpserver}/api/auth/steam`} type="button" className="btn btn-primary btn-block">{t('common:navbar.btnSteam')}</a>;
     return (
       <UserCardContent
         id={authInfo.id}
-        lastPseudo={(authInfo.alreadyConnected) ? authInfo.playerInfo.lastPseudo : t('common:profile.unknowName')}
+        lastPseudo={(authInfo.alreadyConnected) ? authInfo.playerInfo.lastPseudo : t('common:navbar.unknowName')}
         ac={(authInfo.alreadyConnected) ? authInfo.playerInfo.ac : 0}
         level={(authInfo.alreadyConnected) ? authInfo.playerInfo.level : 0}
       />

@@ -40,7 +40,7 @@ export default function Quests() {
           <div className="w-100 h-100" style={{ marginLeft: '-100%' }}>
             <div className="container d-flex flex-column justify-content-center h-100 py-5">
               <div className="my-auto">
-                <h1 className="text-white text-center mb-5 pb-lg-5" data-aos="fade">
+                <h1 className="text-white text-center mb-5 pb-lg-5">
                   {t('common:home.quests.title')}
                 </h1>
                 <div className="my-4">
@@ -50,7 +50,7 @@ export default function Quests() {
                 </div>
               </div>
               <div className="align-self-center m-0">
-                <a className={`${styles['fp-caret-down']} text-white-or-accent opacity-interaction`} label="Go to next section" href="#attack-defense" data-aos="fade" data-aos-offset="0">
+                <a className={`${styles['fp-caret-down']} text-white-or-accent opacity-interaction`} label="Go to next section" href="#attack-defense">
                   <i className={`fas fa-caret-down ${styles.pulse}`} />
                 </a>
               </div>

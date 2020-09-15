@@ -1,8 +1,8 @@
-.round-primary {
+.round-primary1 {
   background: var(--primary-gr);
   width: 8rem;
   height: 8rem;
-  font-size: 70px;
+  font-size: 35px;
   color: white;
   display: flex!important;
   justify-content: center!important;
@@ -201,7 +201,7 @@
 }
 
 .shop-card-legend div:nth-child(2) {
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1;
 }
 
@@ -212,7 +212,7 @@
 }
 
 .shop-card-legend.litle div:nth-child(2) {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1.5rem;
   line-height: 1;
 }

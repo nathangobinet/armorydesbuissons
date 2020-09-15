@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import Navbar from '../components/common/navbar/Navbar';
 import Footer from '../components/common/footer/Footer';
@@ -11,9 +11,17 @@ import Statistics from '../components/live/Statistics';
 import { PlayerPopper } from '../components/live/PlayerPopper';
 
 function Live() {
-  const socket = io('ws://localhost:3005');
+  const [socket, setSocket] = useState(false);
 
-  useEffect(() => () => { socket.close(); });
+  useEffect(() => {
+    setSocket(io('ws://localhost:3005'));
+    return () => {
+      if (socket) {
+        socket.removeAllListeners();
+        socket.close();
+      }
+    };
+  }, []);
 
   return (
     <div>

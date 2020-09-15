@@ -37,6 +37,8 @@ function getLayoutClass(layout) {
 function CardItem({
   ID, layout, img, color, text, subText, isOwned, ac, requirement, setChoosedItem, setModalActive,
 }) {
+  const { t } = useTranslation();
+
   const handleClick = () => {
     setChoosedItem(ID);
     setModalActive(true);
@@ -72,7 +74,7 @@ function CardItem({
         isOwned ? (
           <div style={{ top: '1rem', right: '1rem' }} className="position-absolute font-weight-bold">
             <i className="fas fa-check mr-2" />
-            Owned
+            {t('common:shop.shopPricing.owned')}
           </div>
         ) : ''
       }
@@ -96,7 +98,7 @@ function CardItem({
             (subText) ? <div>{subText}</div> : ''
           }
           <div className="d-flex justify-content-center align-items-center">
-            <img src={acSvg} width={(layout === LAYOUT.MEDIUM) ? '30' : '40'} alt="Armory coins" className="mr-2" />
+            <img src={acSvg} width="40" alt="Armory Coins" className="mr-2" />
             <span style={{ marginBottom: 3 }}>{ac}</span>
             {
               (requirement) ? <em style={{ fontSize: 16 }}>{` - ${requirement}`}</em> : ''
@@ -108,10 +110,10 @@ function CardItem({
   );
 }
 
-function getMappedShop(shop) {
+function getMappedShop(shop, t) {
   const items = shop.map((item) => ({
     ...item,
-    requirement: (item.minLvl) ? `Level ${item.minLvl} required` : undefined,
+    requirement: (item.minLvl) ? t('common:shop.shopPricing.levelRequired', { level: item.minLvl }) : undefined,
     color: RARITY_BG[item.rarity],
   })).sort((a, b) => b.rarity - a.rarity);
   const vipItems = items.filter((item) => item.product.includes('VIP'));
@@ -119,7 +121,7 @@ function getMappedShop(shop) {
   const mappedVipItems = vipItems.map((item) => ({
     ...item,
     text: 'VIP',
-    subText: `${(/(?<=VIP - )\d*/).exec(item.product)[0]} days`, // Do something like '7 days' from 'VIP - 7'
+    subText: `${(/(?<=VIP - )\d*/).exec(item.product)[0]} ${t('common:shop.shopPricing.days')}`, // Do something like '7 days' from 'VIP - 7'
   }));
   const mappedSkinItem = skinItems.map((item) => ({
     ...item,
@@ -130,12 +132,12 @@ function getMappedShop(shop) {
 }
 
 export default function ShopPricing() {
+  const { t } = useTranslation();
   const shop = useFetch('/api/shop', false);
   const [modalActive, setModalActive] = useState(false);
   const [choosedItem, setChoosedItem] = useState(false);
-  const { t } = useTranslation();
 
-  const mappedShop = shop ? getMappedShop(shop) : false;
+  const mappedShop = shop ? getMappedShop(shop, t) : false;
 
   useEffect(() => {
     if (mappedShop) {
@@ -221,7 +223,7 @@ export default function ShopPricing() {
             choosedItem={mappedShop.find((item) => item.ID === choosedItem)}
           />
         </div>
-      ) : <div className="py-5">Loading...</div>}
+      ) : <div className="py-5">{t('common:shop.shopPricing.loading')}</div>}
     </section>
   );
 }

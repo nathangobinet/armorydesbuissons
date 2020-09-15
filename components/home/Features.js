@@ -15,11 +15,11 @@ function Features() {
             <div className="row mb-5">
               <div className="col-md-6 d-flex align-items-center justify-content-center justify-content-md-end">
                 <div className="pb-4 pb-mb-0 pr-md-5 pr-0">
-                  <img className="img-fluid" src={screenLogo} alt="Screen with the armory des buissons logo" width="350" height="350" data-aos="fade-left" />
+                  <img className="img-fluid" src={screenLogo} alt="Screen with the armory des buissons logo" width="350" height="350" />
                 </div>
               </div>
               <div className="col-md-6 d-flex">
-                <div data-aos="fade" data-aos-delay="200">
+                <div>
                   <h1 className="text-center text-md-left text-accent">
                     {t('common:home.features.title')}
                   </h1>
@@ -43,7 +43,7 @@ function Features() {
               </div>
             </div>
             <div className="row">
-              <div className="col-12 d-flex justify-content-center position-relative" data-aos="fade-up" data-aos-delay="200">
+              <div className="col-12 d-flex justify-content-center position-relative">
                 <img className="img-fluid" src={shape} alt="Style shape" width="550" height="550" />
                 <div className={`card shadow pb-0 ${styles['card-on-shape-1']}`}>
                   <div className="text-center">

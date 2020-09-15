@@ -40,10 +40,10 @@ export default function Rules() {
                 </p>
               </div>
               <div className="my-4">
-                <Rule number={1} text={t('common:about.rules.carkill.text')} title={t('about.rules.carkill.title')} />
-                <Rule number={2} text={t('common:about.rules.boost.text')} title={t('about.rules.boost.title')} />
-                <Rule number={3} text={t('common:about.rules.glitch.text')} title={t('about.rules.glitch.title')} />
-                <Rule number={4} text={t('common:about.rules.fairplay.text')} title={t('about.rules.fairplay.title')} />
+                <Rule number={1} text={t('common:about.rules.carkill.text')} title={t('common:about.rules.carkill.title')} />
+                <Rule number={2} text={t('common:about.rules.boost.text')} title={t('common:about.rules.boost.title')} />
+                <Rule number={3} text={t('common:about.rules.glitch.text')} title={t('common:about.rules.glitch.title')} />
+                <Rule number={4} text={t('common:about.rules.fairplay.text')} title={t('common:about.rules.fairplay.title')} />
               </div>
               <div className="text-center">
                 <p className="text-white">

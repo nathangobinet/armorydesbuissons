@@ -18,7 +18,7 @@ export default function Description() {
               <div className="d-flex w-100 justify-content-center mt-md-5 pt-md-5 pl-md-5">
                 <div className="card text-center shadow" style={{ maxWidth: '400px' }}>
                   <h1>{t('common:shop.description.title')}</h1>
-                  <span className={`my-4 mx-auto ${styles['round-primary']}`}><i className="fas fa-angle-double-up" /></span>
+                  <span className={`my-4 mx-auto ${styles['round-primary1']}`}><i className="fas fa-2x fa-angle-double-up" /></span>
                   <p>{t('common:shop.description.p1')}</p>
                 </div>
               </div>

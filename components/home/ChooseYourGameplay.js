@@ -12,7 +12,7 @@ function ChooseYourGameplay() {
       <div className={styles['section-content']}>
         <div className="container d-flex flex-column justify-content-center h-100 py-5">
           <div className="my-auto">
-            <div className="mb-5 text-center" data-aos="fade">
+            <div className="mb-5 text-center">
               <h1>
                 {t('common:home.chooseYourGameplay.title')}
               </h1>
@@ -23,9 +23,9 @@ function ChooseYourGameplay() {
             <div className="d-flex flex-column flex-md-row">
               <div className="px-md-4 align-self-end">
                 <div className="mb-5">
-                  <img className="img-fluid mx-auto d-block" src={striderShape} alt="Shape with striders" data-aos="fade-right" />
+                  <img className="img-fluid mx-auto d-block" src={striderShape} alt="Shape with striders" />
                 </div>
-                <div className="text-center px-md-4" data-aos="fade-up">
+                <div className="text-center px-md-4">
                   <h4 className="text-accent">
                     {t('common:home.chooseYourGameplay.striderTitle')}
                   </h4>
@@ -36,9 +36,9 @@ function ChooseYourGameplay() {
               </div>
               <div className="px-md-4">
                 <div className="mb-5">
-                  <img className="img-fluid mx-auto d-block" src={soldierShape} alt="Shape with soldiers" data-aos="fade-left" />
+                  <img className="img-fluid mx-auto d-block" src={soldierShape} alt="Shape with soldiers" />
                 </div>
-                <div className="text-center px-md-4" data-aos="fade-up">
+                <div className="text-center px-md-4">
                   <h4 className="text-primary">
                     {t('common:home.chooseYourGameplay.soldierTitle')}
                   </h4>

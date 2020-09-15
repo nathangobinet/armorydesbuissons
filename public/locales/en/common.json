@@ -4,6 +4,12 @@
     "live": "Live",
     "about": "About",
     "shop": "Shop"
+  }, "navbar": {
+    "level": "Level",
+    "btnViewProfile": "View Profile",
+    "btnLogout": "Logout",
+    "btnSteam": "Connect with steam",
+    "unknowName": "Unknow pseudo"
   },
   "footer": {
     "copyright": "© Armory des buissons - All Rights Reserved"
@@ -216,6 +222,101 @@
         "f8": "Shop menu",
         "f": "Vehicle siren (only on certain skin)",
         "h": "Enable/Disable the quest menu"
+      }
+    }
+  }, "shop": {
+    "vipPricing": {
+      "title": "Help us by becoming VIP",
+      "days": "days",
+      "skins": "Skins",
+      "slots": "Reserved slot",
+      "ac": "Armory Coins",
+      "btn": "Help us",
+      "modal": {
+        "btnValidate": "Validate",
+        "login": {
+          "title": "Login",
+          "btnContinueSteam": "Continue with steam",
+          "btnLoginSteam": "Login with steam",
+          "btnPlayerId": "Use a Player ID"
+        }, "playerId" : {
+          "title": "Enter your player ID",
+          "infoPlayerId": "You can find your player ID in your",
+          "arma3Profile": "Arma 3 profile",
+          "placeHolderPlayerId": "Player ID",
+          "idNotMatch": "This ID does not match any player",
+          "lastSeenUnder": "Last seen under {{pseudo}}"
+        }, "mail" : {
+          "title": "Enter your e-mail",
+          "placeHolderMail": "Email",
+          "dontWantMail": "I don't want to receive a purchase confirmation"
+        }, "payment": {
+          "title": "Payment",
+          "quantity": "Quantity",
+          "item": "Item",
+          "period": "Period",
+          "bonus": "Bonus",
+          "price": "Price",
+          "days": "days",
+          "to": "To",
+          "lastSeen": "last seen under"
+        }, "success": {
+          "title": "Thank you !",
+          "message": "Your payment has been accepted and you are now VIP. You can find all the information about your VIP on your profile.",
+          "btnProfile": "Go to my profile"
+        }, "error": {
+          "title": "Oh no !",
+          "message": "An unexpected error occurred. You may have been debited. Please contact an administrator if this is the case and you are not VIP.",
+          "btnBack": "Go back"
+        }, "loading": {
+          "message": "Loading..."
+        }
+      }
+    }, "shopPricing": {
+      "title": "Use your coins",
+      "p1": "Your Armory Coins allow you to become VIP for a certain period of time and unlock skins. You must be VIP to use those skins.",
+      "loading": "Loading...",
+      "days": "day(s)",
+      "levelRequired": "Level {{level}} required",
+      "owned": "Owned",
+      "modal": {
+        "error": "An unexpected error occurred. Please try again and contact an administrator if the problem persists.",
+        "success": "Your purchase has been successfully completed. You must perform an in-game disconnect/reconnect to enjoy it.",
+        "unknowPlayer": "Unknown",
+        "neverConnected": "You have never logged on to the server. Please log in once before making a purchase",
+        "notEnoughtAc": "You don't have enough Armory Coins to buy this item",
+        "alreadyOwned": "You already own this item",
+        "btnBuy": "Buy",
+        "btnLoginSteam": "Log in with steam"
+      }
+    }, "description" : {
+      "title": "Become VIP",
+      "p1": "To guarantee you the most pleasant gaming experience, we have invested in a high-performance server. But it comes at a cost, and we need you to help us finance the server.",
+      "p2": "In return for your donation, you will unlock:",
+      "p3": "Exceptional visuals for your vehicles and outfits",
+      "p4": "A reserved slots so that you can always connect"
+    }, "availableSkins" : {
+      "title": "Available skins",
+      "p1": "Many skins are available as VIPs. These skins are designed for \"strider\" vehicles. However, they can also be worn on other vehicles or outfits. Some skins also have sirens.",
+      "t2": "VIP Skins",
+      "p2": "These skins are the ones available by default in the VIP.",
+      "t3": "Ranking Skins",
+      "p3": "Skins representing the different divisions are also available. As a VIP, you will have access to skins representing your division and those of the lower divisions.",
+      "t4": "Custom skins",
+      "p4": "It is possible to help us to finance the server by buying a personalized skin. This skin will be custom made according to your requests.",
+      "sirenAvailable": "Sirens are available for this skin.",
+      "sirenNotAvailable": "Sirens are not available for this skin."
+    }, "otherDonation" : {
+      "title": "Other donations",
+      "freeDonation": {
+        "title": "Free donation",
+        "p1": "You can donate the amount of your wish.",
+        "p2": "This donation does not offer any In-Game advantage, but allows us to continue to develop and to offer you a better gaming experience."
+      },
+      "customSkin": {
+        "title": "Custom skin",
+        "p1": "It is possible to order a personalized and individual skin. This skin will be made to measure according to your requests. It is also possible to provide us with the skin you want. The price is €25,00.",
+        "p2": "Please contact a founder for more details on order and payment terms."
       }
     }
   }
