@@ -34,13 +34,19 @@ function getLayoutClass(layout) {
   }
 }
 
-function CardItem({
-  ID, layout, img, color, text, subText, isOwned, ac, requirement, setChoosedItem, setModalActive,
-}) {
+function CardItem(props) {
+  const {
+    choosedItem, setChoosedItem, setModalActive, layout,
+  } = props;
+
+  const {
+    img, color, text, subText, isOwned, ac, requirement,
+  } = choosedItem;
+
   const { t } = useTranslation();
 
   const handleClick = () => {
-    setChoosedItem(ID);
+    setChoosedItem(choosedItem);
     setModalActive(true);
   };
 
@@ -134,10 +140,14 @@ function getMappedShop(shop, t) {
 export default function ShopPricing() {
   const { t } = useTranslation();
   const shop = useFetch('/api/shop', false);
+
   const [modalActive, setModalActive] = useState(false);
   const [choosedItem, setChoosedItem] = useState(false);
+  const [mappedShop, setMappedShop] = useState(false);
 
-  const mappedShop = shop ? getMappedShop(shop, t) : false;
+  useEffect(() => {
+    if (shop) setMappedShop(getMappedShop(shop, t));
+  }, [shop]);
 
   useEffect(() => {
     if (mappedShop) {
@@ -145,13 +155,14 @@ export default function ShopPricing() {
       // Check if action and action info have id
       if (action.isAction && action.info.id) {
         // Check if action id exist
-        if (mappedShop.some((item) => item.ID === action.info.id)) {
+        const choosed = mappedShop.find((item) => item.ID === action.info.id);
+        if (choosed) {
           setModalActive(true);
-          setChoosedItem(action.info.id);
+          setChoosedItem(choosed);
         }
       }
     }
-  }, [shop]);
+  }, [mappedShop]);
 
   return (
     <section id="other-donation" className="container py-5">
@@ -159,13 +170,13 @@ export default function ShopPricing() {
         <h1 className="text-accent mb-4">{t('shop:shopPricing.title')}</h1>
         <p>{t('shop:shopPricing.p1')}</p>
       </div>
-      { shop ? (
+      { mappedShop ? (
         <div>
           <div className="container">
             <div className="row">
               <div className="col-12">
                 <CardItem
-                  {...mappedShop[0]}
+                  choosedItem={mappedShop[0]}
                   layout={LAYOUT.BIG}
                   setModalActive={setModalActive}
                   setChoosedItem={setChoosedItem}
@@ -175,7 +186,7 @@ export default function ShopPricing() {
             <div className="row">
               <div className="col-lg-6 order-2 order-lg-1">
                 <CardItem
-                  {...mappedShop[2]}
+                  choosedItem={mappedShop[2]}
                   layout={LAYOUT.MEDIUM}
                   setModalActive={setModalActive}
                   setChoosedItem={setChoosedItem}
@@ -183,7 +194,7 @@ export default function ShopPricing() {
               </div>
               <div className="col-lg-6 order-1 order-lg-2">
                 <CardItem
-                  {...mappedShop[1]}
+                  choosedItem={mappedShop[1]}
                   layout={LAYOUT.MEDIUM}
                   setModalActive={setModalActive}
                   setChoosedItem={setChoosedItem}
@@ -193,7 +204,7 @@ export default function ShopPricing() {
             <div className="row">
               <div className="col-lg-4 order-lg-1 order-3">
                 <CardItem
-                  {...mappedShop[5]}
+                  choosedItem={mappedShop[5]}
                   layout={LAYOUT.LITLE}
                   setModalActive={setModalActive}
                   setChoosedItem={setChoosedItem}
@@ -201,7 +212,7 @@ export default function ShopPricing() {
               </div>
               <div className="col-lg-4 order-2">
                 <CardItem
-                  {...mappedShop[4]}
+                  choosedItem={mappedShop[4]}
                   layout={LAYOUT.LITLE}
                   setModalActive={setModalActive}
                   setChoosedItem={setChoosedItem}
@@ -209,7 +220,7 @@ export default function ShopPricing() {
               </div>
               <div className="col-lg-4 order-lg-3 order-1">
                 <CardItem
-                  {...mappedShop[3]}
+                  choosedItem={mappedShop[3]}
                   layout={LAYOUT.LITLE}
                   setModalActive={setModalActive}
                   setChoosedItem={setChoosedItem}
@@ -220,8 +231,16 @@ export default function ShopPricing() {
           <ShopModal
             isActive={modalActive}
             setModalActive={setModalActive}
-            choosedItem={mappedShop.find((item) => item.ID === choosedItem)}
+            choosedItem={choosedItem}
+            setBuyed={() => {
+              setMappedShop((mappedS) => {
+                const item = mappedS.find((s) => s.ID === choosedItem.ID);
+                if (!item.product.includes('VIP')) item.isOwned = true;
+                return mappedS;
+              });
+            }}
           />
+
         </div>
       ) : <div className="py-5">{t('shop:shopPricing.loading')}</div>}
     </section>

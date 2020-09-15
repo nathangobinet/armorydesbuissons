@@ -9,7 +9,7 @@ import useTranslation from 'next-translate/useTranslation';
 import { PayPalButton } from 'react-paypal-button-v2';
 import styles from '../../styles/Shop.module.css';
 import useFetch from '../../helpers/useFetch';
-import { useAuth } from '../../helpers/user';
+import { updateUser, useAuth } from '../../helpers/user';
 import config from '../../helpers/config';
 
 const MODAL_SCREEEN = {
@@ -113,8 +113,12 @@ function Payment({ setScreen, paymentInfo }) {
       }),
     });
     const content = await rawResponse.json();
-    if (content.result !== undefined && content.result === true) setScreen(MODAL_SCREEEN.SUCCESS);
-    else setScreen(MODAL_SCREEEN.ERROR);
+    if (content.result !== undefined && content.result === true) {
+      updateUser((user) => ({
+        ...user, playerInfo: { ...user.playerInfo, ac: user.playerInfo.ac + paymentInfo.ac },
+      }));
+      setScreen(MODAL_SCREEEN.SUCCESS);
+    } else setScreen(MODAL_SCREEEN.ERROR);
   };
 
   const onError = (err) => {
@@ -298,7 +302,7 @@ function Login({ setScreen, setPaymentInfo, paymentInfo }) {
     if (!isAuth) {
       return (
         <a
-          href={`${config.httpserver}/api/auth/steam?action=${encodeURIComponent(JSON.stringify({ type: 'vip', id: paymentInfo.id }))}`}
+          href={`${config.httpserver}/api/auth/steam?action=${encodeURIComponent(JSON.stringify({ type: 'vip_steam_connexion', id: paymentInfo.id }))}`}
           className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}
         >
           {t('shop:vipPricing.modal.login.btnLoginSteam')}
@@ -409,7 +413,6 @@ export default function PaymentModal({
   // TODO faire le fichier _error (et check si il y'en a pas un autre)
   // TODO FAire une page legals ?
   // TODO Résoudre pb de build en prod mode
-  // TODO Fix pb opacity sur shop
   // TODO refaire btn et link dans le global
 
   return (

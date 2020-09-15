@@ -88,8 +88,9 @@ export default function VipPricing() {
   const [isShowModal, setsIsShowModal] = useState(false);
   const [choosedItem, setChoosedItem] = useState(false);
 
+  // Handle action : vip_steam_connexion
   useEffect(() => {
-    const action = getUrlAction('vip');
+    const action = getUrlAction('vip_steam_connexion');
     // Check if action and action info have id
     if (action.isAction && action.info.id) {
       // Check if action id exist

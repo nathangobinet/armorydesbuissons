@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useTranslation from 'next-translate/useTranslation';
 
 import config from '../../helpers/config';
-import { useAuth } from '../../helpers/user';
+import { updateUser, useAuth } from '../../helpers/user';
 
 import acSvg from '../../public/svgs/icons/ac-round.svg';
 import styles from '../../styles/Shop.module.css';
@@ -121,9 +121,13 @@ function ErrorSection() {
   );
 }
 
-export default function ShopModal({ isActive, setModalActive, choosedItem }) {
+export default function ShopModal(props) {
   const authInfo = useAuth();
   const [isBuy, setIsBuy] = useState(false);
+
+  const {
+    isActive, setModalActive, choosedItem, setBuyed,
+  } = props;
 
   const onBuy = async () => {
     const rawResponse = await fetch(`${config.httpserver}/api/shop`, {
@@ -139,8 +143,13 @@ export default function ShopModal({ isActive, setModalActive, choosedItem }) {
       }),
     });
     const content = await rawResponse.json();
-    if (content.success && content.result) setIsBuy('success');
-    else setIsBuy('error');
+    if (content.success && content.result) {
+      setBuyed();
+      updateUser((user) => ({
+        ...user, playerInfo: { ...user.playerInfo, ac: user.playerInfo.ac - choosedItem.ac },
+      }));
+      setIsBuy('success');
+    } else setIsBuy('error');
   };
 
   const Content = () => {
@@ -164,7 +173,7 @@ export default function ShopModal({ isActive, setModalActive, choosedItem }) {
           <div className="p-4 d-flex flex-column text-center flex-sm-row justify-content-sm-between align-items-center">
             {(authInfo && authInfo.auth) ? <PlayerSection authInfo={authInfo} /> : <div />}
             <button
-              onClick={() => { setModalActive(false); }}
+              onClick={() => { setIsBuy(false); setModalActive(false); }}
               className={`${styles['close-button']} order-0 order-sm-1 align-self-sm-start`}
               type="button"
             >

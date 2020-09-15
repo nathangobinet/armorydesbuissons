@@ -32,6 +32,11 @@ export async function loadUser() {
   }
 }
 
+export async function updateUser(updateFunc) {
+  user = updateFunc(user);
+  authListeners.forEach((listener) => listener.set(user));
+}
+
 export function getUrlAction(type) {
   const url = new URL(window.location.href);
   const action = url.searchParams.get('action');
