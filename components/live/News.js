@@ -29,7 +29,7 @@ export default function News({ news, fullWidth, setToggle }) {
               className="btn-link"
               onClick={() => { setToggle(news.id); }}
             >
-              {t('common:live.news.more')}
+              {t('live:news.more')}
             </button>
           )}
         </div>

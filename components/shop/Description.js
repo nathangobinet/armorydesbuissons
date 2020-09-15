@@ -17,9 +17,9 @@ export default function Description() {
             <div className="my-auto">
               <div className="d-flex w-100 justify-content-center mt-md-5 pt-md-5 pl-md-5">
                 <div className="card text-center shadow" style={{ maxWidth: '400px' }}>
-                  <h1>{t('common:shop.description.title')}</h1>
+                  <h1>{t('shop:description.title')}</h1>
                   <span className={`my-4 mx-auto ${styles['round-primary1']}`}><i className="fas fa-2x fa-angle-double-up" /></span>
-                  <p>{t('common:shop.description.p1')}</p>
+                  <p>{t('shop:description.p1')}</p>
                 </div>
               </div>
             </div>
@@ -28,15 +28,15 @@ export default function Description() {
       </div>
       <div className="container">
         <div className="text-center">
-          <p className="mb-5">{t('common:shop.description.p2')}</p>
+          <p className="mb-5">{t('shop:description.p2')}</p>
           <div className="d-flex flex-column flex-sm-row align-items-center justify-content-around mx-auto" style={{ maxWidth: '800px' }}>
             <div style={{ maxWidth: '300px' }} className="py-2">
               <div className="text-primary mb-3"><i className="fas fa-6x fa-palette" /></div>
-              <p>{t('common:shop.description.p3')}</p>
+              <p>{t('shop:description.p3')}</p>
             </div>
             <div style={{ maxWidth: '300px' }} className="py-2">
               <div className="text-accent mb-3"><i className="fas fa-6x fa-stream" /></div>
-              <p>{t('common:shop.description.p4')}</p>
+              <p>{t('shop:description.p4')}</p>
             </div>
           </div>
         </div>

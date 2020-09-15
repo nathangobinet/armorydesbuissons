@@ -100,12 +100,12 @@ export default function Rank() {
   const [current, setCurrent] = useState(0);
 
   const ranks = [
-    { image: rankBronze, league: 'BRONZE', description: t('common:about.rank.league.bronze') },
-    { image: rankSilver, league: 'SILVER', description: t('common:about.rank.league.silver') },
-    { image: rankGold, league: 'GOLD', description: t('common:about.rank.league.gold') },
-    { image: rankPlatinium, league: 'PLATINIUM', description: t('common:about.rank.league.platinium') },
-    { image: rankDiamond, league: 'DIAMOND', description: t('common:about.rank.league.diamond') },
-    { image: rankTop10, league: 'TOP 10', description: t('common:about.rank.league.top10') },
+    { image: rankBronze, league: 'BRONZE', description: t('about:rank.league.bronze') },
+    { image: rankSilver, league: 'SILVER', description: t('about:rank.league.silver') },
+    { image: rankGold, league: 'GOLD', description: t('about:rank.league.gold') },
+    { image: rankPlatinium, league: 'PLATINIUM', description: t('about:rank.league.platinium') },
+    { image: rankDiamond, league: 'DIAMOND', description: t('about:rank.league.diamond') },
+    { image: rankTop10, league: 'TOP 10', description: t('about:rank.league.top10') },
   ];
 
   const changeImage = (change) => {
@@ -118,24 +118,24 @@ export default function Rank() {
     <section id="rank" className="container py-5">
       <div className="text-center py-4">
         <div>
-          <h1 className="text-accent mb-4">{t('common:about.rank.title')}</h1>
-          <p>{t('common:about.rank.p1')}</p>
+          <h1 className="text-accent mb-4">{t('about:rank.title')}</h1>
+          <p>{t('about:rank.p1')}</p>
         </div>
         <ImageHandler ranks={ranks} current={current} onChange={changeImage} />
       </div>
       <div>
-        <Info icon="fa-square-root-alt" title={t('common:about.rank.calculation.title')}>
-          <p>{t('common:about.rank.calculation.p1')}</p>
+        <Info icon="fa-square-root-alt" title={t('about:rank.calculation.title')}>
+          <p>{t('about:rank.calculation.p1')}</p>
           <pre className="mb-1">
             <code>
-              <span className="font-weight-bolder">{t('common:about.rank.calculation.formula1')}</span>
+              <span className="font-weight-bolder">{t('about:rank.calculation.formula1')}</span>
               {' '}
-              {t('common:about.rank.calculation.formula2')}
+              {t('about:rank.calculation.formula2')}
             </code>
           </pre>
         </Info>
-        <Info icon="fa-sort-amount-down" title={t('common:about.rank.decrease.title')}>
-          <p>{t('common:about.rank.decrease.p1')}</p>
+        <Info icon="fa-sort-amount-down" title={t('about:rank.decrease.title')}>
+          <p>{t('about:rank.decrease.p1')}</p>
           <div className="d-flex flex-wrap align-items-center justify-content-between">
             <div className="p-1">
               <div><b>Bronze</b></div>
@@ -163,23 +163,23 @@ export default function Rank() {
             </div>
           </div>
         </Info>
-        <Info icon="fa-people-arrows" title={t('common:about.rank.distance.title')}>
-          <p>{t('common:about.rank.distance.p1')}</p>
+        <Info icon="fa-people-arrows" title={t('about:rank.distance.title')}>
+          <p>{t('about:rank.distance.p1')}</p>
           <pre className="mb-1">
             <code>
-              <span className="font-weight-bolder">{t('common:about.rank.distance.formula1')}</span>
+              <span className="font-weight-bolder">{t('about:rank.distance.formula1')}</span>
               {' '}
-              {t('common:about.rank.distance.formula2')}
+              {t('about:rank.distance.formula2')}
             </code>
           </pre>
         </Info>
-        <Info icon="fa-calendar-week" title={t('common:about.rank.reset.title')}>
-          <p>{t('common:about.rank.reset.p1')}</p>
-          <p>{t('common:about.rank.reset.p2')}</p>
+        <Info icon="fa-calendar-week" title={t('about:rank.reset.title')}>
+          <p>{t('about:rank.reset.p1')}</p>
+          <p>{t('about:rank.reset.p2')}</p>
         </Info>
-        <Info icon="fa-filter" title={t('common:about.rank.filter.title')}>
+        <Info icon="fa-filter" title={t('about:rank.filter.title')}>
           <p>
-            {t('common:about.rank.filter.p1')}
+            {t('about:rank.filter.p1')}
           </p>
         </Info>
       </div>

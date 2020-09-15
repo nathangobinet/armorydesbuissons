@@ -47,15 +47,15 @@ function Error({ hide }) {
   const { t } = useTranslation();
   return (
     <div>
-      <h3 className="text-accent mb-0">{t('common:shop.vipPricing.modal.error.title')}</h3>
+      <h3 className="text-accent mb-0">{t('shop:vipPricing.modal.error.title')}</h3>
       <div className="py-4">
         <div className="mb-2"><i className="fas fa-times fa-3x" /></div>
         <p className="mb-0">
-          {t('common:shop.vipPricing.modal.error.message')}
+          {t('shop:vipPricing.modal.error.message')}
         </p>
       </div>
       <button type="button" onClick={hide} className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}>
-        {t('common:shop.vipPricing.modal.error.btnBack')}
+        {t('shop:vipPricing.modal.error.btnBack')}
         <i className="fas fa-chevron-right ml-4" />
       </button>
     </div>
@@ -66,15 +66,15 @@ function Success() {
   const { t } = useTranslation();
   return (
     <div>
-      <h3 className="text-accent mb-0">{t('common:shop.vipPricing.modal.success.title')}</h3>
+      <h3 className="text-accent mb-0">{t('shop:vipPricing.modal.success.title')}</h3>
       <div className="py-4">
         <div className="mb-2"><i className="fas fa-heart fa-3x" /></div>
         <p className="mb-0">
-          {t('common:shop.vipPricing.modal.success.message')}
+          {t('shop:vipPricing.modal.success.message')}
         </p>
       </div>
       <a href="/" className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}>
-        {t('common:shop.vipPricing.modal.success.btnProfile')}
+        {t('shop:vipPricing.modal.success.btnProfile')}
         <i className="fas fa-chevron-right ml-4" />
       </a>
     </div>
@@ -86,7 +86,7 @@ function Loading() {
   return (
     <div>
       <Spinner animation="border" variant="primary">
-        <span className="sr-only">{t('common:shop.vipPricing.modal.loading.message')}</span>
+        <span className="sr-only">{t('shop:vipPricing.modal.loading.message')}</span>
       </Spinner>
     </div>
   );
@@ -124,7 +124,7 @@ function Payment({ setScreen, paymentInfo }) {
 
   return (
     <div>
-      <h3 className="text-accent mb-0">{t('common:shop.vipPricing.modal.payment.title')}</h3>
+      <h3 className="text-accent mb-0">{t('shop:vipPricing.modal.payment.title')}</h3>
       <div style={{ paddingBottom: '2rem', paddingTop: '2rem' }}>
         <div className="table-responsive mb-2">
           <table
@@ -133,18 +133,18 @@ function Payment({ setScreen, paymentInfo }) {
           >
             <thead>
               <tr>
-                <th scope="col">{t('common:shop.vipPricing.modal.payment.quantity')}</th>
-                <th scope="col">{t('common:shop.vipPricing.modal.payment.item')}</th>
-                <th scope="col">{t('common:shop.vipPricing.modal.payment.period')}</th>
-                <th scope="col">{t('common:shop.vipPricing.modal.payment.bonus')}</th>
-                <th scope="col">{t('common:shop.vipPricing.modal.payment.price')}</th>
+                <th scope="col">{t('shop:vipPricing.modal.payment.quantity')}</th>
+                <th scope="col">{t('shop:vipPricing.modal.payment.item')}</th>
+                <th scope="col">{t('shop:vipPricing.modal.payment.period')}</th>
+                <th scope="col">{t('shop:vipPricing.modal.payment.bonus')}</th>
+                <th scope="col">{t('shop:vipPricing.modal.payment.price')}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>1</td>
                 <td>VIP</td>
-                <td>{`${paymentInfo.days} ${t('common:shop.vipPricing.modal.payment.days')}`}</td>
+                <td>{`${paymentInfo.days} ${t('shop:vipPricing.modal.payment.days')}`}</td>
                 <td>{`${paymentInfo.ac} Armory Coins`}</td>
                 <td>{`${paymentInfo.price}€`}</td>
               </tr>
@@ -152,11 +152,11 @@ function Payment({ setScreen, paymentInfo }) {
           </table>
         </div>
         <p className="mb-0">
-          {t('common:shop.vipPricing.modal.payment.to')}
+          {t('shop:vipPricing.modal.payment.to')}
           {' '}
           <b className="text-accent">{paymentInfo.playerId}</b>
           {' '}
-          {t('common:shop.vipPricing.modal.payment.lastSeen')}
+          {t('shop:vipPricing.modal.payment.lastSeen')}
           {' '}
           <b className="text-accent">{paymentInfo.lastName}</b>
         </p>
@@ -201,12 +201,12 @@ function Information({ setScreen, setPaymentInfo }) {
 
   return (
     <div>
-      <h3 className="text-accent mb-0">{t('common:shop.vipPricing.modal.mail.title')}</h3>
+      <h3 className="text-accent mb-0">{t('shop:vipPricing.modal.mail.title')}</h3>
       <div className="py-5">
         <input
           type="email"
           id="email"
-          placeholder={t('common:shop.vipPricing.modal.mail.placeHolderMail')}
+          placeholder={t('shop:vipPricing.modal.mail.placeHolderMail')}
           className={`${styles.input} mx-auto`}
           onChange={onChange}
           disabled={!mailWanted}
@@ -214,7 +214,7 @@ function Information({ setScreen, setPaymentInfo }) {
         <div className="custom-control custom-checkbox pt-2">
           <input type="checkbox" className="custom-control-input" id="noEmail" onChange={() => setMailWanted((w) => !w)} />
           <label className="custom-control-label pb-1" htmlFor="noEmail" style={{ lineHeight: 1.4 }}>
-            <small>{t('common:shop.vipPricing.modal.mail.dontWantMail')}</small>
+            <small>{t('shop:vipPricing.modal.mail.dontWantMail')}</small>
           </label>
         </div>
       </div>
@@ -224,7 +224,7 @@ function Information({ setScreen, setPaymentInfo }) {
         onClick={onClick}
         disabled={!(!mailWanted || isCorrect)}
       >
-        {t('common:shop.vipPricing.modal.btnValidate')}
+        {t('shop:vipPricing.modal.btnValidate')}
         <i className="fas fa-chevron-right ml-4" />
       </button>
     </div>
@@ -251,19 +251,19 @@ function PlayerID({ setScreen, setPaymentInfo }) {
 
   return (
     <div>
-      <h3 className="text-accent mb-3">{t('common:shop.vipPricing.modal.playerId.title')}</h3>
+      <h3 className="text-accent mb-3">{t('shop:vipPricing.modal.playerId.title')}</h3>
       <p className="mb-0">
-        {t('common:shop.vipPricing.modal.playerId.infoPlayerId')}
+        {t('shop:vipPricing.modal.playerId.infoPlayerId')}
         {' '}
         <a target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=0fzyr0g0wvk">
-          {t('common:shop.vipPricing.modal.playerId.arma3Profile')}
+          {t('shop:vipPricing.modal.playerId.arma3Profile')}
         </a>
       </p>
       <div style={{ paddingBottom: '2rem', paddingTop: '2rem' }}>
         <input
           type="number"
           id="playerId"
-          placeholder={t('common:shop.vipPricing.modal.playerId.placeHolderPlayerId')}
+          placeholder={t('shop:vipPricing.modal.playerId.placeHolderPlayerId')}
           className={`${styles.input} mx-auto`}
           onChange={onChange}
         />
@@ -273,8 +273,8 @@ function PlayerID({ setScreen, setPaymentInfo }) {
         >
           <i className={`fas ${(playerName === null) ? 'fa-times' : 'fa-check'} mr-2`} />
           {(playerName === null)
-            ? t('common:shop.vipPricing.modal.playerId.idNotMatch')
-            : t('common:shop.vipPricing.modal.playerId.lastSeenUnder', { pseudo: playerName })}
+            ? t('shop:vipPricing.modal.playerId.idNotMatch')
+            : t('shop:vipPricing.modal.playerId.lastSeenUnder', { pseudo: playerName })}
         </div>
       </div>
       <button
@@ -283,7 +283,7 @@ function PlayerID({ setScreen, setPaymentInfo }) {
         onClick={onClick}
         disabled={!(isCorrect && playerName !== null)}
       >
-        {t('common:shop.vipPricing.modal.btnValidate')}
+        {t('shop:vipPricing.modal.btnValidate')}
         <i className="fas fa-chevron-right ml-4" />
       </button>
     </div>
@@ -301,7 +301,7 @@ function Login({ setScreen, setPaymentInfo, paymentInfo }) {
           href={`${config.httpserver}/api/auth/steam?action=${encodeURIComponent(JSON.stringify({ type: 'vip', id: paymentInfo.id }))}`}
           className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}
         >
-          {t('common:shop.vipPricing.modal.login.btnLoginSteam')}
+          {t('shop:vipPricing.modal.login.btnLoginSteam')}
           <i className="fas fa-chevron-right ml-4" />
         </a>
       );
@@ -312,7 +312,7 @@ function Login({ setScreen, setPaymentInfo, paymentInfo }) {
         type="button"
         className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}
       >
-        {t('common:shop.vipPricing.modal.login.btnContinueSteam')}
+        {t('shop:vipPricing.modal.login.btnContinueSteam')}
         <i className="fas fa-chevron-right ml-4" />
       </button>
     );
@@ -320,7 +320,7 @@ function Login({ setScreen, setPaymentInfo, paymentInfo }) {
 
   return (
     <div>
-      <h3 className="text-accent">{t('common:shop.vipPricing.modal.login.title')}</h3>
+      <h3 className="text-accent">{t('shop:vipPricing.modal.login.title')}</h3>
       <div className="py-5">
         <SteamButton />
         <button
@@ -328,7 +328,7 @@ function Login({ setScreen, setPaymentInfo, paymentInfo }) {
           type="button"
           onClick={() => { setScreen(MODAL_SCREEEN.PLAYERID); }}
         >
-          {t('common:shop.vipPricing.modal.login.btnPlayerId')}
+          {t('shop:vipPricing.modal.login.btnPlayerId')}
           <i className="fas fa-chevron-right ml-4" />
         </button>
       </div>
@@ -404,7 +404,6 @@ export default function PaymentModal({
     }
   }, [choosedItem]);
 
-  // TODO Bug socket on reload
   // TODO Adapter la requête avec les bons chiffres pour les saisons à la requete player
   // TODO Optional ajouter une action sur vip & shop pour reload les ac / skins owned lors du reload
   // TODO Partitoner les locales

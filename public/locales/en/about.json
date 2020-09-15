@@ -1,0 +1,92 @@
+{
+  "summary": {
+    "title": "About our Arma 3 server", "p1": "This section invites you to:", "btnConnect": "Connect", "btnFeatures": "All the features"
+  }, 
+  "rules": {
+    "title": "Know the rules", "p1": "Even if we play for fun, it is necessary to respect certain rules in order to guarantee a pleasant gaming experience.",
+    "carkill": { "title":"Carkill", "text": "Carkill is not allowed, however if it happens, let the person reposition himself."},
+    "boost": { "title":"Boost", "text": "It is forbidden to be killed in order to increase the score of another player."},
+    "glitch": { "title":"Glitch", "text": "It is obviously forbidden to take advantage of any game bug."},
+    "fairplay": { "title":"Fairplay", "text": "Never forget that you are playing for fun, so try to stay fairplay at all times."}, 
+    "p2": "In the event of non-compliance with the regulations, sanctions will be taken, going from a simple warning to final banishment"
+  }, 
+  "team": {
+    "title": "Meet our team",
+    "hector": { "title": "Game developer", "text": "He fully developed the mission and takes care of the administration of the server." },
+    "jpat": { "title": "Web developer", "text": "He developed the website and moderates the server." },
+    "jezah": { "title": "Investor", "text": "He initially funded the server and helps with its moderation." }
+  }, 
+  "contact": {
+    "title": "Contact us",
+    "join": { 
+      "title": "Join our community",
+      "p1": "You have a problem ? You want to be aware of the last news ? You want to discuss with your friends and with all the members of the Armory ?",
+      "p2": "So our discord is made for you !", "btn": "Join us"
+    },
+    "contact": { 
+      "title": "Contact the founders",
+      "p1": "You want to join the moderation team? You have a problem with a moderator? You have a suggestion or any other problems ?",
+      "p2": "Then send us an email !", "btn": "Mail us"
+    }
+  },
+  "rank": {
+    "title": "Understand the ranking system",
+    "p1": "Each player's ranking is instantly updated each time he kills or is killed by another player. Players are split in 6 divisions according to their number of points.",
+    "league": {
+      "bronze": "This division includes the other players.",
+      "silver": "This division brings together the 60% best players.",
+      "gold": "This division brings together the 28% best players.",
+      "platinium": "This division brings together the 8% best players.",
+      "diamond": "This division brings together the 4% best players.",
+      "top10": "This division brings together the 10 best players."
+    },
+    "calculation": {
+      "title": "Calculation of the number of points",
+      "p1": "The number of points won and lost depends on the ranking of the two players according to the following algorithm:",
+      "formula1": "newRank", "formula2": "= yourRank +  (rankPlayerKilled / yourRank * 5)"
+    },
+    "decrease": {
+      "title": "Decrease for inactivity",
+      "p1": "The ranking decreases automatically if the player has not made a kill during the day. This reduction is made according to the division:"
+    }, 
+    "distance": {
+      "title": "Reduction for distant kills",
+      "p1": "Kills made over 50 meters earn less points proportionally to the distance according to the following algorithm:",
+      "formula1": "earnedPoints", "formula2": "= normalKillPoints * (50 / distance)"
+    }, 
+    "reset": {
+      "title": "Rank initialization and reset",
+      "p1": "Rank is initialised at 1000, which corresponds to the Gold division. Rank is reset to 1000 each month. The highest ranked player wins a VIP and a Top 1 skin.",
+      "p2": "It is also possible to reset your ranking to 1000 by being VIP and going to tour profile."
+    }, 
+    "filter": {
+      "title": "Selection of players",
+      "p1": "In order to make the ranking as accurate as possible, only players who logged in less than two weeks ago are taken into account in the calculation of the ranking."
+    }  
+  },
+  "vip": {
+    "title": "Help us finance the server",
+    "p1": "To guarantee you the most pleasant gaming experience, we have invested in a high-performance server. But it comes at a cost, and we need you to help us finance the server.",
+    "subTitle": "Become a VIP",
+    "p2": "In return for your donation, you will unlock exceptional visuals for your vehicles and outfits. You will also have access to reserved slots so that you can always connect.",
+    "btn": "Learn more"
+  },
+  "shortcut": {
+    "title": "Know all the shortcuts",
+    "shortcuts": {
+      "y": "Main menu",
+      "space": "Jump",
+      "shifth": "Put the weapon in the back",
+      "ctrlh": "Take the weapon in the back",
+      "f1": "Rearrange ammunition",
+      "f2": "Increase/Decrease the display distance",
+      "f3": "Increase/Decrease the sound",
+      "f4": "Attack/Defense the bomb menu",
+      "f6": "Create a target at the shooting range",
+      "f7": "Versus menu",
+      "f8": "Shop menu",
+      "f": "Vehicle siren (only on certain skin)",
+      "h": "Enable/Disable the quest menu"
+    }
+  }
+}

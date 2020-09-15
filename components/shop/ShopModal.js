@@ -11,22 +11,22 @@ function ButtonSection({ choosedItem, authInfo, onBuy }) {
   const { t } = useTranslation();
   if (authInfo && authInfo.auth) {
     if (!authInfo.alreadyConnected || authInfo.playerInfo === undefined) {
-      return <div className="font-weight-bold">{t('common:shop.shopPricing.modal.neverConnected')}</div>;
+      return <div className="font-weight-bold">{t('shop:shopPricing.modal.neverConnected')}</div>;
     }
     if (authInfo.playerInfo.ac < choosedItem.ac) {
-      return <div className="font-weight-bold">{t('common:shop.shopPricing.modal.notEnoughtAc')}</div>;
+      return <div className="font-weight-bold">{t('shop:shopPricing.modal.notEnoughtAc')}</div>;
     }
     if (choosedItem.isOwned) {
-      return <div className="font-weight-bold">{t('common:shop.shopPricing.modal.alreadyOwned')}</div>;
+      return <div className="font-weight-bold">{t('shop:shopPricing.modal.alreadyOwned')}</div>;
     }
-    return <button type="button" onClick={onBuy} className="btn btn-lg btn-primary px-5">{t('common:shop.shopPricing.modal.btnBuy')}</button>;
+    return <button type="button" onClick={onBuy} className="btn btn-lg btn-primary px-5">{t('shop:shopPricing.modal.btnBuy')}</button>;
   }
   return (
     <a
       href={`${config.httpserver}/api/auth/steam?action=${encodeURIComponent(JSON.stringify({ type: 'shop', id: choosedItem.ID }))}`}
       className="btn btn-lg btn-primary px-5"
     >
-      {t('common:shop.shopPricing.modal.btnLoginSteam')}
+      {t('shop:shopPricing.modal.btnLoginSteam')}
     </a>
   );
 }
@@ -39,7 +39,7 @@ function PlayerSection({ authInfo }) {
         fontFamily: '"Montserrat", sans-serif', fontSize: 35, fontWeight: 600, marginBottom: 5,
       }}
       >
-        {(authInfo.playerInfo) ? authInfo.playerInfo.lastPseudo : t('common:shop.shopPricing.modal.unknowPlayer')}
+        {(authInfo.playerInfo) ? authInfo.playerInfo.lastPseudo : t('shop:shopPricing.modal.unknowPlayer')}
       </div>
       <div className="d-flex align-items-center justify-content-center justify-content-sm-start">
         <img src={acSvg} alt="" width="40" className="mr-3" />
@@ -98,7 +98,7 @@ function SuccessSection() {
     >
       <i className="fa-10x fas fa-check mb-4" />
       <div>
-        {t('common:shop.shopPricing.modal.success')}
+        {t('shop:shopPricing.modal.success')}
       </div>
     </div>
   );
@@ -115,7 +115,7 @@ function ErrorSection() {
     >
       <i className="fa-10x fas fa-times mb-4" />
       <div>
-        {t('common:shop.shopPricing.modal.error')}
+        {t('shop:shopPricing.modal.error')}
       </div>
     </div>
   );

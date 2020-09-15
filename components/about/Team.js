@@ -24,11 +24,11 @@ export default function Team() {
   return (
     <section id="team" className="container py-5">
       <div className="py-4">
-        <h1 className="text-center">{t('common:about.team.title')}</h1>
+        <h1 className="text-center">{t('about:team.title')}</h1>
         <div className="d-flex flex-column flex-lg-row align-items-center justify-content-between pt-4">
-          <Profile image={hector} name="Hector" title={t('common:about.team.hector.title')} text={t('common:about.team.hector.text')} />
-          <Profile image={jpat} name="J-Pat" title={t('common:about.team.jpat.title')} text={t('common:about.team.jpat.text')} />
-          <Profile image={jezah} name="Jezah" title={t('common:about.team.jezah.title')} text={t('common:about.team.jezah.text')} />
+          <Profile image={hector} name="Hector" title={t('about:team.hector.title')} text={t('about:team.hector.text')} />
+          <Profile image={jpat} name="J-Pat" title={t('about:team.jpat.title')} text={t('about:team.jpat.text')} />
+          <Profile image={jezah} name="Jezah" title={t('about:team.jezah.title')} text={t('about:team.jezah.text')} />
         </div>
       </div>
     </section>

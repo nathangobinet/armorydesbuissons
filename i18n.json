@@ -5,6 +5,10 @@
   "finalPagesDir": "pages",
   "localesPath": "public/locales",
   "pages": {
-    "*": ["common"]
+    "*": ["common"],
+    "/": ["home"],
+    "/live": ["live"],
+    "/about": ["about"],
+    "/shop": ["shop"]
   }
 }

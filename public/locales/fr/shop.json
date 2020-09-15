@@ -1,0 +1,96 @@
+{
+  "vipPricing": {
+    "title": "Aidez-nous en devenant VIP",
+    "days": "jours",
+    "skins": "Skins",
+    "slots": "Slot reservé",
+    "ac": "Armory Coins",
+    "btn": "Aidez-nous",
+    "modal": {
+      "btnValidate": "Valider",
+      "login": {
+        "title": "Connexion",
+        "btnContinueSteam": "Continuer avec steam",
+        "btnLoginSteam": "Connexion avec steam",
+        "btnPlayerId": "Utiliser un ID Joueur"
+      }, "playerId" : {
+        "title": "Entrez votre ID Joueur",
+        "infoPlayerId": "Vous pouvez trouver votre ID Joueur dans votre",
+        "arma3Profile": "profile Arma 3",
+        "placeHolderPlayerId": "ID Joueur",
+        "idNotMatch": "Cet ID ne correspond à aucun joueur",
+        "lastSeenUnder": "Vu pour la dernière fois sous {{pseudo}}"
+      }, "mail" : {
+        "title": "Entrez votre e-mail",
+        "placeHolderMail": "E-mail",
+        "dontWantMail": "Je ne veux pas recevoir de confirmation d'achat"
+      }, "payment": {
+        "title": "Paiement",
+        "quantity": "Quantité",
+        "item": "Article",
+        "period": "Période",
+        "bonus": "Bonus",
+        "price": "Prix",
+        "days": "jours",
+        "to": "À",
+        "lastSeen": "vu pour la dernière fois sous"
+      }, "success": {
+        "title": "Merci !",
+        "message": "Votre paiement a été accepté et vous êtes maintenant VIP. Vous pouvez trouver toutes les informations concernant votre VIP sur votre profil.",
+        "btnProfile": "Accéder à mon profil"
+      }, "error": {
+        "title": "Oh non !",
+        "message": "Une erreur inattendue s'est produite. Vous avez peut-être été débité. Veuillez contacter un administrateur si c'est le cas et que vous n'êtes pas VIP.",
+        "btnBack": "Retour en arrière"
+      }, "loading": {
+        "message": "Chargement..."
+      }
+    }
+  }, "shopPricing": {
+    "title": "Utilisez vos Armory Coins",
+    "p1": "Vos Armory Coins vous permettent de devenir VIP pendant une certaine période et de débloquer des skins. Vous devez être VIP pour utiliser ces skins.",
+    "loading": "Chargement...",
+    "days": "jour(s)",
+    "levelRequired": "Niveau {{level}} requis",
+    "owned": "Possedé",
+    "modal": {
+      "error": "Une erreur inattendue s'est produite. Veuillez réessayer et contacter un administrateur si le problème persiste.",
+      "success": "Votre achat a été effectué avec succès. Vous devez effectuer une déconnexion/reconnexion en jeu pour en profiter.",
+      "unknowPlayer": "Inconnu",
+      "neverConnected": "Vous ne vous êtes jamais connecté sur le serveur. Veuillez vous connecter au moins une fois avant d'effectuer un achat",
+      "notEnoughtAc": "Vous n'avez pas assez d'Armory Coins pour acheter cet article",
+      "alreadyOwned": "Vous possédez déjà cet article",
+      "btnBuy": "Acheter",
+      "btnLoginSteam": "Connexion avec steam"
+    }
+  }, "description" : {
+    "title": "Devenez VIP",
+    "p1": "Pour vous garantir l'expérience de jeu la plus agréable, nous avons investi dans un serveur performant. Mais cela a un coût, et nous avons besoin que vous nous aidiez à financer le serveur.",
+    "p2": "En échange de votre don, vous débloquerez :",
+    "p3": "Des visuels exceptionnels pour vos véhicules et vos tenues",
+    "p4": "Un slot réservé pour que vous puissiez toujours vous connecter"
+  }, "availableSkins" : {
+    "title": "Skins disponibles",
+    "p1": "De nombreux skins sont disponibles en étant VIP. Ces skins sont conçus pour les véhicules de type \"strider\". Toutefois, ils peuvent également être portés sur d'autres véhicules ou tenues. Certains skins ont également des sirènes.",
+    "t2": "Skins VIP",
+    "p2": "Ces skins sont ceux disponnibles par défaut dans le VIP.",
+    "t3": "Skins de classement",
+    "p3": "Des skins représentant les différentes divisions sont également disponibles. En tant que VIP, vous aurez accès aux skins illustrant votre division et ceux des divisions inférieures.",
+    "t4": "Skins personnalisés",
+    "p4": "Il est possible de nous aider à financer le serveur en achetant un skin perssonalisé. Ce skin sera réalisé sur mesure en fonction de vos demandes.",
+    "sirenAvailable": "Des sirènes sont disponibles pour ce skin.",
+    "sirenNotAvailable": "Des sirènes ne sont pas disponibles pour ce skin."
+  }, "otherDonation" : {
+    "title": "Autres dons",
+    "freeDonation": {
+      "title": "Don libre",
+      "p1": "Vous pouvez également faire don du montant de votre souhait.",
+      "p2": "Ce don n'offre aucun avantage dans le jeu, mais nous permet de continuer à nous développer et à vous offrir une meilleure expérience de jeu."
+    },
+    "customSkin": {
+      "title": "Skin personnalisé",
+      "p1": "Il est possible de commander un skin personnalisé et individuel. Ce skin sera réalisée sur mesure en fonction de vos demandes. Il est également possible de nous fournir le skin que vous souhaitez. Le prix est de 25,00 €.",
+      "p2": "Veuillez contacter un fondateur pour plus de détails sur les conditions de commande et de paiement."
+    }
+  }
+}

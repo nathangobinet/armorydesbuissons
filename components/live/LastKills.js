@@ -70,7 +70,7 @@ function LastKills({ socket }) {
   return (
     <div className="col-xl-5 py-2">
       <div className="card card-accent shadow last-kill" style={{ maxHeight: '100%' }}>
-        <h4 className="text-white mb-3">{t('common:live.lastKills.title')}</h4>
+        <h4 className="text-white mb-3">{t('live:lastKills.title')}</h4>
         {
         transitions.map(({ key, item, props }) => (
           <animated.div key={key} style={props}>

@@ -74,7 +74,7 @@ function CardItem({
         isOwned ? (
           <div style={{ top: '1rem', right: '1rem' }} className="position-absolute font-weight-bold">
             <i className="fas fa-check mr-2" />
-            {t('common:shop.shopPricing.owned')}
+            {t('shop:shopPricing.owned')}
           </div>
         ) : ''
       }
@@ -113,7 +113,7 @@ function CardItem({
 function getMappedShop(shop, t) {
   const items = shop.map((item) => ({
     ...item,
-    requirement: (item.minLvl) ? t('common:shop.shopPricing.levelRequired', { level: item.minLvl }) : undefined,
+    requirement: (item.minLvl) ? t('shop:shopPricing.levelRequired', { level: item.minLvl }) : undefined,
     color: RARITY_BG[item.rarity],
   })).sort((a, b) => b.rarity - a.rarity);
   const vipItems = items.filter((item) => item.product.includes('VIP'));
@@ -121,7 +121,7 @@ function getMappedShop(shop, t) {
   const mappedVipItems = vipItems.map((item) => ({
     ...item,
     text: 'VIP',
-    subText: `${(/(?<=VIP - )\d*/).exec(item.product)[0]} ${t('common:shop.shopPricing.days')}`, // Do something like '7 days' from 'VIP - 7'
+    subText: `${(/(?<=VIP - )\d*/).exec(item.product)[0]} ${t('shop:shopPricing.days')}`, // Do something like '7 days' from 'VIP - 7'
   }));
   const mappedSkinItem = skinItems.map((item) => ({
     ...item,
@@ -156,8 +156,8 @@ export default function ShopPricing() {
   return (
     <section id="other-donation" className="container py-5">
       <div className="text-center py-4">
-        <h1 className="text-accent mb-4">{t('common:shop.shopPricing.title')}</h1>
-        <p>{t('common:shop.shopPricing.p1')}</p>
+        <h1 className="text-accent mb-4">{t('shop:shopPricing.title')}</h1>
+        <p>{t('shop:shopPricing.p1')}</p>
       </div>
       { shop ? (
         <div>
@@ -223,7 +223,7 @@ export default function ShopPricing() {
             choosedItem={mappedShop.find((item) => item.ID === choosedItem)}
           />
         </div>
-      ) : <div className="py-5">{t('common:shop.shopPricing.loading')}</div>}
+      ) : <div className="py-5">{t('shop:shopPricing.loading')}</div>}
     </section>
   );
 }

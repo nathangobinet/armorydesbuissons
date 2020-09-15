@@ -1,0 +1,29 @@
+{
+  "infoCards": {
+    "kills": "kills today", "player": "online players", "unique": "unique players today", "ranked": "players ranked"
+  },
+  "onlinePlayers": {
+    "headers": {"country": "Country", "name": "Name", "kills": "Kills", "deaths": "Deaths", "timePlayed":"Time played"},
+    "title": "Online players"
+  },
+  "lastKills" : {
+    "title": "Last kills", "time": " {{timeStamp}} seconds ago", "distance": " {{distance}} meter distance", "weapon": " with a {{weapon}}", "killed": "killed"
+    },
+  "news": { "title": "News", "more": "See more...", "back": "Go back" },
+  "graph": { "title": "Kills and player history", "day": "Day", "season": "Season", "kills": "Kills", "players": "Players"},
+  "ranking": { 
+    "title": "Ranking", 
+    "headers": {"rank": "Rank", "name": "Name", "division": "Division", "score": "Score", "top":"Top"}
+  },
+  "champions": { "title": "Last champions", "rank": "Rank", "season": "Season" },
+  "bestStats": {
+    "title": "Best stats", "day": "Day", "season": "Season", "allTime": "All Time", "topKills": "Top Kills", "topRatio": "Top Ratio", "kills":" kills", "ratio": " ratio"
+  },
+  "statistic": { 
+    "title": "Statistics", "day": "Day", "season": "Season", "allTime": "All Time",
+    "headers": {"rank": "Rank", "name": "Name", "kills": "Kills", "deaths": "Deaths", "ratio": "Ratio", "level": "Level"}
+  }, "popper" : {
+    "profile": "View profile", "division" : "Current division",  "previously": "Previously", "unranked": "UNRANKED", "stats": "Statistics",
+    "all": "All time", "season": "This season", "day": "This day", "kills": "Kills", "deaths": "Deaths", "ratio": "Ratio"
+  }
+}

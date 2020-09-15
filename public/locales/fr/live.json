@@ -1,0 +1,29 @@
+{
+  "infoCards": {
+    "kills": "kills aujourd'hui", "player": "joueurs connectés", "unique": "joueurs unique aujourd'hui", "ranked": "joueurs classés"
+  },
+  "onlinePlayers": {
+    "headers": { "country": "Pays", "name": "Pseudo", "kills": "Kills", "deaths": "Morts", "timePlayed":"Temps joué" },
+    "title": "Joueurs en ligne"
+  },
+  "lastKills": {
+    "title": "Derniers kills", "time": " Il y a {{timeStamp}} secondes", "distance": " {{distance}} mètres de distance", "weapon": " avec une {{weapon}}", "killed": "a tué"
+  },
+  "news": { "title": "Nouveautés", "more": "Voir plus...", "back": "Retour" },
+  "graph" : { "title": "Historique des kills et des joueurs", "day": "Jour", "season": "Saison", "kills": "Kills", "players": "Joueurs"},
+  "ranking": { 
+    "title": "Classement", 
+    "headers": {"rank": "Rang", "name": "Pseudo", "division": "Division", "score": "Score", "top":"Top"}
+  },
+  "champions": { "title": "Derniers champions", "rank": "Rang", "season": "Saison" },
+  "bestStats": { 
+    "title": "Meilleurs statistiques", "day": "Jour", "season": "Saison", "allTime": "Toute période", "topKills": "Meilleur kills", "topRatio": "Meilleur ratio", "kills":" kills", "ratio": " ratio" 
+  },
+  "statistic": { 
+    "title": "Statistiques", "day": "Jour", "season": "Saison", "allTime": "Toute prériode",
+    "headers": {"rank": "Rang", "name": "Nom", "kills": "Kills", "deaths": "Morts", "ratio": "Ratio", "level": "Level"}
+  }, "popper" : {
+    "profile": "Voir le profile", "division" : "Division actuelle",  "previously": "Précédemment", "unranked": "NON CLASSÉ", "stats": "Statistiques",
+    "all": "Toute période", "season": "Cette saison", "day": "Aujourd'hui", "kills": "Kills", "deaths": "Morts", "ratio": "Ratio"
+  }
+}

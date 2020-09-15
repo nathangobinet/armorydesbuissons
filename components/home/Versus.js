@@ -22,7 +22,7 @@ function Versus() {
             <div className="container d-flex flex-column justify-content-center h-100 py-5">
               <div className="my-auto">
                 <h1 className="text-white text-center mb-5 pb-lg-5">
-                  {t('common:home.versus.title')}
+                  {t('home:versus.title')}
                 </h1>
                 <div className="row">
                   <div className="col-lg-4 px-lg-4 pb-4 pb-lg-0">
@@ -32,10 +32,10 @@ function Versus() {
                           <img src={users} width="100px" alt="Users" />
                         </div>
                         <h4 className="text-primary">
-                          {t('common:home.versus.card1.title')}
+                          {t('home:versus.card1.title')}
                         </h4>
                         <p>
-                          {t('common:home.versus.card1.sub')}
+                          {t('home:versus.card1.sub')}
                         </p>
                       </div>
                     </div>
@@ -47,10 +47,10 @@ function Versus() {
                           <img src={points} width="100px" alt="Points" />
                         </div>
                         <h4 className="text-primary">
-                          {t('common:home.versus.card2.title')}
+                          {t('home:versus.card2.title')}
                         </h4>
                         <p>
-                          {t('common:home.versus.card2.sub')}
+                          {t('home:versus.card2.sub')}
                         </p>
                       </div>
                     </div>
@@ -62,10 +62,10 @@ function Versus() {
                           <img src={location} width="70px" alt="Location" />
                         </div>
                         <h4 className="text-primary">
-                          {t('common:home.versus.card3.title')}
+                          {t('home:versus.card3.title')}
                         </h4>
                         <p>
-                          {t('common:home.versus.card3.sub')}
+                          {t('home:versus.card3.sub')}
                         </p>
                       </div>
                     </div>

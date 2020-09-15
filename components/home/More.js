@@ -15,7 +15,7 @@ function More() {
           <div className="my-auto">
             <div className="mb-5 text-center">
               <h1>
-                {t('common:home.more.title')}
+                {t('home:more.title')}
               </h1>
             </div>
             <div className="container pt-lg-3">
@@ -26,10 +26,10 @@ function More() {
                 <div className="col-md-6 d-flex align-items-center">
                   <div className="pr-md-5">
                     <h4 className="text-primary mb-4">
-                      {t('common:home.more.p1.title')}
+                      {t('home:more.p1.title')}
                     </h4>
                     <p>
-                      {t('common:home.more.p1.sub')}
+                      {t('home:more.p1.sub')}
                     </p>
                   </div>
                 </div>
@@ -38,10 +38,10 @@ function More() {
                 <div className="col-md-6 d-flex order-md-1 order-2 align-items-center">
                   <div className="text-right pl-md-5">
                     <h4 className="text-primary mb-4">
-                      {t('common:home.more.p2.title')}
+                      {t('home:more.p2.title')}
                     </h4>
                     <p>
-                      {t('common:home.more.p2.sub')}
+                      {t('home:more.p2.sub')}
                     </p>
                   </div>
                 </div>
@@ -56,10 +56,10 @@ function More() {
                 <div className="col-md-6 d-flex align-items-center">
                   <div className="pr-md-5">
                     <h4 className="text-primary mb-4">
-                      {t('common:home.more.p3.title')}
+                      {t('home:more.p3.title')}
                     </h4>
                     <p>
-                      {t('common:home.more.p3.sub')}
+                      {t('home:more.p3.sub')}
                     </p>
                   </div>
                 </div>

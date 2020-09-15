@@ -21,22 +21,22 @@ function Features() {
               <div className="col-md-6 d-flex">
                 <div>
                   <h1 className="text-center text-md-left text-accent">
-                    {t('common:home.features.title')}
+                    {t('home:features.title')}
                   </h1>
                   <p>
-                    {t('common:home.features.p1')}
+                    {t('home:features.p1')}
                   </p>
                   <p className="mb-4">
-                    {t('common:home.features.p2')}
+                    {t('home:features.p2')}
                   </p>
                   <div className="text-center text-md-left">
                     <a className="btn btn-accent mr-2 my-1" href="steam://run/107410//-connect=164.132.203.207%20-port=2302">
                       <i className="fas fa-gamepad mr-3" />
-                      {t('common:home.features.btnConnect')}
+                      {t('home:features.btnConnect')}
                     </a>
                     <a className="btn btn-discord my-1" href="https://discord.gg/RUh4QUV" target="_blank" rel="noopener noreferrer">
                       <i className="fab fa-discord mr-3" />
-                      {t('common:home.features.btnDiscord')}
+                      {t('home:features.btnDiscord')}
                     </a>
                   </div>
                 </div>
@@ -48,7 +48,7 @@ function Features() {
                 <div className={`card shadow pb-0 ${styles['card-on-shape-1']}`}>
                   <div className="text-center">
                     <h2 className="text-accent mb-0">
-                      {t('common:home.features.discover')}
+                      {t('home:features.discover')}
                     </h2>
                     <a className="fp-caret-down opacity-interaction mb-0" aria-label="Discover the features" style={{ fontSize: '50px' }} href="#tp-into-fight"><i className="fa fa-caret-down" /></a>
                   </div>

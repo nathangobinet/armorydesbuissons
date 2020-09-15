@@ -1,0 +1,92 @@
+{
+  "summary": {
+    "title": "À propos de notre serveur Arma 3", "p1": "Cette section vous invite à :", "btnConnect": "Connexion", "btnFeatures": "Fonctionnalités"
+  }, 
+  "rules": {
+    "title": "Connaître les règles", "p1": "Même si nous jouons pour le plaisir, il est nécessaire de respecter certaines règles afin de garantir une expérience de jeu agréable.",
+    "carkill": { "title":"Carkill", "text": "Le carkill n'est pas autorisé, dans le cas ou cela se produit, laissez la personne se repositionner."},
+    "boost": { "title":"Boost", "text": "Il est interdit de se laisser tuer pour augmenter le score d'un autre joueur."},
+    "glitch": { "title":"Glitch", "text": "Il est évidemment interdit de tirer profit de tout bug de jeu."},
+    "fairplay": { "title":"Fairplay", "text": "N'oubliez jamais que vous jouez pour le plaisir, alors essayez de rester fair-play à tout moment."}, 
+    "p2": "En cas de non-respect des règles, des sanctions seront prises, allant d'un simple avertissement au bannissement définitif."
+  }, 
+  "team": {
+    "title": "Rencontrer notre équipe",
+    "hector": { "title": "Développeur de la mission", "text": "Il a pleinement développé la mission et s'occupe de l'administration du serveur." },
+    "jpat": { "title": "Développeur web", "text": "Il a développé le site web et modère le serveur." },
+    "jezah": { "title": "Investisseur", "text": "Il a financé le serveur et aide à sa modération." }
+  }, 
+  "contact": {
+    "title": "Nous contacter",
+    "join": { 
+      "title": "Rejoignez notre communauté",
+      "p1": "Vous avez un problème ? Vous voulez être au courant des dernières nouveautés ? Vous voulez discuter avec vos amis et avec tous les membres de l'Armory ?",
+      "p2": "Notre discord est donc fait pour vous !", "btn": "Rejoignez-nous"
+    },
+    "contact": { 
+      "title": "Contacter les fondateurs",
+      "p1": "Vous souhaitez rejoindre l'équipe de modération ? Vous avez un problème avec un modérateur ? Vous avez une suggestion ou tout autre problème ?",
+      "p2": "Alors envoyez-nous un e-mail !", "btn": "Envoyez un e-mail"
+    }
+  },
+  "rank": {
+    "title": "Comprendre le système de classement",
+    "p1": "Le classement de chaque joueur est instantanément mis à jour chaque fois qu'il tue ou est tué par un autre joueur. Les joueurs sont répartis en 6 divisions en fonction de leur nombre de points.",
+    "league": {
+      "bronze": "Cette division inclut les autres joueurs.",
+      "silver": "Cette division regroupe les 60% meilleurs joueurs.",
+      "gold": "Cette division regroupe les 28% meilleurs joueurs.",
+      "platinium": "Cette division regroupe les 8% meilleurs joueurs.",
+      "diamond": "Cette division regroupe les 4 % meilleurs joueurs.",
+      "top10": "Cette division regroupe les 10 meilleurs joueurs."
+    },
+    "calculation": {
+      "title": "Calcul du nombre de points",
+      "p1": "Le nombre de points gagnés et perdus dépend du classement des deux joueurs selon l'algorithme suivant :",
+      "formula1": "nouveauRang", "formula2": "= votreRang + (rangJoueurTué / votreRang * 5)"
+    },
+    "decrease": {
+      "title": "Diminution pour inactivité",
+      "p1": "Le classement diminue automatiquement si le joueur n'a pas effectué de mise à mort pendant la journée. Cette réduction se fait en fonction de la division :"
+    }, 
+    "distance": {
+      "title": "Réduction pour les meurtres à distance",
+      "p1": "Les tirs effectués à plus de 50 mètres gagnent moins de points proportionnellement à la distance selon l'algorithme suivant :",
+      "formula1": "pointGagné", "formula2": "= pointNormalementGagné * (50 / distance)"
+    }, 
+    "reset": {
+      "title": "Initialisation et réinitialisation du classement",
+      "p1": "Le rang est initialisé à 1000, ce qui correspond à la division Gold. Le rang est réinitialisé à 1000 chaque mois. Le joueur le mieux classé gagne un VIP et un skin Top 1.",
+      "p2": "Il est également possible de réinitialiser votre classement à 1000 en étant VIP et en allant sur votre profil"
+    }, 
+    "filter": {
+      "title": "Sélection des joueurs",
+      "p1": "Afin de permettre un classement aussi précis que possible, seuls les joueurs qui se sont connectés il y a moins de deux semaines sont pris en compte dans le calcul du classement."
+    }  
+  },
+  "vip": {
+    "title": "Nous aider à financer le serveur",
+    "p1": "Pour vous garantir une expérience de jeu des plus agréables, nous avons investi dans un serveur performant. Mais cela a un coût, et nous avons besoin que vous nous aidiez à financer le serveur.",
+    "subTitle": "Devenir un VIP",
+    "p2": "En échange de votre don, vous débloquerez des visuels exceptionnels pour vos véhicules et tenues. Vous aurez également accès à des emplacements réservés pour vous connecter en permanence.",
+    "btn": "En savoir plus"
+  },
+  "shortcut": {
+    "title": "Connaître tous les raccourcis",
+    "shortcuts": {  
+      "y": "Menu principal",
+      "f1": "Réorganiser les munitions",
+      "f2": "Augmenter/diminuer la distance d'affichage",
+      "f3": "Augmenter/diminuer le son",
+      "f4": "Menu Attaquer/Défendre la bombe",
+      "f6": "Créer une cible au stand de tir",
+      "f7": "Menu Versus",
+      "f8": "Menu du Shop",
+      "space": "Sauter",
+      "shifth": "Mettre l'arme dans le dos",
+      "ctrlh": "Reprendre l'arme dans le dos",
+      "h": "Activer/Désactiver le menu de quête",
+      "f": "Sirène de véhicule (uniquement sur certains skins)"
+    }
+  }
+}

@@ -54,8 +54,8 @@ function Siren({ sound }) {
       </button>
       {
         (sound)
-          ? <div>{t('common:shop.availableSkins.sirenAvailable')}</div>
-          : <div>{t('common:shop.availableSkins.sirenNotAvailable')}</div>
+          ? <div>{t('shop:availableSkins.sirenAvailable')}</div>
+          : <div>{t('shop:availableSkins.sirenNotAvailable')}</div>
       }
     </div>
   );
@@ -151,16 +151,16 @@ export default function AvailableSkin() {
   return (
     <section id="other-donation" className="container pt-5">
       <div className="text-center py-4">
-        <h1 className="text-accent mb-4">{t('common:shop.availableSkins.title')}</h1>
-        <p className="mb-5">{t('common:shop.availableSkins.p1')}</p>
-        <h3 className="text-accent">{t('common:shop.availableSkins.t2')}</h3>
-        <p>{t('common:shop.availableSkins.p2')}</p>
+        <h1 className="text-accent mb-4">{t('shop:availableSkins.title')}</h1>
+        <p className="mb-5">{t('shop:availableSkins.p1')}</p>
+        <h3 className="text-accent">{t('shop:availableSkins.t2')}</h3>
+        <p>{t('shop:availableSkins.p2')}</p>
         <VipSkins path="vip" skins={(skins) ? skins.vip : false} />
-        <h3 className="text-accent">{t('common:shop.availableSkins.t3')}</h3>
-        <p>{t('common:shop.availableSkins.p3')}</p>
+        <h3 className="text-accent">{t('shop:availableSkins.t3')}</h3>
+        <p>{t('shop:availableSkins.p3')}</p>
         <VipSkins path="rank" skins={(skins) ? skins.rank : false} />
-        <h3 className="text-accent">{t('common:shop.availableSkins.t4')}</h3>
-        <p>{t('common:shop.availableSkins.p4')}</p>
+        <h3 className="text-accent">{t('shop:availableSkins.t4')}</h3>
+        <p>{t('shop:availableSkins.p4')}</p>
         <VipSkins path="custom" skins={(skins) ? skins.custom : false} />
       </div>
     </section>

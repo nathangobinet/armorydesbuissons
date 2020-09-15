@@ -3,8 +3,9 @@ import I18nProvider from 'next-translate/I18nProvider'
 import React from 'react'
 import C from '../../pages_'
 import ns0 from '../../public/locales/fr/common.json'
+import ns1 from '../../public/locales/fr/home.json'
 
-const namespaces = { 'common': ns0 }
+const namespaces = { 'common': ns0, 'home': ns1 }
 
 export default function Page(p){
   return (

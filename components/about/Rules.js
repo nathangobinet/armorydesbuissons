@@ -34,20 +34,20 @@ export default function Rules() {
           <div className="w-100 h-100 py-4" style={{ marginLeft: '-100%' }}>
             <div className="container py-5">
               <div className="text-center">
-                <h1 className="mb-4 text-white">{t('common:about.rules.title')}</h1>
+                <h1 className="mb-4 text-white">{t('about:rules.title')}</h1>
                 <p className="text-white">
-                  {t('common:about.rules.p1')}
+                  {t('about:rules.p1')}
                 </p>
               </div>
               <div className="my-4">
-                <Rule number={1} text={t('common:about.rules.carkill.text')} title={t('common:about.rules.carkill.title')} />
-                <Rule number={2} text={t('common:about.rules.boost.text')} title={t('common:about.rules.boost.title')} />
-                <Rule number={3} text={t('common:about.rules.glitch.text')} title={t('common:about.rules.glitch.title')} />
-                <Rule number={4} text={t('common:about.rules.fairplay.text')} title={t('common:about.rules.fairplay.title')} />
+                <Rule number={1} text={t('about:rules.carkill.text')} title={t('about:rules.carkill.title')} />
+                <Rule number={2} text={t('about:rules.boost.text')} title={t('about:rules.boost.title')} />
+                <Rule number={3} text={t('about:rules.glitch.text')} title={t('about:rules.glitch.title')} />
+                <Rule number={4} text={t('about:rules.fairplay.text')} title={t('about:rules.fairplay.title')} />
               </div>
               <div className="text-center">
                 <p className="text-white">
-                  {t('common:about.rules.p2')}
+                  {t('about:rules.p2')}
                 </p>
               </div>
             </div>

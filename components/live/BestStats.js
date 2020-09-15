@@ -35,22 +35,22 @@ export default function BestStats() {
   const result = useFetch('/api/top', undefined, { period });
 
   const killsCard = (result && result.kill) ? {
-    title: t('common:live.bestStats.topKills'), logo: 'fa-skull', player: <Player name={result.kill.lastPseudo} id={result.kill.id} />, number: result.kill.nbKills, text: t('common:live.bestStats.kills'),
+    title: t('live:bestStats.topKills'), logo: 'fa-skull', player: <Player name={result.kill.lastPseudo} id={result.kill.id} />, number: result.kill.nbKills, text: t('live:bestStats.kills'),
   } : {
-    title: t('common:live.bestStats.topKills'), logo: 'fa-skull', player: 'N/A', number: 'N/A', text: t('common:live.bestStats.kills'),
+    title: t('live:bestStats.topKills'), logo: 'fa-skull', player: 'N/A', number: 'N/A', text: t('live:bestStats.kills'),
   };
 
   const ratioCard = (result && result.ratio) ? {
-    title: t('common:live.bestStats.topRatio'), logo: 'fa-percentage', player: <Player name={result.ratio.lastPseudo} id={result.ratio.id} />, number: result.ratio.ratio.toFixed(2), text: t('common:live.bestStats.ratio'),
+    title: t('live:bestStats.topRatio'), logo: 'fa-percentage', player: <Player name={result.ratio.lastPseudo} id={result.ratio.id} />, number: result.ratio.ratio.toFixed(2), text: t('live:bestStats.ratio'),
   } : {
-    title: t('common:live.bestStats.topRatio'), logo: 'fa-percentage', player: 'N/A', number: 'N/A', text: t('common:live.bestStats.ratio'),
+    title: t('live:bestStats.topRatio'), logo: 'fa-percentage', player: 'N/A', number: 'N/A', text: t('live:bestStats.ratio'),
   };
 
   return (
     <div className="col-xl-5 py-2">
       <div className="card card-primary">
         <div className="d-flex flex-column flex-sm-row align-items-center justify-content-between mb-4">
-          <h4 className="text-white pb-2 pb-sm-0">{t('common:live.bestStats.title')}</h4>
+          <h4 className="text-white pb-2 pb-sm-0">{t('live:bestStats.title')}</h4>
           <div className="nav-pills pills-white d-flex flex-row align-items-center justify-content-between">
             <span
               role="button"
@@ -59,7 +59,7 @@ export default function BestStats() {
               onClick={() => setPeriod(PERIODS.DAY)}
               onKeyPress={() => setPeriod(PERIODS.DAY)}
             >
-              {t('common:live.bestStats.day')}
+              {t('live:bestStats.day')}
             </span>
             <span
               role="button"
@@ -68,7 +68,7 @@ export default function BestStats() {
               onClick={() => setPeriod(PERIODS.SEASON)}
               onKeyPress={() => setPeriod(PERIODS.SEASON)}
             >
-              {t('common:live.bestStats.season')}
+              {t('live:bestStats.season')}
             </span>
             <span
               role="button"
@@ -77,7 +77,7 @@ export default function BestStats() {
               onClick={() => setPeriod(PERIODS.ALLTIME)}
               onKeyPress={() => setPeriod(PERIODS.ALLTIME)}
             >
-              {t('common:live.bestStats.allTime')}
+              {t('live:bestStats.allTime')}
             </span>
           </div>
         </div>

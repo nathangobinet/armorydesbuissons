@@ -64,17 +64,17 @@ function OnlinePlayers({ socket }) {
   }
 
   const headers = [
-    { text: t('common:live.onlinePlayers.headers.country'), size: 2 },
-    { text: t('common:live.onlinePlayers.headers.name'), size: 4 },
-    { text: t('common:live.onlinePlayers.headers.kills'), size: 2 },
-    { text: t('common:live.onlinePlayers.headers.deaths'), size: 2 },
-    { text: t('common:live.onlinePlayers.headers.timePlayed'), size: 2 },
+    { text: t('live:onlinePlayers.headers.country'), size: 2 },
+    { text: t('live:onlinePlayers.headers.name'), size: 4 },
+    { text: t('live:onlinePlayers.headers.kills'), size: 2 },
+    { text: t('live:onlinePlayers.headers.deaths'), size: 2 },
+    { text: t('live:onlinePlayers.headers.timePlayed'), size: 2 },
   ];
 
   return (
     <div className="col-xl-7 py-2">
       <div className="card shadow">
-        <h4 className="text-accent mb-4">{t('common:live.onlinePlayers.title')}</h4>
+        <h4 className="text-accent mb-4">{t('live:onlinePlayers.title')}</h4>
         <Table id="onlinePlayers" headers={headers} rows={printedPlayer} />
       </div>
     </div>

@@ -13,15 +13,15 @@ function TpIntoFight() {
           <div className="my-auto">
             <div className="text-center">
               <h1 className="mb-5">
-                {t('common:home.tpintofight.title')}
+                {t('home:tpintofight.title')}
               </h1>
               <div className="mb-5">
                 <img className="img-fluid" alt="Map of Altis" src={altisMap} width="930" height="390" />
               </div>
               <p>
-                {t('common:home.tpintofight.beforeKey')}
+                {t('home:tpintofight.beforeKey')}
                 <kbd>Y</kbd>
-                {t('common:home.tpintofight.afterKey')}
+                {t('home:tpintofight.afterKey')}
               </p>
             </div>
           </div>

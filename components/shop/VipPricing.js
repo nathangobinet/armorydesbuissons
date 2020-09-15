@@ -17,7 +17,7 @@ function PriceCard({
         <div className="text-center">
           <div className={`${styles['text-day-pricing']} mb-4`}>
             <div className="text-primary">{period}</div>
-            <div>{t('common:shop.vipPricing.days')}</div>
+            <div>{t('shop:vipPricing.days')}</div>
           </div>
           <div className={`${styles['text-price-pricing']} mb-4`}>
             { priceBeforeDiscount ? (
@@ -42,11 +42,11 @@ function PriceCard({
           <div className="text-left mx-auto mb-4" style={{ maxWidth: '190px' }}>
             <div>
               <i className="fas fa-check mr-3" />
-              {t('common:shop.vipPricing.skins')}
+              {t('shop:vipPricing.skins')}
             </div>
             <div>
               <i className="fas fa-check mr-3" />
-              {t('common:shop.vipPricing.slots')}
+              {t('shop:vipPricing.slots')}
             </div>
             <div>
               <i className="fas fa-check mr-3" />
@@ -55,12 +55,12 @@ function PriceCard({
                 {ac}
               </b>
               {' '}
-              {t('common:shop.vipPricing.ac')}
+              {t('shop:vipPricing.ac')}
             </div>
           </div>
           <button type="button" onClick={() => handleBuy(id)} className="btn btn-primary my-1 px-5">
             <i className="fas fa-shopping-cart mr-2" />
-            {t('common:shop.vipPricing.btn')}
+            {t('shop:vipPricing.btn')}
           </button>
         </div>
       </div>
@@ -123,7 +123,7 @@ export default function VipPricing() {
             <div className="w-100 h-100 py-5" style={{ marginLeft: '-100%' }}>
               <div className="container d-flex flex-column justify-content-center h-100 py-5">
                 <div className="my-auto">
-                  <h1 className="text-white text-center mb-3 pb-5">{t('common:shop.vipPricing.title')}</h1>
+                  <h1 className="text-white text-center mb-3 pb-5">{t('shop:vipPricing.title')}</h1>
                   <div className="row">
                     {
                     vipItems.map((item) => (

@@ -24,12 +24,12 @@ export default function OtherDonation() {
   return (
     <section id="other-donation" className="container py-5">
       <div className="text-center py-4">
-        <h1 className="text-accent mb-4">{t('common:shop.otherDonation.title')}</h1>
+        <h1 className="text-accent mb-4">{t('shop:otherDonation.title')}</h1>
       </div>
       <div>
-        <Info icon="fa-hands-helping" title={t('common:shop.otherDonation.freeDonation.title')}>
-          <p>{t('common:shop.otherDonation.freeDonation.p2')}</p>
-          <p>{t('common:shop.otherDonation.freeDonation.p1')}</p>
+        <Info icon="fa-hands-helping" title={t('shop:otherDonation.freeDonation.title')}>
+          <p>{t('shop:otherDonation.freeDonation.p2')}</p>
+          <p>{t('shop:otherDonation.freeDonation.p1')}</p>
           <form className="text-center" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_s-xclick" />
             <input type="hidden" name="hosted_button_id" value="2KSCXQ7WS7LMC" />
@@ -37,9 +37,9 @@ export default function OtherDonation() {
             <img alt="" border="0" src="https://www.paypal.com/en_FR/i/scr/pixel.gif" width="1" height="1" />
           </form>
         </Info>
-        <Info icon="fa-paint-roller" title={t('common:shop.otherDonation.customSkin.title')}>
-          <p>{t('common:shop.otherDonation.customSkin.p1')}</p>
-          <p>{t('common:shop.otherDonation.customSkin.p2')}</p>
+        <Info icon="fa-paint-roller" title={t('shop:otherDonation.customSkin.title')}>
+          <p>{t('shop:otherDonation.customSkin.p1')}</p>
+          <p>{t('shop:otherDonation.customSkin.p2')}</p>
         </Info>
       </div>
     </section>

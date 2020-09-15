@@ -1,0 +1,92 @@
+{
+  "features": {
+    "title": "An Arma 3 server",
+    "p1": "Armory des buissons is a training server for the game Arma 3. It offers many features such as anked PVP, public and private arenas, sandbox and attack-defense fight.",
+    "p2": "Go ahead and join us now to become the best player !",
+    "btnConnect": "Connect",
+    "btnDiscord": "Join us",
+    "discover": "Discover the features"
+  },
+  "tpintofight": {
+    "title": "Be teleported directly into the fight",
+    "beforeKey": "The game panel (",
+    "afterKey": ") allows you to teleport directly to different combat zones. You can also activate automatic teleportation during respawn. The game panel also tells you the number of players in each area."
+  }, 
+  "chooseYourGameplay": {
+    "title": "Choose your gameplay",
+    "subTitle": "Different types of figting zone are available",
+    "striderTitle": "Long range fight",
+    "striderParagraph": "You can train in long distance combat thanks to the large arenas with an open field.",
+    "soldierTitle": "Close range fight",
+    "soldierParagraph": "You can train in short distance combat thanks to the small arenas like towns or factory."
+  },
+  "versus": {
+    "title": "Fight in versus",
+    "card1": {
+      "title": "Invite your friends",
+      "sub": "Invite your friends and split up into two teams."
+    }, 
+    "card2": {
+      "title": "Set the points limit",
+      "sub": "Define the number of kills to reach to win the game."
+    }, 
+    "card3": {
+      "title": "Choose your arena",
+      "sub": "A variety of short or long distance arenas are available."
+    }
+  },
+  "ranking": {
+    "title": "Get the highest ranking",
+    "paragraph": "Each player's ranking is instantly updated each time he kills or is killed by another player. Players are split in 6 divisions according to their number of points.",
+    "button": "Learn more"
+  }, 
+  "quests": {
+    "title": "Complete quests and progress through levels",
+    "quest": {
+      "title": "Complete different type of quest",
+      "text": "Many quests are available. They can be completed daily, seasonally, or just once. Once completed, quests allow you to earn experience points."
+    }, 
+    "levels": {
+      "title": "Progress through levels",
+      "text": "The experience points earned accumulate to gain levels. Levels allow you to stand out and access unique rewards."
+    }, 
+    "ac": {
+      "title": "Earn virtual credits",
+      "text": "Each level completed earns you Armory Coins. These virtual credits allow you to purchase unique skins or unlock the VIP over a period of time."
+    }
+  },
+  "attackDefense": {
+    "title": "Attack or defend the bomb",
+    "p1": {
+      "title": "A public lobby system",
+      "sub": "It allows you to sign up for the fight and choose your side."
+    },
+    "p2": {
+      "title": "Defenders must defend the bomb",
+      "sub": "Their goal is to prevent attackers from defusing it."
+    },
+    "p3": {
+      "title": "Multiple arenas are available",
+      "sub": "Arenas are varied and offer a different experience."
+    },
+    "p4": {
+      "title": "Attackers must defuse the bomb",
+      "sub": "Their goal is to prevent the bomb from exploding and therefore defuse it."
+    }
+  },
+  "more": {
+    "title": "And even more to discover",
+    "p1": {
+      "title": "Sandbox",
+      "sub": "Sandbox allows you to try out all the vehicles available on the game. Train yourself to fly helicopters and fight against your friends in epic battles."
+    },
+    "p2": {
+      "title": "Inventory",
+      "sub": "You can completely customize your stuff. Outfit, weapons, accessory ... Create the stuff that suits you and fight with it."
+    },
+    "p3": {
+      "title": "Gameplay",
+      "sub": "The server is perfectly programmed to offer you the best gameplay, whether you are alone or with others."
+    }
+  }
+}
