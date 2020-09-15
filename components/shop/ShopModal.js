@@ -154,22 +154,26 @@ export default function ShopModal({ isActive, setModalActive, choosedItem }) {
     return <div>Error</div>;
   };
 
-  return (choosedItem) ? (
+  return (
     <div
       className={styles['shop-modal']}
       style={{ visibility: (isActive) ? 'visible' : 'hidden', opacity: (isActive) ? 1 : 0 }}
     >
-      <div className="p-4 d-flex flex-column text-center flex-sm-row justify-content-sm-between align-items-center">
-        {(authInfo && authInfo.auth) ? <PlayerSection authInfo={authInfo} /> : <div />}
-        <button
-          onClick={() => { setModalActive(false); }}
-          className={`${styles['close-button']} order-0 order-sm-1 align-self-sm-start`}
-          type="button"
-        >
-          <i aria-label="Close" className="fas fa-times fa-3x" />
-        </button>
-      </div>
-      <Content />
+      {(choosedItem) ? (
+        <div>
+          <div className="p-4 d-flex flex-column text-center flex-sm-row justify-content-sm-between align-items-center">
+            {(authInfo && authInfo.auth) ? <PlayerSection authInfo={authInfo} /> : <div />}
+            <button
+              onClick={() => { setModalActive(false); }}
+              className={`${styles['close-button']} order-0 order-sm-1 align-self-sm-start`}
+              type="button"
+            >
+              <i aria-label="Close" className="fas fa-times fa-3x" />
+            </button>
+          </div>
+          <Content />
+        </div>
+      ) : ''}
     </div>
-  ) : '';
+  );
 }

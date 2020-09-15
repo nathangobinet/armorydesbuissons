@@ -406,7 +406,6 @@ export default function PaymentModal({
 
   // TODO Adapter la requête avec les bons chiffres pour les saisons à la requete player
   // TODO Optional ajouter une action sur vip & shop pour reload les ac / skins owned lors du reload
-  // TODO Partitoner les locales
   // TODO faire le fichier _error (et check si il y'en a pas un autre)
   // TODO FAire une page legals ?
   // TODO Résoudre pb de build en prod mode
