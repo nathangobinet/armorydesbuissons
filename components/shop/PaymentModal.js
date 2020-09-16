@@ -54,7 +54,7 @@ function Error({ hide }) {
           {t('shop:vipPricing.modal.error.message')}
         </p>
       </div>
-      <button type="button" onClick={hide} className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}>
+      <button type="button" onClick={hide} className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}>
         {t('shop:vipPricing.modal.error.btnBack')}
         <i className="fas fa-chevron-right ml-4" />
       </button>
@@ -73,7 +73,7 @@ function Success() {
           {t('shop:vipPricing.modal.success.message')}
         </p>
       </div>
-      <a href="/" className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}>
+      <a href="/" className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}>
         {t('shop:vipPricing.modal.success.btnProfile')}
         <i className="fas fa-chevron-right ml-4" />
       </a>
@@ -223,7 +223,7 @@ function Information({ setScreen, setPaymentInfo }) {
         </div>
       </div>
       <button
-        className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}
+        className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}
         type="button"
         onClick={onClick}
         disabled={!(!mailWanted || isCorrect)}
@@ -282,7 +282,7 @@ function PlayerID({ setScreen, setPaymentInfo }) {
         </div>
       </div>
       <button
-        className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}
+        className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}
         type="button"
         onClick={onClick}
         disabled={!(isCorrect && playerName !== null)}
@@ -303,7 +303,7 @@ function Login({ setScreen, setPaymentInfo, paymentInfo }) {
       return (
         <a
           href={`${config.httpserver}/api/auth/steam?action=${encodeURIComponent(JSON.stringify({ type: 'vip_steam_connexion', id: paymentInfo.id }))}`}
-          className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}
+          className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}
         >
           {t('shop:vipPricing.modal.login.btnLoginSteam')}
           <i className="fas fa-chevron-right ml-4" />
@@ -314,7 +314,7 @@ function Login({ setScreen, setPaymentInfo, paymentInfo }) {
       <button
         onClick={() => { setSteamInfo(setPaymentInfo, setScreen, userInfo); }}
         type="button"
-        className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}
+        className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}
       >
         {t('shop:vipPricing.modal.login.btnContinueSteam')}
         <i className="fas fa-chevron-right ml-4" />
@@ -328,7 +328,7 @@ function Login({ setScreen, setPaymentInfo, paymentInfo }) {
       <div className="py-5">
         <SteamButton />
         <button
-          className={`my-2 mx-auto btn ${styles['btn-roud-primary']} ${styles['btn-size']}`}
+          className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}
           type="button"
           onClick={() => { setScreen(MODAL_SCREEEN.PLAYERID); }}
         >
@@ -409,7 +409,6 @@ export default function PaymentModal({
   }, [choosedItem]);
 
   // TODO Adapter la requête avec les bons chiffres pour les saisons à la requete player
-  // TODO Optional ajouter une action sur vip & shop pour reload les ac / skins owned lors du reload
   // TODO faire le fichier _error (et check si il y'en a pas un autre)
   // TODO FAire une page legals ?
   // TODO Résoudre pb de build en prod mode

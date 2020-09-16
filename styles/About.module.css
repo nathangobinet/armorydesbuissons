@@ -65,3 +65,15 @@
 .shortcuts-table tr:last-child {
  border-bottom: 1px solid #929292;
 }
+
+.link-effect {
+  color: var(--text-accent)!important;
+  transition: opacity .2s;
+}
+
+.link-effect:hover {
+  opacity: .7;
+  text-decoration: none!important;
+}
+
+

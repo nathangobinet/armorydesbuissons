@@ -53,13 +53,6 @@
   border-radius: .5rem;
 }
 
-.btn-roud-primary {
-  border-radius: 25px;
-  background: var(--primary-gr);
-  display: block;
-  padding: .6rem 0;
-  transition: opacity .2s;
-}
 
 @media (min-width: 500px) { 
   .btn-size  {
@@ -71,10 +64,6 @@
   .btn-size {
     width: 225px;
   }
-}
-
-.btn-roud-primary:hover, .btn-roud-primary:focus {
-  opacity: .7;
 }
 
 .input {
@@ -308,7 +297,8 @@
   box-shadow: 0 0 0 0.2rem var(--darker-accent)
 }
 
-.chevron.litle {
+ .chevron.litle {
+  padding: none!important;
   font-size: 14px;
   width: 2rem;
   height: 2rem;

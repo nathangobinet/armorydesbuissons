@@ -1,10 +1,12 @@
 // Override default variables before the import
-$primary: #00AC3A;
-$secondary: #F26E50;
+$primary: #00ac3a;
+$secondary: #f16b4d;
 $link-color: $secondary;
 $theme-colors: (
   "primary": $primary, 
-  "accent": $secondary
+  "accent": $secondary,
+  "discord": #5C6BC0,
+  "mail": #D54B3E
 );
 // Import Bootstrap and its default variables
 @import "~bootstrap/scss/bootstrap.scss";
