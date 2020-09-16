@@ -97,7 +97,7 @@ function Payment({ setScreen, paymentInfo }) {
   const setLoadingScreen = () => { setScreen(MODAL_SCREEEN.LOADING); };
   const removeLoadingScreen = () => { setScreen(MODAL_SCREEEN.PAYMENT); };
 
-  const onSuccess = async (details) => {
+  const onSuccess = async () => {
     const rawResponse = await fetch(`${config.httpserver}/api/shop/vip`, {
       method: 'POST',
       headers: {
@@ -107,9 +107,8 @@ function Payment({ setScreen, paymentInfo }) {
       body: JSON.stringify({
         id: paymentInfo.playerId,
         days: paymentInfo.days,
-        mail: paymentInfo.mail ? paymentInfo.mail : details.payer.email_address,
+        mail: paymentInfo.mail ? paymentInfo.mail : undefined,
         ac: paymentInfo.ac,
-        sendMail: !!paymentInfo.mail,
       }),
     });
     const content = await rawResponse.json();
@@ -408,11 +407,11 @@ export default function PaymentModal({
     }
   }, [choosedItem]);
 
-  // TODO Adapter la requête avec les bons chiffres pour les saisons à la requete player
   // TODO faire le fichier _error (et check si il y'en a pas un autre)
   // TODO FAire une page legals ?
   // TODO Résoudre pb de build en prod mode
-  // TODO refaire btn et link dans le global
+  // TODO Essayer de re résoudre PB socket
+  // TODO Envoyer le mail que si le mec le veut
 
   return (
     <Modal
