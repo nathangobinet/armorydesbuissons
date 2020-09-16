@@ -11,7 +11,9 @@ function storeLanguage(language) {
 }
 
 export function removeLangFromPath(path) {
-  const possibleLangPath = `/${clientSideLang()}`;
+  const clientLang = clientSideLang();
+  if (clientLang === undefined) return undefined;
+  const possibleLangPath = `/${clientLang}`;
   if (path === possibleLangPath) return '/';
   return path.replace(possibleLangPath, '');
 }
@@ -20,6 +22,7 @@ export function setLanguage(language) {
   storeLanguage(language);
   const path = window.location.pathname + window.location.search;
   const pathWithoutLang = removeLangFromPath(path);
+  if (pathWithoutLang === undefined) return;
   Router.pushI18n({ url: pathWithoutLang, options: { lang: language } });
 }
 

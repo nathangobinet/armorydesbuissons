@@ -27,7 +27,7 @@ function PlayerPopper() {
       <div className="card bg-info-popper">
         <div className="d-flex align-items-center justify-content-between mb-4">
           <h4 className="text-accent hide-overflow mb-0">{playerData.name}</h4>
-          <a href="/">{t('live:popper.profile')}</a>
+          <a className={styles['link-effect']} href={`/p/${(playerData) ? playerData.id : ''}`}>{t('live:popper.profile')}</a>
         </div>
         <div className="row mb-4">
           <div className="col-sm-6 pb-3 pb-xl-0 px-xl-5">

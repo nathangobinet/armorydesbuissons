@@ -411,7 +411,6 @@ export default function PaymentModal({
   // TODO FAire une page legals ?
   // TODO Résoudre pb de build en prod mode
   // TODO Essayer de re résoudre PB socket
-  // TODO Envoyer le mail que si le mec le veut
 
   return (
     <Modal
