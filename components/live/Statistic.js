@@ -43,9 +43,9 @@ export default function Statistic() {
   return (
     <div className="col-xl-7 py-2">
       <div className="card shadow">
-        <div className="d-flex flex-column flex-sm-row align-items-center justify-content-between mb-4">
+        <div className="d-flex flex-column flex-md-row align-items-center justify-content-between mb-4">
           <h4 className="text-accent mb-0 mr-3">{t('live:statistic.title')}</h4>
-          <div className="nav-pills pills-accent d-flex flex-row align-items-center justify-content-between py-sm-0 py-3">
+          <div className="nav-pills pills-accent d-flex flex-row align-items-center justify-content-between py-md-0 py-3">
             <span
               role="button"
               tabIndex="0"

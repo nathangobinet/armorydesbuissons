@@ -15,7 +15,7 @@ let doNotHide = false;
 function create(target) {
   const tooltip = document.querySelector('#player-info-popper');
   popperInstance = createPopper(target, tooltip, {
-    placement: (window.innerWidth) > 1100 ? 'right' : 'bottom',
+    placement: (window.innerWidth) > 1200 ? 'right' : 'bottom',
     modifiers: [
       {
         name: 'offset',

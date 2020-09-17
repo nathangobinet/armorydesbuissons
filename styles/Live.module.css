@@ -122,7 +122,6 @@
   outline: none;
   text-decoration: none;
   display: inline-block;
-  text-align: left;
   border: none;
   background: none;
   margin: 0;
@@ -156,6 +155,7 @@
 
 
 .player-info-popper {
+  z-index: 1;
   display: block;
   position: fixed;
   width: 100%;
