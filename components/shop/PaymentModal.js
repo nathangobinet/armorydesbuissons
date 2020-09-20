@@ -62,7 +62,7 @@ function Error({ hide }) {
   );
 }
 
-function Success() {
+function Success({ paymentInfo }) {
   const { t } = useTranslation();
   return (
     <div>
@@ -73,7 +73,7 @@ function Success() {
           {t('shop:vipPricing.modal.success.message')}
         </p>
       </div>
-      <a href="/" className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}>
+      <a href={`/p/${paymentInfo.playerId}`} className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}>
         {t('shop:vipPricing.modal.success.btnProfile')}
         <i className="fas fa-chevron-right ml-4" />
       </a>

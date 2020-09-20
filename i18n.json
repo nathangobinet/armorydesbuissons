@@ -9,6 +9,7 @@
     "/": ["home"],
     "/live": ["live"],
     "/about": ["about"],
-    "/shop": ["shop"]
+    "/shop": ["shop"],
+    "/p/[id]": ["player"]
   }
 }
