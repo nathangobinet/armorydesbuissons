@@ -9,7 +9,7 @@ All improvements are welcome (typo, security issues, etc...). Just make a pull r
 
 ## License
 - Source code under MIT License
-- Our own images and illustrations (skins, rank, ...) are private and may not be used without the written consent of the Armory des buissons.
+- Our own images and illustrations (skins, rank, ...) are private and cannot be used without the written consent of the Armory des buissons.
 
 ## Contact
 For all requests please contact us by mail at armorydesbuissons@gmail.com.
