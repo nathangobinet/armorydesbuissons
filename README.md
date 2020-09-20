@@ -8,7 +8,7 @@ The website is built with Next.js and React.
 All improvements are welcome (typo, security issues, etc...). Just make a pull request 😉.
 
 ## License
-- Source code under MIT License
+- Source code is under MIT License
 - Images and illustrations are private and may not be used without the written consent of the Armory des buissons.
 
 ## Contact
