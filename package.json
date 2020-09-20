@@ -25,9 +25,9 @@
     "react-dom": "16.13.1",
     "react-paypal-button-v2": "^2.6.2",
     "react-spring": "^8.0.27",
-    "sass": "^1.26.10",
+    "sass": "^1.26.11",
     "socket.io-client": "^2.3.0",
-    "svg-country-flags": "^1.2.7",
+    "svg-country-flags": "^1.2.8",
     "url-loader": "^4.1.0",
     "uuid": "^8.3.0"
   },
