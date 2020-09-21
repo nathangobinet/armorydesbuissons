@@ -71,7 +71,7 @@ export default function InfoCards({ profileInfo }) {
           <ProfileInformation />
         </InfoCard>
         <InfoCard title="Search another player" logo="search" bg="card-primary">
-          <DynamicInput className="mb-2" style={{ background: 'rgba(255,255,255,.8)' }} setFilter={setSearchInput} />
+          <DynamicInput className="mb-2 text-black" style={{ background: 'rgba(255,255,255,.8)' }} setFilter={setSearchInput} />
           <div style={{ whiteSpace: 'nowrap', overflowX: 'auto' }} className="text-center">
             <SearchResult />
           </div>
