@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import useTranslation from 'next-translate/useTranslation';
 
 import Table from './Table';
-import TableInput from './TableInput';
+import DynamicInput from '../common/DynamicInput';
 import Player from './Player';
 import useFetch from '../../helpers/useFetch';
 
@@ -33,7 +33,7 @@ export default function Ranking() {
       <div className="card shadow">
         <div className="d-flex flex-column flex-sm-row align-items-center justify-content-between mb-4">
           <h4 className="text-accent mb-3 mb-sm-0 mr-3">{t('live:ranking.title')}</h4>
-          <TableInput setFilter={setFilter} />
+          <DynamicInput setFilter={setFilter} />
         </div>
         <Table id="ranking" headers={headers} rows={rows} />
       </div>

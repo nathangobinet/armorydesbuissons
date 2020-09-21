@@ -10,13 +10,13 @@ function BannerContent(props) {
     button, text, href, onClick, color, badge,
   } = props;
   return (
-    <div className="d-flex align-items-center">
+    <div className="d-flex flex-column flex-sm-row text-center text-sm-left align-items-center">
       {
         button ? (
           (href)
-            ? <a className="btn btn-primary px-5 mr-3" href={href}>{button}</a>
-            : <button className={`btn btn-${color || 'primary'} px-5 mr-3`} type="button" onClick={onClick}>{button}</button>
-        ) : <div style={{ fontSize: 20 }} className="badge badge-primary py-2 px-3 badge mr-3">{badge}</div>
+            ? <a className={`btn btn-${color || 'primary'} px-5 mr-0 mr-sm-3 mb-3 mb-sm-0`} href={href}>{button}</a>
+            : <button className={`btn btn-${color || 'primary'} px-5 mr-0 mr-sm-3 mb-3 mb-sm-0`} type="button" onClick={onClick}>{button}</button>
+        ) : <div style={{ fontSize: 20 }} className="badge badge-primary py-2 px-3 badge mr-0 mr-sm-3 mb-3 mb-sm-0">{badge}</div>
       }
       <b>{text}</b>
     </div>

@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import { createPopper } from '@popperjs/core';
-
 import useTranslation from 'next-translate/useTranslation';
+import Link from 'next/link';
+
 import acSvg from '../../../public/svgs/icons/ac-round.svg';
 import { useAuth } from '../../../helpers/user';
 import config from '../../../helpers/config';
@@ -74,7 +76,9 @@ function UserCardContent(props) {
           </em>
         </div>
       </div>
-      <a href={`/p/${id}`} type="button" className="btn btn-primary btn-block">{t('common:navbar.btnViewProfile')}</a>
+      <Link href={`/p/${encodeURIComponent(id)}`}>
+        <a type="button" className="btn btn-primary btn-block">{t('common:navbar.btnViewProfile')}</a>
+      </Link>
       <a href={`${config.httpserver}/api/auth/logout`} type="button" className="btn btn-accent btn-block">{t('common:navbar.btnLogout')}</a>
     </div>
   );

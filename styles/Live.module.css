@@ -95,18 +95,6 @@
   }
 }
 
-.input {
-  width: 100%;
-  display: block;
-  max-width: 300px;
-  padding: .3rem .8rem .2rem .8rem;
-  border-radius: .5rem;
-  border: none;
-  outline: none;
-  color: var(--text-color);
-  background: var(--lighter-or-darker);
-}
-
 .card-rank div:last-child {
   font-weight: 600;
   font-size: 42px;

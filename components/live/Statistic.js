@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useTranslation from 'next-translate/useTranslation';
 
 import Table from './Table';
-import TableInput from './TableInput';
+import DynamicInput from '../common/DynamicInput';
 import Player from './Player';
 import useFetch from '../../helpers/useFetch';
 
@@ -74,7 +74,7 @@ export default function Statistic() {
               {t('live:statistic.allTime')}
             </span>
           </div>
-          <TableInput setFilter={setFilter} />
+          <DynamicInput setFilter={setFilter} />
         </div>
         <Table id="statistic" headers={headers} rows={rows} />
       </div>

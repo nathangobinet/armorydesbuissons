@@ -115,6 +115,19 @@ code {
   filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.3));
 }
 
+.input {
+  width: 100%;
+  display: block;
+  max-width: 300px;
+  padding: .3rem .8rem .2rem .8rem;
+  border-radius: .5rem;
+  border: none;
+  outline: none;
+  color: var(--text-color);
+  background: var(--lighter-or-darker);
+}
+
+
 /* Colors */
 
 div .text-accent {

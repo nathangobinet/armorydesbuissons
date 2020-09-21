@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-console */
 /* eslint-disable no-param-reassign */
 /* eslint-disable jsx-a11y/label-has-associated-control */
@@ -7,6 +8,7 @@ import { Modal, Spinner } from 'react-bootstrap';
 import useTranslation from 'next-translate/useTranslation';
 
 import { PayPalButton } from 'react-paypal-button-v2';
+import Link from 'next/link';
 import styles from '../../styles/Shop.module.css';
 import useFetch from '../../helpers/useFetch';
 import { updateUser, useAuth } from '../../helpers/user';
@@ -73,10 +75,13 @@ function Success({ paymentInfo }) {
           {t('shop:vipPricing.modal.success.message')}
         </p>
       </div>
-      <a href={`/p/${paymentInfo.playerId}`} className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}>
-        {t('shop:vipPricing.modal.success.btnProfile')}
-        <i className="fas fa-chevron-right ml-4" />
-      </a>
+      <Link href={`/p/${paymentInfo.playerId}`}>
+        <a className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}>
+          {t('shop:vipPricing.modal.success.btnProfile')}
+          <i className="fas fa-chevron-right ml-4" />
+        </a>
+      </Link>
+
     </div>
   );
 }

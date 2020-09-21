@@ -1,0 +1,36 @@
+@media (min-width: 576px) { 
+  .card-width {
+    max-width: 70%;
+    min-width: 60%;
+  }
+  .card-height {
+    max-height: 195px;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 576px) { 
+  .card-width {
+    max-height: none;
+    width: 100%;
+  }
+  .card-height {
+    max-height: none;
+  }
+}
+
+.text-gr-accent {
+  background: var(--accent-gr);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.link {
+  color: var(--text-white)!important;
+  transition: opacity .2s;
+}
+
+.link:hover {
+  opacity: .7;
+  text-decoration: none!important;
+}
