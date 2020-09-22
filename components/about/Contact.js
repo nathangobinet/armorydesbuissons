@@ -26,7 +26,7 @@ export default function Contact() {
                     <p>{t('about:contact.join.p1')}</p>
                     <p>{t('about:contact.join.p2')}</p>
                     <a className="btn btn-discord mt-2 w-75 mx-auto" href="https://discord.gg/RUh4QUV" target="_blank" rel="noreferrer">
-                      <i className="fab fa-discord mr-1" />
+                      <i className="fab fa-discord mr-2" />
                       {t('about:contact.join.btn')}
                     </a>
                   </div>
@@ -37,7 +37,7 @@ export default function Contact() {
                     <p>{t('about:contact.contact.p1')}</p>
                     <p>{t('about:contact.contact.p2')}</p>
                     <a className="btn btn-mail mt-2 w-75 mx-auto" href="mailto:armorydesbuissons@gmail.com">
-                      <i className="fas fa-envelope mr-1" />
+                      <i className="fas fa-envelope mr-2" />
                       {t('about:contact.contact.btn')}
                     </a>
                   </div>
