@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 
 import useTranslation from 'next-translate/useTranslation';
-import Link from 'next/link';
+import Link from 'next-translate/Link';
 import styles from '../../styles/Live.module.css';
 import useFetch from '../../helpers/useFetch';
 
