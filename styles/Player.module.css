@@ -4,7 +4,7 @@
     min-width: 60%;
   }
   .card-height {
-    max-height: 195px;
+    max-height: 205px;
     overflow-y: auto;
   }
 }
@@ -21,6 +21,12 @@
 
 .text-gr-accent {
   background: var(--accent-gr);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gr-primary {
+  background: var(--primary-gr);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { createPopper } from '@popperjs/core';
 import useTranslation from 'next-translate/useTranslation';
-import Link from 'next/link';
+import Link from 'next-translate/Link';
 
 import acSvg from '../../../public/svgs/icons/ac-round.svg';
 import { useAuth } from '../../../helpers/user';

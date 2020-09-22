@@ -8,7 +8,7 @@ import { Modal, Spinner } from 'react-bootstrap';
 import useTranslation from 'next-translate/useTranslation';
 
 import { PayPalButton } from 'react-paypal-button-v2';
-import Link from 'next/link';
+import Link from 'next-translate/Link';
 import styles from '../../styles/Shop.module.css';
 import useFetch from '../../helpers/useFetch';
 import { updateUser, useAuth } from '../../helpers/user';

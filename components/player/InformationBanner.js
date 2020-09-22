@@ -1,4 +1,5 @@
-/* eslint-disable no-nested-ternary */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import Link from 'next-translate/Link';
 import React, { useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import config from '../../helpers/config';
@@ -7,17 +8,21 @@ import DiscordQuestModal from './DiscordQuestModal';
 
 function BannerContent(props) {
   const {
-    button, text, href, onClick, color, badge,
+    button, text, href, onClick, color, badge, external,
   } = props;
+
+  const ButtonType = () => {
+    const commonClasses = 'mr-0 mr-sm-3 mb-3 mb-sm-0';
+    const btnClasses = `btn btn-${color || 'primary'} px-5 mr-0 mr-sm-3 mb-3 mb-sm-0`;
+    if (!button && badge) return <div style={{ fontSize: 20 }} className={`badge badge-${color} py-2 px-3 badge ${commonClasses}`}>{badge}</div>;
+    if (!href && onClick) return <button className={btnClasses} type="button" onClick={onClick}>{button}</button>;
+    if (external) return <a className={btnClasses} href={href}>{button}</a>;
+    return <Link href={href}><a className={btnClasses}>{button}</a></Link>;
+  };
+
   return (
     <div className="d-flex flex-column flex-sm-row text-center text-sm-left align-items-center">
-      {
-        button ? (
-          (href)
-            ? <a className={`btn btn-${color || 'primary'} px-5 mr-0 mr-sm-3 mb-3 mb-sm-0`} href={href}>{button}</a>
-            : <button className={`btn btn-${color || 'primary'} px-5 mr-0 mr-sm-3 mb-3 mb-sm-0`} type="button" onClick={onClick}>{button}</button>
-        ) : <div style={{ fontSize: 20 }} className="badge badge-primary py-2 px-3 badge mr-0 mr-sm-3 mb-3 mb-sm-0">{badge}</div>
-      }
+      <ButtonType />
       <b>{text}</b>
     </div>
   );
@@ -38,6 +43,7 @@ function BannerChooser({ profileInfo, setDiscordModalVisible }) {
         button="Connect with steam"
         text="To view your full profile, see your rankings, statistics, graphs and more..."
         href={`${config.httpserver}/api/auth/steam`}
+        type="external"
       />
     );
   }
@@ -65,7 +71,7 @@ function BannerChooser({ profileInfo, setDiscordModalVisible }) {
       <BannerContent
         button="Help the server"
         text="By becoming VIP and unlocking exceptional visuals to set you apart from other players."
-        onclick={() => {}}
+        href="/shop#pricing"
       />
     );
   }
@@ -73,6 +79,7 @@ function BannerChooser({ profileInfo, setDiscordModalVisible }) {
     <BannerContent
       text="Thank you very much for helping the server ♥. It is thanks to you that the server can continue to exist."
       badge="You are VIP"
+      color="primary"
     />
   );
 }

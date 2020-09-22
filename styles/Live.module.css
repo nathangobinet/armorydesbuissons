@@ -1,6 +1,7 @@
 .card-icon {
   color: var(--white-text);
-  font-size: 60px;
+  font-size: 70px;
+  line-height: 1;
 }
 
 .card-text {

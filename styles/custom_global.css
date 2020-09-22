@@ -396,8 +396,11 @@ div .text-primary  {
 }
 
 .bt-primary {
-  border-top: solid var(--primary) 1rem!important;
-  border-radius: 0 0 .8rem .8rem!important;
+  border-top: solid var(--primary) 10px!important;
+}
+
+.bt-accent {
+  border-top: solid var(--accent) 10px!important;
 }
 
 

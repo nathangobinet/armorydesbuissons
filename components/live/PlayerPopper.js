@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-nested-ternary */
 import React, { useState } from 'react';
 
 import useTranslation from 'next-translate/useTranslation';
+import Link from 'next/link';
 import styles from '../../styles/Live.module.css';
 import useFetch from '../../helpers/useFetch';
 
@@ -27,7 +29,11 @@ function PlayerPopper() {
       <div className="card bg-info-popper">
         <div className="d-flex align-items-center justify-content-between mb-4">
           <h4 className="text-accent hide-overflow mb-0">{playerData.name}</h4>
-          <a className={`${styles['link-effect']} ml-2 text-right`} href={`/p/${(playerData) ? playerData.id : ''}`}>{t('live:popper.profile')}</a>
+          <Link href={(playerData) ? `/p/${playerData.id}` : '/live'}>
+            <a className={`${styles['link-effect']} ml-2 text-right`}>
+              {t('live:popper.profile')}
+            </a>
+          </Link>
         </div>
         <div className="row mb-4">
           <div className="col-sm-6 pb-3 pb-xl-0 px-xl-5">
