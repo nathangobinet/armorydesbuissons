@@ -6,6 +6,7 @@ import InformationBanner from '../../components/player/InformationBanner';
 import useFetch from '../../helpers/useFetch';
 import InfoCards from '../../components/player/InfoCards';
 import RankingLevel from '../../components/player/RankingLevel';
+import Statistic from '../../components/player/Statistic';
 
 export default function Player() {
   const router = useRouter();
@@ -23,6 +24,7 @@ export default function Player() {
         <InformationBanner profileInfo={profileInfo} setProfileInfo={setProfileInfo} />
         <InfoCards profileInfo={profileInfo} />
         <RankingLevel profileInfo={profileInfo} />
+        <Statistic profileInfo={profileInfo} />
       </div>
       <Footer />
     </div>

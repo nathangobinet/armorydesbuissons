@@ -54,10 +54,10 @@ export default function Level({ profileInfo }) {
     );
   }
   return (
-    <div className="card bt-accent shadow mt-3 mt-xl-0">
+    <div className="card bt-accent shadow mt-4 mt-xl-0">
       <h3 className="mb-3">Level</h3>
       <LevelPart levelInfo={profileInfo.levelInfo} />
-      <h3 className="mb-3">Stats</h3>
+      <h3 className="mb-3">Statistics</h3>
       <div
         style={{ overflowX: 'auto', overflowY: 'hidden' }}
         className="d-flex align-items-center justify-content-between pb-1"

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
+import config from '../../helpers/config';
 import { getUrlAction } from '../../helpers/user';
 
 function ScreenSuccess({ setDiscordModalVisible }) {
@@ -61,7 +62,7 @@ function ScreenQuest() {
           {' '}
           let us verify that you are indeed a member.
         </p>
-        <a className="btn btn-discord my-1 mb-3" href="https://discord.com/oauth2/authorize?client_id=756616202268311704&redirect_uri=http%3A%2F%2Flocalhost%3A3005%2Fapi%2Fauth%2Fdiscord&response_type=code&scope=guilds">
+        <a className="btn btn-discord my-1 mb-3" href={`${config.httpserver}/api/auth/discord`}>
           <i className="fas fa-check mr-3" />
           Check that I am a member
         </a>
