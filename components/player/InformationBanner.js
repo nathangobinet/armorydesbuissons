@@ -43,7 +43,7 @@ function BannerChooser({ profileInfo, setDiscordModalVisible }) {
         button="Connect with steam"
         text="To view your full profile, see your rankings, statistics, graphs and more..."
         href={`${config.httpserver}/api/auth/steam`}
-        type="external"
+        external
       />
     );
   }

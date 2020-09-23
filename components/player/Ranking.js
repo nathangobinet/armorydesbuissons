@@ -4,20 +4,7 @@ import React from 'react';
 
 import { Spinner } from 'react-bootstrap';
 import styles from '../../styles/Player.module.css';
-
-function NumberPresentation({ number, title }) {
-  return (
-    <div className="px-2">
-      <div className="text-accent" style={{ fontWeight: 600, lineHeight: 1, fontSize: 20 }}>{title}</div>
-      <div style={{
-        fontFamily: '"Montserrat", sans-serif', fontSize: 40, fontWeight: 600, lineHeight: 0.85, marginLeft: 1,
-      }}
-      >
-        {number}
-      </div>
-    </div>
-  );
-}
+import NumberPresentation from './NumberPresentation';
 
 function CurrentRank({ rank }) {
   const ranks = {
@@ -32,45 +19,52 @@ function CurrentRank({ rank }) {
   const unranked = 'rank_unranked.png';
 
   return (
-    <div className="card shadow bg-darker mb-3 mb-xl-0">
-      <h3 className="mb-3">Current rank</h3>
-      <div className="d-flex flex-column flex-sm-row align-items-center justify-content-between justify-content-sm-around mb-4">
-        <div className="mb-3 mb-sm-0 mr-0 mr-sm-2" style={{ width: '50%' }}>
-          <img
-            style={{ maxHeight: 158 }}
-            className="img-fluid"
-            src={require(`../../public/images/ranks/${rank ? ranks[rank.division] : unranked}`)}
-            alt="rank"
-          />
-        </div>
-        <div>
-          <div style={{ fontWeight: 600, lineHeight: 1, fontSize: 22 }}>Points</div>
-          <div
-            className={styles['text-gr-primary']}
-            style={{
-              fontFamily: '"Montserrat", sans-serif', fontSize: '4.5rem', fontWeight: 600, lineHeight: 0.85,
-            }}
-          >
-            {rank ? Math.trunc(rank.score) : 'N/A'}
+    <div className="h-100 d-flex flex-column">
+      <div className="card shadow bg-darker h-100 d-flex flex-column justify-content-between">
+        <h3 className="mb-3">Current rank</h3>
+        <div className="d-flex flex-column flex-sm-row align-items-center justify-content-between justify-content-sm-around mb-4">
+          <div className="mb-3 mb-sm-0 mr-0 mr-sm-2" style={{ width: '50%' }}>
+            <img
+              style={{ maxHeight: 158 }}
+              className="img-fluid"
+              src={require(`../../public/images/ranks/${rank ? ranks[rank.division] : unranked}`)}
+              alt="rank"
+            />
+          </div>
+          <div>
+            <div style={{ fontWeight: 600, lineHeight: 1, fontSize: 22 }}>Points</div>
+            <div
+              className={styles['text-gr-primary']}
+              style={{
+                fontFamily: '"Montserrat", sans-serif', fontSize: '4.5rem', fontWeight: 600, lineHeight: 0.85,
+              }}
+            >
+              {rank ? Math.trunc(rank.score) : 'N/A'}
+            </div>
           </div>
         </div>
+        <div
+          style={{ overflowX: 'auto', overflowY: 'hidden' }}
+          className="d-flex align-items-center justify-content-between pb-1"
+        >
+          <NumberPresentation title="№" number={rank ? rank.rank : 'N/A'} />
+          <NumberPresentation title="Total" number={rank ? rank.total : 'N/A'} />
+          <NumberPresentation title="Top" number={rank ? `${Math.trunc(rank.top * 100)}%` : 'N/A'} />
+        </div>
       </div>
-      <div style={{ overflowX: 'auto', overflowY: 'hidden' }} className="d-flex align-items-center justify-content-between pb-1">
-        <NumberPresentation title="№" number={rank ? rank.rank : 'N/A'} />
-        <NumberPresentation title="Total" number="1238" />
-        <NumberPresentation title="Top" number={rank ? `${Math.trunc(rank.top * 100)}%` : 'N/A'} />
-      </div>
+      <div className="mb-3 mb-md-0" />
     </div>
+
   );
 }
 
-function PreviousRank({ className }) {
+function PreviousRank({ className, rank }) {
   return (
     <div className={`card shadow bg-darker ${className}`}>
       <div style={{ overflowX: 'auto', overflowY: 'hidden' }} className="d-flex align-items-center justify-content-between pb-1">
-        <NumberPresentation title="Season" number="30" />
-        <NumberPresentation title="Division" number="PLATINIUM" />
-        <NumberPresentation title="Points" number="1200" />
+        <NumberPresentation title="Season" number={rank.season} />
+        <NumberPresentation title="Division" number={rank.ligue ? rank.ligue : 'UNRANKED'} />
+        <NumberPresentation title="Points" number={rank.score ? Math.trunc(rank.score) : 'N/A'} />
       </div>
     </div>
   );
@@ -86,9 +80,9 @@ export default function Ranking({ profileInfo }) {
             <CurrentRank rank={profileInfo.ranks.current} />
           </div>
           <div className="col-md-7">
-            <PreviousRank />
-            <PreviousRank className="mt-2" />
-            <PreviousRank className="mt-2" />
+            <PreviousRank rank={profileInfo.ranks.passed[0]} />
+            <PreviousRank rank={profileInfo.ranks.passed[1]} className="mt-2" />
+            <PreviousRank rank={profileInfo.ranks.passed[2]} className="mt-2" />
           </div>
         </div>
       ) : (
