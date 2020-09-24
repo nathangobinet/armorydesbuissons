@@ -412,11 +412,6 @@ export default function PaymentModal({
     }
   }, [choosedItem]);
 
-  // TODO faire le fichier _error (et check si il y'en a pas un autre)
-  // TODO FAire une page legals ?
-  // TODO Résoudre pb de build en prod mode
-  // TODO Essayer de re résoudre PB socket
-
   return (
     <Modal
       centered
