@@ -252,10 +252,13 @@ div .text-primary  {
   transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-.nav-menu:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+@media (min-width: 991px) { 
+  .nav-menu:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 }
+
 
 
 .nav-py {
@@ -288,7 +291,8 @@ div .text-primary  {
 
 .nav-select > .nav-to-select {
   width: 67px;
-  transition: ease-in-out width .2s, ease-in-out opacity .2s, ease-in-out padding-left .2s, ease-in-out padding-right .2s;
+  max-width: 67px; /* Fix for safari */
+  transition: ease-in-out width .2s, ease-in-out max-width .2s, ease-in-out opacity .2s, ease-in-out padding-left .2s, ease-in-out padding-right .2s;
 }
 
 .nav-select > .nav-select-hide {
@@ -296,6 +300,7 @@ div .text-primary  {
   padding-left: 0 !important;
   z-index: -1;
   width: 0px;
+  max-width: 0px; /* Fix for safari */
   opacity: 0;
 }
 

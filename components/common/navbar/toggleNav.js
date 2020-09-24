@@ -2,7 +2,7 @@
 function displayNav(currentScrollPos, prevScrollpos) {
   if (prevScrollpos > currentScrollPos) {
     document.getElementById('navbar').style.top = '0';
-  } else {
+  } else if (currentScrollPos > 0) {
     document.getElementById('navbar').style.top = '-66px';
   }
   return currentScrollPos;
