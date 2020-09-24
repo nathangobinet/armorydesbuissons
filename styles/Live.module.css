@@ -165,11 +165,11 @@
 .link-effect {
   color: var(--text-accent)!important;
   transition: opacity .2s;
+  text-decoration: underline;
 }
 
 .link-effect:hover {
   opacity: .7;
-  text-decoration: none!important;
 }
 
 

@@ -44,11 +44,12 @@ function StatCard(props) {
 
 export default function Statistic({ profileInfo }) {
   return (
-    <div className="row">
-      <div className="col-12">
-        <div className="card shadow card-accent mt-4">
-          <h3 className="mb-3 text-white">Statistics</h3>
-          {
+    <section id="statistic">
+      <div className="row">
+        <div className="col-12">
+          <div className="card shadow card-accent mt-4">
+            <h3 className="mb-3 text-white">Statistics</h3>
+            {
             profileInfo ? (
               <div className="row">
                 <StatCard className="mb-3 mb-xl-0" title="This day" icon="calendar-day" stat={profileInfo.stats.day} />
@@ -61,8 +62,10 @@ export default function Statistic({ profileInfo }) {
               </div>
             )
           }
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
   );
 }

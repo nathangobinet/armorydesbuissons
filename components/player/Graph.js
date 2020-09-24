@@ -1,0 +1,103 @@
+import React, { useEffect, useRef } from 'react';
+import { Chart } from 'chart.js';
+
+import Lock from './Lock';
+import { isDarkMode } from '../../helpers/theme';
+
+import styles from '../../styles/Player.module.css';
+
+function createGraph(graphRef, data) {
+  const {
+    labels, data1, data2, data3,
+  } = data;
+  const lineChartData = {
+    labels,
+    datasets: [{
+      label: 'Kills',
+      borderColor: '#63BF60',
+      backgroundColor: '#63BF60',
+      fill: false,
+      data: data1,
+      yAxisID: 'y-axis-1',
+    }, {
+      label: 'Deaths',
+      borderColor: '#F26E50',
+      backgroundColor: '#F26E50',
+      fill: false,
+      data: data2,
+      yAxisID: 'y-axis-1',
+    }, {
+      label: 'Ratio',
+      borderColor: '#aaa',
+      backgroundColor: isDarkMode() ? '#555' : '#ccc',
+      fill: false,
+      type: 'bar',
+      data: data3,
+      yAxisID: 'y-axis-2',
+    }],
+  };
+  Chart.defaults.global.defaultFontColor = isDarkMode() ? '#ddd' : '#666';
+  const gridColor = isDarkMode() ? '#666' : '#ccc';
+  return new Chart(graphRef.current, {
+    type: 'line',
+    data: lineChartData,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      legend: {
+        position: 'bottom',
+      },
+      scales: {
+        xAxes: [{ gridLines: { color: gridColor } }],
+        yAxes: [{
+          id: 'y-axis-1',
+          type: 'linear',
+          display: true,
+          position: 'left',
+          gridLines: { color: gridColor },
+        }, {
+          id: 'y-axis-2',
+          type: 'linear',
+          display: true,
+          position: 'right',
+          gridLines: {
+            drawOnChartArea: false, // only want the grid lines for one axis to show up
+            gridLines: { color: gridColor },
+          },
+        }],
+      },
+    },
+  });
+}
+
+function getData(killsHistory) {
+  const labels = killsHistory.map((k) => (new Date(k.date)).toLocaleDateString());
+  const data1 = killsHistory.map((k) => k.nbKills);
+  const data2 = killsHistory.map((k) => k.nbDeaths);
+  const data3 = killsHistory.map(
+    (k) => ((k.nbDeaths === 0) ? k.nbKills : (k.nbKills / k.nbDeaths).toFixed(2)),
+  );
+  return {
+    labels, data1, data2, data3,
+  };
+}
+
+export default function Graph({ profileInfo }) {
+  const graphRef = useRef();
+  useEffect(() => {
+    const data = getData(profileInfo.killsHistory);
+    createGraph(graphRef, data);
+  }, []);
+
+  return (
+    <div className="card shadow h-100 mt-4 mt-xl-0">
+      <div className="d-flex align-items-center justify-content-between mb-3">
+        <h3>Kills and death history</h3>
+        <Lock id="ResetScore" />
+      </div>
+      <div className={styles['chart-container']}>
+        <canvas ref={graphRef} />
+      </div>
+    </div>
+  );
+}
