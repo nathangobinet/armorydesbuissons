@@ -202,39 +202,41 @@ function Information({ setScreen, setPaymentInfo }) {
     else setIsCorrect(false);
   };
 
-  const onClick = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
     setPaymentInfo((paymentInfo) => ({ ...paymentInfo, mail: mailWanted ? mail : undefined }));
     setScreen(MODAL_SCREEEN.PAYMENT);
   };
 
   return (
     <div>
-      <h3 className="text-accent mb-0">{t('shop:vipPricing.modal.mail.title')}</h3>
-      <div className="py-5">
-        <input
-          type="email"
-          id="email"
-          placeholder={t('shop:vipPricing.modal.mail.placeHolderMail')}
-          className={`${styles.input} mx-auto`}
-          onChange={onChange}
-          disabled={!mailWanted}
-        />
-        <div className="custom-control custom-checkbox pt-2">
-          <input type="checkbox" className="custom-control-input" id="noEmail" onChange={() => setMailWanted((w) => !w)} />
-          <label className="custom-control-label pb-1" htmlFor="noEmail" style={{ lineHeight: 1.4 }}>
-            <small>{t('shop:vipPricing.modal.mail.dontWantMail')}</small>
-          </label>
+      <form onSubmit={onSubmit}>
+        <h3 className="text-accent mb-0">{t('shop:vipPricing.modal.mail.title')}</h3>
+        <div className="py-5">
+          <input
+            type="email"
+            id="email"
+            placeholder={t('shop:vipPricing.modal.mail.placeHolderMail')}
+            className={`${styles.input} mx-auto`}
+            onChange={onChange}
+            disabled={!mailWanted}
+          />
+          <div className="custom-control custom-checkbox pt-2">
+            <input type="checkbox" className="custom-control-input" id="noEmail" onChange={() => setMailWanted((w) => !w)} />
+            <label className="custom-control-label pb-1" htmlFor="noEmail" style={{ lineHeight: 1.4 }}>
+              <small>{t('shop:vipPricing.modal.mail.dontWantMail')}</small>
+            </label>
+          </div>
         </div>
-      </div>
-      <button
-        className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}
-        type="button"
-        onClick={onClick}
-        disabled={!(!mailWanted || isCorrect)}
-      >
-        {t('shop:vipPricing.modal.btnValidate')}
-        <i className="fas fa-chevron-right ml-4" />
-      </button>
+        <button
+          className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}
+          type="submit"
+          disabled={!(!mailWanted || isCorrect)}
+        >
+          {t('shop:vipPricing.modal.btnValidate')}
+          <i className="fas fa-chevron-right ml-4" />
+        </button>
+      </form>
     </div>
   );
 }
@@ -252,48 +254,51 @@ function PlayerID({ setScreen, setPaymentInfo }) {
     else setIsCorrect(false);
   };
 
-  const onClick = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
     setPaymentInfo((paymentInfo) => ({ ...paymentInfo, playerId: input, lastName: playerName }));
     setScreen(MODAL_SCREEEN.INNFORMATION);
   };
 
   return (
     <div>
-      <h3 className="text-accent mb-3">{t('shop:vipPricing.modal.playerId.title')}</h3>
-      <p className="mb-0">
-        {t('shop:vipPricing.modal.playerId.infoPlayerId')}
-        {' '}
-        <a target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=0fzyr0g0wvk">
-          {t('shop:vipPricing.modal.playerId.arma3Profile')}
-        </a>
-      </p>
-      <div style={{ paddingBottom: '2rem', paddingTop: '2rem' }}>
-        <input
-          type="number"
-          id="playerId"
-          placeholder={t('shop:vipPricing.modal.playerId.placeHolderPlayerId')}
-          className={`${styles.input} mx-auto`}
-          onChange={onChange}
-        />
-        <div style={{
-          transition: 'opacity O.5s', opacity: (isCorrect) ? 1 : 0, fontSize: 14, marginTop: 8,
-        }}
-        >
-          <i className={`fas ${(playerName === null) ? 'fa-times' : 'fa-check'} mr-2`} />
-          {(playerName === null)
-            ? t('shop:vipPricing.modal.playerId.idNotMatch')
-            : t('shop:vipPricing.modal.playerId.lastSeenUnder', { pseudo: playerName })}
+      <form onSubmit={onSubmit}>
+        <h3 className="text-accent mb-3">{t('shop:vipPricing.modal.playerId.title')}</h3>
+        <p className="mb-0">
+          {t('shop:vipPricing.modal.playerId.infoPlayerId')}
+          {' '}
+          <a target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=0fzyr0g0wvk">
+            {t('shop:vipPricing.modal.playerId.arma3Profile')}
+          </a>
+        </p>
+        <div style={{ paddingBottom: '2rem', paddingTop: '2rem' }}>
+          <input
+            type="number"
+            id="playerId"
+            placeholder={t('shop:vipPricing.modal.playerId.placeHolderPlayerId')}
+            className={`${styles.input} mx-auto`}
+            onChange={onChange}
+          />
+          <div style={{
+            transition: 'opacity O.5s', opacity: (isCorrect) ? 1 : 0, fontSize: 14, marginTop: 8,
+          }}
+          >
+            <i className={`fas ${(playerName === null) ? 'fa-times' : 'fa-check'} mr-2`} />
+            {(playerName === null)
+              ? t('shop:vipPricing.modal.playerId.idNotMatch')
+              : t('shop:vipPricing.modal.playerId.lastSeenUnder', { pseudo: playerName })}
+          </div>
         </div>
-      </div>
-      <button
-        className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}
-        type="button"
-        onClick={onClick}
-        disabled={!(isCorrect && playerName !== null)}
-      >
-        {t('shop:vipPricing.modal.btnValidate')}
-        <i className="fas fa-chevron-right ml-4" />
-      </button>
+        <button
+          className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}
+          type="submit"
+          disabled={!(isCorrect && playerName !== null)}
+        >
+          {t('shop:vipPricing.modal.btnValidate')}
+          <i className="fas fa-chevron-right ml-4" />
+        </button>
+      </form>
+
     </div>
   );
 }
