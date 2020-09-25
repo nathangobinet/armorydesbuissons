@@ -30,11 +30,20 @@ function BannerContent(props) {
 
 function BannerChooser({ profileInfo, setDiscordModalVisible }) {
   const user = useAuth();
-  if (!profileInfo) {
+  if (profileInfo === false) {
     return (
       <div className="text-center">
         <Spinner animation="border" variant="primary" />
       </div>
+    );
+  }
+  if (profileInfo === undefined) {
+    return (
+      <BannerContent
+        text="No player with this id has already connected to the server. If this is your profile, connect to the server to see your statistics."
+        badge="Warning"
+        color="danger"
+      />
     );
   }
   if (!user.auth) {

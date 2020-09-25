@@ -10,7 +10,7 @@ function IconNumberPresentation(props) {
   } = props;
 
   return (
-    <div className={`w-100 d-flex align-items-center justify-content-between justify-content-sm-start  ${className}`}>
+    <div className={`d-flex align-items-center justify-content-between ${className}`}>
       <i style={{ fontSize: 65 }} className={`fas fa-${icon} ${styles['text-gr-primary']} mr-3`} />
       <NumberPresentation title={title} number={number} />
     </div>

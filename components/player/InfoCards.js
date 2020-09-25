@@ -38,7 +38,7 @@ export default function InfoCards({ profileInfo }) {
   };
 
   const ProfileInformation = () => {
-    if (!profileInfo) return <Spinner animation="border" variant="white" />;
+    if (!profileInfo) return <div className="text-center"><Spinner animation="border" variant="primary" /></div>;
     if (profileInfo.isItsProfile) {
       return (
         <div>
@@ -56,13 +56,20 @@ export default function InfoCards({ profileInfo }) {
     );
   };
 
+  const ProfileOf = () => {
+    if (!profileInfo) return <div className="text-center"><Spinner animation="border" variant="primary" /></div>;
+    return (
+      <div style={{ fontSize: 36, fontWeight: 600, fontFamily: '"Montserrat", sans-serif' }}>
+        { profileInfo ? profileInfo.lastName : <Spinner animation="border" variant="white" />}
+      </div>
+    );
+  };
+
   return (
     <section id="info-card" className="mt-3">
       <div className="row">
         <InfoCard logo="user" title="Profile of" color="primary">
-          <div style={{ fontSize: 36, fontWeight: 600, fontFamily: '"Montserrat", sans-serif' }}>
-            { profileInfo ? profileInfo.lastName : <Spinner animation="border" variant="white" />}
-          </div>
+          <ProfileOf />
         </InfoCard>
         <InfoCard title="Profile information" logo="lock" color="accent">
           <ProfileInformation />
