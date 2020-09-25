@@ -33,7 +33,7 @@ export default function InfoCards({ profileInfo }) {
   const players = useFetch('/api/playersByName', undefined, { name: searchInput }, false);
 
   const SearchResult = () => {
-    if (searchInput === '') return t('player:infoCards.searchPlayer.waitSearch');
+    if (players === undefined || searchInput === '') return t('player:infoCards.searchPlayer.waitSearch');
     if (players.length === 0) return t('player:infoCards.searchPlayer.noPlayerFound');
     return players.map(
       (p) => <Link key={p.playerId} href={`/p/${p.playerId}`}><a className={styles.link}>{p.lastName}</a></Link>,

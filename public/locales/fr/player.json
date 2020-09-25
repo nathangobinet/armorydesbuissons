@@ -47,7 +47,7 @@
     }, 
     "searchPlayer": {
       "title": "Rechercher un autre joueur",
-      "waitSearch": "En attendant la recherche...",
+      "waitSearch": "En attente de la recherche...",
       "noPlayerFound": "Aucun joueur n'a été trouvé"
     }
   },

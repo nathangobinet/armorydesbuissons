@@ -54,7 +54,7 @@ function BannerChooser({ profileInfo, setDiscordModalVisible }) {
       <BannerContent
         button={t('player:informationBanner.steamConnect.title')}
         text={t('player:informationBanner.steamConnect.text')}
-        href={`${config.httpserver}/api/auth/steam`}
+        href={`${config.httpserver}/api/auth/steam?action=${encodeURIComponent(JSON.stringify({ type: 'redirect_profile' }))}`}
         external
       />
     );
