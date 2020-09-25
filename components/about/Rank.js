@@ -182,6 +182,11 @@ export default function Rank() {
             {t('about:rank.filter.p1')}
           </p>
         </Info>
+        <Info icon="fa-trophy" title={t('about:rank.winner.title')}>
+          <p>
+            {t('about:rank.winner.p1')}
+          </p>
+        </Info>
       </div>
     </section>
   );

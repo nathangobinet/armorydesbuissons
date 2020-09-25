@@ -56,13 +56,17 @@
     }, 
     "reset": {
       "title": "Rank initialization and reset",
-      "p1": "Rank is initialised at 1000, which corresponds to the Gold division. Rank is reset to 1000 each month. The highest ranked player wins a VIP and a Top 1 skin.",
+      "p1": "Rank is initialised at 1000, which corresponds to the Gold division. The rank corresponds to your ranking over a season. A season lasts 1 month. At the end of the month the rank is reset to 1000.",
       "p2": "It is also possible to reset your ranking to 1000 by being VIP and going to tour profile."
     }, 
     "filter": {
       "title": "Selection of players",
       "p1": "In order to make the ranking as accurate as possible, only players who logged in less than two weeks ago are taken into account in the calculation of the ranking."
-    }  
+    }, 
+    "winner": {
+      "title": "End of season award",
+      "p1": "Every month, the player who finishes the season with the highest score becomes the champion. He wins a month of VIP and an exclusive \"champion\" skin for the next month."
+    } 
   },
   "vip": {
     "title": "Help us finance the server",

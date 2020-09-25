@@ -56,13 +56,17 @@
     }, 
     "reset": {
       "title": "Initialisation et réinitialisation du classement",
-      "p1": "Le rang est initialisé à 1000, ce qui correspond à la division Gold. Le rang est réinitialisé à 1000 chaque mois. Le joueur le mieux classé gagne un VIP et un skin Top 1.",
-      "p2": "Il est également possible de réinitialiser votre classement à 1000 en étant VIP et en allant sur votre profil"
+      "p1": "Le rang est initialisé à 1000, ce qui correspond à la division Gold. Le rang correspond à votre classement sur une saison. Une saison dure 1 mois. À la fin du mois, le classement est remis à 1000.",
+      "p2": "Il est également possible de réinitialiser votre classement à 1000 en étant VIP et en allant sur votre profil."
     }, 
     "filter": {
       "title": "Sélection des joueurs",
       "p1": "Afin de permettre un classement aussi précis que possible, seuls les joueurs qui se sont connectés il y a moins de deux semaines sont pris en compte dans le calcul du classement."
-    }  
+    }, 
+    "winner": {
+      "title": "Récompense de fin de saison",
+      "p1": "Tous les mois, le joueur qui finit la saison avec le meilleur score devient champion. Il gagne un mois de VIP et un skin exclusif \"champion\" pour le mois suivant."
+    } 
   },
   "vip": {
     "title": "Nous aider à financer le serveur",
