@@ -165,7 +165,7 @@ export default function ShopPricing() {
   }, [mappedShop]);
 
   return (
-    <section id="other-donation" className="container py-5">
+    <section id="shop" className="container py-5">
       <div className="text-center py-4">
         <h1 className="text-accent mb-4">{t('shop:shopPricing.title')}</h1>
         <p>{t('shop:shopPricing.p1')}</p>

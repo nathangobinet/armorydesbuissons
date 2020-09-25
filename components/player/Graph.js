@@ -90,10 +90,10 @@ export default function Graph({ profileInfo }) {
   }, []);
 
   return (
-    <div className="card shadow h-100 mt-4 mt-xl-0">
+    <div className="card shadow h-100 mt-xl-0">
       <div className="d-flex align-items-center justify-content-between mb-3">
         <h3>Kills and death history</h3>
-        <Lock id="ResetScore" />
+        <Lock id="graph" />
       </div>
       <div className={styles['chart-container']}>
         <canvas ref={graphRef} />

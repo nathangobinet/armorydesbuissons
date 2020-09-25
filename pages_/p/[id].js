@@ -8,6 +8,7 @@ import InfoCards from '../../components/player/InfoCards';
 import RankingLevel from '../../components/player/RankingLevel';
 import Statistic from '../../components/player/Statistic';
 import ResetGraph from '../../components/player/ResetGraph';
+import PurchasesWallet from '../../components/player/PurchasesWallet';
 
 export default function Player() {
   const router = useRouter();
@@ -26,7 +27,15 @@ export default function Player() {
         <InfoCards profileInfo={profileInfo} />
         <RankingLevel profileInfo={profileInfo} />
         <Statistic profileInfo={profileInfo} />
-        <ResetGraph profileInfo={profileInfo} />
+        {
+          profileInfo && profileInfo.isItsProfile
+            ? (
+              <div>
+                <ResetGraph profileInfo={profileInfo} />
+                <PurchasesWallet profileInfo={profileInfo} />
+              </div>
+            ) : ''
+        }
       </div>
       <Footer />
     </div>

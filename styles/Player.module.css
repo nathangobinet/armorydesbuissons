@@ -86,3 +86,7 @@
       height: 400px;
   }
 }
+
+.card-padding > div:not(:first-child) {
+  margin-top: .6rem;
+}

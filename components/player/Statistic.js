@@ -10,7 +10,7 @@ function IconNumberPresentation(props) {
   } = props;
 
   return (
-    <div className={`d-flex align-items-center ${className}`}>
+    <div className={`w-100 d-flex align-items-center justify-content-between justify-content-sm-start  ${className}`}>
       <i style={{ fontSize: 65 }} className={`fas fa-${icon} ${styles['text-gr-primary']} mr-3`} />
       <NumberPresentation title={title} number={number} />
     </div>
@@ -27,7 +27,7 @@ function StatCard(props) {
       <div className="card shadow bg-darker">
         <div className="d-flex align-items-center justify-content-between mb-4">
           <h3>{title}</h3>
-          <i className={`fas fa-${icon} fa-2x`} />
+          <i className={`fas fa-${icon} fa-2x ml-2`} />
         </div>
         <div className="d-flex flex-column flex-sm-row align-items-center justify-content-between mb-3">
           <IconNumberPresentation icon="plus-square" title="Kills" number={stat.nbKills} />

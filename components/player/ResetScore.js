@@ -42,7 +42,7 @@ function ResetContent({ rank }) {
     <div className="card shadow">
       <div className="d-flex align-items-center justify-content-between mb-3">
         <h3>Reset your score</h3>
-        <Lock id="ResetScore" />
+        <Lock id="reset-score" />
       </div>
       <div className="d-flex flex-column flex-sm-row align-items-center justify-content-between justify-content-sm-around mb-4">
         <div className="mb-3 mb-sm-0 mr-0 mr-sm-4">
