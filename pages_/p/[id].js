@@ -12,7 +12,7 @@ import PurchasesWallet from '../../components/player/PurchasesWallet';
 
 export default function Player() {
   const router = useRouter();
-  const profileFetch = useFetch('/api/playerInfo', undefined, { id: router.query.id });
+  const profileFetch = useFetch('/api/playerInfo', false, { id: router.query.id }, false);
   const [profileInfo, setProfileInfo] = useState(false);
 
   useEffect(() => {

@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import useTranslation from 'next-translate/useTranslation';
+
 import { Modal } from 'react-bootstrap';
 import config from '../../helpers/config';
 import { getUrlAction } from '../../helpers/user';
 
 function ScreenSuccess({ setDiscordModalVisible }) {
+  const { t } = useTranslation();
   return (
     <div style={{ maxWidth: 600 }} className="mx-auto text-center">
-      <h3 className="text-accent mb-4">Discord Quest</h3>
+      <h3 className="text-accent mb-4">{t('player:informationBanner.discordModal.title')}</h3>
       <div className="my-3"><i className="fas fa-check fa-3x" /></div>
-      <p className="mb-4">
-        You have completed the discord quest.
-        {' '}
-        Please log out and log back in to the game to see the changes.
-      </p>
+      <p className="mb-4">{t('player:informationBanner.discordModal.success')}</p>
       <button type="button" onClick={() => { setDiscordModalVisible(false); }} className="btn btn-primary mb-2">
-        Go back
+        {t('player:informationBanner.discordModal.btnBack')}
         <i className="fas fa-chevron-right ml-4" />
       </button>
     </div>
@@ -22,17 +21,14 @@ function ScreenSuccess({ setDiscordModalVisible }) {
 }
 
 function ScreenError({ setDiscordModalVisible }) {
+  const { t } = useTranslation();
   return (
     <div style={{ maxWidth: 600 }} className="mx-auto text-center">
-      <h3 className="text-accent mb-4">Discord Quest</h3>
+      <h3 className="text-accent mb-4">{t('player:informationBanner.discordModal.title')}</h3>
       <div className="my-3"><i className="fas fa-times fa-3x" /></div>
-      <p className="mb-4">
-        An error occurred and the quest was not completed.
-        {' '}
-        Please try again and contact an administrator if this happens again.
-      </p>
+      <p className="mb-4">{t('player:informationBanner.discordModal.error')}</p>
       <button type="button" onClick={() => { setDiscordModalVisible(false); }} className="btn btn-primary mb-2">
-        Go back
+        {t('player:informationBanner.discordModal.btnBack')}
         <i className="fas fa-chevron-right ml-4" />
       </button>
     </div>
@@ -40,38 +36,33 @@ function ScreenError({ setDiscordModalVisible }) {
 }
 
 function ScreenQuest() {
+  const { t } = useTranslation();
   return (
     <div style={{ maxWidth: 600 }} className="mx-auto text-center">
-      <h3 className="text-accent mb-4">Discord Quest</h3>
+      <h3 className="text-accent mb-4">{t('player:informationBanner.discordModal.title')}</h3>
       <div className="mb-4">
         <p>
           <b className="text-primary">1.</b>
           {' '}
-          Join our discord server by clicking on this button
+          {t('player:informationBanner.discordModal.p1')}
         </p>
         <a className="btn btn-discord my-1" href="https://discord.gg/RUh4QUV" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-discord mr-3" />
-          Join us
+          {t('player:informationBanner.discordModal.btnJoin')}
         </a>
       </div>
       <div>
         <p>
           <b className="text-primary">2.</b>
           {' '}
-          When this is done, or if you are already a member,
-          {' '}
-          let us verify that you are indeed a member.
+          {t('player:informationBanner.discordModal.p2')}
         </p>
         <a className="btn btn-discord my-1 mb-3" href={`${config.httpserver}/api/auth/discord`}>
           <i className="fas fa-check mr-3" />
-          Check that I am a member
+          {t('player:informationBanner.discordModal.btnCheck')}
         </a>
         <div style={{ maxWidth: 500, lineHeight: 1 }} className="mx-auto">
-          <small>
-            Permission to see the servers you belong to will
-            {' '}
-            be immediately removed once the check is performed.
-          </small>
+          <small>{t('player:informationBanner.discordModal.info')}</small>
         </div>
       </div>
     </div>

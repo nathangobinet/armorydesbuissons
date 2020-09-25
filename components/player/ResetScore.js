@@ -1,15 +1,17 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from 'next-translate/Link';
 import React, { useEffect, useState } from 'react';
-import config from '../../helpers/config';
+import useTranslation from 'next-translate/useTranslation';
 
+import config from '../../helpers/config';
 import styles from '../../styles/Player.module.css';
 import Lock from './Lock';
 
 function Points({ number }) {
+  const { t } = useTranslation();
   return (
     <div>
-      <div style={{ fontWeight: 600, lineHeight: 1, fontSize: 20 }}>Points</div>
+      <div style={{ fontWeight: 600, lineHeight: 1, fontSize: 20 }}>{t('player:resetScore.points')}</div>
       <div
         className={styles['text-gr-primary']}
         style={{
@@ -23,6 +25,7 @@ function Points({ number }) {
 }
 
 function ResetContent({ rank }) {
+  const { t } = useTranslation();
   const [printedRank, setRank] = useState('');
   const [confirm, setConfirm] = useState(false);
 
@@ -34,14 +37,14 @@ function ResetContent({ rank }) {
     const response = await fetch(`${config.httpserver}/api/resetRank`, { credentials: 'include' }).then((res) => res.json());
     if (response.success && response.result) {
       setRank('1000');
-    } else setRank('Err');
+    } else setRank(t('player:resetScore.err'));
     setConfirm(false);
   };
 
   return (
-    <div className="card shadow">
+    <div className="card bt-primary shadow">
       <div className="d-flex align-items-center justify-content-between mb-3">
-        <h3>Reset your score</h3>
+        <h3>{t('player:resetScore.title')}</h3>
         <Lock id="reset-score" />
       </div>
       <div className="d-flex flex-column flex-sm-row align-items-center justify-content-between justify-content-sm-around mb-4">
@@ -49,23 +52,19 @@ function ResetContent({ rank }) {
           <i className={`fas fa-retweet fa-6x ${styles['text-gr-primary']}`} />
         </div>
         <div style={{ maxWidth: 300 }}>
-          <h4>Informations</h4>
-          <p>
-            This feature allows you to reset your points to 1000.
-            {' '}
-            The reset will be final. It can be used as many times as desired.
-          </p>
+          <h4>{t('player:resetScore.infoTitle')}</h4>
+          <p>{t('player:resetScore.info')}</p>
         </div>
       </div>
       <div className="d-flex flex-column flex-sm-row align-items-center justify-content-around mb-5">
         <Points number={printedRank} />
-        <b className="py-2 py-sm-0">to</b>
+        <b className="py-2 py-sm-0">{t('player:resetScore.to')}</b>
         <Points number="1000" />
       </div>
       {
         confirm
-          ? <button className="btn btn-block btn-primary" type="button" onClick={reqResetScore}>Confirm</button>
-          : <button className="btn btn-block btn-primary" type="button" onClick={() => { setConfirm(true); }}>Reset my points</button>
+          ? <button className="btn btn-block btn-primary" type="button" onClick={reqResetScore}>{t('player:resetScore.btnConfirm')}</button>
+          : <button className="btn btn-block btn-primary" type="button" onClick={() => { setConfirm(true); }}>{t('player:resetScore.btnReset')}</button>
       }
 
     </div>

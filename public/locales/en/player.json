@@ -1,3 +1,106 @@
 {
-  "test": "testen"
+  "informationBanner": {
+    "neverConnected": {
+      "title": "Warning",
+      "text": "No player with this id has already connected to the server. If this is your profile, connect to the server to see your statistics."
+    }, 
+    "steamConnect": {
+      "title": "Connect with steam",
+      "text": "To view your full profile, see your rankings, statistics, graphs and more..."
+    },
+    "goProfile": {
+      "title": "Go to your profile",
+      "text": "To view your full profile, see your rankings, statistics, graphs and more..."
+    },
+    "discordQuest": {
+      "title": "Complete the discord quest",
+      "text": "To gain XP and help you get through the levels."
+    },
+    "helpServer": {
+      "title": "Help the server",
+      "text": "By becoming VIP and unlocking exceptional visuals to set you apart from other players."
+    },
+    "vip": {
+      "title": "You are VIP",
+      "text": "Thank you very much for helping the server ♥. It is thanks to you that the server can continue to exist."
+    },
+    "discordModal": {
+      "error": "An error occurred and the quest was not completed. Please try again and contact an administrator if this happens again.",
+      "success": "You have completed the discord quest. Please log out and log back in to the game to see the changes.",
+      "btnBack": "Go back",
+      "title": "Discord Quest",
+      "p1": "Join our discord server by clicking on this button",
+      "btnJoin": "Join us",
+      "p2": "When this is done, or if you are already a member, let us verify that you are indeed a member.",
+      "btnCheck": "Check that I am a member",
+      "info": "Permission to see the servers you belong to will be immediately removed once the check is performed."
+    }
+  },
+  "infoCards": {
+    "profileOf": {
+      "title": "Profile of"
+    },
+    "profileInfo": {
+      "title": "Profile information",
+      "isItsProfile": "This is your profile. Only you can see the information with a lock",
+      "isNotItsProfile": "This is not your profile or you are not connected. In order to protect player privacy, you do not have access to all the profile information."
+    }, 
+    "searchPlayer": {
+      "title": "Search another player",
+      "waitSearch": "Waiting for search...",
+      "noPlayerFound": "No player was found"
+    }
+  },
+  "ranking": {
+    "title": "Ranking",
+    "title2": "Current rank",
+    "num": "№",
+    "total": "Total",
+    "top": "Top",
+    "NA": "N/A",
+    "unranked": "UNRANKED",
+    "season": "Season",
+    "division": "Division",
+    "points": "Points"
+  },
+  "level": {
+    "title": "Level",
+    "title2": "Statistics",
+    "num": "№",
+    "total": "Total",
+    "top": "Top"
+  },
+  "lock": "Only you can see this information",
+  "statistics": {
+    "title": "Statistics",
+    "day": "This day",
+    "season": "This season",
+    "all": "All period",
+    "kills": "Kills",
+    "deaths": "Deaths",
+    "ratio": "Ratio"
+  },
+  "resetScore": {
+    "title": "Reset your score",
+    "infoTitle": "Informations",
+    "info": "This feature allows you to reset your points to 1000. The reset will be final. It can be used as many times as desired.",
+    "points": "Points",
+    "to": "to",
+    "btnReset": "Reset my points",
+    "btnConfirm": "Confirm",
+    "err": "Err"
+  }, "graph": {
+    "title": "Kills and deaths history",
+    "kills": "Kills",
+    "deaths": "Deaths",
+    "ratio": "Ratio"
+  }, "purchases": {
+    "title": "Purchases",
+    "date": "Date",
+    "ac": "Armory Coins",
+    "item": "Item"
+  }, "wallet": {
+    "title": "Wallet",
+    "btn": "Go to shop"
+  }
 }

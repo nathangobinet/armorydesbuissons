@@ -1,3 +1,106 @@
 {
-  "test": "testfr"
+  "informationBanner": {
+    "neverConnected": {
+      "title": "Avertissement",
+      "text": "Aucun joueur possédant cette id ne s'est déjà connecté au serveur. Si c'est votre profil, connectez-vous au serveur avant de voir vos statistiques."
+    }, 
+    "steamConnect": {
+      "title": "Connexion avec steam",
+      "text": "Pour voir votre profil complet, consultez votre classement, vos statistiques, des graphiques et encore plus..."
+    },
+    "goProfile": {
+      "title": "Aller à votre profil",
+      "text": "Pour voir votre profil complet, consultez votre classement, vos statistiques, des graphiques et encore plus..."
+    },
+    "discordQuest": {
+      "title": "Terminer la quête discord",
+      "text": "Pour gagner de l'XP facilement et vous aider à passer les niveaux."
+    },
+    "helpServer": {
+      "title": "Aidez le serveur",
+      "text": "En devenant VIP et en débloquant des visuels exceptionnels pour vous démarquer des autres joueurs."
+    },
+    "vip": {
+      "title": "Vous êtes VIP",
+      "text": "Merci beaucoup d'aider le serveur ♥. C'est grâce à toi que le serveur peut continuer d'exister."
+    },
+    "discordModal": {
+      "error": "Une erreur s'est produite et la quête n'a pas été complétée. Veuillez réessayer et contacter un administrateur si cela se reproduit.",
+      "success": "Vous avez terminé la quête discord. Veuillez vous déconnecter et vous reconnecter du jeu pour voir les changements.",
+      "btnBack": "Retour",
+      "title": "Quête discord",
+      "p1": "Rejoignez notre serveur discord en cliquant sur ce bouton",
+      "btnJoin": "Rejoignez-nous",
+      "p2": "Lorsque cela est fait, ou si vous êtes déjà membre, laissez-nous vérifier que vous êtes bien membre.",
+      "btnCheck": "Vérifier que je suis membre",
+      "info": "L'autorisation de voir les serveurs auxquels vous appartenez sera immédiatement supprimée dès que la vérification sera effectuée."
+    }
+  },
+  "infoCards": {
+    "profileOf": {
+      "title": "Profile de"
+    },
+    "profileInfo": {
+      "title": "Information du profile",
+      "isItsProfile": "Voici votre profil. Vous seul pouvez voir les informations avec un cadenas",
+      "isNotItsProfile": "Ce n'est pas votre profil ou vous n'êtes pas connecté. Afin de protéger la vie privée des joueurs, vous n'avez pas accès à toutes les informations du profil."
+    }, 
+    "searchPlayer": {
+      "title": "Rechercher un autre joueur",
+      "waitSearch": "En attendant la recherche...",
+      "noPlayerFound": "Aucun joueur n'a été trouvé"
+    }
+  },
+  "ranking": {
+    "title": "Classement",
+    "title2": "Rang actuel",
+    "num": "№",
+    "total": "Total",
+    "top": "Top",
+    "NA": "N/A",
+    "unranked": "NON CLASSÉ",
+    "season": "Saison",
+    "division": "Division",
+    "points": "Points"
+  },
+  "level": {
+    "title": "Niveau",
+    "title2": "Statistiques",
+    "num": "№",
+    "total": "Total",
+    "top": "Top"
+  },
+  "lock": "Vous seul pouvez voir ces informations",
+  "statistics": {
+    "title": "Vous seul pouvez voir ces informations",
+    "day": "Ce jour",
+    "season": "Cette saison",
+    "all": "Tout période",
+    "kills": "Kills",
+    "deaths": "Morts",
+    "ratio": "Ratio"
+  },
+  "resetScore": {
+    "title": "Réinitialiser votre score",
+    "infoTitle": "Informations",
+    "info": "Cette fonction vous permet de remettre vos points à 1000. La réinitialisation sera définitive. Elle peut être utilisée autant de fois que vous le souhaitez.",
+    "points": "Points",
+    "to": "à",
+    "btnReset": "Réinitialiser mes points",
+    "btnConfirm": "Confirmer",
+    "err": "Err"
+  }, "graph": {
+    "title": "Historique des kills et des morts",
+    "kills": "Kills",
+    "deaths": "Morts",
+    "ratio": "Ratio"
+  }, "purchases": {
+    "title": "Achats",
+    "date": "Date",
+    "ac": "Armory Coins",
+    "item": "Article"
+  }, "wallet": {
+    "title": "Portefeuille",
+    "btn": "Aller à la boutique"
+  }
 }

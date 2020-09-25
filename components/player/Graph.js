@@ -1,33 +1,33 @@
 import React, { useEffect, useRef } from 'react';
 import { Chart } from 'chart.js';
+import useTranslation from 'next-translate/useTranslation';
 
 import Lock from './Lock';
 import { isDarkMode } from '../../helpers/theme';
-
 import styles from '../../styles/Player.module.css';
 
-function createGraph(graphRef, data) {
+function createGraph(graphRef, t, data) {
   const {
     labels, data1, data2, data3,
   } = data;
   const lineChartData = {
     labels,
     datasets: [{
-      label: 'Kills',
+      label: t('player:graph.kills'),
       borderColor: '#63BF60',
       backgroundColor: '#63BF60',
       fill: false,
       data: data1,
       yAxisID: 'y-axis-1',
     }, {
-      label: 'Deaths',
+      label: t('player:graph.deaths'),
       borderColor: '#F26E50',
       backgroundColor: '#F26E50',
       fill: false,
       data: data2,
       yAxisID: 'y-axis-1',
     }, {
-      label: 'Ratio',
+      label: t('player:graph.ratio'),
       borderColor: '#aaa',
       backgroundColor: isDarkMode() ? '#555' : '#ccc',
       fill: false,
@@ -83,16 +83,17 @@ function getData(killsHistory) {
 }
 
 export default function Graph({ profileInfo }) {
+  const { t } = useTranslation();
   const graphRef = useRef();
   useEffect(() => {
     const data = getData(profileInfo.killsHistory);
-    createGraph(graphRef, data);
+    createGraph(graphRef, t, data);
   }, []);
 
   return (
-    <div className="card shadow h-100 mt-xl-0">
+    <div className="card bt-accent shadow h-100 mt-xl-0">
       <div className="d-flex align-items-center justify-content-between mb-3">
-        <h3>Kills and death history</h3>
+        <h3>{t('player:graph.title')}</h3>
         <Lock id="graph" />
       </div>
       <div className={styles['chart-container']}>

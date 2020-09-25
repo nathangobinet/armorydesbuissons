@@ -1,5 +1,6 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
+import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../../styles/Player.module.css';
 import NumberPresentation from './NumberPresentation';
@@ -43,6 +44,8 @@ function LevelPart({ levelInfo }) {
 }
 
 export default function Level({ profileInfo }) {
+  const { t } = useTranslation();
+
   if (!profileInfo) {
     return (
       <div style={{ height: 431 }} className="card bt-accent shadow mt-3 mt-xl-0">
@@ -55,16 +58,16 @@ export default function Level({ profileInfo }) {
   }
   return (
     <div className="card bt-accent shadow mt-4 mt-xl-0">
-      <h3 className="mb-3">Level</h3>
+      <h3 className="mb-3">{t('player:level.title')}</h3>
       <LevelPart levelInfo={profileInfo.levelInfo} />
-      <h3 className="mb-3">Statistics</h3>
+      <h3 className="mb-3">{t('player:level.title2')}</h3>
       <div
         style={{ overflowX: 'auto', overflowY: 'hidden' }}
         className="d-flex align-items-center justify-content-between pb-1"
       >
-        <NumberPresentation title="№" number={profileInfo.levelInfo.rank} />
-        <NumberPresentation title="Total" number={profileInfo.levelInfo.total} />
-        <NumberPresentation title="Top" number={`${((profileInfo.levelInfo.rank / profileInfo.levelInfo.total) * 100).toFixed(1)}%`} />
+        <NumberPresentation title={t('player:level.num')} number={profileInfo.levelInfo.rank} />
+        <NumberPresentation title={t('player:level.total')} number={profileInfo.levelInfo.total} />
+        <NumberPresentation title={t('player:level.top')} number={`${((profileInfo.levelInfo.rank / profileInfo.levelInfo.total) * 100).toFixed(1)}%`} />
       </div>
     </div>
   );

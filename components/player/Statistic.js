@@ -1,7 +1,8 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
-import NumberPresentation from './NumberPresentation';
+import useTranslation from 'next-translate/useTranslation';
 
+import NumberPresentation from './NumberPresentation';
 import styles from '../../styles/Player.module.css';
 
 function IconNumberPresentation(props) {
@@ -18,6 +19,7 @@ function IconNumberPresentation(props) {
 }
 
 function StatCard(props) {
+  const { t } = useTranslation();
   const {
     className, title, icon, stat,
   } = props;
@@ -30,12 +32,12 @@ function StatCard(props) {
           <i className={`fas fa-${icon} fa-2x ml-2`} />
         </div>
         <div className="d-flex flex-column flex-sm-row align-items-center justify-content-between mb-3">
-          <IconNumberPresentation icon="plus-square" title="Kills" number={stat.nbKills} />
+          <IconNumberPresentation icon="plus-square" title={t('player:statistics.kills')} number={stat.nbKills} />
           <i className={`d-none d-sm-block fas fa-chart-line fa-4x ${styles['text-gr-primary']}`} />
         </div>
         <div className="d-flex flex-column flex-sm-row  align-items-center justify-content-between">
-          <IconNumberPresentation className="mb-3 mb-sm-0" icon="minus-square" title="Deaths" number={stat.nbDeaths} />
-          <IconNumberPresentation icon="percentage" title="Ratio" number={(stat.ratio).toFixed(2)} />
+          <IconNumberPresentation className="mb-3 mb-sm-0" icon="minus-square" title={t('player:statistics.deaths')} number={stat.nbDeaths} />
+          <IconNumberPresentation icon="percentage" title={t('player:statistics.ratio')} number={(stat.ratio).toFixed(2)} />
         </div>
       </div>
     </div>
@@ -43,18 +45,19 @@ function StatCard(props) {
 }
 
 export default function Statistic({ profileInfo }) {
+  const { t } = useTranslation();
   return (
     <section id="statistic">
       <div className="row">
         <div className="col-12">
           <div className="card shadow card-accent mt-4">
-            <h3 className="mb-3 text-white">Statistics</h3>
+            <h3 className="mb-3 text-white">{t('player:statistics.title')}</h3>
             {
             profileInfo ? (
               <div className="row">
-                <StatCard className="mb-3 mb-xl-0" title="This day" icon="calendar-day" stat={profileInfo.stats.day} />
-                <StatCard className="mb-3 mb-xl-0" title="This season" icon="calendar-week" stat={profileInfo.stats.season} />
-                <StatCard title="All period" icon="calendar" stat={profileInfo.stats.all} />
+                <StatCard className="mb-3 mb-xl-0" title={t('player:statistics.day')} icon="calendar-day" stat={profileInfo.stats.day} />
+                <StatCard className="mb-3 mb-xl-0" title={t('player:statistics.season')} icon="calendar-week" stat={profileInfo.stats.season} />
+                <StatCard title={t('player:statistics.all')} icon="calendar" stat={profileInfo.stats.all} />
               </div>
             ) : (
               <div style={{ height: 266 }} className="d-flex align-items-center justify-content-center">

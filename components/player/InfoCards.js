@@ -2,6 +2,8 @@
 import Link from 'next-translate/Link';
 import React, { useState } from 'react';
 import { Spinner } from 'react-bootstrap';
+import useTranslation from 'next-translate/useTranslation';
+
 import useFetch from '../../helpers/useFetch';
 import styles from '../../styles/Player.module.css';
 import DynamicInput from '../common/DynamicInput';
@@ -26,12 +28,13 @@ function InfoCard(props) {
 }
 
 export default function InfoCards({ profileInfo }) {
+  const { t } = useTranslation();
   const [searchInput, setSearchInput] = useState('');
-  const players = useFetch('/api/playersByName', undefined, { name: searchInput });
+  const players = useFetch('/api/playersByName', undefined, { name: searchInput }, false);
 
   const SearchResult = () => {
-    if (players === undefined) return 'Waiting for search...';
-    if (players.length === 0) return 'No player found';
+    if (searchInput === '') return t('player:infoCards.searchPlayer.waitSearch');
+    if (players.length === 0) return t('player:infoCards.searchPlayer.noPlayerFound');
     return players.map(
       (p) => <Link key={p.playerId} href={`/p/${p.playerId}`}><a className={styles.link}>{p.lastName}</a></Link>,
     ).reduce((prev, curr) => [prev, ', ', curr]);
@@ -42,9 +45,7 @@ export default function InfoCards({ profileInfo }) {
     if (profileInfo.isItsProfile) {
       return (
         <div>
-          This is your profile. You have access to all the information about you.
-          {' '}
-          Only you can see the information with a lock
+          {t('player:infoCards.profileInfo.isItsProfile')}
           {' '}
           <i className="fas fa-lock" />
           .
@@ -52,7 +53,7 @@ export default function InfoCards({ profileInfo }) {
       );
     }
     return (
-      'This is not your profile or you are not connected. In order to protect player privacy, you do not have access to all the profile information.'
+      t('player:infoCards.profileInfo.isNotItsProfile')
     );
   };
 
@@ -68,13 +69,13 @@ export default function InfoCards({ profileInfo }) {
   return (
     <section id="info-card" className="mt-3">
       <div className="row">
-        <InfoCard logo="user" title="Profile of" color="primary">
+        <InfoCard logo="user" title={t('player:infoCards.profileOf.title')} color="primary">
           <ProfileOf />
         </InfoCard>
-        <InfoCard title="Profile information" logo="lock" color="accent">
+        <InfoCard title={t('player:infoCards.profileInfo.title')} logo="lock" color="accent">
           <ProfileInformation />
         </InfoCard>
-        <InfoCard title="Search another player" logo="search" color="primary">
+        <InfoCard title={t('player:infoCards.searchPlayer.title')} logo="search" color="primary">
           <DynamicInput className="mb-2 mx-auto" setFilter={setSearchInput} />
           <div style={{ whiteSpace: 'nowrap', overflowX: 'auto' }} className="text-center pb-1">
             <SearchResult />

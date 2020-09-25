@@ -6,16 +6,22 @@ function fetcher(url, args) {
   return (fetch(urlWithArg, { credentials: 'include' }).then((res) => res.json()));
 }
 
-export default function useFetch(url, defaultResult, args = undefined) {
+function isNoArg(args) {
+  if (!args) return true;
+  return Object.values(args).some((v) => v === undefined || v === '');
+}
+
+export default function useFetch(url, defaultResult, args = undefined, sendWithNoArg = true) {
   const [data, setData] = useState({ result: defaultResult });
   const argsString = JSON.stringify(args); // Used To refetch when args change
-
   useEffect(() => {
     async function fetch() {
       const result = await fetcher((config.httpserver + url), args);
       if (result.success) setData(result);
     }
-    fetch();
+    if (!(!sendWithNoArg && isNoArg(args))) {
+      fetch();
+    }
   }, [argsString]);
 
   return data.result;

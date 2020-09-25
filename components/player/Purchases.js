@@ -1,7 +1,8 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
-import Lock from './Lock';
+import useTranslation from 'next-translate/useTranslation';
 
+import Lock from './Lock';
 import acSvg from '../../public/svgs/icons/ac-round.svg';
 import styles from '../../styles/Player.module.css';
 
@@ -28,6 +29,7 @@ function PurchaseElement(props) {
 }
 
 function Purchase({ date, price, product }) {
+  const { t } = useTranslation();
   const matchVip = product.match(/VIP - \d*/);
   const matchAddedCoins = price.match(/-\d*/);
   const productDesciption = matchVip ? `${product} days` : `Skin - ${product}`;
@@ -35,9 +37,9 @@ function Purchase({ date, price, product }) {
   return (
     <div className="card bg-darker">
       <div className="d-flex flex-column flex-md-row align-items-center justify-content-between jus">
-        <PurchaseElement title="Date" description={date} icon="calendar-alt" />
-        <PurchaseElement className="mt-3 mt-md-0" title="Armory Coins" description={printedPrice} img={acSvg} />
-        <PurchaseElement className="mt-3 mt-md-0" title="Item" description={productDesciption} icon="tag" />
+        <PurchaseElement title={t('player:purchases.date')} description={date} icon="calendar-alt" />
+        <PurchaseElement className="mt-3 mt-md-0" title={t('player:purchases.ac')} description={printedPrice} img={acSvg} />
+        <PurchaseElement className="mt-3 mt-md-0" title={t('player:purchases.item')} description={productDesciption} icon="tag" />
       </div>
     </div>
   );
@@ -68,6 +70,7 @@ function PurchasesContent({ purchases }) {
 }
 
 export default function Purchases({ profileInfo }) {
+  const { t } = useTranslation();
   const Content = () => {
     if (!profileInfo) {
       return (
@@ -83,7 +86,7 @@ export default function Purchases({ profileInfo }) {
     <div className="col-xl-8">
       <div className="card mt-4 shadow card-accent">
         <div className="d-flex align-items-center justify-content-between mb-3 text-white">
-          <h3>Purchases</h3>
+          <h3>{t('player:purchases.title')}</h3>
           <Lock id="purchases" />
         </div>
         <Content />

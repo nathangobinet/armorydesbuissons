@@ -2,6 +2,8 @@
 import Link from 'next-translate/Link';
 import React, { useState } from 'react';
 import { Spinner } from 'react-bootstrap';
+import useTranslation from 'next-translate/useTranslation';
+
 import config from '../../helpers/config';
 import { useAuth } from '../../helpers/user';
 import DiscordQuestModal from './DiscordQuestModal';
@@ -29,6 +31,7 @@ function BannerContent(props) {
 }
 
 function BannerChooser({ profileInfo, setDiscordModalVisible }) {
+  const { t } = useTranslation();
   const user = useAuth();
   if (profileInfo === false) {
     return (
@@ -40,8 +43,8 @@ function BannerChooser({ profileInfo, setDiscordModalVisible }) {
   if (profileInfo === undefined) {
     return (
       <BannerContent
-        text="No player with this id has already connected to the server. If this is your profile, connect to the server to see your statistics."
-        badge="Warning"
+        text={t('player:informationBanner.neverConnected.text')}
+        badge={t('player:informationBanner.neverConnected.title')}
         color="danger"
       />
     );
@@ -49,8 +52,8 @@ function BannerChooser({ profileInfo, setDiscordModalVisible }) {
   if (!user.auth) {
     return (
       <BannerContent
-        button="Connect with steam"
-        text="To view your full profile, see your rankings, statistics, graphs and more..."
+        button={t('player:informationBanner.steamConnect.title')}
+        text={t('player:informationBanner.steamConnect.text')}
         href={`${config.httpserver}/api/auth/steam`}
         external
       />
@@ -59,8 +62,8 @@ function BannerChooser({ profileInfo, setDiscordModalVisible }) {
   if (!profileInfo.isItsProfile) {
     return (
       <BannerContent
-        button="Go to your profile"
-        text="To view your full profile, see your rankings, statistics, graphs and more..."
+        button={t('player:informationBanner.goProfile.title')}
+        text={t('player:informationBanner.goProfile.text')}
         href={`/p/${user.id}`}
       />
     );
@@ -68,8 +71,8 @@ function BannerChooser({ profileInfo, setDiscordModalVisible }) {
   if (!profileInfo.isDiscordQuestAchieved) {
     return (
       <BannerContent
-        button="Complete the discord quest"
-        text="To gain XP and help you get through the levels."
+        button={t('player:informationBanner.discordQuest.title')}
+        text={t('player:informationBanner.discordQuest.text')}
         color="discord"
         onClick={() => { setDiscordModalVisible(true); }}
       />
@@ -78,16 +81,16 @@ function BannerChooser({ profileInfo, setDiscordModalVisible }) {
   if (!profileInfo.isVip) {
     return (
       <BannerContent
-        button="Help the server"
-        text="By becoming VIP and unlocking exceptional visuals to set you apart from other players."
+        button={t('player:informationBanner.helpServer.title')}
+        text={t('player:informationBanner.helpServer.text')}
         href="/shop#pricing"
       />
     );
   }
   return (
     <BannerContent
-      text="Thank you very much for helping the server ♥. It is thanks to you that the server can continue to exist."
-      badge="You are VIP"
+      text={t('player:informationBanner.vip.text')}
+      badge={t('player:informationBanner.vip.title')}
       color="primary"
     />
   );
