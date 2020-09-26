@@ -12,6 +12,9 @@
 /.next/
 /out/
 
+# next-translate
+/pages
+
 # production
 /build
 
