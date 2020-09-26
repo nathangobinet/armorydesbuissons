@@ -13,6 +13,7 @@ import styles from '../../styles/Shop.module.css';
 import useFetch from '../../helpers/useFetch';
 import { updateUser, useAuth } from '../../helpers/user';
 import config from '../../helpers/config';
+import { getLanguage } from '../../helpers/language';
 
 const MODAL_SCREEEN = {
   LOGIN: 0,
@@ -114,6 +115,8 @@ function Payment({ setScreen, paymentInfo }) {
         days: paymentInfo.days,
         mail: paymentInfo.mail ? paymentInfo.mail : undefined,
         ac: paymentInfo.ac,
+        price: paymentInfo.price,
+        lang: getLanguage(),
       }),
     });
     const content = await rawResponse.json();
