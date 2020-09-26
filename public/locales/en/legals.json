@@ -1,0 +1,38 @@
+{
+  "title": "Legal Notice",
+  "preamble": "Please read carefully the various terms and conditions of use of this site before browsing its pages. By logging on to this site, you accept these terms and conditions without reservation. Also, in accordance with article n°6 of Law n°2004-575 of 21 June 2004 for confidence in the digital economy, the persons in charge of the website <0>www.armorydesbuissons.fr</0> are :",
+  "hosting": {
+    "title": "Hosting",
+    "hosting": "Hosting : Company OVH",
+    "adress": "2 rue Kellermann - 59100 Roubaix",
+    "phone": "Tel. +33 (0)8 99 70 17 61",
+    "website": "Website: <0>www.ovh.com</0>"
+  },
+  "terms": {
+    "title": "Terms and conditions of use",
+    "text": "This site (<0>www.armorydesbuissons.fr</0>) is proposed in different web languages (HTML, HTML5, Javascript, CSS, etc...) for a better comfort of use and a more pleasant graphic design, we recommend you to use modern browsers such as Edge, Safari, Firefox, Google Chrome, etc..."
+  },
+  "cookies": {
+    "title": "Cookies",
+    "text": "The site <0>www.armorydesbuissons.fr</0> may ask you to accept cookies for statistical and display purposes. A cookie is a piece of information deposited on your hard disk by the server of the site you visit. It contains several data that are stored on your computer in a simple text file that a server accesses to read and record information. Some parts of this site cannot be functional without the acceptance of cookies."
+  },
+  "links": {
+    "title": "Hypertext links",
+    "p1": "The Websites may offer links to other websites or other resources available on the Internet. This site has no means of controlling the sites linked to its websites. It is not responsible for the availability of such external sites and sources, nor does it guarantee it. It cannot be held responsible for any damage, of any nature whatsoever, resulting from the content of these sites or external sources, and in particular the information, products or services they offer, or any use that may be made of these elements. The risks related to this use are fully incumbent on the Internet user, who must comply with their terms of use.",
+    "p2": "Users, subscribers and visitors to the websites may not set up a hyperlink to this site without the express prior authorization of the creators of this site.",
+    "p3": "In the event that a user or visitor would like to set up a hyperlink to one of this site, it will be up to him to send an e-mail accessible on the site in order to formulate his request to set up a hyperlink. The persons in charge reserve the right to accept or refuse a hyperlink without having to justify their decision."
+  },
+  "intellectual": {
+    "title": "Intellectual Property",
+    "p1": "All the content of this site <0>www.armorydesbuissons.fr</0>, including, but not limited to, graphics, images, texts, videos, animations, sounds, logos, gifs and icons as well as their formatting are the exclusive property of the company with the exception of trademarks, logos or content belonging to other partner companies or authors.",
+    "p2": "Any reproduction, distribution, modification, adaptation, retransmission or publication, even partial, of these various elements is strictly prohibited without the express written consent of the site managers. This representation or reproduction, by any process whatsoever, constitutes an infringement punishable by articles L.335-2 and following of the Intellectual Property Code. Failure to comply with this prohibition constitutes an infringement that may result in the civil and criminal liability of the counterfeiter. In addition, the owners of the copied Contents could institute legal proceedings against you."
+  },
+  "data": {
+    "title": "Personal data",
+    "p1": "In general, you are not obliged to provide us with your personal data when you visit our website <0>www.armorydesbuissons.fr</0>.",
+    "p2": "However, there are some exceptions to this principle. Indeed, for certain services offered by our site, you may have to communicate certain data to us such as: your email address. This is the case when you make a purchase on the site.",
+    "p3": "In any case, you can refuse to provide your personal data.",
+    "p4": "Finally, we may automatically collect certain information about you when you browse our website, in particular: information concerning the use of our website, such as the areas you visit and the services you access, your IP address, the type of your browser, your access times.",
+    "p5": "Such information is used exclusively for internal statistical purposes, in order to improve the quality of the services offered to you. The databases are protected by the provisions of the law of 1 July 1998 transposing directive 96/9 of 11 March 1996 on the legal protection of databases."
+  }
+}

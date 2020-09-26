@@ -3,7 +3,8 @@
     "home": "Accueil",
     "live": "Direct",
     "about": "À propos",
-    "shop": "Boutique"
+    "shop": "Boutique",
+    "legals": "Mentions légales"
   }, "navbar": {
     "level": "Niveau",
     "btnViewProfile": "Voir le profile",

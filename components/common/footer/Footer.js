@@ -28,6 +28,7 @@ function Footer() {
         </div>
         <div className="row py-5">
           <div className="col-12 text-center">
+            <div className="text-white"><Link href="/legals"><a>{t('common:pages.legals')}</a></Link></div>
             <span className="text-white">{t('common:footer.copyright')}</span>
           </div>
         </div>

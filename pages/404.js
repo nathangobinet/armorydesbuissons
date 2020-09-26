@@ -5,7 +5,6 @@ import Link from 'next-translate/Link';
 import React from 'react';
 import DynamicNamespaces from 'next-translate/DynamicNamespaces';
 import useTranslation from 'next-translate/useTranslation';
-import Trans from 'next-translate/Trans';
 import { useRouter } from 'next/router';
 
 import i18nConfig from '../i18n.json';
@@ -42,9 +41,7 @@ export default function Custom404() {
   const lang = useLangFromRouter();
   return (
     <DynamicNamespaces
-      dynamic={(_, ns) => {
-        return import(`../public/locales/${lang}/${ns}.json`).then((m) => m.default);
-      }}
+      dynamic={(_, ns) => require(`../public/locales/${lang}/${ns}.json`)}
       namespaces={['common']}
       fallback="Loading..."
     >

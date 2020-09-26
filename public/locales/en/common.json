@@ -3,7 +3,8 @@
     "home": "Home",
     "live": "Live",
     "about": "About",
-    "shop": "Shop"
+    "shop": "Shop",
+    "legals": "Legal Notice"
   }, "navbar": {
     "level": "Level",
     "btnViewProfile": "View Profile",

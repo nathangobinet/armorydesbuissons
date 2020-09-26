@@ -10,6 +10,7 @@
     "/live": ["live"],
     "/about": ["about"],
     "/shop": ["shop"],
+    "/legals": ["legals"],
     "/p/[id]": ["player"]
   }
 }
