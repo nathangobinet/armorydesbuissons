@@ -14,5 +14,10 @@
   "footer": {
     "copyright": "© Armory des buissons - All Rights Reserved"
   },
-  "search" : "Search..."
+  "search" : "Search...",
+  "404": {
+    "title": "404",
+    "text": "Sorry we can't find that page.",
+    "btn": "Go back to home"
+  }
 }

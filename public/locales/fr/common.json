@@ -14,5 +14,10 @@
   "footer": {
     "copyright": "© Armory des buissons - Tous droits réservés"
   },
-  "search" : "Chercher..."
+  "search" : "Chercher...",
+  "404": {
+    "title": "404",
+    "text": "Désolé, nous ne pouvons pas trouver cette page.",
+    "btn": "Retour à l'accueil"
+  }
 }

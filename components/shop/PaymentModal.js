@@ -298,7 +298,6 @@ function PlayerID({ setScreen, setPaymentInfo }) {
           <i className="fas fa-chevron-right ml-4" />
         </button>
       </form>
-
     </div>
   );
 }
