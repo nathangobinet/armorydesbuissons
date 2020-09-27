@@ -1,4 +1,10 @@
 {
+  "head": {
+    "title": "Player profile",
+    "description": "Rankings, statistics and level of",
+    "thePlayer": "of the player",
+    "players": "of players"
+  },
   "informationBanner": {
     "neverConnected": {
       "title": "Warning",

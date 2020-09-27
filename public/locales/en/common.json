@@ -17,6 +17,10 @@
   },
   "search" : "Search...",
   "404": {
+    "head": {
+      "title": "404 - Page not found",
+      "description": "This page does not exist"
+    },
     "title": "404",
     "text": "Sorry we can't find that page.",
     "btn": "Go back to home"

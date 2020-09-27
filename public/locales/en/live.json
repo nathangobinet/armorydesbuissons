@@ -1,4 +1,8 @@
 {
+  "head": {
+    "title": "Live - Statistics and Rankings",
+    "description": "Discover the live statistics of the Armory: connected players, number of kills, ... As well as the ranking of the different seasons"
+  },
   "infoCards": {
     "kills": "kills today", "player": "online players", "unique": "unique players today", "ranked": "players ranked"
   },

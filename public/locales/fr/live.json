@@ -1,4 +1,8 @@
 {
+  "head": {
+    "title": "Direct - Statistiques et classement",
+    "description": "Découvrez les statistiques en direct de l'Armory: joueurs connectés, nombre de kills, ... Ainsi que le classement des différents saisons"
+  },
   "infoCards": {
     "kills": "kills aujourd'hui", "player": "joueurs connectés", "unique": "joueurs unique aujourd'hui", "ranked": "joueurs classés"
   },

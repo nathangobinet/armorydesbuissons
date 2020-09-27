@@ -17,6 +17,10 @@
   },
   "search" : "Chercher...",
   "404": {
+    "head": {
+      "title": "404 - Page non trouvée",
+      "description": "Cette page n'existe pas"
+    },
     "title": "404",
     "text": "Désolé, nous ne pouvons pas trouver cette page.",
     "btn": "Retour à l'accueil"

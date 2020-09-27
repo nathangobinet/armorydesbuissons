@@ -1,4 +1,8 @@
 {
+  "head": {
+    "title": "À propos",
+    "description": "Connaître les règles, rencontrer l'équipe, nous contacter, comprendre le système de classement, aider le serveur, connaître les raccourcis."
+  },
   "summary": {
     "title": "À propos de notre serveur Arma 3", "p1": "Cette section vous invite à :", "btnConnect": "Connexion", "btnFeatures": "Fonctionnalités"
   }, 

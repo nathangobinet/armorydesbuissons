@@ -1,4 +1,10 @@
 {
+  "head": {
+    "title": "Profil du joueur",
+    "description": "Classement, statistiques et niveau",
+    "thePlayer": "du joueur",
+    "players": "des joueurs"
+  },
   "informationBanner": {
     "neverConnected": {
       "title": "Avertissement",

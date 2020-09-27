@@ -1,4 +1,8 @@
 {
+  "head": {
+    "title": "Armory des buissons",
+    "description": "Discover our ARMA 3 server: The Armory des buissons. Ranked PVP, versus, sandbox, quests, levels and more to discover."
+  },
   "features": {
     "title": "An Arma 3 server",
     "p1": "Armory des buissons is a training server for the game Arma 3. It offers many features such as anked PVP, public and private arenas, sandbox and attack-defense fight.",

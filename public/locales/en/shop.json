@@ -1,4 +1,8 @@
 {
+  "head": {
+    "title": "Shop",
+    "description": "Help the server by buying a VIP and spend your Armory Coins to get exceptional rewards."
+  },
   "vipPricing": {
     "title": "Help us by becoming VIP",
     "days": "days",

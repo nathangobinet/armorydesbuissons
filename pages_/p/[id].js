@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
+import useTranslation from 'next-translate/useTranslation';
+
 import Navbar from '../../components/common/navbar/Navbar';
 import Footer from '../../components/common/footer/Footer';
 import InformationBanner from '../../components/player/InformationBanner';
@@ -11,6 +14,7 @@ import ResetGraph from '../../components/player/ResetGraph';
 import PurchasesWallet from '../../components/player/PurchasesWallet';
 
 export default function Player() {
+  const { t } = useTranslation();
   const router = useRouter();
   const profileFetch = useFetch('/api/playerInfo', false, { id: router.query.id }, false);
   const [profileInfo, setProfileInfo] = useState(false);
@@ -21,6 +25,13 @@ export default function Player() {
 
   return (
     <div>
+      <Head>
+        <title>{`${profileInfo ? `${profileInfo.lastName} - ` : ''}${t('player:head.title')}`}</title>
+        <meta
+          name="description"
+          content={`${t('player:head.description')} ${profileInfo ? `${t('player:head.thePlayer')} ${profileInfo.lastName}` : t('player:head.players')}`}
+        />
+      </Head>
       <Navbar />
       <div className="container-fluid p-4">
         <InformationBanner profileInfo={profileInfo} setProfileInfo={setProfileInfo} />

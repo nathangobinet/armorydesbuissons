@@ -1,4 +1,8 @@
 {
+  "head": {
+    "title": "About",
+    "description": "Know the rules, meet the team, contact us, understand the ranking system, help the server, know the shortcuts."
+  },
   "summary": {
     "title": "About our Arma 3 server", "p1": "This section invites you to:", "btnConnect": "Connect", "btnFeatures": "All the features"
   }, 

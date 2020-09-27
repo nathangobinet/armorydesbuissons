@@ -6,6 +6,7 @@ import React from 'react';
 import DynamicNamespaces from 'next-translate/DynamicNamespaces';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 import i18nConfig from '../i18n.json';
 
@@ -24,6 +25,10 @@ function Custom404Content() {
   const { t } = useTranslation();
   return (
     <div className="h-100 w-100 d-flex align-items-center justify-content-center ">
+      <Head>
+        <title>{t('common:404.head.title')}</title>
+        <meta name="description" content={t('common:404.head.description')} />
+      </Head>
       <div className="text-center">
         <div className="d-flex flex-column flex-sm-row align-items-center mb-4">
           <h1 className="mb-3 mb-sm-0 mr-0 mr-sm-4">{t('common:404.title')}</h1>

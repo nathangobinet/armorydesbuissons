@@ -1,4 +1,8 @@
 {
+  "head": {
+    "title": "Boutique",
+    "description": "Aider le serveur en achetant un VIP et dépenser vos Armory Coins pour obtenir des récompenses exceptionnelles."
+  },
   "vipPricing": {
     "title": "Aidez-nous en devenant VIP",
     "days": "jours",

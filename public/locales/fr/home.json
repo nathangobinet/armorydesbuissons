@@ -1,4 +1,8 @@
 {
+  "head": {
+    "title": "Armory des buissons",
+    "description": "Découvre notre serveur ARMA 3 : L'Armory des buissons. PVP classé, versus, \"bac à sable\", quêtes, niveau et encore plus à découvrir."
+  },
   "features": {
     "title": "Un serveur Arma 3",
     "p1": "L'Armory des buissons est un serveur d'entraînement pour le jeu Arma 3. Il offre de nombreuses fonctionnalités telles que du PVP classé, des arènes publiques et privées, un mode \"bac à sable\" et du combat de type attaque-défense.",
