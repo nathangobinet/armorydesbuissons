@@ -29,30 +29,32 @@ function Table({ id, headers, rows }) {
     <div className={styles['table-container']}>
       <table className={`table ${styles['live-table']} ${styles['dynamic-table']}`}>
         <thead>
-          <div style={{ position: 'relative' }}>
-            <tr className="d-flex w-100 hide-overflow">
+          <tr style={{ position: 'relative' }}>
+            <th style={{ position: 'absolute', padding: 0 }} scope="col" className="d-flex w-100 hide-overflow">
               {headers.map((header) => (
-                <th key={`${id}th${header.text}`} scope="col" className={`col-${header.size}`}>
+                <div key={`${id}th${header.text}`} style={{ padding: '0.75rem' }} className={`col-${header.size}`}>
                   {header.text}
-                </th>
+                </div>
               ))}
-            </tr>
-          </div>
+            </th>
+          </tr>
         </thead>
         <tbody>
           {
             transitions.map(({
               key, item, props: { y, ...rest },
             }) => (
-              <div key={key} style={{ position: 'relative' }}>
-                <animated.tr
+              <tr key={key} style={{ position: 'relative' }}>
+                <animated.td
                   className="d-flex w-100 hide-overflow"
                   key={key}
-                  style={{ transform: y.interpolate((newy) => `translate3d(0,${newy}px,0)`), ...rest }}
+                  style={{
+                    position: 'absolute', padding: 0, transform: y.interpolate((newy) => `translate3d(0,${newy}px,0)`), ...rest,
+                  }}
                 >
-                  {item.data.map((cell, i) => <td className={`col-${headers[i].size} hide-overflow`} key={`${item.key}td${i}`}>{cell}</td>)}
-                </animated.tr>
-              </div>
+                  {item.data.map((cell, i) => <div style={{ padding: '0.75rem' }} className={`col-${headers[i].size} hide-overflow`} key={`${item.key}td${i}`}>{cell}</div>)}
+                </animated.td>
+              </tr>
             ))
           }
         </tbody>

@@ -74,10 +74,6 @@
   width: 100%;
 }
 
-.dynamic-table tr {
-  position: absolute;
-}
-
 .truncateNews {
   height: 80px;
 }
