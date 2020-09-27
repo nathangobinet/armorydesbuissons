@@ -8,7 +8,7 @@ import styles from '../../styles/Shop.module.css';
 import useFetch from '../../helpers/useFetch';
 
 function useAudio(sound) {
-  const [audio] = useState(new Audio(require(`../../public/sounds/striders/${sound}`)));
+  const [audio] = useState(new Audio((require(`../../public/sounds/striders/${sound}`).default)));
   audio.volume = 0.1;
   const [playing, setPlaying] = useState(false);
 
