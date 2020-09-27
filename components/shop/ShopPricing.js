@@ -127,7 +127,7 @@ function getMappedShop(shop, t) {
   const mappedVipItems = vipItems.map((item) => ({
     ...item,
     text: 'VIP',
-    subText: `${(/(?<=VIP - )\d*/).exec(item.product)[0]} ${t('shop:shopPricing.days')}`, // Do something like '7 days' from 'VIP - 7'
+    subText: `${item.product.match(/VIP - (\d*)/)[1]} ${t('shop:shopPricing.days')}`, // Do something like '7 days' from 'VIP - 7'
   }));
   const mappedSkinItem = skinItems.map((item) => ({
     ...item,
