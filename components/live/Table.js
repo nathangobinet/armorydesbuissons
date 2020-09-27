@@ -29,14 +29,12 @@ function Table({ id, headers, rows }) {
     <div className={styles['table-container']}>
       <table className={`table ${styles['live-table']} ${styles['dynamic-table']}`}>
         <thead>
-          <tr style={{ position: 'relative' }}>
-            <th style={{ position: 'absolute', padding: 0 }} scope="col" className="d-flex w-100 hide-overflow">
-              {headers.map((header) => (
-                <div key={`${id}th${header.text}`} style={{ padding: '0.75rem' }} className={`col-${header.size}`}>
-                  {header.text}
-                </div>
-              ))}
-            </th>
+          <tr style={{ position: 'absolute' }} className="d-flex w-100">
+            {headers.map((header) => (
+              <th key={`${id}th${header.text}`} scope="col" className={`col-${header.size}  hide-overflow`}>
+                {header.text}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
@@ -44,17 +42,15 @@ function Table({ id, headers, rows }) {
             transitions.map(({
               key, item, props: { y, ...rest },
             }) => (
-              <tr key={key} style={{ position: 'relative' }}>
-                <animated.td
-                  className="d-flex w-100 hide-overflow"
-                  key={key}
-                  style={{
-                    position: 'absolute', padding: 0, transform: y.interpolate((newy) => `translate3d(0,${newy}px,0)`), ...rest,
-                  }}
-                >
-                  {item.data.map((cell, i) => <div style={{ padding: '0.75rem' }} className={`col-${headers[i].size} hide-overflow`} key={`${item.key}td${i}`}>{cell}</div>)}
-                </animated.td>
-              </tr>
+              <animated.tr
+                className="d-flex w-100"
+                key={key}
+                style={{
+                  position: 'absolute', transform: y.interpolate((newy) => `translate3d(0,${newy}px,0)`), ...rest,
+                }}
+              >
+                {item.data.map((cell, i) => <td className={`col-${headers[i].size} hide-overflow`} key={`${item.key}td${i}`}>{cell}</td>)}
+              </animated.tr>
             ))
           }
         </tbody>
