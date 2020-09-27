@@ -29,26 +29,30 @@ function Table({ id, headers, rows }) {
     <div className={styles['table-container']}>
       <table className={`table ${styles['live-table']} ${styles['dynamic-table']}`}>
         <thead>
-          <tr className="d-flex w-100 hide-overflow">
-            {headers.map((header) => (
-              <th key={`${id}th${header.text}`} scope="col" className={`col-${header.size}`}>
-                {header.text}
-              </th>
-            ))}
-          </tr>
+          <div style={{ position: 'relative' }}>
+            <tr className="d-flex w-100 hide-overflow">
+              {headers.map((header) => (
+                <th key={`${id}th${header.text}`} scope="col" className={`col-${header.size}`}>
+                  {header.text}
+                </th>
+              ))}
+            </tr>
+          </div>
         </thead>
         <tbody>
           {
             transitions.map(({
               key, item, props: { y, ...rest },
             }) => (
-              <animated.tr
-                className="d-flex w-100 hide-overflow"
-                key={key}
-                style={{ transform: y.interpolate((newy) => `translate3d(0,${newy}px,0)`), ...rest }}
-              >
-                {item.data.map((cell, i) => <td className={`col-${headers[i].size} hide-overflow`} key={`${item.key}td${i}`}>{cell}</td>)}
-              </animated.tr>
+              <div key={key} style={{ position: 'relative' }}>
+                <animated.tr
+                  className="d-flex w-100 hide-overflow"
+                  key={key}
+                  style={{ transform: y.interpolate((newy) => `translate3d(0,${newy}px,0)`), ...rest }}
+                >
+                  {item.data.map((cell, i) => <td className={`col-${headers[i].size} hide-overflow`} key={`${item.key}td${i}`}>{cell}</td>)}
+                </animated.tr>
+              </div>
             ))
           }
         </tbody>
