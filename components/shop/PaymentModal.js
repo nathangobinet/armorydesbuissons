@@ -248,7 +248,7 @@ function PlayerID({ setScreen, setPaymentInfo }) {
   const { t } = useTranslation();
   const [isCorrect, setIsCorrect] = useState(false);
   const [input, setInput] = useState('');
-  const playerName = useFetch('/api/playerName', undefined, { id: input }, 'GET');
+  const playerName = useFetch('/api/playerName', undefined, { id: input }, false);
   const regId = /^[0-9]{17}$/;
 
   const onChange = (event) => {
