@@ -22,13 +22,15 @@
 .text-gr-accent {
   background: var(--accent-gr);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  color: transparent!important;
 }
 
 .text-gr-primary {
   background: var(--primary-gr);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  color: transparent!important;
 }
 
 .link {

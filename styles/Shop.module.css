@@ -15,7 +15,8 @@
   font-weight: 600;
   background: var(--primary-gr);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  color: transparent!important;
   font-family: 'Montserrat', sans-serif;
   font-size: 80px;
   line-height: 1.1;
