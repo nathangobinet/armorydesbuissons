@@ -12,16 +12,21 @@ import RankingChampions from '../components/live/RankingChampions';
 import Statistics from '../components/live/Statistics';
 import { PlayerPopper } from '../components/live/PlayerPopper';
 
+// Workaround to access the socket inside componentWillUnmount
+let socketSave;
+
 function Live() {
   const { t } = useTranslation();
   const [socket, setSocket] = useState(false);
 
+  socketSave = socket;
+
   useEffect(() => {
     setSocket(io('ws://localhost:3005'));
     return () => {
-      if (socket) {
-        socket.removeAllListeners();
-        socket.close();
+      if (socketSave) {
+        socketSave.removeAllListeners();
+        socketSave.close();
       }
     };
   }, []);
