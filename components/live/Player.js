@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { createPopper } from '@popperjs/core';
 import { playerState } from './PlayerPopper';
 
@@ -58,6 +58,9 @@ function displayPopper(playerRef, id, name) {
 
 export default function Player({ id, name }) {
   const playerRef = useRef();
+
+  useEffect(() => () => { document.removeEventListener('click', hide); });
+
   return (
     <button
       ref={playerRef}
