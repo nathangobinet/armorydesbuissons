@@ -68,6 +68,7 @@ function PreviousRank({ className, rank }) {
         <NumberPresentation title={t('player:ranking.season')} number={rank.season} />
         <NumberPresentation title={t('player:ranking.division')} number={rank.ligue ? rank.ligue : t('player:ranking.unranked')} />
         <NumberPresentation title={t('player:ranking.points')} number={rank.score ? Math.trunc(rank.score) : t('player:ranking.NA')} />
+        <NumberPresentation title={t('player:ranking.num')} number={rank.rang ? rank.rang : t('player:ranking.NA')} />
       </div>
     </div>
   );
