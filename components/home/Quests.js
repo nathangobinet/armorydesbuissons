@@ -14,8 +14,8 @@ function Section({ image, title, text }) {
     <div className="card my-3 shadow">
       <div className="d-flex flex-column flex-sm-row align-items-center ">
         <div className=" mr-0 ml-sm-3 mr-sm-4 ml-lg-4 mr-lg-5 flex-shrink-0 mb-sm-0 mb-3">
-          <div className={`${styles['round-accent']} d-flex `}>
-            <img alt="" className="mx-auto" src={image} width="50" />
+          <div className={`${styles['round-accent']}`}>
+            <img alt="" src={image} width="50" />
           </div>
         </div>
         <div className="text-center text-sm-left">

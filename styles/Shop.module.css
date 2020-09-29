@@ -106,7 +106,6 @@
 
 .round-primary {
   background: var(--primary-gr);
-  font-size: 32px;
   width: 4.5rem;
   height: 4.5rem;
   color: white;
@@ -114,7 +113,6 @@
   justify-content: center!important;
   align-items: center!important;
   border-radius: 50%!important;
-  
 }
 
 .round-primary.bigger {
