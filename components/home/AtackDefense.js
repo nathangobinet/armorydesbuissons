@@ -65,7 +65,7 @@ function AtackDefense() {
             </div>
           </div>
           <div className="align-self-center m-0">
-            <a className={`${styles['fp-caret-down']} opacity-interaction`} href="#more" alt="Next section">
+            <a className={`${styles['fp-caret-down']} opacity-interaction`} href="#more">
               <i className={`fa fa-caret-down ${styles.pulse}`} />
             </a>
           </div>

@@ -15,7 +15,7 @@ function RankImage({ image, league, description }) {
   return (
     <div className="px-3 position-relative mx-auto" style={{ maxWidth: '300px' }}>
       <div className="font-weight-bold text-accent mb-4">{league}</div>
-      <img src={image} alt={league} width="200px" className="img-fluid mb-4 drop-shadow" />
+      <img src={image} alt={league} width="200" className="img-fluid mb-4 drop-shadow" />
       <p className="mb-0">{description}</p>
     </div>
   );

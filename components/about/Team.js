@@ -11,7 +11,7 @@ function Profile(props) {
   } = props;
   return (
     <div className="p-3" style={{ flex: '1 1 0' }}>
-      <img className="rounded-circle mx-auto d-block" alt={name} src={image} width="200px" />
+      <img className="rounded-circle mx-auto d-block" alt={name} src={image} width="200" />
       <h4 className="text-primary text-center mt-3 mb-0">{name}</h4>
       <div className="text-accent text-center mb-4"><b>{title}</b></div>
       <p className="text-center">{text}</p>

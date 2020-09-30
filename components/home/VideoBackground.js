@@ -20,7 +20,7 @@ function VideoBackground() {
               <img src={logo} alt="Armory des buissons logo" className={styles['logo-front-page']} />
             </div>
             <div className="align-self-center m-0 mb-5">
-              <a className={`${styles['fp-caret-down']} opacity-interaction`} href="#features" alt="Next section">
+              <a className={`${styles['fp-caret-down']} opacity-interaction`} href="#features">
                 <i className={`fa fa-caret-down ${styles.pulse}`} />
               </a>
             </div>

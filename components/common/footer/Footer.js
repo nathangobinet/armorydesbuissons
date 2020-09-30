@@ -23,7 +23,7 @@ function Footer() {
         </div>
         <div className="row py-4">
           <div className="col-12">
-            <img className="d-block mx-auto img-fluid" src={logo} width="350px" alt="Armory des buissons logo" />
+            <img className="d-block mx-auto img-fluid" src={logo} width="350" alt="Armory des buissons logo" />
           </div>
         </div>
         <div className="row py-5">

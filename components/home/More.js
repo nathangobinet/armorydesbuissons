@@ -21,7 +21,7 @@ function More() {
             <div className="container pt-lg-3">
               <div className="row mb-5">
                 <div className="col-md-6 text-center">
-                  <img className="pb-5 px-3 pb-md-0" alt="Sandbox" src={sandox} width="200px" />
+                  <img className="pb-5 px-3 pb-md-0" alt="Sandbox" src={sandox} width="200" />
                 </div>
                 <div className="col-md-6 d-flex align-items-center">
                   <div className="pr-md-5">
@@ -46,12 +46,12 @@ function More() {
                   </div>
                 </div>
                 <div className="col-md-6 order-md-2 order-1 text-center">
-                  <img className="pb-5 px-3 pb-md-0" alt="Inventory" src={inventory} width="200px" />
+                  <img className="pb-5 px-3 pb-md-0" alt="Inventory" src={inventory} width="200" />
                 </div>
               </div>
               <div className="row">
                 <div className="col-md-6 text-center">
-                  <img className="pb-5 px-3 pb-md-0" alt="Code" src={code} width="200px" />
+                  <img className="pb-5 px-3 pb-md-0" alt="Code" src={code} width="200" />
                 </div>
                 <div className="col-md-6 d-flex align-items-center">
                   <div className="pr-md-5">

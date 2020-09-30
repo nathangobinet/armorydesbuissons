@@ -5,7 +5,7 @@ import Champions from './Champions';
 
 export default function NewsGraphs() {
   return (
-    <section className="py-2" id="news-graph">
+    <section className="py-2" id="ranking-champion">
       <div className="row">
         <Ranking />
         <Champions />

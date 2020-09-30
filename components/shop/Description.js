@@ -10,7 +10,7 @@ export default function Description() {
     <section id="description" className="mb-5">
       <div className="d-flex h-100">
         <div className="container text-center mx-auto">
-          <img className="img-fluid mx-auto" alt="" src={shape3} width="800px" />
+          <img className="img-fluid mx-auto" alt="" src={shape3} width="800" />
         </div>
         <div className="w-100 h-100" style={{ marginLeft: '-100%' }}>
           <div className="container d-flex flex-column justify-content-center h-100 py-5">

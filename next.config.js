@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 const withOptimizedImages = require('next-optimized-images');
 const withVideos = require('next-videos');
 
@@ -14,7 +15,10 @@ module.exports = withOptimizedImages(withVideos({
     }];
   },
   assetDirectory: 'static',
-  webpack(config) {
+  webpack(config, { isServer }) {
+    if (isServer) {
+      require('./scripts/generate-sitemap');
+    }
     config.module.rules.push({
       test: /\.(mp3|wav|mpe?g)$/i,
       use: [

@@ -14,7 +14,7 @@ function Ranking() {
       <div className={styles['section-content']}>
         <div className="d-flex h-100">
           <div className="container my-auto pl-md-5 pt-md-5 mt-md-5">
-            <img className="img-fluid" src={shape} width="600px" alt="" />
+            <img className="img-fluid" src={shape} width="600" alt="" />
           </div>
           <div className="w-100 h-100" style={{ marginLeft: '-100%' }}>
             <div className="container d-flex flex-column justify-content-center h-100 py-5">
@@ -24,7 +24,7 @@ function Ranking() {
                     <h1 className="text-primary">
                       {t('home:ranking.title')}
                     </h1>
-                    <img className="py-4 mx-auto" src={rank} width="90px" alt="Rank" />
+                    <img className="py-4 mx-auto" src={rank} width="90" alt="Rank" />
                     <p className="mb-4">
                       {t('home:ranking.paragraph')}
                     </p>
@@ -35,7 +35,7 @@ function Ranking() {
                 </div>
               </div>
               <div className="align-self-center m-0">
-                <a className={`${styles['fp-caret-down']} opacity-interaction`} href="#quests" alt="Next section">
+                <a className={`${styles['fp-caret-down']} opacity-interaction`} href="#quests">
                   <i className={`fa fa-caret-down ${styles.pulse}`} />
                 </a>
               </div>

@@ -26,7 +26,7 @@ function TpIntoFight() {
             </div>
           </div>
           <div className="align-self-center m-0">
-            <a className={`${styles['fp-caret-down']} opacity-interaction`} href="#choose-your-gameplay" alt="Next section">
+            <a className={`${styles['fp-caret-down']} opacity-interaction`} href="#choose-your-gameplay">
               <i className={`fa fa-caret-down ${styles.pulse}`} />
             </a>
           </div>

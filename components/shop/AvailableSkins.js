@@ -149,7 +149,7 @@ export default function AvailableSkin() {
   const skins = useFetch('/api/skins', false);
   const { t } = useTranslation();
   return (
-    <section id="other-donation" className="container pt-5">
+    <section id="available-skins" className="container pt-5">
       <div className="text-center py-4">
         <h1 className="text-accent mb-4">{t('shop:availableSkins.title')}</h1>
         <p className="mb-5">{t('shop:availableSkins.p1')}</p>

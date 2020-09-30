@@ -55,6 +55,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="msapplication-TileColor" content="#2b5797" />
         <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
         <meta name="theme-color" content="#333333" />
+        <meta property="og:image" content="/images/meta/meta.png" />
       </Head>
       <Component {...pageProps} />
     </div>

@@ -29,7 +29,7 @@ function Versus() {
                     <div className="card shadow bt-primary">
                       <div className="text-center">
                         <div className="py-4 mx-auto">
-                          <img src={users} width="100px" alt="Users" />
+                          <img src={users} width="100" alt="Users" />
                         </div>
                         <h4 className="text-primary">
                           {t('home:versus.card1.title')}
@@ -44,7 +44,7 @@ function Versus() {
                     <div className="card shadow bt-primary">
                       <div className="text-center">
                         <div className="py-4 mx-auto">
-                          <img src={points} width="100px" alt="Points" />
+                          <img src={points} width="100" alt="Points" />
                         </div>
                         <h4 className="text-primary">
                           {t('home:versus.card2.title')}
@@ -59,7 +59,7 @@ function Versus() {
                     <div className="card shadow bt-primary">
                       <div className="text-center">
                         <div className="py-4 mx-auto">
-                          <img src={location} width="70px" alt="Location" />
+                          <img src={location} width="70" alt="Location" />
                         </div>
                         <h4 className="text-primary">
                           {t('home:versus.card3.title')}
@@ -73,7 +73,7 @@ function Versus() {
                 </div>
               </div>
               <div className="align-self-center m-0">
-                <a className={`${styles['fp-caret-down']} text-white-or-accent opacity-interaction`} label="Go to next section" href="#ranking">
+                <a className={`${styles['fp-caret-down']} text-white-or-accent opacity-interaction`} href="#ranking">
                   <i className={`fas fa-caret-down ${styles.pulse}`} />
                 </a>
               </div>

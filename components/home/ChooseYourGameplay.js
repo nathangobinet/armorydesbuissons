@@ -50,7 +50,7 @@ function ChooseYourGameplay() {
             </div>
           </div>
           <div className="align-self-center m-0">
-            <a className={`${styles['fp-caret-down']} opacity-interaction`} href="#versus" alt="Next section">
+            <a className={`${styles['fp-caret-down']} opacity-interaction`} href="#versus">
               <i className={`fa fa-caret-down ${styles.pulse}`} />
             </a>
           </div>

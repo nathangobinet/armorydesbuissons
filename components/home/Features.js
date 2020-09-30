@@ -45,7 +45,7 @@ function Features() {
             <div className="row">
               <div className="col-12 d-flex justify-content-center position-relative">
                 <img className="img-fluid" src={shape} alt="Style shape" width="550" height="550" />
-                <div className={`card shadow pb-0 ${styles['card-on-shape-1']}`}>
+                <div style={{ maxWidth: '90%' }} className={`card shadow pb-0 ${styles['card-on-shape-1']}`}>
                   <div className="text-center">
                     <h2 className="text-accent mb-0">
                       {t('home:features.discover')}

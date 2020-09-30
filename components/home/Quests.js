@@ -50,7 +50,7 @@ export default function Quests() {
                 </div>
               </div>
               <div className="align-self-center m-0">
-                <a className={`${styles['fp-caret-down']} text-white-or-accent opacity-interaction`} label="Go to next section" href="#attack-defense">
+                <a className={`${styles['fp-caret-down']} text-white-or-accent opacity-interaction`} href="#attack-defense">
                   <i className={`fas fa-caret-down ${styles.pulse}`} />
                 </a>
               </div>
