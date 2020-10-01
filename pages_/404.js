@@ -46,7 +46,7 @@ export default function Custom404() {
   const lang = useLangFromRouter();
   return (
     <DynamicNamespaces
-      dynamic={(_, ns) => require(`../locales/${lang}/${ns}.json`)}
+      dynamic={(_, ns) => require(`../public/locales/${lang}/${ns}.json`)}
       namespaces={['common']}
       fallback="Loading..."
     >
