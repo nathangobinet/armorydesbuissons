@@ -5,10 +5,13 @@
  */
 
 const fs = require('fs');
+const prettier = require('prettier');
 
 const globby = require('globby');
 
 (async () => {
+  const prettierConfig = await prettier.resolveConfig('./.prettierrc.js');
+
   // Ignore Next.js specific files (e.g., _app.js) and API routes.
   const pages = await globby([
     'pages/**/*{.js,.mdx}',
@@ -36,5 +39,10 @@ const globby = require('globby');
         </urlset>
     `;
 
-  fs.writeFileSync('public/sitemap.xml', sitemap);
+  const formatted = prettier.format(sitemap, {
+    ...prettierConfig,
+    parser: 'html',
+  });
+
+  fs.writeFileSync('public/sitemap.xml', formatted);
 })();

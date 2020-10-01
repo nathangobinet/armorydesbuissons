@@ -23,7 +23,7 @@ function ButtonSection({ choosedItem, authInfo, onBuy }) {
   }
   return (
     <a
-      href={`${config.httpserver}/api/auth/steam?action=${encodeURIComponent(JSON.stringify({ type: 'shop', id: choosedItem.ID }))}`}
+      href={`${config.apiUrl}/auth/steam?action=${encodeURIComponent(JSON.stringify({ type: 'shop', id: choosedItem.ID }))}`}
       className="btn btn-lg btn-primary px-5"
     >
       {t('shop:shopPricing.modal.btnLoginSteam')}
@@ -130,7 +130,7 @@ export default function ShopModal(props) {
   } = props;
 
   const onBuy = async () => {
-    const rawResponse = await fetch(`${config.httpserver}/api/shop`, {
+    const rawResponse = await fetch(`${config.apiUrl}/shop`, {
       method: 'POST',
       credentials: 'include',
       headers: {

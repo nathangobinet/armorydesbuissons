@@ -30,7 +30,7 @@ function InfoCard(props) {
 export default function InfoCards({ profileInfo }) {
   const { t } = useTranslation();
   const [searchInput, setSearchInput] = useState('');
-  const players = useFetch('/api/playersByName', undefined, { name: searchInput }, false);
+  const players = useFetch('/playersByName', undefined, { name: searchInput }, false);
 
   const SearchResult = () => {
     if (players === undefined || searchInput === '') return t('player:infoCards.searchPlayer.waitSearch');

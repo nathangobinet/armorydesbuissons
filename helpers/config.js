@@ -1,4 +1,10 @@
+const env = process.env.NODE_ENV;
+
+const domain = (env === 'development') ? ('http://localhost:3005') : '';
+const apiPath = '/api';
+
 export default {
-  server: 'localhost:3005',
-  httpserver: 'http://localhost:3005',
+  domain,
+  apiPath,
+  apiUrl: domain + apiPath,
 };

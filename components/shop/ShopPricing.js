@@ -139,7 +139,7 @@ function getMappedShop(shop, t) {
 
 export default function ShopPricing() {
   const { t } = useTranslation();
-  const shop = useFetch('/api/shop', false);
+  const shop = useFetch('/shop', false);
 
   const [modalActive, setModalActive] = useState(false);
   const [choosedItem, setChoosedItem] = useState(false);

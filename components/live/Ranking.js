@@ -10,7 +10,7 @@ import useFetch from '../../helpers/useFetch';
 export default function Ranking() {
   const { t } = useTranslation();
   const [filter, setFilter] = useState('');
-  const players = useFetch('/api/rank', [], { name: filter });
+  const players = useFetch('/rank', [], { name: filter });
 
   const rows = players.map((p) => ({
     key: p.id,

@@ -146,7 +146,7 @@ function VipSkins({ skins, path }) {
 }
 
 export default function AvailableSkin() {
-  const skins = useFetch('/api/skins', false);
+  const skins = useFetch('/skins', false);
   const { t } = useTranslation();
   return (
     <section id="available-skins" className="container pt-5">

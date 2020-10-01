@@ -57,7 +57,7 @@ function ScreenQuest() {
           {' '}
           {t('player:informationBanner.discordModal.p2')}
         </p>
-        <a className="btn btn-discord my-1 mb-3" href={`${config.httpserver}/api/auth/discord`}>
+        <a className="btn btn-discord my-1 mb-3" href={`${config.apiUrl}/auth/discord`}>
           <i className="fas fa-check mr-3" />
           {t('player:informationBanner.discordModal.btnCheck')}
         </a>

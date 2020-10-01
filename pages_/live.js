@@ -11,6 +11,7 @@ import NewsGraphs from '../components/live/NewsGraphs';
 import RankingChampions from '../components/live/RankingChampions';
 import Statistics from '../components/live/Statistics';
 import { PlayerPopper } from '../components/live/PlayerPopper';
+import config from '../helpers/config';
 
 // Workaround to access the socket inside componentWillUnmount
 let socketSave;
@@ -22,7 +23,7 @@ function Live() {
   socketSave = socket;
 
   useEffect(() => {
-    setSocket(io('ws://localhost:3005'));
+    setSocket(io(config.domain, { path: `${config.apiPath}/socket.io` }));
     return () => {
       if (socketSave) {
         socketSave.removeAllListeners();

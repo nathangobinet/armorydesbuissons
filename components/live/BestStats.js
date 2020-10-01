@@ -32,7 +32,7 @@ function StatCard({
 export default function BestStats() {
   const { t } = useTranslation();
   const [period, setPeriod] = useState(PERIODS.DAY);
-  const result = useFetch('/api/top', undefined, { period });
+  const result = useFetch('/top', undefined, { period });
 
   const killsCard = (result && result.kill) ? {
     title: t('live:bestStats.topKills'), logo: 'fa-skull', player: <Player name={result.kill.lastPseudo} id={result.kill.id} />, number: result.kill.nbKills, text: t('live:bestStats.kills'),

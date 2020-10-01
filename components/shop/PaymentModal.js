@@ -104,7 +104,7 @@ function Payment({ setScreen, paymentInfo }) {
   const removeLoadingScreen = () => { setScreen(MODAL_SCREEEN.PAYMENT); };
 
   const onSuccess = async () => {
-    const rawResponse = await fetch(`${config.httpserver}/api/shop/vip`, {
+    const rawResponse = await fetch(`${config.apiUrl}/shop/vip`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -248,7 +248,7 @@ function PlayerID({ setScreen, setPaymentInfo }) {
   const { t } = useTranslation();
   const [isCorrect, setIsCorrect] = useState(false);
   const [input, setInput] = useState('');
-  const playerName = useFetch('/api/playerName', undefined, { id: input }, false);
+  const playerName = useFetch('/playerName', undefined, { id: input }, false);
   const regId = /^[0-9]{17}$/;
 
   const onChange = (event) => {
@@ -313,7 +313,7 @@ function Login({ setScreen, setPaymentInfo, paymentInfo }) {
     if (!isAuth) {
       return (
         <a
-          href={`${config.httpserver}/api/auth/steam?action=${encodeURIComponent(JSON.stringify({ type: 'vip_steam_connexion', id: paymentInfo.id }))}`}
+          href={`${config.apiUrl}/auth/steam?action=${encodeURIComponent(JSON.stringify({ type: 'vip_steam_connexion', id: paymentInfo.id }))}`}
           className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}
         >
           {t('shop:vipPricing.modal.login.btnLoginSteam')}

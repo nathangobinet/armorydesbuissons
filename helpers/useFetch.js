@@ -16,7 +16,7 @@ export default function useFetch(url, defaultResult, args = undefined, sendWithN
   const argsString = JSON.stringify(args); // Used To refetch when args change
   useEffect(() => {
     async function fetch() {
-      const result = await fetcher((config.httpserver + url), args);
+      const result = await fetcher((config.apiUrl + url), args);
       if (result.success) setData(result);
     }
     if (!(!sendWithNoArg && isNoArg(args))) {

@@ -9,7 +9,7 @@ import useFetch from '../../helpers/useFetch';
 import styles from '../../styles/Live.module.css';
 
 export default function NewsList() {
-  const news = useFetch('/api/news', []);
+  const news = useFetch('/news', []);
   const [toggle, setToggle] = useState(false);
 
   const animation = {

@@ -79,7 +79,7 @@ function UserCardContent(props) {
       <Link href={`/p/${encodeURIComponent(id)}`}>
         <a className="btn btn-primary btn-block">{t('common:navbar.btnViewProfile')}</a>
       </Link>
-      <a href={`${config.httpserver}/api/auth/logout`} className="btn btn-accent btn-block">{t('common:navbar.btnLogout')}</a>
+      <a href={`${config.apiUrl}/auth/logout`} className="btn btn-accent btn-block">{t('common:navbar.btnLogout')}</a>
     </div>
   );
 }
@@ -92,7 +92,7 @@ export function UserTooltip() {
 
   const CardContent = () => {
     if (!authInfo) return (<div>Loading...</div>);
-    if (!authInfo.auth) return <a href={`${config.httpserver}/api/auth/steam`} className="btn btn-primary btn-block">{t('common:navbar.btnSteam')}</a>;
+    if (!authInfo.auth) return <a href={`${config.apiUrl}/auth/steam`} className="btn btn-primary btn-block">{t('common:navbar.btnSteam')}</a>;
     return (
       <UserCardContent
         id={authInfo.id}
