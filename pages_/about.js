@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 import useTranslation from 'next-translate/useTranslation';
 
 import Navbar from '../components/common/navbar/Navbar';
@@ -11,15 +10,13 @@ import Contact from '../components/about/Contact';
 import Rank from '../components/about/Rank';
 import Vip from '../components/about/Vip';
 import Shortcuts from '../components/about/Shortcuts';
+import CustomHeader from '../components/common/CustomHeader';
 
 export default function About() {
   const { t } = useTranslation();
   return (
     <div>
-      <Head>
-        <title>{t('about:head.title')}</title>
-        <meta name="description" content={t('about:head.description')} />
-      </Head>
+      <CustomHeader title={t('about:head.title')} description={t('about:head.description')} />
       <Navbar />
       <Summary />
       <Rules />

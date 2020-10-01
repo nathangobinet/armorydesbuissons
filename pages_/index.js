@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 import useTranslation from 'next-translate/useTranslation';
 
 import Navbar from '../components/common/navbar/Navbar';
@@ -13,15 +12,13 @@ import Ranking from '../components/home/Ranking';
 import AtackDefense from '../components/home/AtackDefense';
 import More from '../components/home/More';
 import Quests from '../components/home/Quests';
+import CustomHeader from '../components/common/CustomHeader';
 
 function Home() {
   const { t } = useTranslation();
   return (
     <div className="h-100">
-      <Head>
-        <title>{t('home:head.title')}</title>
-        <meta name="description" content={t('home:head.description')} />
-      </Head>
+      <CustomHeader title={t('home:head.title')} description={t('home:head.description')} />
       <Navbar transparent />
       <VideoBackground />
       <Features />

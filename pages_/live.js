@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import useTranslation from 'next-translate/useTranslation';
-import Head from 'next/head';
 
 import Navbar from '../components/common/navbar/Navbar';
 import Footer from '../components/common/footer/Footer';
@@ -12,6 +11,7 @@ import RankingChampions from '../components/live/RankingChampions';
 import Statistics from '../components/live/Statistics';
 import { PlayerPopper } from '../components/live/PlayerPopper';
 import config from '../helpers/config';
+import CustomHeader from '../components/common/CustomHeader';
 
 // Workaround to access the socket inside componentWillUnmount
 let socketSave;
@@ -34,10 +34,7 @@ function Live() {
 
   return (
     <div>
-      <Head>
-        <title>{t('live:head.title')}</title>
-        <meta name="description" content={t('live:head.description')} />
-      </Head>
+      <CustomHeader title={t('live:head.title')} description={t('live:head.description')} />
       <Navbar />
       <div className="container-fluid p-4">
         <InfoCards socket={socket} />

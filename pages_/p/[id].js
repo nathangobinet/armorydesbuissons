@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Head from 'next/head';
 import useTranslation from 'next-translate/useTranslation';
 
 import Navbar from '../../components/common/navbar/Navbar';
@@ -12,6 +11,7 @@ import RankingLevel from '../../components/player/RankingLevel';
 import Statistic from '../../components/player/Statistic';
 import ResetGraph from '../../components/player/ResetGraph';
 import PurchasesWallet from '../../components/player/PurchasesWallet';
+import CustomHeader from '../../components/common/CustomHeader';
 
 export default function Player() {
   const { t } = useTranslation();
@@ -25,13 +25,10 @@ export default function Player() {
 
   return (
     <div>
-      <Head>
-        <title>{`${profileInfo ? `${profileInfo.lastName} - ` : ''}${t('player:head.title')}`}</title>
-        <meta
-          name="description"
-          content={`${t('player:head.description')} ${profileInfo ? `${t('player:head.thePlayer')} ${profileInfo.lastName}` : t('player:head.players')}`}
-        />
-      </Head>
+      <CustomHeader
+        title={`${profileInfo ? `${profileInfo.lastName} - ` : ''}${t('player:head.title')}`}
+        description={`${t('player:head.description')} ${profileInfo ? `${t('player:head.thePlayer')} ${profileInfo.lastName}` : t('player:head.players')}`}
+      />
       <Navbar />
       <div className="container-fluid p-4">
         <InformationBanner profileInfo={profileInfo} setProfileInfo={setProfileInfo} />

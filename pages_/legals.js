@@ -3,20 +3,17 @@
 import React from 'react';
 import Trans from 'next-translate/Trans';
 import useTranslation from 'next-translate/useTranslation';
-import Head from 'next/head';
 
 import Footer from '../components/common/footer/Footer';
 import Navbar from '../components/common/navbar/Navbar';
+import CustomHeader from '../components/common/CustomHeader';
 
 export default function Legals() {
   const { t } = useTranslation();
   const ARMORY_URL = 'https://www.armorydesbuissons.fr';
   return (
     <div>
-      <Head>
-        <title>{t('legals:head.title')}</title>
-        <meta name="description" content={t('legals:head.description')} />
-      </Head>
+      <CustomHeader title={t('legals:head.title')} description={t('legals:head.description')} />
       <Navbar />
       <div className="container py-5">
         <h1><Trans i18nKey="legals:title" /></h1>
