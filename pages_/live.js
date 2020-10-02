@@ -23,7 +23,7 @@ function Live() {
   socketSave = socket;
 
   useEffect(() => {
-    setSocket(io(config.domain, { path: `${config.apiPath}/socket.io` }));
+    setSocket(io(config.domain, { path: `${config.apiPath}/socket.io`, secure: true }));
     return () => {
       if (socketSave) {
         socketSave.removeAllListeners();
