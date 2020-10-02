@@ -35,6 +35,21 @@ function ScreenError({ setDiscordModalVisible }) {
   );
 }
 
+function ScreenNotMember({ setDiscordModalVisible }) {
+  const { t } = useTranslation();
+  return (
+    <div style={{ maxWidth: 600 }} className="mx-auto text-center">
+      <h3 className="text-accent mb-4">{t('player:informationBanner.discordModal.title')}</h3>
+      <div className="my-3"><i className="fas fa-times fa-3x" /></div>
+      <p className="mb-4">{t('player:informationBanner.discordModal.notMember')}</p>
+      <button type="button" onClick={() => { setDiscordModalVisible(false); }} className="btn btn-primary mb-2">
+        {t('player:informationBanner.discordModal.btnBack')}
+        <i className="fas fa-chevron-right ml-4" />
+      </button>
+    </div>
+  );
+}
+
 function ScreenQuest() {
   const { t } = useTranslation();
   return (
@@ -72,6 +87,7 @@ function ScreenQuest() {
 function ScreenChooser({ screen, setDiscordModalVisible }) {
   if (screen === 'quest') return <ScreenQuest />;
   if (screen === 'success') return <ScreenSuccess setDiscordModalVisible={setDiscordModalVisible} />;
+  if (screen === 'notMember') return <ScreenNotMember setDiscordModalVisible={setDiscordModalVisible} />;
   return <ScreenError setDiscordModalVisible={setDiscordModalVisible} />;
 }
 
@@ -84,6 +100,8 @@ export default function DiscordQuestModal({ discordModalVisible, setDiscordModal
     if (action.isAction) {
       if (action.info.result) {
         setScreen('success');
+      } else if (!action.info.isMember) {
+        setScreen('notMember');
       } else {
         setScreen('error');
       }
