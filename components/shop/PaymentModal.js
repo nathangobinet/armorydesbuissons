@@ -183,7 +183,7 @@ function Payment({ setScreen, paymentInfo }) {
           shippingPreference="NO_SHIPPING"
           amount={paymentInfo.price}
           options={{
-            clientId: 'AVjsijz7YM8XK9sHmrETzj-smASi3dbjAMN0S7IzMAL7UiSPYfD41bXRbpfacjd_Z3DA_jFtj6tOMpe0',
+            clientId: config.paypalId,
             currency: 'EUR',
           }}
         />
