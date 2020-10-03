@@ -3,7 +3,7 @@ import config from './config';
 
 function fetcher(url, args) {
   const urlWithArg = (args) ? `${url}?${new URLSearchParams(args)}` : url;
-  return (fetch(urlWithArg, { credentials: 'include' }).then((res) => res.json()));
+  return (fetch(urlWithArg, { credentials: config.includeCredentials }).then((res) => res.json()));
 }
 
 function isNoArg(args) {

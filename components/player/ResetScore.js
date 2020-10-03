@@ -34,7 +34,7 @@ function ResetContent({ rank }) {
   }, []);
 
   const reqResetScore = async () => {
-    const response = await fetch(`${config.apiUrl}/resetRank`, { credentials: 'include' }).then((res) => res.json());
+    const response = await fetch(`${config.apiUrl}/resetRank`, { credentials: config.includeCredentials }).then((res) => res.json());
     if (response.success && response.result) {
       setRank('1000');
     } else setRank(t('player:resetScore.err'));

@@ -10,5 +10,8 @@ export default {
   paypalId: (env === 'development')
     ? 'AVjsijz7YM8XK9sHmrETzj-smASi3dbjAMN0S7IzMAL7UiSPYfD41bXRbpfacjd_Z3DA_jFtj6tOMpe0'
     : 'AaCjFrOU1fQIpruC6FqlPnMWNkAqjBom6opmtcQlE8wGA9rMa8O7-SVEqTzmhWgK2xf0YPCEMgaMLAyQ',
+  includeCredentials: (env === 'development')
+    ? 'include'
+    : 'same-origin',
   apiUrl: domain + apiPath,
 };
