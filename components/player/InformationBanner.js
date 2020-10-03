@@ -64,7 +64,7 @@ function BannerChooser({ profileInfo, setDiscordModalVisible }) {
       <BannerContent
         button={t('player:informationBanner.goProfile.title')}
         text={t('player:informationBanner.goProfile.text')}
-        href={`/p/${user.id}`}
+        href={`/p/${user.hash}`}
       />
     );
   }

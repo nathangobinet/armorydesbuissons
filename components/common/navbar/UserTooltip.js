@@ -49,7 +49,7 @@ export function toogleUserPopper(refId) {
 
 function UserCardContent(props) {
   const {
-    id, lastPseudo, ac, level,
+    hash, lastPseudo, ac, level,
   } = props;
   const { t } = useTranslation();
   return (
@@ -76,7 +76,7 @@ function UserCardContent(props) {
           </em>
         </div>
       </div>
-      <Link href={`/p/${encodeURIComponent(id)}`}>
+      <Link href={`/p/${hash}`}>
         <a className="btn btn-primary btn-block">{t('common:navbar.btnViewProfile')}</a>
       </Link>
       <a href={`${config.apiUrl}/auth/logout`} className="btn btn-accent btn-block">{t('common:navbar.btnLogout')}</a>
@@ -95,7 +95,7 @@ export function UserTooltip() {
     if (!authInfo.auth) return <a href={`${config.apiUrl}/auth/steam`} className="btn btn-primary btn-block">{t('common:navbar.btnSteam')}</a>;
     return (
       <UserCardContent
-        id={authInfo.id}
+        hash={authInfo.hash}
         lastPseudo={(authInfo.alreadyConnected) ? authInfo.playerInfo.lastPseudo : t('common:navbar.unknowName')}
         ac={(authInfo.alreadyConnected) ? authInfo.playerInfo.ac : 0}
         level={(authInfo.alreadyConnected) ? authInfo.playerInfo.level : 0}
