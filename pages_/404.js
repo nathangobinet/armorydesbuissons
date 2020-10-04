@@ -1,7 +1,7 @@
 /* eslint-disable import/no-dynamic-require */
 /* eslint-disable global-require */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import Link from 'next-translate/Link';
+import Link from 'next/link';
 import React from 'react';
 import DynamicNamespaces from 'next-translate/DynamicNamespaces';
 import useTranslation from 'next-translate/useTranslation';
@@ -21,7 +21,7 @@ function useLangFromRouter() {
   }, defaultLanguage);
 }
 
-function Custom404Content() {
+function Custom404Content({ lang }) {
   const { t } = useTranslation();
   return (
     <div className="h-100 w-100 d-flex align-items-center justify-content-center ">
@@ -31,7 +31,7 @@ function Custom404Content() {
           <h1 className="mb-3 mb-sm-0 mr-0 mr-sm-4">{t('common:404.title')}</h1>
           <div>{t('common:404.text')}</div>
         </div>
-        <Link href="/">
+        <Link href={`/${lang === 'en' ? '' : lang}`}>
           <a className="btn btn-primary">{t('common:404.btn')}</a>
         </Link>
       </div>
@@ -47,7 +47,7 @@ export default function Custom404() {
       namespaces={['common']}
       fallback="Loading..."
     >
-      <Custom404Content />
+      <Custom404Content lang={lang} />
     </DynamicNamespaces>
   );
 }

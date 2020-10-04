@@ -27,7 +27,7 @@ export default function Wallet({ profileInfo }) {
             {profileInfo.ac}
           </div>
         </div>
-        <Link href="shop#shop">
+        <Link href="/shop#shop">
           <a className="btn btn-block btn-primary">{t('player:wallet.btn')}</a>
         </Link>
       </div>

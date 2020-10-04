@@ -9,7 +9,9 @@ module.exports = withOptimizedImages(withVideos({
       headers: [
         {
           key: 'Referrer-Policy',
-          value: 'no-referrer-when-downgrade',
+          value: (process.env.NODE_ENV === 'development')
+            ? 'no-referrer-when-downgrade'
+            : 'strict-origin-when-cross-origin',
         },
       ],
     }];

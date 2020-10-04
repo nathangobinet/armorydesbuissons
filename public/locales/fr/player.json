@@ -19,7 +19,7 @@
       "text": "Pour voir votre profil complet, consultez votre classement, vos statistiques, des graphiques et encore plus..."
     },
     "discordQuest": {
-      "title": "Terminer la quête discord",
+      "title": "Complétez la quête discord",
       "text": "Pour gagner de l'XP facilement et vous aider à passer les niveaux."
     },
     "helpServer": {
@@ -33,6 +33,7 @@
     "discordModal": {
       "error": "Une erreur s'est produite et la quête n'a pas été complétée. Veuillez réessayer et contacter un administrateur si cela se reproduit.",
       "success": "Vous avez terminé la quête discord. Veuillez vous déconnecter et vous reconnecter du jeu pour voir les changements.",
+      "notMember": "Vous n'êtes pas membre du Discord. Veuillez rejoindre le serveur Discord avant de procéder à la vérification.",
       "btnBack": "Retour",
       "title": "Quête discord",
       "p1": "Rejoignez notre serveur discord en cliquant sur ce bouton",
@@ -44,7 +45,7 @@
   },
   "infoCards": {
     "profileOf": {
-      "title": "Profile de"
+      "title": "Profil de"
     },
     "profileInfo": {
       "title": "Information du profile",

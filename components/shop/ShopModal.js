@@ -132,7 +132,7 @@ export default function ShopModal(props) {
   const onBuy = async () => {
     const rawResponse = await fetch(`${config.apiUrl}/shop`, {
       method: 'POST',
-      credentials: 'include',
+      credentials: config.includeCredentials,
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',

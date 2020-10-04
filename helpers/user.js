@@ -24,7 +24,7 @@ export function useAuth() {
 export async function loadUser() {
   const response = await fetch(
     `${config.apiUrl}/auth/user`,
-    { credentials: 'include' },
+    { credentials: config.includeCredentials },
   ).then((res) => res.json());
   if (response.success) {
     user = response.result;

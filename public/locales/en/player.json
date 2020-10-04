@@ -33,6 +33,7 @@
     "discordModal": {
       "error": "An error occurred and the quest was not completed. Please try again and contact an administrator if this happens again.",
       "success": "You have completed the discord quest. Please log out and log back in to the game to see the changes.",
+      "notMember": "You are not a Discord member. Please join the Discord server before proceeding to the verification.",
       "btnBack": "Go back",
       "title": "Discord Quest",
       "p1": "Join our discord server by clicking on this button",

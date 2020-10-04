@@ -29,6 +29,7 @@ function setSteamInfo(setPaymentInfo, setScreen, userInfo) {
   setPaymentInfo((pInfo) => ({
     ...pInfo,
     playerId: userInfo.id,
+    hash: userInfo.hash,
     lastName: (userInfo.playerInfo) ? userInfo.playerInfo.lastPseudo : 'Unknown',
   }));
   setScreen(MODAL_SCREEEN.INNFORMATION);
@@ -76,7 +77,7 @@ function Success({ paymentInfo }) {
           {t('shop:vipPricing.modal.success.message')}
         </p>
       </div>
-      <Link href={`/p/${paymentInfo.playerId}`}>
+      <Link href={`/p/${paymentInfo.hash}`}>
         <a className={`my-2 mx-auto btn btn-primary btn-block ${styles['btn-size']}`}>
           {t('shop:vipPricing.modal.success.btnProfile')}
           <i className="fas fa-chevron-right ml-4" />
@@ -183,7 +184,7 @@ function Payment({ setScreen, paymentInfo }) {
           shippingPreference="NO_SHIPPING"
           amount={paymentInfo.price}
           options={{
-            clientId: 'AVjsijz7YM8XK9sHmrETzj-smASi3dbjAMN0S7IzMAL7UiSPYfD41bXRbpfacjd_Z3DA_jFtj6tOMpe0',
+            clientId: config.paypalId,
             currency: 'EUR',
           }}
         />
