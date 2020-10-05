@@ -16,9 +16,9 @@
   }, 
   "team": {
     "title": "Rencontrer notre équipe",
-    "hector": { "title": "Développeur de la mission", "text": "Il a pleinement développé la mission et s'occupe de l'administration du serveur." },
-    "jpat": { "title": "Développeur web", "text": "Il a développé le site web et modère le serveur." },
-    "jezah": { "title": "Investisseur", "text": "Il a financé le serveur et aide à sa modération." }
+    "hector": { "title": "Développeur de la mission", "text": "A pleinement développé la mission et s'occupe de l'administration du serveur." },
+    "jpat": { "title": "Développeur web", "text": "A développé le site web et modère le serveur." },
+    "jezah": { "title": "Investisseur", "text": "A financé le serveur et aide à sa modération." }
   }, 
   "contact": {
     "title": "Nous contacter",
