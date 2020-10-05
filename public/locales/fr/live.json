@@ -4,7 +4,7 @@
     "description": "Découvrez les statistiques en direct de l'Armory: joueurs connectés, nombre de kills, ... Ainsi que le classement des différentes saisons"
   },
   "infoCards": {
-    "kills": "kills aujourd'hui", "player": "joueurs connectés", "unique": "joueurs unique aujourd'hui", "ranked": "joueurs classés"
+    "kills": "kills aujourd'hui", "player": "joueurs connectés", "unique": "joueurs uniques aujourd'hui", "ranked": "joueurs classés"
   },
   "onlinePlayers": {
     "headers": { "country": "Pays", "name": "Pseudo", "kills": "Kills", "deaths": "Morts", "timePlayed":"Temps joué" },
