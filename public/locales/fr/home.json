@@ -21,7 +21,7 @@
     "subTitle": "Différents types de zones de combat sont disponibles",
     "striderTitle": "Combat à distance",
     "striderParagraph": "Vous pouvez vous entraîner au combat à longue distance grâce aux grandes arènes avec un champ de vue ouvert.",
-    "soldierTitle": "Combat rapprochée",
+    "soldierTitle": "Combat rapproché",
     "soldierParagraph": "Vous pouvez vous entraîner au combat à courte distance grâce aux petites arènes comme les villes ou les usines."
   },
   "versus": {
@@ -31,7 +31,7 @@
       "sub": "Invitez vos amis et séparez-vous en deux équipes."
     }, 
     "card2": {
-      "title": "Fixer la limite de points",
+      "title": "Fixez la limite de points",
       "sub": "Définissez le nombre de kills à atteindre pour gagner la partie."
     }, 
     "card3": {
