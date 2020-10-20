@@ -1,9 +1,13 @@
 import clientSideLang from 'next-translate/clientSideLang';
 import Router from 'next-translate/Router';
 
+import i18nConfig from '../i18n.json';
+
 function getDefaultLanguage() {
-  const userLang = navigator.language || navigator.userLanguage;
-  return userLang.substring(0, 2);
+  const { allLanguages, defaultLanguage } = i18nConfig;
+  const userLang = (navigator.language || navigator.userLanguage).substring(0, 2);
+  if (allLanguages.includes(userLang)) return userLang;
+  return defaultLanguage;
 }
 
 function storeLanguage(language) {
