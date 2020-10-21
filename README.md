@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<h4 align="center">Armory des buissons is an Arma 3 game server. This repository contain the new version of the <a href="armorydesbuissons.fr">website</a></h4>
+<h4 align="center">Armory des buissons is an Arma 3 game server. This repository contain the new version of the <a href="https://armorydesbuissons.fr">website</a></h4>
 <br>
 
 This repository only contain the client of the website. This website uses an API which is not available at the moment (for security reasons). 
