@@ -6,7 +6,10 @@ function LastKill(props) {
     killer, killed, distance, weapon, date,
   } = props;
   const timestampDefault = Math.round((new Date() - new Date(date)) / 1000);
-  const [timeStamp, setTimeStamp] = useState(timestampDefault >= 0 ? timestampDefault : 0);
+  const [timeStamp, setTimeStamp] = useState(timestampDefault);
+  const minutes = (timeStamp >= 60) ? Math.floor(timeStamp / 60) : 0;
+  const seconds = (timeStamp <= 0) ? 0 : timeStamp % 60;
+  const timeString = `${minutes > 0 ? `${minutes}min ` : ''}${seconds}s`;
   useEffect(() => {
     const interval = setInterval(() => setTimeStamp((ts) => ts + 1), 1000);
     return () => {
@@ -25,7 +28,7 @@ function LastKill(props) {
               <div style={{ fontFamily: '"Montserrat", sans-serif' }}>{killer}</div>
               <small className="d-none d-sm-block mt-2">
                 <i className="fa fa-clock" />
-                {t('live:lastKills.time', { timeStamp })}
+                {t('live:lastKills.time', { timeString })}
               </small>
             </div>
           </div>

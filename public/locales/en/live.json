@@ -11,7 +11,7 @@
     "title": "Online players"
   },
   "lastKills" : {
-    "title": "Last kills", "time": " {{timeStamp}} seconds ago", "distance": " {{distance}} meter distance", "weapon": " with a {{weapon}}", "killed": "killed"
+    "title": "Last kills", "time": " {{timeString}} ago", "distance": " {{distance}} meter distance", "weapon": " with a {{weapon}}", "killed": "killed"
     },
   "news": { "title": "News", "more": "See more...", "back": "Go back" },
   "graph": { "title": "Kills and player history", "day": "Day", "season": "Season", "kills": "Kills", "players": "Players"},
