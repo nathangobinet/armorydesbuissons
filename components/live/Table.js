@@ -56,7 +56,7 @@ function Table(props) {
                     {emptyTableMessage}
                   </td>
                 </tr>
-              ) : ''
+              ) : null
           }
           {
             transitions.map(({
