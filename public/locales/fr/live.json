@@ -8,7 +8,8 @@
   },
   "onlinePlayers": {
     "headers": { "country": "Pays", "name": "Pseudo", "kills": "Kills", "deaths": "Morts", "timePlayed":"Temps joué" },
-    "title": "Joueurs en ligne"
+    "title": "Joueurs en ligne",
+    "emptyTableMessage": "Aucun joueur connecté"
   },
   "lastKills": {
     "title": "Derniers kills", "time": " Il y a {{timeString}}", "distance": " {{distance}} mètres de distance", "weapon": " avec une {{weapon}}", "killed": "a tué"
@@ -29,5 +30,5 @@
   }, "popper" : {
     "profile": "Voir le profile", "division" : "Division actuelle",  "previously": "Précédemment", "unranked": "NON CLASSÉ", "stats": "Statistiques",
     "all": "Toute période", "season": "Cette saison", "day": "Aujourd'hui", "kills": "Kills", "deaths": "Morts", "ratio": "Ratio"
-  }
+  }, "defaultEmptyTableMessage": "Aucun joueur"
 }

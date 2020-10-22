@@ -1,10 +1,16 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { useTransition, animated } from 'react-spring';
+import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../../styles/Live.module.css';
 
-function Table({ id, headers, rows }) {
+function Table(props) {
+  const { t } = useTranslation();
+  const {
+    id, headers, rows, emptyTableMessage = t('live:defaultEmptyTableMessage'),
+  } = props;
+
   const rowHeight = 52;
   let height = 0;
 
@@ -38,6 +44,20 @@ function Table({ id, headers, rows }) {
           </tr>
         </thead>
         <tbody>
+          {
+            (transitions.length === 0)
+              ? (
+                <tr>
+                  <td
+                    style={{ transform: `translate3d(0,${rowHeight}px,0)` }}
+                    colSpan={headers.length}
+                    className="text-center"
+                  >
+                    {emptyTableMessage}
+                  </td>
+                </tr>
+              ) : ''
+          }
           {
             transitions.map(({
               key, item, props: { y, ...rest },

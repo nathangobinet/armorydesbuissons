@@ -8,7 +8,8 @@
   },
   "onlinePlayers": {
     "headers": {"country": "Country", "name": "Name", "kills": "Kills", "deaths": "Deaths", "timePlayed":"Time played"},
-    "title": "Online players"
+    "title": "Online players",
+    "emptyTableMessage": "No player connected"
   },
   "lastKills" : {
     "title": "Last kills", "time": " {{timeString}} ago", "distance": " {{distance}} meter distance", "weapon": " with a {{weapon}}", "killed": "killed"
@@ -29,5 +30,5 @@
   }, "popper" : {
     "profile": "View profile", "division" : "Current division",  "previously": "Previously", "unranked": "UNRANKED", "stats": "Statistics",
     "all": "All time", "season": "This season", "day": "This day", "kills": "Kills", "deaths": "Deaths", "ratio": "Ratio"
-  }
+  }, "defaultEmptyTableMessage": "No player"
 }
