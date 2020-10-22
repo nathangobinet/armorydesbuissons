@@ -49,7 +49,7 @@ function Table(props) {
               ? (
                 <tr>
                   <td
-                    style={{ transform: `translate3d(0,${rowHeight}px,0)` }}
+                    style={{ transform: `translateY(${rowHeight}px)` }}
                     colSpan={headers.length}
                     className="text-center"
                   >
@@ -66,7 +66,7 @@ function Table(props) {
                 className="d-flex w-100"
                 key={key}
                 style={{
-                  position: 'absolute', transform: y.interpolate((newy) => `translate3d(0,${newy}px,0)`), ...rest,
+                  position: 'absolute', transform: y.interpolate((newy) => `translateY(${newy}px)`), ...rest,
                 }}
               >
                 {item.data.map((cell, i) => <td className={`col-${headers[i].size} hide-overflow`} key={`${item.key}td${i}`}>{cell}</td>)}
