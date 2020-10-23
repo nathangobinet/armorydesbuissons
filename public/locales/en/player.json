@@ -105,7 +105,8 @@
     "title": "Purchases",
     "date": "Date",
     "ac": "Armory Coins",
-    "item": "Item"
+    "item": "Item",
+    "noPurchase": "You have no purchase yet"
   }, "wallet": {
     "title": "Wallet",
     "btn": "Go to shop"

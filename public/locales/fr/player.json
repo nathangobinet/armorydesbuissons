@@ -105,7 +105,8 @@
     "title": "Achats",
     "date": "Date",
     "ac": "Armory Coins",
-    "item": "Article"
+    "item": "Article",
+    "noPurchase": "Vous n'avez pas encore d'achats"
   }, "wallet": {
     "title": "Portefeuille",
     "btn": "Aller à la boutique"

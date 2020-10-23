@@ -59,10 +59,10 @@ function LastKills({ socket }) {
 
   const transitions = process.browser ? useTransition(printLastKills, (kill) => kill.id, {
     from: {
-      height: 0, opacity: 0, transform: 'scale(0,0)',
+      height: 0, opacity: 0, transform: 'scale(0)',
     },
-    enter: { height: getKillHeight(), opacity: 1, transform: 'scale(1,1)' },
-    leave: { transform: 'scale(1,0)', height: 0, opacity: 0 },
+    enter: { height: getKillHeight(), opacity: 1, transform: 'scale(1)' },
+    leave: { transform: 'scale(0)', height: 0, opacity: 0 },
   }) : [];
 
   const { t } = useTranslation();

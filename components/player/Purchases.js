@@ -46,10 +46,11 @@ function Purchase({ date, price, product }) {
 }
 
 function PurchasesContent({ purchases }) {
+  const { t } = useTranslation();
   if (purchases.length === 0) {
     return (
-      <div style={{ height: 270 }} className="d-flex align-items-center justify-content-center">
-        You have no purchases yet
+      <div style={{ height: 270 }} className="d-flex text-white align-items-center justify-content-center">
+        {t('player:purchases.noPurchase')}
       </div>
     );
   }

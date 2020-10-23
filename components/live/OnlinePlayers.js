@@ -75,7 +75,12 @@ function OnlinePlayers({ socket }) {
     <div className="col-xl-7 py-2">
       <div className="card shadow">
         <h4 className="text-accent mb-4">{t('live:onlinePlayers.title')}</h4>
-        <Table id="onlinePlayers" headers={headers} rows={printedPlayer} />
+        <Table
+          id="onlinePlayers"
+          headers={headers}
+          rows={printedPlayer}
+          emptyTableMessage={t('live:onlinePlayers.emptyTableMessage')}
+        />
       </div>
     </div>
   );

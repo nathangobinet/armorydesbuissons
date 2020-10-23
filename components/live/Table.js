@@ -1,10 +1,16 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { useTransition, animated } from 'react-spring';
+import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../../styles/Live.module.css';
 
-function Table({ id, headers, rows }) {
+function Table(props) {
+  const { t } = useTranslation();
+  const {
+    id, headers, rows, emptyTableMessage = t('live:defaultEmptyTableMessage'),
+  } = props;
+
   const rowHeight = 52;
   let height = 0;
 
@@ -39,6 +45,20 @@ function Table({ id, headers, rows }) {
         </thead>
         <tbody>
           {
+            (transitions.length === 0)
+              ? (
+                <tr>
+                  <td
+                    style={{ transform: `translateY(${rowHeight}px)` }}
+                    colSpan={headers.length}
+                    className="text-center"
+                  >
+                    {emptyTableMessage}
+                  </td>
+                </tr>
+              ) : null
+          }
+          {
             transitions.map(({
               key, item, props: { y, ...rest },
             }) => (
@@ -46,7 +66,7 @@ function Table({ id, headers, rows }) {
                 className="d-flex w-100"
                 key={key}
                 style={{
-                  position: 'absolute', transform: y.interpolate((newy) => `translate3d(0,${newy}px,0)`), ...rest,
+                  position: 'absolute', transform: y.interpolate((newy) => `translateY(${newy}px)`), ...rest,
                 }}
               >
                 {item.data.map((cell, i) => <td className={`col-${headers[i].size} hide-overflow`} key={`${item.key}td${i}`}>{cell}</td>)}
