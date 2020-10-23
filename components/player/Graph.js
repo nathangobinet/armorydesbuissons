@@ -71,10 +71,11 @@ function createGraph(graphRef, t, data) {
 }
 
 function getData(killsHistory) {
-  const labels = killsHistory.map((k) => (new Date(k.date)).toLocaleDateString());
-  const data1 = killsHistory.map((k) => k.nbKills);
-  const data2 = killsHistory.map((k) => k.nbDeaths);
-  const data3 = killsHistory.map(
+  const orderedKillsHistory = killsHistory.reverse();
+  const labels = orderedKillsHistory.map((k) => (new Date(k.date)).toLocaleDateString());
+  const data1 = orderedKillsHistory.map((k) => k.nbKills);
+  const data2 = orderedKillsHistory.map((k) => k.nbDeaths);
+  const data3 = orderedKillsHistory.map(
     (k) => ((k.nbDeaths === 0) ? k.nbKills : (k.nbKills / k.nbDeaths).toFixed(2)),
   );
   return {
