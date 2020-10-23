@@ -30,9 +30,9 @@ function ImageHandler({ ranks, current, onChange }) {
   else way = (current - previousTab);
 
   const transitions = useTransition(ranks[current], (p) => p.league, {
-    from: { opacity: 0, transform: `translate3d(${-way * 50}%,0,0)` },
-    enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
-    leave: { opacity: 0, transform: `translate3d(${way * 50}%,0,0)` },
+    from: { opacity: 0, transform: `translateX(${way * 50}%)` },
+    enter: { opacity: 1, transform: 'translateX(0%)' },
+    leave: { opacity: 0, transform: `translateX(${-way * 50}%)` },
   });
   if (current !== previousTab) setPreviousTab(current);
 
