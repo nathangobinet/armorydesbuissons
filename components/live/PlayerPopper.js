@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-nested-ternary */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPopper } from '@popperjs/core';
 
 import useTranslation from 'next-translate/useTranslation';
 import Link from 'next-translate/Link';
@@ -13,6 +14,58 @@ const playerState = {
   setPlayerData: null,
 };
 
+let popperInstance = null;
+
+/**
+ *  Use because the show function is trigered before the hide function
+ *  when we click 2 times on player
+ */
+let doNotHide = false;
+
+function create(target) {
+  const tooltip = document.querySelector('#player-info-popper');
+  popperInstance = createPopper(target, tooltip, {
+    placement: (window.innerWidth) > 1200 ? 'right' : 'bottom',
+    modifiers: [
+      {
+        name: 'offset',
+        options: {
+          offset: [0, 10],
+        },
+      },
+    ],
+  });
+}
+
+function destroy() {
+  if (popperInstance) {
+    popperInstance.destroy();
+    popperInstance = null;
+  }
+}
+
+export function hide(event) {
+  const tooltip = document.getElementById('player-info-popper');
+  const path = event.path || (event.composedPath && event.composedPath());
+  if (!path.includes(tooltip)) {
+    if (!doNotHide) {
+      document.removeEventListener('click', hide);
+      playerState.setDisplayed(false);
+      destroy();
+    } else {
+      doNotHide = false;
+    }
+  }
+}
+
+export function displayPopper(playerRef, id, name) {
+  if (playerState.displayed) doNotHide = true;
+  playerState.setPlayerData({ name, id });
+  playerState.setDisplayed(true);
+  document.addEventListener('click', hide);
+  create(playerRef.current);
+}
+
 function PlayerPopper() {
   const [displayed, setDisplayed] = useState(false);
   const [playerData, setPlayerData] = useState({});
@@ -23,6 +76,8 @@ function PlayerPopper() {
   playerState.displayed = displayed;
   playerState.setDisplayed = setDisplayed;
   playerState.setPlayerData = setPlayerData;
+
+  useEffect(() => () => { document.removeEventListener('click', hide); }, []);
 
   return (
     <div id="player-info-popper" className={styles['player-info-popper']} style={{ margin: 0, visibility: (displayed) ? 'visible' : 'hidden', opacity: (displayed) ? 1 : 0 }}>
