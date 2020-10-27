@@ -28,7 +28,7 @@
     "title": "Statistiques", "day": "Jour", "season": "Saison", "allTime": "Toute prériode",
     "headers": {"rank": "Rang", "name": "Nom", "kills": "Kills", "deaths": "Morts", "ratio": "Ratio", "level": "Level"}
   }, "popper" : {
-    "profile": "Voir le profile", "division" : "Division actuelle",  "previously": "Précédemment", "unranked": "NON CLASSÉ", "stats": "Statistiques",
+    "profile": "Voir le profil", "division" : "Division actuelle",  "previously": "Précédemment", "unranked": "NON CLASSÉ", "stats": "Statistiques",
     "all": "Toute période", "season": "Cette saison", "day": "Aujourd'hui", "kills": "Kills", "deaths": "Morts", "ratio": "Ratio"
   }, "defaultEmptyTableMessage": "Aucun joueur"
 }
