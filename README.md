@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://nathangobinet.github.io/monconfinement"><img src="https://raw.githubusercontent.com/nathangobinet/armorydesbuissons/master/public/svgs/screen-logo.svg" alt="Mon confinement" width="200"></a>
+  <a href="https://armorydesbuissons.fr"><img src="https://raw.githubusercontent.com/nathangobinet/armorydesbuissons/master/public/svgs/screen-logo.svg" alt="Mon confinement" width="200"></a>
   <br>
   Armory des buissons
   <br>
