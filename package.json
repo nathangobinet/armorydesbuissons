@@ -11,7 +11,7 @@
     "@fortawesome/fontawesome-free": "^5.14.0",
     "@popperjs/core": "^2.4.4",
     "bootstrap": "^4.5.2",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
