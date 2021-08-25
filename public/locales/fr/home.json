@@ -9,12 +9,12 @@
     "p2": "N'hésitez plus et rejoignez-nous maintenant pour devenir le meilleur joueur !",
     "btnConnect": "Connexion",
     "btnDiscord": "Rejoins-nous",
-    "discover": "Découvre les fonctionalités"
+    "discover": "Découvre les fonctionnalités"
   },
   "tpintofight": {
     "title": "Soyez téléporté au plus proche du combat",
     "beforeKey": "Le panel de jeu (",
-    "afterKey": ") vous permet de vous téléporter directement dans différentes zones de combat. Vous pouvez activer la téléportation automatique lors de la réaparition. Le panneau de jeu vous indique également le nombre de joueurs dans chaque zone."
+    "afterKey": ") vous permet de vous téléporter directement dans différentes zones de combat. Vous pouvez activer la téléportation automatique lors de la réapparition. Le panneau de jeu vous indique également le nombre de joueurs dans chaque zone."
   }, 
   "chooseYourGameplay": {
     "title": "Choisissez votre gameplay",
@@ -86,7 +86,7 @@
     },
     "p2": {
       "title": "Inventaire",
-      "sub": "Vous pouvez entièrement personnaliser votre matériel. Equipement, armes, accessoires ... Créez le matériel qui vous convient et combattez avec."
+      "sub": "Vous pouvez entièrement personnaliser votre matériel. Équipement, armes, accessoires ... Créez le matériel qui vous convient et combattez avec."
     },
     "p3": {
       "title": "Gameplay",
